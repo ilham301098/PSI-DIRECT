@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="logo-pro">
-			<a href="index.html"><img class="main-logo" src="components/images/kia.png" alt="" /></a>
+				<a href="?module=dashboard"><img class="main-logo" src="components/images/kia.png" alt="" /></a>
 			</div>
 		</div>
 	</div>
@@ -33,13 +33,21 @@
 										<li class="nav-item">
 											<a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
 												<img src="components/images/logo.png" alt="" style="width: 40px;height: 30px;" />
-												<span class="admin-name">Prof.Anderson</span>
+												<span class="admin-name">Admin Direct</span>
 												<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
 											</a>
 											<ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-												<li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
+												<li>
+													<a href="#">
+														<span class="edu-icon edu-home-admin author-log-ic"></span>
+														My Account
+													</a>
 												</li>										
-												<li><a href="#"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
+												<li>
+													<a href="logout.php">
+														<span class="edu-icon edu-locked author-log-ic"></span>
+														Log Out
+													</a>
 												</li>
 											</ul>
 										</li>
@@ -61,13 +69,21 @@
 					<div class="mobile-menu">
 						<nav id="dropdown">
 							<ul class="mobile-menu-nav">
-								<li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+								<?php include('sidebar.php'); ?>
+								<li>
+									<a data-toggle="collapse" data-target="#Charts" href="#">
+										Home 
+										<span class="admin-project-icon edu-icon edu-down-arrow"></span>
+									</a>
 									<ul class="collapse dropdown-header-top">
+
 										<li><a href="index.html">Dashboard v.1</a></li>
 										<li><a href="index-1.html">Dashboard v.2</a></li>
 									</ul>
 								</li>
-								<li><a href="events.html">Event</a></li>
+								<li>
+									<a href="events.html">Event</a>
+								</li>
 								
 							</ul>
 						</nav>
