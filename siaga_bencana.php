@@ -23,6 +23,7 @@ include('front-end/head.php');
 			<center>
 				<div class="col-12 col-lg-6">
 					<div class="milestones d-flex flex-wrap justify-content-between">
+						<a href="video-siaga_bencana.php">
 						<div class="col-12 col-sm-4 mt-5 mt-lg-0">
 							<div class="counter-box">
 								<div class="d-flex justify-content-center align-items-center">
@@ -32,6 +33,7 @@ include('front-end/head.php');
 							</div><!-- counter-box -->
 
 						</div><!-- .col -->
+						</a>
 						<div class="col-12 col-sm-4 mt-5 mt-lg-0">
 							<div class="counter-box">
 								<div class="d-flex justify-content-center align-items-center">
