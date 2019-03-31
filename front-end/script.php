@@ -6,3 +6,4 @@
 <script type='text/javascript' src='components/js/jquery.countTo.min.js'></script>
 <script type='text/javascript' src='components/js/jquery.barfiller.js'></script>
 <script type='text/javascript' src='components/js/custom.js'></script>
+ <script src="back-end/js/tawk-chat.js"></script>

@@ -1,9 +1,10 @@
 <head>
-    <title>Hello World</title>
+<title>Direct | Home</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="components/images/logo.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="components/css/bootstrap.min.css">
