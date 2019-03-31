@@ -32,13 +32,13 @@
 										
 										<li class="nav-item">
 											<a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-												<img src="components/images/logo.png" alt="" style="width: 40px;height: 30px;" />
+												<img src="components/images/logo.png" alt="" style="width: 40px;height: 30px;background: white;" />
 												<span class="admin-name">Admin Direct</span>
 												<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
 											</a>
 											<ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
 												<li>
-													<a href="#">
+													<a href="?module=User">
 														<span class="edu-icon edu-home-admin author-log-ic"></span>
 														My Account
 													</a>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
     ============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="back-end/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="components/images/logo.png">
     <!-- Google Fonts
     ============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
@@ -59,18 +59,10 @@
     <!-- modernizr JS
     ============================================ -->
     <script src="back-end/js/vendor/modernizr-2.8.3.min.js"></script>
-    
-    <div style="position: fixed;z-index:1000; margin-left: 5px;margin-bottom: 10px; bottom:0;background-color: grey;padding: 10px;">
-        <div class="row">
-        <div class="col-md-4">
-                <img src="components/images/logo.png" style="width: 40px;height: 60px" alt="img">
-            </div>
-            <div class="col-md-7">
-                DIRECT<br>
-                PSI KELOMPOK 3
-            </div>
-        </div>
 
-    </div>
+    <link rel="stylesheet" href="back-end/css/data-table/bootstrap-table.css">
+    <link rel="stylesheet" href="back-end/css/data-table/bootstrap-editable.css">
+    <link rel="stylesheet" href="back-end/css/modals.css">
+    
 
 </head>

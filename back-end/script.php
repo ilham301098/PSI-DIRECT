@@ -60,3 +60,23 @@
     <!-- tawk chat JS
     ============================================ -->
     <script src="back-end/js/tawk-chat.js"></script>
+    <!-- data table JS
+        ============================================ -->
+    <script src="back-end/js/data-table/bootstrap-table.js"></script>
+    <script src="back-end/js/data-table/tableExport.js"></script>
+    <script src="back-end/js/data-table/data-table-active.js"></script>
+    <script src="back-end/js/data-table/bootstrap-table-editable.js"></script>
+    <script src="back-end/js/data-table/bootstrap-editable.js"></script>
+    <script src="back-end/js/data-table/bootstrap-table-resizable.js"></script>
+    <script src="back-end/js/data-table/colResizable-1.5.source.js"></script>
+    <script src="back-end/js/data-table/bootstrap-table-export.js"></script>
+    <!--  editable JS
+        ============================================ -->
+    <script src="back-end/js/editable/jquery.mockjax.js"></script>
+    <script src="back-end/js/editable/mock-active.js"></script>
+    <script src="back-end/js/editable/select2.js"></script>
+    <script src="back-end/js/editable/moment.min.js"></script>
+    <script src="back-end/js/editable/bootstrap-datetimepicker.js"></script>
+    <script src="back-end/js/editable/bootstrap-editable.js"></script>
+    <script src="back-end/js/editable/xediable-active.js"></script>
+    <!-- Chart JS
