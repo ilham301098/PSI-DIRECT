@@ -31,8 +31,8 @@
 		<span class="mini-click-non">&nbsp;Pencarian Orang</span>
 	</a>
 	<ul class="submenu-angle" aria-expanded="true">
-		<li><a href="?module=under"><span class="mini-sub-pro">&nbsp;Orang Hilang</span></a></li>
-		<li><a href="index-1.html"><span class="mini-sub-pro">&nbsp;Orang di Temukan</span></a></li>
+		<li><a href="?module=daftar_orang"><span class="mini-sub-pro">&nbsp;Daftar Orang</span></a></li>
+		<li><a href="?module=verifikasi_form"><span class="mini-sub-pro">&nbsp;Verifikasi Orang Hilang</span></a></li>
 
 	</ul>
 </li>
@@ -47,35 +47,6 @@
 		<li><a href="index-1.html"><span class="mini-sub-pro">Video</span></a></li>
 
 	</ul>
-</li>
-
-
-<li>
-	<a href="?module=under" aria-expanded="false">
-		<i class="fa fa-donate "></i>
-		<span class="mini-click-non">&nbsp;Donasi</span>
-	</a>
-</li>
-
-<li>
-	<a href="?module=under" aria-expanded="false">
-		<i class="fa fa-wind"></i> 
-		<span class="mini-click-non">&nbsp;Cuaca</span>
-	</a>
-</li>
-
-<li>
-	<a href="?module=under" aria-expanded="false">
-		<i class="fa fa-address-book  "></i>
-		<span class="mini-click-non">&nbsp;Kontak Penting</span>
-	</a>
-</li>
-
-<li>
-	<a href="?module=under" aria-expanded="false">
-		<i class="fa fa-address-card "></i>
-		<span class="mini-click-non">&nbsp;Kontak Kami</span>
-	</a>
 </li>
 
 <li>

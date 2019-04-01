@@ -45,10 +45,10 @@
 							} ?>
 							><a href="infomedis.php">INFO MEDIS</a></li>
 							<li 
-							<?php if (strpos($_SERVER['PHP_SELF'], "daftarorang") !== false) {
+							<?php if (strpos($_SERVER['PHP_SELF'], "pencarian") !== false) {
 								echo 'class="current-menu-item"';
 							} ?>
-							><a href="daftarorang.php"> PENCARIAN ORANG</a></li>
+							><a href="pencarian_orang.php"> PENCARIAN ORANG</a></li>
 							<li 
 							<?php if (strpos($_SERVER['PHP_SELF'], "pemulihan") !== false) {
 								echo 'class="current-menu-item"';
@@ -68,7 +68,7 @@
 							<?php if (strpos($_SERVER['PHP_SELF'], "kontak") !== false) {
 								echo 'class="current-menu-item"';
 							} ?>
-							><a href="kontak.php">KONTAK PENTING</a></li>
+							><a href="KontakPenting.php">KONTAK PENTING</a></li>
 						</ul>
 					</nav><!-- .site-navigation -->
 					<div class="hamburger-menu d-lg-none">
