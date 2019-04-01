@@ -38,15 +38,10 @@
 </li>
 
 <li>
-	<a class="has-arrow" href="#">
-		<i class="fa fa-first-aid  "></i>
-		<span class="mini-click-non">&nbsp;Pemulihan</span>
+	<a href="?module=artikel-pemulihan" aria-expanded="false">
+		<i class="fa fa-first-aid "></i>
+		<span class="mini-click-non">&nbsp;Article Pemulihan</span>
 	</a>
-	<ul class="submenu-angle" aria-expanded="true">
-		<li><a href="?module=under"><span class="mini-sub-pro">Artikel</span></a></li>
-		<li><a href="index-1.html"><span class="mini-sub-pro">Video</span></a></li>
-
-	</ul>
 </li>
 
 <li>
