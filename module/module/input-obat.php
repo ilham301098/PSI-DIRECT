@@ -22,7 +22,7 @@
 			</div>
 		</div>
 	</div>
-    <center><h2> Input Obat </h2></center>
+    <center><h2>Input Obat</h2></center>
 </div>
 
 <div class="analytics-sparkle-area">
