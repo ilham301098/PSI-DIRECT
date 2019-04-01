@@ -22,7 +22,7 @@
 			</div>
 		</div>
 	</div>
-    <center><h2>Edit Obat</h2></center>
+    <center><h2> Edit Obat </h2></center>
 </div>
 
 <div class="analytics-sparkle-area">
