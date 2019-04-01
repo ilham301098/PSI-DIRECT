@@ -35,24 +35,19 @@ include('front-end/head.php');
 			</div><!-- .hero-content-wrap -->
 
 			<div class="swiper-slide hero-content-wrap">
-				<img src="components/images/hero.jpg" alt="">
+				<img src="images/bencana.jpg" alt="">
 
 				<div class="hero-content-overlay position-absolute w-100 h-100">
 					<div class="container h-100">
 						<div class="row h-100">
-							<div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
+							<div class="col-12 col-lg-9 d-flex flex-column justify-content-center align-items-start">
 								<header class="entry-header">
-									<h1>Donate</h1>
-									<h4>4 a better world</h4>
+									<h1>Donasi Sekarang</h1>
+									<h4>Mari kita bantu saudara kita</h4>
 								</header><!-- .entry-header -->
 
-								<div class="entry-content mt-4">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus ullamcorper</p>
-								</div><!-- .entry-content -->
-
 								<footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-									<a href="#" class="btn gradient-bg mr-2">Donate Now</a>
-									<a href="#" class="btn orange-border">Read More</a>
+									<a href="donasi.php" class="btn gradient-bg mr-2">Donate Now</a>
 								</footer><!-- .entry-footer -->
 							</div><!-- .col -->
 						</div><!-- .row -->
@@ -61,24 +56,19 @@ include('front-end/head.php');
 			</div><!-- .hero-content-wrap -->
 
 			<div class="swiper-slide hero-content-wrap">
-				<img src="components/images/hero.jpg" alt="">
+				<img src="images/bencana1.jpg" alt="">
 
 				<div class="hero-content-overlay position-absolute w-100 h-100">
 					<div class="container h-100">
 						<div class="row h-100">
-							<div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
+							<div class="col-12 col-lg-9 d-flex flex-column justify-content-center align-items-start">
 								<header class="entry-header">
-									<h1>Donate</h1>
-									<h4>4 a better world</h4>
+									<h1>Donasi Sekarang</h1>
+									<h4>Mari kita bantu saudara kita</h4>
 								</header><!-- .entry-header -->
 
-								<div class="entry-content mt-4">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus ullamcorper</p>
-								</div><!-- .entry-content -->
-
-								<footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-									<a href="#" class="btn gradient-bg mr-2">Donate Now</a>
-									<a href="#" class="btn orange-border">Read More</a>
+								<footer class="entry-footer d-flex flex-wrap align-items-center mt-5" >
+									<a href="donasi.php" class="btn gradient-bg mr-2">Donate Now</a>
 								</footer><!-- .entry-footer -->
 							</div><!-- .col -->
 						</div><!-- .row -->
@@ -86,12 +76,6 @@ include('front-end/head.php');
 				</div><!-- .hero-content-overlay -->
 			</div><!-- .hero-content-wrap -->
 		</div><!-- .swiper-wrapper -->
-
-		<div class="pagination-wrap position-absolute w-100">
-			<div class="container">
-				<div class="swiper-pagination"></div>
-			</div><!-- .container -->
-		</div><!-- .pagination-wrap -->
 
 		<!-- Add Arrows -->
 		<div class="swiper-button-next flex justify-content-center align-items-center">
@@ -107,141 +91,180 @@ include('front-end/head.php');
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-md-3 col-lg-3 mt-4 mt-lg-0">
-					<div class="icon-box">
-						<figure class="d-flex justify-content-center">
-							<img src="components/images/hands-gray.png" alt="">
-							<img src="components/images/hands-white.png" alt="">
-						</figure>
+					<a href="siaga_bencana.php">
+						<div class="icon-box">
+							<figure class="d-flex justify-content-center">
+								<img src="components/images/hands-gray.png" alt="">
+								<img src="components/images/hands-white.png" alt="">
+							</figure>
 
-						<header class="entry-header">
-							<h3 class="entry-title">Siaga Bencana</h3>
-						</header>
+							<header class="entry-header">
+								<h3 class="entry-title">Siaga Bencana</h3>
+							</header>
 
-					</div>
+						</div>
+					</a>
 				</div>
 
 				<div class="col-12 col-md-3 col-lg-3 mt-4 mt-lg-0">
-					<div class="icon-box">
-						<figure class="d-flex justify-content-center">
-							<img src="components/images/donation-gray.png" alt="">
-							<img src="components/images/donation-white.png" alt="">
-						</figure>
+					<a href="infomedis.php">
+						<div class="icon-box">
+							<figure class="d-flex justify-content-center">
+								<img src="components/images/donation-gray.png" alt="">
+								<img src="components/images/donation-white.png" alt="">
+							</figure>
 
-						<header class="entry-header">
-							<h3 class="entry-title">Informasi Medis</h3>
-						</header>
+							<header class="entry-header">
+								<h3 class="entry-title">Informasi Medis</h3>
+							</header>
 
-					</div>
+						</div>
+					</a>
 				</div>
 
 				<div class="col-12 col-md-3 col-lg-3 mt-4 mt-lg-0">
-					<div class="icon-box">
-						<figure class="d-flex justify-content-center">
-							<img src="components/images/hands-gray.png" alt="">
-							<img src="components/images/hands-white.png" alt="">
-						</figure>
+					<a href="pencarian_orang.php">
+						<div class="icon-box">
+							<figure class="d-flex justify-content-center">
+								<img src="components/images/hands-gray.png" alt="">
+								<img src="components/images/hands-white.png" alt="">
+							</figure>
 
-						<header class="entry-header">
-							<h3 class="entry-title">Pencarian Orang</h3>
-						</header>
+							<header class="entry-header">
+								<h3 class="entry-title">Pencarian Orang</h3>
+							</header>
 
-					</div>
+						</div>
+					</a>
 				</div>
 
 				<div class="col-12 col-md-3 col-lg-3 mt-4 mt-lg-0">
-					<div class="icon-box">
-						<figure class="d-flex justify-content-center">
-							<img src="components/images/hands-gray.png" alt="">
-							<img src="components/images/hands-white.png" alt="">
-						</figure>
+					<a href="pemulihan.php">
+						<div class="icon-box">
+							<figure class="d-flex justify-content-center">
+								<img src="components/images/hands-gray.png" alt="">
+								<img src="components/images/hands-white.png" alt="">
+							</figure>
 
-						<header class="entry-header">
-							<h3 class="entry-title">Pemulihan</h3>
-						</header>
+							<header class="entry-header">
+								<h3 class="entry-title">Pemulihan</h3>
+							</header>
 
-					</div>
+						</div>
+					</a>
 				</div>
 			</div>
+
 			<br><br>
 			<div class="row">
 				<div class="col-12 col-md-3 col-lg-3 mt-4 mt-lg-0">
-					<div class="icon-box">
-						<figure class="d-flex justify-content-center">
-							<img src="components/images/charity-gray.png" alt="">
-							<img src="components/images/charity-white.png" alt="">
-						</figure>
+					<a href="donasi.php">
+						<div class="icon-box">
+							<figure class="d-flex justify-content-center">
+								<img src="components/images/charity-gray.png" alt="">
+								<img src="components/images/charity-white.png" alt="">
+							</figure>
 
-						<header class="entry-header">
-							<h3 class="entry-title">Donasi</h3>
-						</header>
+							<header class="entry-header">
+								<h3 class="entry-title">Donasi</h3>
+							</header>
 
-					</div>
+						</div>
+					</a>
 				</div>
 
 				<div class="col-12 col-md-3 col-lg-3 mt-4 mt-lg-0">
-					<div class="icon-box">
-						<figure class="d-flex justify-content-center">
-							<img src="components/images/hands-gray.png" alt="">
-							<img src="components/images/hands-white.png" alt="">
-						</figure>
+					<a href="Ramalan_cuaca.php">
+						<div class="icon-box">
+							<figure class="d-flex justify-content-center">
+								<img src="components/images/hands-gray.png" alt="">
+								<img src="components/images/hands-white.png" alt="">
+							</figure>
 
-						<header class="entry-header">
-							<h3 class="entry-title">Ramalan Cuaca</h3>
-						</header>
+							<header class="entry-header">
+								<h3 class="entry-title">Ramalan Cuaca</h3>
+							</header>
 
-					</div>
+						</div>
+					</a>
 				</div>
-
+				
 				<div class="col-12 col-md-3 col-lg-3 mt-4 mt-lg-0">
-					<div class="icon-box">
-						<figure class="d-flex justify-content-center">
-							<img src="components/images/donation-gray.png" alt="">
-							<img src="components/images/donation-white.png" alt="">
-						</figure>
+					<a href="KontakPenting.php">
+						<div class="icon-box">
+							<figure class="d-flex justify-content-center">
+								<img src="components/images/donation-gray.png" alt="">
+								<img src="components/images/donation-white.png" alt="">
+							</figure>
 
-						<header class="entry-header">
-							<h3 class="entry-title">Kontak Penting</h3>
-						</header>
-					</div>
+							<header class="entry-header">
+								<h3 class="entry-title">Kontak Penting</h3>
+							</header>
+						</div>
+					</a>
 				</div>
-
-				<div class="col-12 col-md-3 col-lg-3 mt-4 mt-lg-0">
-					<div class="icon-box">
-						<figure class="d-flex justify-content-center">
-							<img src="components/images/charity-gray.png" alt="">
-							<img src="components/images/charity-white.png" alt="">
-						</figure>
-
-						<header class="entry-header">
-							<h3 class="entry-title">Kontak Kami</h3>
-						</header>				
-					</div>
-				</div>
+				
+				
 			</div><!-- .row -->
 		</div><!-- .container -->
 	</div><!-- .home-page-icon-boxes -->
+
+	
+
+	<div class="single-page about-page">
+		<div class="welcome-wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-6 order-2 order-lg-1">
+						<div class="welcome-content">
+							<header class="entry-header">
+								<h2 class="entry-title">Siaga Bencana</h2>
+							</header><!-- .entry-header -->
+
+							<div class="entry-content mt-5">
+								<p>Indonesia menyadari bahwa masalah kebencanaan harus ditangani secara serius sejak terjadinya gempabumi dan disusul tsunami yang menerjang Aceh dan sekitarnya pada 2004. Kebencanaan merupakan pembahasan yang sangat komprehensif dan multi dimensi. Menyikapi kebencanaan yang frekuensinya terus meningkat setiap tahun, pemikiran terhadap penanggulangan bencana harus dipahami dan diimplementasikan oleh semua pihak. Bencana adalah urusan semua pihak.
+									<br><br>
+									Sumber: <a href="https://www.bnpb.go.id/home/sistem.html" target="__blank">/www.bnpb.go.id</a>
+								</p>
+							</div><!-- .entry-content -->
+
+							<div class="entry-footer mt-5" align="center">
+								<a href="siaga_bencana.php" class="btn gradient-bg mr-2">Siaga Bencana</a>
+							</div><!-- .entry-footer -->
+						</div><!-- .welcome-content -->
+					</div><!-- .col -->
+
+					<div class="col-12 col-lg-6 order-1 order-lg-2">
+						<img src="components/images/BNPB.jpg" style="width: 100%;height: 90%;" alt="welcome">
+					</div><!-- .col -->
+				</div><!-- .row -->
+			</div><!-- .container -->
+		</div><!-- .home-page-icon-boxes -->
+	</div>
 
 	<div class="our-causes">
 		<div class="container">
 			<div class="row">
 				<div class="coL-12">
 					<div class="section-heading">
-						<h2 class="entry-title">Our Causes</h2>
+						<h2 class="entry-title">Donasi</h2>
 					</div><!-- .section-heading -->
 				</div><!-- .col -->
 			</div><!-- .row -->
 
 			<div class="row">
 				<div class="col-12">
+
 					<div class="swiper-container causes-slider">
 						<div class="swiper-wrapper">
+
 							<div class="swiper-slide">
 								<div class="cause-wrap">
 									<figure class="m-0">
 										<img src="components/images/cause-1.jpg" alt="">
 
 										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-											<a href="#" class="btn gradient-bg mr-2">Donate Now</a>
+											<a href="donasi.php" class="btn gradient-bg mr-2">Donate Now</a>
 										</div><!-- .figure-overlay -->
 									</figure>
 
@@ -253,110 +276,6 @@ include('front-end/head.php');
 										<div class="entry-content">
 											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
 										</div><!-- .entry-content -->
-
-										<div class="fund-raised w-100">
-											<div class="fund-raised-bar-1 barfiller">
-												<div class="tipWrap">
-													<span class="tip"></span>
-												</div><!-- .tipWrap -->
-
-												<span class="fill" data-percentage="83"></span>
-											</div><!-- .fund-raised-bar -->
-
-											<div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
-												<div class="fund-raised-total mt-4">
-													Raised: $56 880
-												</div><!-- .fund-raised-total -->
-
-												<div class="fund-raised-goal mt-4">
-													Goal: $70 000
-												</div><!-- .fund-raised-goal -->
-											</div><!-- .fund-raised-details -->
-										</div><!-- .fund-raised -->
-									</div><!-- .cause-content-wrap -->
-								</div><!-- .cause-wrap -->
-							</div><!-- .swiper-slide -->
-
-							<div class="swiper-slide">
-								<div class="cause-wrap">
-									<figure class="m-0">
-										<img src="components/images/cause-2.jpg" alt="">
-
-										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-											<a href="#" class="btn gradient-bg mr-2">Donate Now</a>
-										</div><!-- .figure-overlay -->
-									</figure>
-
-									<div class="cause-content-wrap">
-										<header class="entry-header d-flex flex-wrap align-items-center">
-											<h3 class="entry-title w-100 m-0"><a href="#">Education for all</a></h3>
-										</header><!-- .entry-header -->
-
-										<div class="entry-content">
-											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
-										</div><!-- .entry-content -->
-
-										<div class="fund-raised w-100">
-											<div class="fund-raised-bar-2 barfiller">
-												<div class="tipWrap">
-													<span class="tip"></span>
-												</div><!-- .tipWrap -->
-
-												<span class="fill" data-percentage="70"></span>
-											</div><!-- .fund-raised-bar -->
-
-											<div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
-												<div class="fund-raised-total mt-4">
-													Raised: $56 880
-												</div><!-- .fund-raised-total -->
-
-												<div class="fund-raised-goal mt-4">
-													Goal: $70 000
-												</div><!-- .fund-raised-goal -->
-											</div><!-- .fund-raised-details -->
-										</div><!-- .fund-raised -->
-									</div><!-- .cause-content-wrap -->
-								</div><!-- .cause-wrap -->
-							</div><!-- .swiper-slide -->
-
-							<div class="swiper-slide">
-								<div class="cause-wrap">
-									<figure class="m-0">
-										<img src="components/images/cause-3.jpg" alt="">
-
-										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-											<a href="#" class="btn gradient-bg mr-2">Donate Now</a>
-										</div><!-- .figure-overlay -->
-									</figure>
-
-									<div class="cause-content-wrap">
-										<header class="entry-header d-flex flex-wrap align-items-center">
-											<h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
-										</header><!-- .entry-header -->
-
-										<div class="entry-content">
-											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
-										</div><!-- .entry-content -->
-
-										<div class="fund-raised w-100">
-											<div class="fund-raised-bar-3 barfiller">
-												<div class="tipWrap">
-													<span class="tip"></span>
-												</div><!-- .tipWrap -->
-
-												<span class="fill" data-percentage="83"></span>
-											</div><!-- .fund-raised-bar -->
-
-											<div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
-												<div class="fund-raised-total mt-4">
-													Raised: $56 880
-												</div><!-- .fund-raised-total -->
-
-												<div class="fund-raised-goal mt-4">
-													Goal: $70 000
-												</div><!-- .fund-raised-goal -->
-											</div><!-- .fund-raised-details -->
-										</div><!-- .fund-raised -->
 									</div><!-- .cause-content-wrap -->
 								</div><!-- .cause-wrap -->
 							</div><!-- .swiper-slide -->
@@ -367,7 +286,7 @@ include('front-end/head.php');
 										<img src="components/images/cause-1.jpg" alt="">
 
 										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-											<a href="#" class="btn gradient-bg mr-2">Donate Now</a>
+											<a href="donasi.php" class="btn gradient-bg mr-2">Donate Now</a>
 										</div><!-- .figure-overlay -->
 									</figure>
 
@@ -379,79 +298,17 @@ include('front-end/head.php');
 										<div class="entry-content">
 											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
 										</div><!-- .entry-content -->
-
-										<div class="fund-raised w-100">
-											<div class="fund-raised-bar-4 barfiller">
-												<div class="tipWrap">
-													<span class="tip"></span>
-												</div><!-- .tipWrap -->
-
-												<span class="fill" data-percentage="83"></span>
-											</div><!-- .fund-raised-bar -->
-
-											<div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
-												<div class="fund-raised-total mt-4">
-													Raised: $56 880
-												</div><!-- .fund-raised-total -->
-
-												<div class="fund-raised-goal mt-4">
-													Goal: $70 000
-												</div><!-- .fund-raised-goal -->
-											</div><!-- .fund-raised-details -->
-										</div><!-- .fund-raised -->
 									</div><!-- .cause-content-wrap -->
 								</div><!-- .cause-wrap -->
-							</div><!-- .swiper-slide -->
+							</div>
 
 							<div class="swiper-slide">
 								<div class="cause-wrap">
 									<figure class="m-0">
-										<img src="components/images/cause-2.jpg" alt="">
+										<img src="components/images/cause-1.jpg" alt="">
 
 										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-											<a href="#" class="btn gradient-bg mr-2">Donate Now</a>
-										</div><!-- .figure-overlay -->
-									</figure>
-
-									<div class="cause-content-wrap">
-										<header class="entry-header d-flex flex-wrap align-items-center">
-											<h3 class="entry-title w-100 m-0"><a href="#">Education for all</a></h3>
-										</header><!-- .entry-header -->
-
-										<div class="entry-content">
-											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
-										</div><!-- .entry-content -->
-
-										<div class="fund-raised w-100">
-											<div class="fund-raised-bar-5 barfiller">
-												<div class="tipWrap">
-													<span class="tip"></span>
-												</div><!-- .tipWrap -->
-
-												<span class="fill" data-percentage="70"></span>
-											</div><!-- .fund-raised-bar -->
-
-											<div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
-												<div class="fund-raised-total mt-4">
-													Raised: $56 880
-												</div><!-- .fund-raised-total -->
-
-												<div class="fund-raised-goal mt-4">
-													Goal: $70 000
-												</div><!-- .fund-raised-goal -->
-											</div><!-- .fund-raised-details -->
-										</div><!-- .fund-raised -->
-									</div><!-- .cause-content-wrap -->
-								</div><!-- .cause-wrap -->
-							</div><!-- .swiper-slide -->
-
-							<div class="swiper-slide">
-								<div class="cause-wrap">
-									<figure class="m-0">
-										<img src="components/images/cause-3.jpg" alt="">
-
-										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-											<a href="#" class="btn gradient-bg mr-2">Donate Now</a>
+											<a href="donasi.php" class="btn gradient-bg mr-2">Donate Now</a>
 										</div><!-- .figure-overlay -->
 									</figure>
 
@@ -463,29 +320,53 @@ include('front-end/head.php');
 										<div class="entry-content">
 											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
 										</div><!-- .entry-content -->
-
-										<div class="fund-raised w-100">
-											<div class="fund-raised-bar-6 barfiller">
-												<div class="tipWrap">
-													<span class="tip"></span>
-												</div><!-- .tipWrap -->
-
-												<span class="fill" data-percentage="83"></span>
-											</div><!-- .fund-raised-bar -->
-
-											<div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
-												<div class="fund-raised-total mt-4">
-													Raised: $56 880
-												</div><!-- .fund-raised-total -->
-
-												<div class="fund-raised-goal mt-4">
-													Goal: $70 000
-												</div><!-- .fund-raised-goal -->
-											</div><!-- .fund-raised-details -->
-										</div><!-- .fund-raised -->
 									</div><!-- .cause-content-wrap -->
 								</div><!-- .cause-wrap -->
-							</div><!-- .swiper-slide -->
+							</div>
+
+							<div class="swiper-slide">
+								<div class="cause-wrap">
+									<figure class="m-0">
+										<img src="components/images/cause-1.jpg" alt="">
+
+										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
+											<a href="donasi.php" class="btn gradient-bg mr-2">Donate Now</a>
+										</div><!-- .figure-overlay -->
+									</figure>
+
+									<div class="cause-content-wrap">
+										<header class="entry-header d-flex flex-wrap align-items-center">
+											<h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+										</header><!-- .entry-header -->
+
+										<div class="entry-content">
+											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
+										</div><!-- .entry-content -->
+									</div><!-- .cause-content-wrap -->
+								</div><!-- .cause-wrap -->
+							</div>
+
+							<div class="swiper-slide">
+								<div class="cause-wrap">
+									<figure class="m-0">
+										<img src="components/images/cause-1.jpg" alt="">
+
+										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
+											<a href="donasi.php" class="btn gradient-bg mr-2">Donate Now</a>
+										</div><!-- .figure-overlay -->
+									</figure>
+
+									<div class="cause-content-wrap">
+										<header class="entry-header d-flex flex-wrap align-items-center">
+											<h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+										</header><!-- .entry-header -->
+
+										<div class="entry-content">
+											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
+										</div><!-- .entry-content -->
+									</div><!-- .cause-content-wrap -->
+								</div><!-- .cause-wrap -->
+							</div>
 						</div><!-- .swiper-wrapper -->
 
 					</div><!-- .swiper-container -->
@@ -503,67 +384,43 @@ include('front-end/head.php');
 		</div><!-- .container -->
 	</div><!-- .our-causes -->
 
-	<div class="home-page-limestone">
-		<div class="container">
-			<div class="row align-items-end">
-				<div class="coL-12 col-lg-6">
-					<div class="section-heading">
-						<h2 class="entry-title">We love to help all the children that have problems in the world. After 15 years we have many goals achieved.</h2>
+	<div class="single-page about-page">
+		<div class="welcome-wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-6 order-1 order-lg-2">
+						<img src="components/images/P3K.jpeg" style="width: 100%;height: 90%;" alt="welcome">
+					</div>
 
-						<p class="mt-5">Dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. Lorem ipsum dolor sit amet.</p>
-					</div><!-- .section-heading -->
-				</div><!-- .col -->
+					<div class="col-12 col-lg-6 order-2 order-lg-1">
+						<div class="welcome-content">
+							<header class="entry-header">
+								<h2 class="entry-title">Informasi Medis</h2>
+							</header><!-- .entry-header -->
 
-				<div class="col-12 col-lg-6">
-					<div class="milestones d-flex flex-wrap justify-content-between">
-						<div class="col-12 col-sm-4 mt-5 mt-lg-0">
-							<div class="counter-box">
-								<div class="d-flex justify-content-center align-items-center">
-									<img src="components/images/teamwork.png" alt="">
-								</div>
+							<div class="entry-content mt-5">
+								<p>Pengetahuan tentang tindakan gawat darurat inilah dibutuhkan oleh masyarakat. Untuk itu, para dokter juga harus proaktif meningkatkan pengetahuan pertolongan pertama para petugas. Seperti petugas keamanan maupun kebersihan ditempat fasilitas umum. 
+								</p>
+								<p>
+									"Angka partisipasi masyarakat terhadap penanganan darurat terpadu harus ditingkatkan. Untuk itu, harus ada program kerjasama antara rumah sakit dan pemerintah dalam memberikan pelatihan penanganan darurat terpadu tersebut"
+									<br><br>
+									Sumber: <a href="https://radarsurabaya.jawapos.com/read/2018/01/27/44105/rawan-bencana-masyarakat-butuh-pengetahuan-pertolongan-pertama" target="__blank">radarsurabaya.jawapos.com</a>
+								</p>
+							</div><!-- .entry-content -->
 
-								<div class="d-flex justify-content-center align-items-baseline">
-									<div class="start-counter" data-to="120" data-speed="2000"></div>
-									<div class="counter-k">K</div>
-								</div>
+							<div class="entry-footer mt-5" align="center">
+								<a href="infomedis.php" class="btn gradient-bg mr-2">Informasi Medis</a>
+							</div><!-- .entry-footer -->
+						</div><!-- .welcome-content -->
+					</div><!-- .col -->
 
-								<h3 class="entry-title">Children helped</h3><!-- entry-title -->
-							</div><!-- counter-box -->
-						</div><!-- .col -->
+					<!-- .col -->
+				</div><!-- .row -->
+			</div><!-- .container -->
+		</div>
 
-						<div class="col-12 col-sm-4 mt-5 mt-lg-0">
-							<div class="counter-box">
-								<div class="d-flex justify-content-center align-items-center">
-									<img src="components/images/donation.png" alt="">
-								</div>
 
-								<div class="d-flex justify-content-center align-items-baseline">
-									<div class="start-counter" data-to="79" data-speed="2000"></div>
-								</div>
-
-								<h3 class="entry-title">Water wells</h3><!-- entry-title -->
-							</div><!-- counter-box -->
-						</div><!-- .col -->
-
-						<div class="col-12 col-sm-4 mt-5 mt-lg-0">
-							<div class="counter-box">
-								<div class="d-flex justify-content-center align-items-center">
-									<img src="components/images/dove.png" alt="">
-								</div>
-
-								<div class="d-flex justify-content-center align-items-baseline">
-									<div class="start-counter" data-to="253" data-speed="2000"></div>
-								</div>
-
-								<h3 class="entry-title">Volunteeres</h3><!-- entry-title -->
-							</div><!-- counter-box -->
-						</div><!-- .col -->
-					</div><!-- .milestones -->
-				</div><!-- .col -->
-			</div><!-- .row -->
-		</div><!-- .container -->
-	</div><!-- .our-causes -->
-
+	</div>
 
 
 	<?php
