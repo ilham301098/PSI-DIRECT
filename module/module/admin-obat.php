@@ -27,7 +27,7 @@
 <div class="analytics-sparkle-area">
 	<div class="container-fluid">
 		<br>
-            <center><h2>Admin Info Obat<h2></center>
+            <center><h2> Admin Info Obat <h2></center>
             <div class="breadcome-area">
                 <div class="container-fluid">
                     <div class="row">
