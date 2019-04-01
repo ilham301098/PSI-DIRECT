@@ -22,7 +22,7 @@
 			</div>
 		</div>
 	</div>
-    <center><h2>Edit Pertolongan Pertama</h2></center>
+    <center><h2> Edit Pertolongan Pertama </h2></center>
 </div>
 
 <div class="analytics-sparkle-area">
