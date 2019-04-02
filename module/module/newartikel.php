@@ -64,6 +64,7 @@
 	</div>
 </div>
 
+
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	<div class="sparkline12-list mt-b-30">
 		<div class="sparkline12-hd">
@@ -124,9 +125,9 @@
 				</div>
 				<br><br>
 				<div class="row" align="center">
-							<button class="btn btn-theme" type="submit">Save</button>
-							<button class="btn btn-theme" type="submit">Cancel</button>
-						
+					<button class="btn btn-theme" type="submit">Save</button>
+					<button class="btn btn-theme" type="submit">Cancel</button>
+					
 				</div>
 				
 				
