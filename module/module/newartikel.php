@@ -85,7 +85,7 @@ button:hover {
               </div>
             </div>
             <div class="form-group has-error">
-              <label class="col-lg-2 control-label">Deskripsi</label>
+              <label class="col-lg-2 control-label">Upload Header</label>
               <div class="col-lg-10">
                 <input type="file" placeholder="" id="email2" class="form-control">                <!-- <p class="help-block">Something went wrong</p> -->
               </div>
