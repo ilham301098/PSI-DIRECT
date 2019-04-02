@@ -24,7 +24,6 @@ button {
 }
 button:hover {
   background-color: blue;}
-
 </style>
 <div class="breadcome-area">
 	<div class="container-fluid">
@@ -56,29 +55,58 @@ button:hover {
 		</div>
 	</div>
 </div>
+<section id="main-content">
+  <section class="wrapper">
+    <!-- BASIC FORM VALIDATION -->
+    <div class="row mt">
+      <div class="col-lg-12">
+        <h4>Form Artikel Baru</h4>
+        <div class="form-panel">
+          <form role="form" class="form-horizontal style-form">
+            <div class="form-group has-error">
+              <label class="col-lg-2 control-label">Judul Artikel</label>
+              <div class="col-lg-10">
+                <input type="text" placeholder="" id="f-name" class="form-control">
+                <!-- <p class="help-block">Successfully done</p> -->
+              </div>
+            </div>
+            <div class="form-group has-error">
+              <label class="col-lg-2 control-label">Sumber Artikel</label>
+              <div class="col-lg-10">
+                <input type="text" placeholder="" id="l-name" class="form-control">
+                <!-- <p class="help-block">Aha you gave a wrong info</p> -->
+              </div>
+            </div>
+            <div class="form-group has-error">
+              <label class="col-lg-2 control-label">Deskripsi</label>
+              <div class="col-lg-10">
+                <input type="textarea" placeholder="" id="email2" class="form-control">
+                <!-- <p class="help-block">Something went wrong</p> -->
+              </div>
+            </div>
+            <div class="form-group has-error">
+              <label class="col-lg-2 control-label">Deskripsi</label>
+              <div class="col-lg-10">
+                <input type="file" placeholder="" id="email2" class="form-control">                <!-- <p class="help-block">Something went wrong</p> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn btn-theme" type="submit">Save</button>
+                <button class="btn btn-theme" type="submit">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- /form-panel -->
+      </div>
+      <!-- /col-lg-12 -->
+    </div>
+    <!-- /row -->
+    <!-- FORM VALIDATION -->
 
 <div class="analytics-sparkle-area">
 	<div class="container-fluid">
-	<h1 align="center">New Artikel</h1>
-  <br><br>
-    <form action="/action_page.php">
-      <h4>Judul Artikel:</h4><input type="text" name="judul_artikel" value="judul..">
-      <br><br>
-      <h4>Sumber:</h4><input type="text" name="sumber_artikel" value="sumber..">
-      <br><br>
-      <h4>Konten:</h4><textarea type="textarea" name="sumber_artikel" value="konten.."></textarea>
-      <br><br>
-      <h4>Header:</h4><input type="file" name="Upload foto" value="upload disini">
-        <br><br>
-      <input type="submit" value="Save" >
-      <input type="submit" value="Cancel">
-    </form>
 		</div>
-    <br>
-
-		<br><br>
-
-<br><br>
-
-	</div>
+  </div>
 </div>
