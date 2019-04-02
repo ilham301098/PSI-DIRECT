@@ -1,3 +1,6 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
   font-family: Arial;
@@ -48,6 +51,7 @@ td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+  width: 200px;
 }
 tr:nth-child(even) {
   background-color: #dddddd;
@@ -60,12 +64,14 @@ button {
   text-align: center;
   font-size: 16px;
   cursor: pointer;
+  width:100px;
 }
 button:hover {
   background-color: blue;}
 
 
 </style>
+</head>
 
 <div class="breadcome-area">
 	<div class="container-fluid">
@@ -105,7 +111,7 @@ button:hover {
     <br>
     <a href="?module=newartikel"><button class="button">New</button></a>
     <br><br>
-    <form class="example" action="/action_page.php" style="max-width:200px">
+    <form class="example" action="/action_page.php" style="max-width:200px" align="right">
       <input type="text" placeholder="Search.." name="search2">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
