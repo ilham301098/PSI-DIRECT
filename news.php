@@ -81,18 +81,18 @@ include('front-end/head.php');
                             </tr>
                             <tr>
                               <td width="200" height="50">
-                                <a href="artikelbencana.html"><h7>JUDUL ARTIKEL</h7>
+                                <a href="news1.php"><h7>JUDUL ARTIKEL</h7>
                                 <br><h10>tanggal | by Admin</h10></a>
                               </td>
                               <td width="10px"  height="50"></td>
                               <td width="200" height="50">
-                                <a href="artikelbencana.html">
+                                <a href="news1.php">
                                 <h7>JUDUL ARTIKEL</h7>
                                 <br><h10>tanggal | by Admin</h10></a>
                               </td>
                               <td width="10px"  height="50"></td>
                                 <td width="200" height="50">
-                                  <a href="artikelbencana.html">
+                                  <a href="news1.php">
                                     <h7>JUDUL ARTIKEL</h7>
                                       <br>
                                       <h10>tanggal | by Admin</h10></a>
@@ -107,18 +107,18 @@ include('front-end/head.php');
                             </tr>
                             <tr>
                               <td width="200" height="50">
-                                <a href="artikelbencana.html"><h7>JUDUL ARTIKEL</h7>
+                                <a href="news1.php"><h7>JUDUL ARTIKEL</h7>
                                 <br><h10>tanggal | by Admin</h10></a>
                               </td>
                               <td width="10px"  height="50"></td>
                               <td width="200" height="50">
-                                <a href="artikelbencana.html">
+                                <a href="news1.php">
                                 <h7>JUDUL ARTIKEL</h7>
                                 <br><h10>tanggal | by Admin</h10></a>
                               </td>
                               <td width="10px"  height="50"></td>
                                 <td width="200" height="50">
-                                  <a href="artikelbencana.html">
+                                  <a href="news1.php">
                                     <h7>JUDUL ARTIKEL</h7>
                                       <br>
                                       <h10>tanggal | by Admin</h10></a>
