@@ -13,17 +13,24 @@
 	</a>
 	<ul class="submenu-angle" aria-expanded="true">
 		<li><a href="?module=video-siaga"><span class="mini-sub-pro">Video</span></a></li>
-		<li><a href="?module=under"><span class="mini-sub-pro">Artikel</span></a></li>
+		<li><a href="?module=artikeladm"><span class="mini-sub-pro">Artikel</span></a></li>
 
 	</ul>
 </li>
 
 <li>
-	<a href="?module=under" aria-expanded="false">
-		<i class="fa fa-briefcase-medical "></i>
+	<a class="has-arrow" href="#">
+		<i class="fa fa-briefcase-medical"></i>
 		<span class="mini-click-non">&nbsp;Informasi Medis</span>
 	</a>
+	<ul class="submenu-angle" aria-expanded="true">
+		<li><a href="?module=admin-pp"><span class="mini-sub-pro">Pertolongan Pertama</span></a></li>
+		<li><a href="?module=admin-obat"><span class="mini-sub-pro">Obat</span></a></li>
+
+	</ul>
 </li>
+
+
 
 <li>
 	<a class="has-arrow" href="#">
