@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="logo-pro">
-				<a href="?module=dashboard"><img class="main-logo" src="components/images/kia.png" alt="" /></a>
+				<a href="?module=dashboard"><img class="main-logo" src="components/images/logo.png" style="height: 60px;width: 50px;" alt="" /></a>
 			</div>
 		</div>
 	</div>
@@ -70,21 +70,6 @@
 						<nav id="dropdown">
 							<ul class="mobile-menu-nav">
 								<?php include('sidebar.php'); ?>
-								<li>
-									<a data-toggle="collapse" data-target="#Charts" href="#">
-										Home 
-										<span class="admin-project-icon edu-icon edu-down-arrow"></span>
-									</a>
-									<ul class="collapse dropdown-header-top">
-
-										<li><a href="index.html">Dashboard v.1</a></li>
-										<li><a href="index-1.html">Dashboard v.2</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="events.html">Event</a>
-								</li>
-								
 							</ul>
 						</nav>
 					</div>
