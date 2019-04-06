@@ -17,36 +17,46 @@ include('front-end/head.php');
 			</div><!-- .row -->
 		</div><!-- .container -->
 	</div><!-- .page-header -->
+	<br><br>
+	<center><div>
+		<table cellpadding="10" cellspacing="10">
+			<tbody>
+				<tr> 
+					<td align="justify" valign="top" width="45%">
+						<center>
+							<a href=video-siaga_bencana.php>
+								<img src="components/images/video.png" width="200px" height="200px">
+							</a>
+						</center>
+						<center> 
+							<a href=video-siaga_bencana.php> 
+								<h2>Video</h2> 
+							</a> 
+						</center>
+					</td>
 
-	<div class="news-wrap">
-		<div class="container">
-			<center>
-				<div class="col-12 col-lg-6">
-					<div class="milestones d-flex flex-wrap justify-content-between">
-						<a href="video-siaga_bencana.php">
-                          <div class="col-12 col-sm-4 mt-5 mt-lg-0">
-                             <div class="counter-box">
-                                <div class="d-flex justify-content-center align-items-center">
-                                   <img src="components/images/video.png" style="width: 100%; height: 100%">
-                               </div>
-                               <h3>Video</h3><!-- entry-title -->
-                           </div><!-- counter-box -->
+					<td></td>
 
-                       </div><!-- .col -->
-                   </a>
-                   <div class="col-12 col-sm-4 mt-5 mt-lg-0">
-                     <div class="counter-box">
-                        <div class="d-flex justify-content-center align-items-center">
-                           <img src="components/images/article.png" style="width: 100%; height: 100%">
-                       </div>
-                       <h3>Artikel</h3><!-- entry-title -->
-                   </div><!-- counter-box -->
-                   
-               </div><!-- .col -->
-           </center>
-       </div>
-   </div>
-</div>
+					<td align="justify" valign="top" width="45%">
+						<center>
+							<a href=artikel-siaga_bencana.php>
+								<img src="components/images/article.png" width="200px" height="200px">
+							</a>
+						</center>
+						<center> 
+							<a href=artikel-siaga_bencana.php> 
+								<h2>Article</h2> 
+							</a>
+						</center>
+					</td> 
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</center>
+<br>
+
+
 
 <?php
 include('front-end/footer.php');
