@@ -21,6 +21,18 @@
 <li>
 	<a class="has-arrow" href="#">
 		<i class="fa fa-briefcase-medical"></i>
+		<span class="mini-click-non">&nbsp;Pemulihan</span>
+	</a>
+	<ul class="submenu-angle" aria-expanded="true">
+		<li><a href="?module=video-pemulihan"><span class="mini-sub-pro">Video</span></a></li>
+		<li><a href="?module=artikel-pemulihan"><span class="mini-sub-pro">Artikel</span></a></li>
+
+	</ul>
+</li>
+
+<li>
+	<a class="has-arrow" href="#">
+		<i class="fa fa-briefcase-medical"></i>
 		<span class="mini-click-non">&nbsp;Informasi Medis</span>
 	</a>
 	<ul class="submenu-angle" aria-expanded="true">
@@ -42,13 +54,6 @@
 		<li><a href="?module=verifikasi_form"><span class="mini-sub-pro">&nbsp;Verifikasi Orang Hilang</span></a></li>
 
 	</ul>
-</li>
-
-<li>
-	<a href="?module=artikel-pemulihan" aria-expanded="false">
-		<i class="fa fa-first-aid "></i>
-		<span class="mini-click-non">&nbsp;Article Pemulihan</span>
-	</a>
 </li>
 
 <li>

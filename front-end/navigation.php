@@ -6,7 +6,7 @@
 			<div class="row flex-wrap justify-content-center justify-content-lg-between align-items-lg-center">
 				<div class="col-12 col-lg-8 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0">
 					<div class="header-bar-email">
-						<a href="#">contact@ourcharity.com</a>
+						<a href="#">contact@direct.com</a>
 					</div><!-- .header-bar-email -->
 				</div><!-- .col -->
 
@@ -53,7 +53,7 @@
 							<?php if (strpos($_SERVER['PHP_SELF'], "pemulihan") !== false) {
 								echo 'class="current-menu-item"';
 							} ?>
-							><a href="pemulihan.php"> PEMULIHAN</a></li>
+							><a href="pemulihan-home.php"> PEMULIHAN</a></li>
 							<li 
 							<?php if (strpos($_SERVER['PHP_SELF'], "donasi") !== false) {
 								echo 'class="current-menu-item"';
