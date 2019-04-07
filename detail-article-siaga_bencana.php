@@ -53,6 +53,20 @@ include('front-end/head.php');
                           </div>
                       </div>
                       </div>
+                    <div class="popular-posts">
+                          <h2 class="entry-title"><a href="#">Artikel Terkait</a></h2>
+                            <ul class="p-0">
+                              <li class="d-flex flex-wrap justify-content-between align-items-center">
+                                  <figure><a href="#"><img src="components/images//p-1.jpg" alt=""></a></figure>
+
+                                  <div class="entry-content">
+                                      <h3 class="entry-title"><a href="#">A new cause to help</a></h3>
+
+                                      <div class="posted-date">MArch 12, 2018</div>
+                                  </div>
+                              </li>
+                          </ul>
+                      </div>
                 </div><!--penutup bagian news-->
 
                 <div class="col-12 col-lg-4">
