@@ -25,7 +25,7 @@ include('front-end/head.php');
                 <div class="col-12 col-lg-8">
                     <div class="news-content">
                         <div class="page-title color mb20">
-                          <span><a href="news.html"> Siaga Bencana</a></span>
+                          <span><a href="detail-article-siaga_bencana.php"> Siaga Bencana</a></span>
                           <span class="separator"> | </span>
                           <span class="active"><a href="artikel.html">Artikel</a></span>
                         </div>
@@ -55,18 +55,18 @@ include('front-end/head.php');
                           </tr>
                           <tr>
                             <td width="200" height="50">
-                              <a href="news1.php"><h7>JUDUL ARTIKEL</h7>
+                              <a href="detail-article-siaga_bencana.php"><h7>JUDUL ARTIKEL</h7>
                               <br><h10>tanggal | by Admin</h10></a>
                             </td>
                             <td width="10px"  height="50"></td>
                             <td width="200" height="50">
-                              <a href="news1.php">
+                              <a href="detail-article-siaga_bencana.php">
                               <h7>JUDUL ARTIKEL</h7>
                               <br><h10>tanggal | by Admin</h10></a>
                             </td>
                             <td width="10px"  height="50"></td>
                               <td width="200" height="50">
-                                <a href="news1.php">
+                                <a href="detail-article-siaga_bencana.php">
                                   <h7>JUDUL ARTIKEL</h7>
                                     <br>
                                     <h10>tanggal | by Admin</h10></a>

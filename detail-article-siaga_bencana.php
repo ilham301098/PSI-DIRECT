@@ -79,7 +79,7 @@ include('front-end/head.php');
                         </div><!-- .search-widget -->
 
                         <div class="popular-posts">
-                            <h2>Popular Posts</h2>
+                            <h2>Artikel Terbaru</h2>
 
                             <ul class="p-0">
                                 <li class="d-flex flex-wrap justify-content-between align-items-center">
