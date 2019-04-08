@@ -57,9 +57,6 @@
     <!-- main JS
     ============================================ -->
     <script src="back-end/js/main.js"></script>
-    <!-- tawk chat JS
-    ============================================ -->
-    <script src="back-end/js/tawk-chat.js"></script>
     <!-- data table JS
         ============================================ -->
     <script src="back-end/js/data-table/bootstrap-table.js"></script>

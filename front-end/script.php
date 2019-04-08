@@ -8,5 +8,4 @@
 <script type='text/javascript' src='components/js/custom.js'></script>
 <script src="back-end/js/sparkline/jquery.sparkline.min.js"></script>
 <script src="back-end/js/sparkline/sparkline-active.js"></script>
-<script src="back-end/js/tawk-chat.js"></script>
 <script src="back-end/js/main.js"></script>

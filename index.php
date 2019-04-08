@@ -4,6 +4,9 @@
 include('front-end/head.php');
 ?>
 <body>
+	<!--Start of Tawk.to Script-->
+
+<!--End of Tawk.to Script-->
 	<?php
 	include('front-end/navigation.php');
 	?>
