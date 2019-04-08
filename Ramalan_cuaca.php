@@ -27,6 +27,7 @@ include('front-end/head.php');
 							<a class="navbar-brand">Cari Kota</a>
 							<form class="form-inline" method="post" action="">
 								<select class="form-control mr-sm-2" name="lokasi">
+									<option value="-6.91,107.6">Bandung</option>
 									<option value="-7.24917,112.75083">Surabaya</option>
 								</select>
 								&nbsp;&nbsp;&nbsp;
