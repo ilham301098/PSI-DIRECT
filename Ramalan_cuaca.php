@@ -74,6 +74,8 @@ function dailyWeather($cordinates,$nama){
 
 
 	$temperature_current = round($obj->currently->temperature);
+	$temperature_current = round(($temperature_current-32)/1.8);
+
 	$summary_current = $obj->currently->summary;
 	if ($summary_current == "Partly Cloudy") {
 		$summary_current = "Berawan";
@@ -89,7 +91,7 @@ function dailyWeather($cordinates,$nama){
 
 	<div class = "card p-4" style = "margin: 0 auto; max-width : 320px;" align="center">
 		<h2>Ramalan Cuaca hari ini</h2>
-		<h3 class="display-2"><?php echo $temperature_current; ?>&deg;</h3>
+		<h3 class="display-2"><?php echo $temperature_current; ?>&deg;C</h3>
 		<h3>Kelembapan : <?php echo $humidity_current; ?>%</h3>
 		<p class="lead"> <img src="gambar-cuaca/clouds_weather.png" height="100px"> </p>
 		<p class="lead"> <?php echo $summary_current; ?> </p>
@@ -128,7 +130,15 @@ function dailyWeather($cordinates,$nama){
 					?>
 				</h2>
 				<p class="lead">
-					<?php echo round($day->temperatureLow);?>&deg;-<?php echo round($day->temperatureHigh);?>&deg;
+
+					<?php
+					$temperatureLow = $day->temperatureLow;
+					$temperatureLow = round(($temperatureLow-32)/1.8);
+
+					$temperatureHigh = $day->temperatureHigh;
+					$temperatureHigh = round(($temperatureHigh-32)/1.8);
+
+					echo round($temperatureLow);?>&deg;C-<?php echo round($temperatureHigh);?>&deg;C
 				</p>
 				<p class="lead">
 					Kelembapan : <?php echo $day->humidity*100;?>%
