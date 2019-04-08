@@ -429,4 +429,5 @@ include('front-end/head.php');
 	?>
 
 </body>
+
 </html>
