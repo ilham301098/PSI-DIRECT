@@ -125,8 +125,8 @@
 				</div>
 				<br><br>
 				<div class="row" align="center">
-					<button class="btn btn-theme" type="submit">Save</button>
-					<button class="btn btn-theme" type="submit">Cancel</button>
+					<a href="?module=artikeladm"<button class="btn btn-theme" type="submit">Save</button></a>
+					<a href="?module=artikeladm"<button class="btn btn-theme" type="submit">Cancel</button></a>
 					
 				</div>
 				
