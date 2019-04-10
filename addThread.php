@@ -25,6 +25,7 @@ include('front-end/head.php');
 				<div class="col-12" style="background: #edf3f5;" >
 					<br>
 					<h2 align="center">Buat Thread Baru</h2>
+					<p>Anda Login Sebagai Ilham3010</p>
 					<div class="form-group">
 						<label for="exampleInputNama">Judul Thread:</label>
 						<input type="text" class="form-control" placeholder="Isikan judul thread">
