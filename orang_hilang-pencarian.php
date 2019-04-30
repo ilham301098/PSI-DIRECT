@@ -21,6 +21,7 @@ include('front-end/head.php');
 	<div style="padding:20px" class="">
 
 		<form action="" method="post">
+
 			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<div class="form-group">
@@ -52,23 +53,6 @@ include('front-end/head.php');
 				</div>
 			</div>
 
-			<div class="row justify-content-center">
-				<div class="col-sm-10">
-					<div class="form-group">
-						<label for="exampleInputAlamat">Alamat</label>
-						<input type="alamat" class="form-control" id="exampleInputAlamat" placeholder="Masukkan Alamat">
-					</div>
-				</div>
-			</div>
-
-			<div class="row justify-content-center">
-				<div class="col-sm-10">
-					<div class="form-group">
-						<label for="exampleInputNoTelp">No. Telepon</label>
-						<input type="noTelp" class="form-control" id="exampleInputNoTelp" placeholder="Masukkan no. telepon yang dapat dihubungi">
-					</div>
-				</div>
-			</div>
 
 			<div class="row justify-content-center">
 				<div class="col-sm-10">
@@ -79,6 +63,73 @@ include('front-end/head.php');
 				</div>
 			</div>
 
+			<div class="row justify-content-center">
+				<div class="col-sm-10">
+					<div class="form-group">
+						<label for="exampleInputLokasiTerakhirKorban">Lokasi Terakhir Korban</label>
+						<input type="LokasiTerakhirKorban" class="form-control" id="exampleInputLokasiTerakhirKorban" placeholder="Masukkan Lokasi Terakhir Korban">
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-sm-10">
+					<div class="form-group">
+						<label for="exampleInputTanggalHilag">Tanggal Hilang</label>
+						<!-- <input type="text" data-role="calendarpicker" name="tanggal_hilang" class="form-control" id="exampleInputTanggalHilang" > -->
+						<input type="date" name="" value="" class="form-control">
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-sm-10">
+					<div class="form-group">
+						<label for="exampleInputJenisBencana">Jenis Bencana</label>
+						<select type="jenis_bencana" id="exampleInputJenisBencana" class="form-control">
+							<option>Gempa Bumi</option>
+							<option>Banjir</option>
+							<option>Tanah Longsor</option>
+							<option>Tsunami</option>
+							<option>Gunung Meletus</option>
+							<option>Angin Puting Beliung</option>
+
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-sm-10">
+					<div class="form-group">
+						<label for="exampleInputNamaPelapor">Nama Pelapor</label>
+						<input type="namaPelapor" class="form-control" id="exampleInputNamaPelapor" placeholder="Masukkan Nama Pelapor">
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-sm-10">
+					<div class="form-group">
+						<label for="exampleInputNoTeleponPelapor">No. Telepon Pelapor</label>
+						<input type="NoTeleponPelapor" class="form-control" id="exampleInputNoTeleponPelapor" placeholder="Masukkan No. Telepon Peapor">
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-sm-10">
+					<div class="form-group">
+						<label for="exampleInputHubunganPelaporDenganKorban">Hubungan Pelapor Dengan Korban</label>
+						<select type="HubunganPelaporDenganKorban" id="exampleInputHubunganPelaporDenganKorban" class="form-control">
+							<option>Keluarga</option>
+							<option>Teman</option>
+
+
+						</select>
+					</div>
+				</div>
+			</div>
 
 			<div class="row justify-content-center">
 				<input type="submit" onclick="return clicked();" value="Kirim" class="btn gradient-bg">
