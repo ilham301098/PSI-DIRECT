@@ -36,14 +36,8 @@ include('front-end/head.php');
 						</nav>
 					</div>
 				</div>
-				<form class="form-inline" method="post" action="">
-					<select class="form-control mr-sm-2" name="lokasi">
-						<option value="-6.91,107.6">Bandung</option>
-						<option value="-7.24917,112.75083">Surabaya</option>
-					</select>
-					&nbsp;&nbsp;&nbsp;
-					<button class="btn btn gradient-bg my-1 my-sm-0" type="submit">Search</button>
-				</form>
+				<button id="verify" onclick="return celcius($temp);" class="btn btn-primary btn-sm">Celcius</button>
+				<button id="verify" onclick="return farenheit($temp);" class="btn btn-primary btn-sm">Farenheit</button>
 			</div>
 
 			<?php
@@ -159,3 +153,11 @@ function dailyWeather($cordinates,$nama){
 	</div>
 
 	<?php }	?>
+
+	<?php
+	function celcius($temp){
+		return round(($temp-32)*/1.8);
+	}
+	function farenheit($temp){
+		return round($temp*1.8+32);
+	} ?>
