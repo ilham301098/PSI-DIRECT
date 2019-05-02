@@ -369,7 +369,7 @@ function dailyWeather($cordinates,$nama){
 
 	$GLOBALS['kordinat'] = $cordinates;
 
-	echo "<h2 class='display-4 my-5' align='center'>Result for ".$nama.'</h2>';
+	echo "<h2 class='display-4 my-5' align='center'>Hasil untuk ".$nama.'</h2>';
 
 
 	$ch = curl_init();
@@ -395,7 +395,6 @@ function dailyWeather($cordinates,$nama){
 		<h2>Ramalan Cuaca hari ini</h2>
 		<h3 class="display-2"><?php echo $temperature_current; ?>&deg;C</h3>
 		<h3>Kelembapan : <?php echo $humidity_current; ?>%</h3>
-		<!-- <p class="lead"> <img src="gambar-cuaca/clouds_weather.png" height="100px"> </p> -->
 		<p class="lead"> <?php echo $summary_current; ?> </p>
 		<p class="lead"> Kecepatan Angin :  <?php echo $windSpeed_current; ?> <abbr title="miles per hour">MPH</abbr></p>
 	</div>
@@ -440,13 +439,18 @@ function dailyWeather($cordinates,$nama){
 					$temperatureHigh = $day->temperatureHigh;
 					$temperatureHigh = round(($temperatureHigh-32)/1.8);
 
+					$windSpeed_daily = round($day->windSpeed);
+
 					echo round($temperatureLow);?>&deg;C-<?php echo round($temperatureHigh);?>&deg;C
 				</p>
 				<p class="lead">
 					Kelembapan : <?php echo $day->humidity*100;?>%
 				</p>
 				<p class="lead">
-					<?php echo $day->summary;?>
+					Kecepatan Angin : <?php echo $day->summary;?>
+				</p>
+				<p class="lead">
+					<?php echo $windSpeed_daily?> MPH
 				</p>
 			</div>
 		</div>
@@ -460,11 +464,3 @@ function dailyWeather($cordinates,$nama){
 	<?php
 		}
 		?>
-
-	<!-- <?php
-	// function celcius($temp){
-	// 	return round(($temp-32)/1.8);
-	// }
-	// function farenheit($temp){
-	// 	return round($temp*1.8+32);
-	// } ?> -->
