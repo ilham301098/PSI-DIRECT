@@ -36,6 +36,14 @@ include('front-end/head.php');
 						</nav>
 					</div>
 				</div>
+				<form class="form-inline" method="post" action="">
+					<select class="form-control mr-sm-2" name="lokasi">
+						<option value="-6.91,107.6">Bandung</option>
+						<option value="-7.24917,112.75083">Surabaya</option>
+					</select>
+					&nbsp;&nbsp;&nbsp;
+					<button class="btn btn gradient-bg my-1 my-sm-0" type="submit">Search</button>
+				</form>
 			</div>
 
 			<?php
@@ -48,6 +56,8 @@ include('front-end/head.php');
 			?>
 		</div>
 	</div>
+
+
 
 	<?php
 	include('front-end/footer.php');
@@ -77,13 +87,6 @@ function dailyWeather($cordinates,$nama){
 	$temperature_current = round(($temperature_current-32)/1.8);
 
 	$summary_current = $obj->currently->summary;
-	if ($summary_current == "Partly Cloudy") {
-		$summary_current = "Berawan";
-	}elseif ($summary_current == "Overcast") {
-		$summary_current = "Mendung";
-	}elseif ($summary_current == "Drizzle") {
-		$summary_current = "Gerimis";
-	}
 	$windSpeed_current = round($obj->currently->windSpeed);
 	$humidity_current = $obj->currently->humidity*100;
 
@@ -109,7 +112,7 @@ function dailyWeather($cordinates,$nama){
 			<div class="card p-4 mb-4" align="center">
 				<h2 class="h4">
 					<?php
-                //$hari = date("l", $day->time);
+                $hari = date("l", $day->time);
 					if ((date("l", $day->time))=="Sunday") {
 						$hari="Minggu";
 					}elseif ((date("l", $day->time))=="Monday") {
@@ -125,7 +128,7 @@ function dailyWeather($cordinates,$nama){
 					}elseif ((date("l", $day->time))=="Saturday") {
 						$hari="Sabtu";
 					}
-					echo $hari;
+					 echo $hari;
 
 					?>
 				</h2>
