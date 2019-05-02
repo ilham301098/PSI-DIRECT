@@ -6,6 +6,8 @@ include('front-end/head.php');
 <body class="single-page portfolio">
 	<?php
 	include('front-end/navigation.php');
+
+	$kordinat = "-7.24917,112.75083";
 	?><!-- .site-header -->
 
 	<div class="page-header">
@@ -27,25 +29,27 @@ include('front-end/head.php');
 							<a class="navbar-brand">Cari Kota</a>
 							<form class="form-inline" method="post" action="">
 								<select class="form-control mr-sm-2" name="lokasi">
-									<option value="-6.91,107.6">Bandung</option>
-									<option value="-7.24917,112.75083">Surabaya</option>
+									<option value="-6.91,107.6:Bandung">Bandung</option>
+									<option value="-7.24917,112.75083:Surabaya">Surabaya</option>
 								</select>
 								&nbsp;&nbsp;&nbsp;
-								<button class="btn btn gradient-bg my-1 my-sm-0" type="submit">Search</button>
+								<button class="btn btn gradient-bg my-1 my-sm-0" type="submit" name="btnSearch">Search</button>
 							</form>
 						</nav>
 					</div>
 				</div>
-				<button id="verify" onclick="return celcius($temp);" class="btn btn-primary btn-sm">Celcius</button>
-				<button id="verify" onclick="return farenheit($temp);" class="btn btn-primary btn-sm">Farenheit</button>
 			</div>
 
 			<?php
 			if( isset($_POST['btnSearch'])){
-				dailyWeather($_POST['lokasi'],"Surabaya");
+				$ambil = $_POST['lokasi'];
+				$arr = explode(':', $ambil);
+				dailyWeather($arr[0],$arr[1]);
+			}else{
+				dailyWeather("-7.24917,112.75083","Surabaya");
 			}
 
-			dailyWeather("-7.24917,112.75083","Surabaya");
+
 
 			?>
 		</div>
@@ -64,6 +68,9 @@ include('front-end/head.php');
 
 <?php
 function dailyWeather($cordinates,$nama){
+
+	$GLOBALS['kordinat'] = $cordinates;
+
 	echo "<h2 class='display-4 my-5' align='center'>Result for ".$nama.'</h2>';
 
 
@@ -90,7 +97,7 @@ function dailyWeather($cordinates,$nama){
 		<h2>Ramalan Cuaca hari ini</h2>
 		<h3 class="display-2"><?php echo $temperature_current; ?>&deg;C</h3>
 		<h3>Kelembapan : <?php echo $humidity_current; ?>%</h3>
-		<p class="lead"> <img src="gambar-cuaca/clouds_weather.png" height="100px"> </p>
+		<!-- <p class="lead"> <img src="gambar-cuaca/clouds_weather.png" height="100px"> </p> -->
 		<p class="lead"> <?php echo $summary_current; ?> </p>
 		<p class="lead"> Kecepatan Angin :  <?php echo $windSpeed_current; ?> <abbr title="miles per hour">MPH</abbr></p>
 	</div>
@@ -152,7 +159,9 @@ function dailyWeather($cordinates,$nama){
 		?>
 	</div>
 
-	<?php }	?>
+	<?php
+		echo $GLOBALS['kordinat'];
+		}?>
 
 	<?php
 	function celcius($temp){
