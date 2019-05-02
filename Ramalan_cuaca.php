@@ -156,7 +156,7 @@ function dailyWeather($cordinates,$nama){
 
 	<?php
 	function celcius($temp){
-		return round(($temp-32)*/1.8);
+		return round(($temp-32)/1.8);
 	}
 	function farenheit($temp){
 		return round($temp*1.8+32);
