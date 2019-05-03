@@ -1,3 +1,38 @@
+<?php
+  // Create database connection
+  $db = mysqli_connect("localhost", "root", "", "pencarian_orang");
+
+  // Initialize message variable
+  $msg = "";
+
+  // If upload button is clicked ...
+  if (isset($_POST['kirim'])) {
+  	// Get data
+	  $image = $_FILES['image']['name'];
+	  $nama = $_POST['nama'];
+	  $usia = $_POST['usia'];
+	  $gender = $_POST['gender'];
+	  $ciri = $_POST['ciri'];
+	  $lokasi_terakhir = $_POST['LokasiTerakhirKorban'];
+	  $tgl_hilang = $_POST['tgl_hilang'];
+	  $jenis_bencana = $_POST['jenis_bencana'];
+	  $nama_pelapor = $_POST['namaPelapor'];
+	  $no_telp_pelapor = $_POST['NoTeleponPelapor'];
+	  $hub_pelapor = $_POST['HubunganPelaporDenganKorban'];
+	  $status = "Belum Diverifikasi";
+
+
+	  $sql = "INSERT INTO orang_hilang (nama, usia, gender, Ciri_ciri_korban, Lokasi_Terakhir, Tanggal_Hilang,
+	   Jenis_Bencana, status, Hubungan_Pelapor, Nama_Pelapor, No_Telepon_Pelapor, image)
+	  VALUES ('$nama', '$usia', '$gender', '$ciri', '$lokasi_terakhir', '$tgl_hilang', '$jenis_bencana',
+	   '$status', '$hub_pelapor', '$nama_pelapor', '$no_telp_pelapor', '$image')";
+  	// execute query
+  	mysqli_query($db, $sql);
+
+  }
+  $result = mysqli_query($db, "SELECT * FROM orang_hilang");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -20,13 +55,13 @@ include('front-end/head.php');
 
 	<div style="padding:20px" class="">
 
-		<form action="" method="post">
-
+		<form action="orang_hilang-pencarian.php" method="POST" enctype="multipart/form-data">
+  			<input type="hidden" name="size" value="1000000">
 			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleInputNama">Nama</label>
-						<input type="nama" class="form-control" id="exampleInputNama" aria-describedby="emailHelp" placeholder="Masukkan Nama">
+						<input type="nama" name="nama" class="form-control" id="exampleInputNama" aria-describedby="emailHelp" placeholder="Masukkan Nama">
 						<!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 					</div>
 				</div>
@@ -36,7 +71,7 @@ include('front-end/head.php');
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleInputUsia">Usia</label>
-						<input type="usia" class="form-control" id="exampleInputUsia" placeholder="Masukkan Usia">
+						<input name="usia" class="form-control" id="exampleInputUsia" placeholder="Masukkan Usia">
 					</div>
 				</div>
 			</div>
@@ -45,7 +80,7 @@ include('front-end/head.php');
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleInpuGender">Gender</label>
-						<select type="gender" id="exampleInputGender" class="form-control">
+						<select name="gender" id="exampleInputGender" class="form-control">
 							<option>Laki-Laki</option>
 							<option>Perempuan</option>
 						</select>
@@ -58,7 +93,7 @@ include('front-end/head.php');
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleInputCiri">Ciri-ciri</label>
-						<input type="ciri" class="form-control" id="exampleInputCiri" placeholder="Masukkan Ciri-ciri">
+						<input name="ciri" class="form-control" id="exampleInputCiri" placeholder="Masukkan Ciri-ciri">
 					</div>
 				</div>
 			</div>
@@ -67,7 +102,7 @@ include('front-end/head.php');
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleInputLokasiTerakhirKorban">Lokasi Terakhir Korban</label>
-						<input type="LokasiTerakhirKorban" class="form-control" id="exampleInputLokasiTerakhirKorban" placeholder="Masukkan Lokasi Terakhir Korban">
+						<input name="LokasiTerakhirKorban" class="form-control" id="exampleInputLokasiTerakhirKorban" placeholder="Masukkan Lokasi Terakhir Korban">
 					</div>
 				</div>
 			</div>
@@ -76,8 +111,8 @@ include('front-end/head.php');
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleInputTanggalHilag">Tanggal Hilang</label>
-						<!-- <input type="text" data-role="calendarpicker" name="tanggal_hilang" class="form-control" id="exampleInputTanggalHilang" > -->
-						<input type="date" name="" value="" class="form-control">
+						<!-- <input name="text" data-role="calendarpicker" name="tanggal_hilang" class="form-control" id="exampleInputTanggalHilang" > -->
+						<input type="date" name="tgl_hilang" value="" class="form-control">
 					</div>
 				</div>
 			</div>
@@ -86,7 +121,7 @@ include('front-end/head.php');
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleInputJenisBencana">Jenis Bencana</label>
-						<select type="jenis_bencana" id="exampleInputJenisBencana" class="form-control">
+						<select name="jenis_bencana" id="exampleInputJenisBencana" class="form-control">
 							<option>Gempa Bumi</option>
 							<option>Banjir</option>
 							<option>Tanah Longsor</option>
@@ -103,7 +138,7 @@ include('front-end/head.php');
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleInputNamaPelapor">Nama Pelapor</label>
-						<input type="namaPelapor" class="form-control" id="exampleInputNamaPelapor" placeholder="Masukkan Nama Pelapor">
+						<input name="namaPelapor" class="form-control" id="exampleInputNamaPelapor" placeholder="Masukkan Nama Pelapor">
 					</div>
 				</div>
 			</div>
@@ -112,7 +147,7 @@ include('front-end/head.php');
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleInputNoTeleponPelapor">No. Telepon Pelapor</label>
-						<input type="NoTeleponPelapor" class="form-control" id="exampleInputNoTeleponPelapor" placeholder="Masukkan No. Telepon Peapor">
+						<input name="NoTeleponPelapor" class="form-control" id="exampleInputNoTeleponPelapor" placeholder="Masukkan No. Telepon Peapor">
 					</div>
 				</div>
 			</div>
@@ -121,7 +156,7 @@ include('front-end/head.php');
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleInputHubunganPelaporDenganKorban">Hubungan Pelapor Dengan Korban</label>
-						<select type="HubunganPelaporDenganKorban" id="exampleInputHubunganPelaporDenganKorban" class="form-control">
+						<select name="HubunganPelaporDenganKorban" id="exampleInputHubunganPelaporDenganKorban" class="form-control">
 							<option>Keluarga</option>
 							<option>Teman</option>
 
@@ -132,7 +167,16 @@ include('front-end/head.php');
 			</div>
 
 			<div class="row justify-content-center">
-				<input type="submit" onclick="return clicked();" value="Kirim" class="btn gradient-bg">
+				<div class="col-sm-10">
+					<div class="form-group">
+						<label for="exampleInputNoTeleponPelapor">Foto Korban (Opsional)</label>
+						<input type="file" name="image" class="form-control" id="exampleInputNoTeleponPelapor" placeholder="Masukkan No. Telepon Peapor">
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<input type="submit" onclick="return clicked();" name="kirim" value="Kirim" class="btn gradient-bg">
 				<script>
 					function clicked() {
 						return alert('Data yang anda masukan telah terkirim. Mohon tunggu konfirmasi dari Admin !');
