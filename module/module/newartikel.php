@@ -41,15 +41,15 @@
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 							<ul class="breadcome-menu">
 								<li>
-									<a href="?module=dashboard">Home</a> 
+									<a href="?module=dashboard">Home</a>
 									<span class="bread-slash">/</span>
 								</li>
 								<li>
-									<span class="bread-blod">Dashboard</span> 
+									<span class="bread-blod">Dashboard</span>
 									<span class="bread-slash">/</span>
 								</li>
 								<li>
-									<span class="bread-blod">Siaga Bencana</span> 
+									<span class="bread-blod">Siaga Bencana</span>
 									<span class="bread-slash">/</span>
 								</li>
 								<li>
@@ -72,6 +72,7 @@
 				<h1 align="center">Form Tambah Artikel</h1>
 			</div>
 		</div>
+		<form method="POST" enctype="multipart/form-data">
 		<div class="sparkline12-graph">
 			<div class="input-knob-dial-wrap">
 				<div class="row">
@@ -82,7 +83,7 @@
 					</div>
 					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 						<div class="input-mark-inner mg-b-22">
-							<input type="text" class="form-control" placeholder="">
+							<input type="text" class="form-control" name="judul">
 						</div>
 					</div>
 				</div>
@@ -94,7 +95,7 @@
 					</div>
 					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 						<div class="input-mark-inner mg-b-22">
-							<input type="text" class="form-control" placeholder="">
+							<input type="text" class="form-control" name="sumber">
 
 						</div>
 					</div>
@@ -107,7 +108,7 @@
 					</div>
 					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 						<div class="input-mark-inner mg-b-22">
-							<input type="text" class="form-control" placeholder="">
+							<input type="text" class="form-control" name="isi">
 						</div>
 					</div>
 				</div>
@@ -119,20 +120,41 @@
 					</div>
 					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 						<div class="input-mark-inner mg-b-22">
-							<input type="file" placeholder="" id="email2" class="form-control">   
+							<input type="file" placeholder="" name="image" class="form-control">
 						</div>
 					</div>
 				</div>
 				<br><br>
 				<div class="row" align="center">
-					<a href="?module=artikeladm"<button class="btn btn-theme" type="submit">Save</button></a>
-					<a href="?module=artikeladm"<button class="btn btn-theme" type="submit">Cancel</button></a>
-					
+					<input type="hidden" name="id" id="artikel_id" />
+					<button type="submit" button class="btn btn-theme" name="upload">Save</button>
+					<button class="btn btn-theme" type="button">Cancel</button>
 				</div>
-				
-				
+			</form>
 			</div>
 		</div>
 	</div>
 </div>
 
+<?php
+include 'config.php';
+	if (isset($_POST['upload'])){
+
+		$target = "components/images/".basename($_FILES['image']['name']);
+		$db = mysqli_connect("localhost","root","","direct");
+
+		$image = $_FILES['image']['name'];
+		$judul = $_POST['judul'];
+		$sumber = $_POST['sumber'];
+		$isi = $_POST['isi'];
+		$date = date("Y-m-d");
+
+		$sql = "INSERT INTO artikel_sg (judul, sumber, isi, image, date) VALUES ('$judul', '$sumber', '$isi', '$image', '$date')";
+		$result= mysqli_query($db,$sql);
+		if ($result){
+			echo '<script>window.location.href="?module=artikeladm"</script>';
+
+		}
+	}
+
+ ?>
