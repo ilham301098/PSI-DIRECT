@@ -21,6 +21,11 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="components/css/swiper.min.css">
 
+    <!-- Datatables CSS -->
+    <link rel="stylesheet" href="components/css/datatables.min.css">
+    <link rel="stylesheet" href="components/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
     <!-- Styles -->
     <link rel="stylesheet" href="components/style.css">
 </head>
