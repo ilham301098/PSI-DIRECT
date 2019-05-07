@@ -95,7 +95,7 @@ include('front-end/head.php');
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleJenisKartuIdentitas">Jenis Kartu Identitas (opsional)</label>
-						<select name="jenis_kartu_identitas" id="exampleInputGender" class="form-control">
+						<select name="jenis_kartu_identitas" id="jenis_kartu_identitas" class="form-control">
 							<option style="display;none" disabled selected value> -- select an option -- </option>
 							<option>KTP</option>
 							<option>SIM</option>
@@ -105,7 +105,27 @@ include('front-end/head.php');
 				</div>
 			</div>
 
-			<div class="row justify-content-center">
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+			<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>‌​
+			<script>
+				$(document).ready(function () {
+					toggleFields(); // call this first so we start out with the correct visibility depending on the selected form values
+					// this will call our toggleFields function every time the selection value of our other field changes
+					$("#jenis_kartu_identitas").change(function () {
+						toggleFields();
+					});
+
+				});
+				// this toggles the visibility of other server
+				function toggleFields() {
+					if ($("#jenis_kartu_identitas").val() != null)
+						$("#no_identitas").show();
+					else
+						$("#no_identitas").hide();
+				}
+			</script>
+
+			<div class="row justify-content-center" id="no_identitas">
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleInputNoIdentitas">No. Identitas (opsional)</label>
