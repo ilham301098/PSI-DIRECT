@@ -24,10 +24,10 @@
   	// image file directory
 	  $target = "foto_org_ditemukan/".basename($foto);
 	  
-	  $sql = "INSERT INTO orang_ditemukan (nama_korban, usia, gender, ciri, lokasi_ditemukan, tgl_ditemukan,
-	   jenis_bencana, nama_pelapor, no_telepon_pelapor, kondisi, foto_korban) 
+	  $sql = "INSERT INTO orang_ditemukan (nama_korban, usia, gender, ciri_ciri_korban, lokasi_ditemukan, tanggal_ditemukan,
+	   jenis_bencana, nama_pelapor, no_telepon_pelapor, kondisi_korban, foto_korban, status) 
 	  VALUES ('$nama', '$usia', '$gender', '$ciri', '$lokasi_ditemukan', '$tgl_ditemukan', '$jenis_bencana',
-	   '$nama_pelapor', '$no_telp_pelapor', '$kondisi', '$foto')";
+	   '$nama_pelapor', '$no_telp_pelapor', '$kondisi', '$foto', '$status')";
   	// execute query
   	mysqli_query($db, $sql);
 
@@ -128,7 +128,10 @@ include('front-end/head.php');
 				<div class="col-sm-10">
 					<div class="form-group">
 						<label for="exampleInputKondisiKorban">Kondisi Korban</label>
-						<input name="kondisi_korban" class="form-control" id="exampleInputKondisiKorban" placeholder="Masukkan Kondisi Korban">
+						<select name="kondisi_korban" id="jenis_kartu_identitas" class="form-control">
+							<option>Hidup</option>
+							<option>Meninggal Dunia</option>
+						</select>
 					</div>
 				</div>
 			</div>
