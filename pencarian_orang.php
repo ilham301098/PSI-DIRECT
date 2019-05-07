@@ -7,7 +7,12 @@ include('front-end/head.php');
 	<?php
 	include('front-end/navigation.php');
 	?><!-- .site-header -->
-
+<?php
+  // Create database connection
+  $db = mysqli_connect("localhost", "root", "", "pencarian_orang");
+  $result_hilang = mysqli_query($db, "SELECT * FROM orang_hilang WHERE status='Terverifikasi'");
+  $result_ditemukan = mysqli_query($db, "SELECT * FROM orang_ditemukan WHERE status='Terverifikasi'");
+?>
 	<div class="page-header">
 		<div class="container">
 			<div class="row">
@@ -36,46 +41,104 @@ include('front-end/head.php');
 		</div>
 	</div>
 
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm-10">
+				<div style="padding:10px" class="row justify-content-center">
+					<nav class="navbar navbar-light bg-light ">
+						<button class="btn btn gradient-bg my-1 my-sm-0" id="show_tabel_ditemukan" type="button">Tampilkan tabel orang ditemukan</button>
+						<button class="btn btn gradient-bg my-1 my-sm-0" id="show_tabel_hilang" type="button">Tampilkan tabel orang hilang</button>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div id="tabel_org_hilang">
+			<h3 align="center">Tabel orang hilang</h3>
 			<table class="table">
 				<thead>
 					<tr>
-						<th>No.</th>
-						<th>Nama</th>
-						<th>Usia</th>
-						<th>Gender</th>
-						<th>Alamat</th>
-						<th>No. Telepon</th>
-						<th>Ciri-Ciri</th>
-						<th>Status</th>
-						<th>Lokasi</th>
+					<th>No.</th>
+					<th>Foto Korban</th>
+					<th>Nama Korban</th>
+					<th>No. Identitas</th>
+					<th>Jenis Kartu Identitas</th>
+					<th>Usia</th>
+					<th>Gender</th>
+					<th>Nama Pelapor</th>
+					<th>No. Telepon Pelapor</th>
+					<th>Hubungan Pelapor Dengan Korban</th>
+					<th>Tanggal Hilang</th>
+					<th>Jenis Bencana</th>
+					<th>Lokasi Terakhir</th>
+					<th>Ciri-Ciri Korban</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Budi</td>
-						<td>20</td>
-						<td>Laki-Laki</td>
-						<td>Sidoarjo</td>
-						<td>081524162761</td>
-						<td>Botak</td>
-						<td>Belum Ditemukan</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>Tony</td>
-						<td>27</td>
-						<td>Laki-Laki</td>
-						<td>Mojokerto</td>
-						<td>085675453211</td>
-						<td>Gondrong</td>
-						<td>Hidup</td>
-						<td>RS. Helmut Franzen</td>
-					</tr>
+					<?php 
+						$no_korban=1;
+						while($user_data = mysqli_fetch_array($result_hilang)) {         
+							echo "<tr>";
+							echo "<td>".$no_korban++."</td>";
+							echo "<td><img src='foto_org_hilang/".$user_data['foto_korban']."' alt="." border="."3"." height="."100"." width="."300"." ></td>";
+							echo "<td>".$user_data['nama_korban']."</td>";
+							echo "<td>".$user_data['no_identitas']."</td>";   
+							echo "<td>".$user_data['jenis_kartu_identitas']."</td>";    
+							echo "<td>".$user_data['usia']."</td>";    
+							echo "<td>".$user_data['gender']."</td>";    
+							echo "<td>".$user_data['nama_pelapor']."</td>";    
+							echo "<td>".$user_data['no_telepon_pelapor']."</td>";    
+							echo "<td>".$user_data['hubungan_pelapor']."</td>";    
+							echo "<td>".$user_data['tanggal_hilang']."</td>";    
+							echo "<td>".$user_data['jenis_bencana']."</td>";    
+							echo "<td>".$user_data['lokasi_terakhir']."</td>";    
+							echo "<td>".$user_data['ciri_ciri_korban']."</td>";          
+						}
+					?>
 				</tbody>
 			</table>
-
+		</div>
+		<div id="tabel_org_ditemukan">
+		<h3>Tabel orang ditemukan</h3>
+			<table class="table">
+				<thead>
+					<tr>
+					<th>No.</th>
+					<th>Foto Korban</th>
+					<th>Nama Korban</th>
+					<th>Usia</th>
+					<th>Gender</th>
+					<th>Nama Pelapor</th>
+					<th>No. Telepon Pelapor</th>
+					<th>Jenis Bencana</th>
+					<th>Tanggal Ditemukan</th>
+					<th>Lokasi Ditemukan</th>
+					<th>Ciri-Ciri Korban</th>
+					<th>Kondisi Korban</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php 
+						$no_korban=1;
+						while($user_data = mysqli_fetch_array($result_ditemukan)) {         
+							echo "<tr>";
+							echo "<td>".$no_korban++."</td>";
+							echo "<td><img src='foto_org_ditemukan/".$user_data['foto_korban']."' alt="." border=".'"3"'." height=".'"100"'." width=".'"300"'." ></td>";
+							echo "<td>".$user_data['nama_korban']."</td>";   
+							echo "<td>".$user_data['usia']."</td>";    
+							echo "<td>".$user_data['gender']."</td>";    
+							echo "<td>".$user_data['nama_pelapor']."</td>";    
+							echo "<td>".$user_data['no_telepon_pelapor']."</td>";      
+							echo "<td>".$user_data['jenis_bencana']."</td>";  
+							echo "<td>".$user_data['tanggal_ditemukan']."</td>";    
+							echo "<td>".$user_data['lokasi_ditemukan']."</td>";    
+							echo "<td>".$user_data['ciri_ciri_korban']."</td>";    
+							echo "<td>".$user_data['kondisi_korban']."</td>";           
+						}
+					?>
+				</tbody>
+			</table>
+		</div>
 
 			<div class="row">
 				<p>
@@ -83,23 +146,44 @@ include('front-end/head.php');
 				</p>
 
 				<p>
-					Jika orang yang anda cari tidak terdapat pada tabel,
-					<a href="orang_hilang-pencarian.php" ><b>klik disini</b>
+					
+					<a href="orang_hilang-pencarian.php" ><b>Klik disini</b>
 					</a>
-					untuk mengisi form orang hilang.
+					untuk melaporkan orang hilang.
 				</p>
 
 
 			</div>
 			<div class="row">
 				<p>
-					Jika anda mempunyai informasi mengenai orang hilang,
-					silakan hubungi admin melalui chat atau e-mail !
+					<a href="orang_ditemukan-pencarian.php" ><b>Klik disini</b>
+					</a>
+					untuk melaporkan orang ditemukan.
 				</p>
 
 			</div>
 		</div>
 	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		$("#show_tabel_hilang").hide();
+		$("#tabel_org_ditemukan").hide();
+		$("#show_tabel_ditemukan").click(function(){
+			$("#tabel_org_hilang").hide();
+			$("#tabel_org_ditemukan").show();
+			$("#show_tabel_ditemukan").hide();
+			$("#show_tabel_hilang").show();
+		});
+		$("#show_tabel_hilang").click(function(){
+			$("#tabel_org_hilang").show();
+			$("#tabel_org_ditemukan").hide();
+			$("#show_tabel_hilang").hide();
+			$("#show_tabel_ditemukan").show();
+			
+		});
+		});
+	</script>
 
 	<?php
 	include('front-end/footer.php');
