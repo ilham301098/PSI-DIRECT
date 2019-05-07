@@ -42,40 +42,60 @@ include('front-end/head.php');
 			<br>
 			<p>Silahkan pilih thread yang anda inginkan untuk mulai berdiskusi</p>
 
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Nama Thread</th>
-						<th>Pembuat Thread</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<a href="detail_diskusi.php">10 hal untuk melakukan penyelamatan saat bencana banjir terjadi</a>
-						</td>
-						<td>
-							<a href="detail_diskusi.php">Budi</a> (2019-04-10 07:37)
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="detail_diskusi.php">8 hal untuk melakukan penyelamatan saat gempa terjadi</a>
-						</td>
-						<td>
-							<a href="detail_diskusi.php">Adi</a> (2019-04-10 07:40)
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="detail_diskusi.php">5 hal untuk melakukan penyelamatan saat tsunami terjadi</a>
-						</td>
-						<td>
-							<a href="detail_diskusi.php">Dani</a> (2019-04-10 07:43)
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<?php
+			$con = mysqli_connect("localhost","root","","direct");
+			$sql = "SELECT
+			            topics.topic_id,
+			            topics.topic_subject,
+			            topics.topic_by,
+			            topics.topic_date,
+			            users.user_id,
+			            users.user_name
+			        FROM
+			            topics
+			        LEFT JOIN
+			        	users
+			       	ON topics.topic_by = users.user_id";
+			$result = mysqli_query($con,$sql);
+
+			if(!$result)
+			{
+			    echo 'The topic could not be displayed, please try again later.' . mysqli_error($con);
+			}
+			else
+			{
+			    if(mysqli_num_rows($result) == 0)
+			    {
+			        echo 'This topic does not exist.';
+			    }
+			    else
+			    {
+			        //display category data
+			        echo '<table class="table">
+					<thead>
+						<tr>
+							<th>Nama Thread</th>
+							<th>Pembuat Thread</th>
+						</tr>
+					</thead>';
+			        while($row = mysqli_fetch_assoc($result))
+			        {
+					echo '<tbody>
+							<tr>
+								<td>
+								<a href="detail_diskusi.php?id='.$row['topic_id'].'">'.$row['topic_subject'].'</a>
+								</td>
+								<td>
+								'.$row['user_name'].' ';
+								echo date('d-m-Y', strtotime($row['topic_date']));
+								echo'</td>
+							</tr>
+						 </tbody>';
+		}
+		echo '</table>';
+	}
+}
+			?>
 
 
 			
