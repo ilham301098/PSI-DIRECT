@@ -99,7 +99,7 @@ include('front-end/head.php');
 			</table>
 		</div>
 		<div id="tabel_org_ditemukan">
-		<h3>Tabel orang ditemukan</h3>
+		<h3 align="center">Tabel orang ditemukan</h3>
 			<table class="table">
 				<thead>
 					<tr>
