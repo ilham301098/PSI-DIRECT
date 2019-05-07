@@ -115,10 +115,10 @@ include('front-end/head.php');
 
                 echo '
                 </form>
-                <form class="contact-form" action="" method="post" autocomplete="off"> <div class="form-group">
+                <form class="contact-form" action="reply.php?id='.$_GET['id'].'" method="post" autocomplete="off"> <div class="form-group">
 						<label for="exampleInputNama"><h3>Reply :</h3></label>
 						<input type="text" name="reply" class="form-control" placeholder="Isikan reply">
-						<a href="#" class="btn btn gradient-bg my-1 my-sm-0 btn-sm" data-toggle="modal" data-target="#tambahpost">Submit</a>
+						<input class="btn btn gradient-bg my-1 my-sm-0 btn-sm" type="submit" value="Submit" />
 						</div>
 						</form>';
 
