@@ -29,15 +29,19 @@ include('front-end/head.php');
                         <span class="separator"> | </span>
                         <span class="active"><a href="artikel.html">Artikel</a></span>
                       </div>
+                      <?php
+                      include 'module/module/config.php';
+                      $sql = 'SELECT * FROM artikel_sg WHERE id ='.$_GET['id'];
+                      $result = mysqli_query($conn,$sql);
+                      $output = '';
+                      while ($row = mysqli_fetch_array($result)){
+                      $output='
                       <div class="news-content">
                           <a href="#"><img src="components/images/artikel.jpg" alt=""></a>
-
                           <header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
                               <div class="header-elements">
-                                  <div class="posted-date">March 12, 2018</div>
-
-                                  <h2 class="entry-title"><a href="#">Cara Menghadapi Bencana : Puting Beliung</a></h2>
-
+                                  <div class="posted-date">'.$row["date"].'</div>
+                                  <h2 class="entry-title"><a href="#">'.$row["judul"].'</a></h2>
                                   <div class="post-metas d-flex flex-wrap align-items-center">
                                       <span class="post-author">by <a href="#">Admin</a></span>
                                   </div>
@@ -49,10 +53,13 @@ include('front-end/head.php');
                           </header>
 
                           <div class="entry-content">
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris. Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. Integer accumsan sodales odio, id tempus velit ullamc.</p>
+                              <p>'.$row["isi"].'</p>
                           </div>
                       </div>
                       </div>
+                      ';}
+                      echo $output;
+                      ?>
                     <div class="popular-posts">
                           <h2 class="entry-title"><a href="#">Artikel Terkait</a></h2>
                             <ul class="p-0">
@@ -68,6 +75,37 @@ include('front-end/head.php');
                           </ul>
                       </div>
                 </div><!--penutup bagian news-->
+                <?php
+                if(isset($_POST['display'])){
+                // sql to delete a record
+                $display_id = $_POST['id'];
+                $sql = "SELECT FROM artikel_sg WHERE id='$display_id' ";
+                $result = mysqli_query($conn,$sql);
+                $output = '
+                <div class="news-content">
+                    <a href="#"><img src="components/images/artikel.jpg" alt=""></a>
+                    <header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="header-elements">
+                            <div class="posted-date">March 12, 2018</div>
+                            <h2 class="entry-title"><a href="#"><php echo "$judul" ?></a></h2>
+                            <div class="post-metas d-flex flex-wrap align-items-center">
+                                <span class="post-author">by <a href="#">Admin</a></span>
+                            </div>
+                        </div>
+
+                        <div class="donate-icon">
+                            <a href="#"><img src="images/donate-icon.png" alt=""></a>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <p><php echo "$isi" ?></p>
+                    </div>
+                </div>
+                </div>
+                ';
+                echo $output;
+                } ?>
 
                 <div class="col-12 col-lg-4">
                     <div class="sidebar">
