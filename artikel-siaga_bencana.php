@@ -3,12 +3,61 @@
 <?php
 include('front-end/head.php');
 ?>
+<style >
+  h3, h4, h5, h6 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 700;
+      color: #212631;
+      margin: 0px 0px 15px}
+  h3 {
+        font-size: 23px;
+   }
+   .post {
+       margin-bottom: 40px;
+     }
+     .post .post-img {
+       display: block;
+       -webkit-transition: 0.2s opacity;
+       transition: 0.2s opacity;
+       }
+    .post .post-img > img {
+       width: 100%;
+        }
+    .post .post-meta {
+          margin-top: 15px;
+          margin-bottom: 15px;
+      }
+     .post-meta .post-category {
+         font-size: 13px;
+         text-transform: uppercase;
+         padding: 3px 10px;
+         font-weight: 600;
+         border-radius: 2px;
+         margin-right: 15px;
+         color: #FFF;
+         background-color: #212631;
+         -webkit-transition: 0.2s opacity;
+         transition: 0.2s opacity;
+    }
+     .post-meta .post-category:hover, .post-meta .post-category:focus {
+         text-decoration: none;
+         opacity: 0.9;
+    }
+     .post-meta .post-category.cat-1 {
+         background-color: #4BB92F;
+    }.post-meta .post-date {
+        font-size: 13px;
+        font-weight: 600;
+   }
+     .post .post-title {
+         font-size: 18px;
+         margin-bottom: 0px;
+    }
+</style>
 <body class="single-page news-page">
     <?php
     include('front-end/navigation.php');
     ?>
-
-
     <div class="page-header">
         <div class="container">
             <div class="row">
@@ -31,103 +80,37 @@ include('front-end/head.php');
                         </div>
                         <br><br>
                       <div class="news-content">
-                        <!-- <ul class="p-0">
-                            <div class="col-sm-1 col-md-1">
-                            </div>
-                            <li class="d-flex flex-wrap justify-content-between align-items-left">
-                                <figure><a href="#"><img src="images/p-1.jpg" alt=""></a></figure>
-                                <div class="entry-content">
-                                    <h3 class="entry-title"><a href="#">A new cause to help</a></h3>
+                        <div class="row">
+                        <?php
+                        include 'module/module/config.php';
+                        $sql = 'SELECT * FROM artikel_sg ORDER by id ASC';
+                        $result = mysqli_query($conn,$sql);
+                        $output = '';
 
-                                    <div class="posted-date">MArch 12, 2018</div>
-                                </div>
-                            </li>
-                            </ul> -->
-                        </div>
+                        while ($row = mysqli_fetch_array($result)){
+                          $output.='
 
-                        <table>
-                          <tr>
-                            <td width="200px" height="200" background="components/images/artikel.jpg"></td>
-                            <td width="10px"  height="200" backgroung="white"></td>
-                            <td width="200px" height="200" background="components/images/artikel.jpg"></td>
-                            <td width="10px"  height="200" backgroung="white"></td>
-                            <td width="200px" height="200" background="components/images/artikel.jpg"></td>
-                          </tr>
-                          <tr>
-                            <td width="200" height="50">
-                              <a href="detail-article-siaga_bencana.php"><h7>JUDUL ARTIKEL</h7>
-                              <br><h10>tanggal | by Admin</h10></a>
-                            </td>
-                            <td width="10px"  height="50"></td>
-                            <td width="200" height="50">
-                              <a href="detail-article-siaga_bencana.php">
-                              <h7>JUDUL ARTIKEL</h7>
-                              <br><h10>tanggal | by Admin</h10></a>
-                            </td>
-                            <td width="10px"  height="50"></td>
-                              <td width="200" height="50">
-                                <a href="detail-article-siaga_bencana.php">
-                                  <h7>JUDUL ARTIKEL</h7>
-                                    <br>
-                                    <h10>tanggal | by Admin</h10></a>
-                            </td>
-                            </tr>
-                          <tr>
-                            <td width="200" height="10px" background="components/images/artikel.jpg"></td>
-                            <td width="10px"  height="200" backgroung="white"></td>
-                            <td width="200" height="10px" background="components/images/artikel.jpg">tengah 2</td>
-                            <td width="10px"  height="200" backgroung="white"></td>
-                            <td width="200" height="10px" background="components/images/artikel.jpg">kiri</td>
-                            </tr>
-                            <tr>
-                              <td width="200" height="50">
-                                <a href="artikelbencana.html"><h7>JUDUL ARTIKEL</h7>
-                                <br><h10>tanggal | by Admin</h10></a>
-                              </td>
-                              <td width="10px"  height="50"></td>
-                              <td width="200" height="50">
-                                <a href="artikelbencana.html">
-                                <h7>JUDUL ARTIKEL</h7>
-                                <br><h10>tanggal | by Admin</h10></a>
-                              </td>
-                              <td width="10px"  height="50"></td>
-                                <td width="200" height="50">
-                                  <a href="artikelbencana.html">
-                                    <h7>JUDUL ARTIKEL</h7>
-                                      <br>
-                                      <h10>tanggal | by Admin</h10></a>
-                              </td>
-                              </tr>
-                          <tr>
-                            <td width="200px" height="200" background="components/images/artikel.jpg"></td>
-                            <td width="10px"  height="200" backgroung="white"></td>
-                            <td width="200px" height="200" background="components/images/artikel.jpg">tengah 2</td>
-                            <td width="10px"  height="200" backgroung="white"></td>
-                            <td width="200px" height="200" background="components/images/artikel.jpg">kiri</td>
-                            </tr>
-                            <tr>
-                              <td width="200" height="50">
-                                <a href="artikelbencana.html"><h7>JUDUL ARTIKEL</h7>
-                                <br><h10>tanggal | by Admin</h10></a>
-                              </td>
-                              <td width="10px"  height="50"></td>
-                              <td width="200" height="50">
-                                <a href="artikelbencana.html">
-                                <h7>JUDUL ARTIKEL</h7>
-                                <br><h10>tanggal | by Admin</h10></a>
-                              </td>
-                              <td width="10px"  height="50"></td>
-                                <td width="200" height="50">
-                                  <a href="artikelbencana.html">
-                                    <h7>JUDUL ARTIKEL</h7>
-                                      <br>
-                                      <h10>tanggal | by Admin</h10></a>
-                              </td>
-                              </tr>
-                        </table>
+                					<div class="col-md-4">
+                						<div class="post">
+                							<a class="post-img" href=""><img src="./components/images/artikel.jpg" alt=""></a>
+                							<div class="post-body">
+                								<div class="post-meta">
+                									<a class="post-category cat-1" href="">by Admin</a>
+                									<span class="post-date">'.$row['date'].'</span>
+                								</div>
+                								<h3 class="post-title" name="display" id="'.$row["id"].'"><a href="detail-article-siaga_bencana.php?id='.$row['id'].'">'.$row['judul'].'</a></h3>
+                							</div>
+                						</div>
+                					</div>
+
+                				';
+                        }
+                          echo $output;
+                        ?>
+                       </div>
+                       </div>
                       </div>
                     </div>
-
                 <div class="col-12 col-lg-4">
                     <div class="sidebar">
                         <div class="search-widget">
