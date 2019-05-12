@@ -132,13 +132,12 @@ button:hover {
 	<div class="container-fluid">
 	<h1 align="center">Artikel Siaga Bencana</h1>
 		</div>
-    <br>
-    <form class="example" action="/action_page.php" style="max-width:200px" align="right">
-      <input type="text" placeholder="Search.." name="search2">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
-      <div align="right"><a href="?module=newartikel"><button class="btn btn-success" >New</button></a></div>
-  </br>
+       <div align="right"><a href="?module=newartikel"><button class="btn btn-success" >New</button></a></div>
+    </br>
+    <form role="search" class="sr-input-func" action="" method="post" style="max-width:200px" align="left">
+        <input type="text" placeholder="Search..." class="search-int form-control" name="cari">
+        <button class="btn btn-sm btn-primary" type="submit" name="btn-cari"><i class="fa fa-search"></i></button>
+       </form>
   <?php
     include 'config.php';
 
@@ -261,8 +260,6 @@ button:hover {
               echo "Error updating record: " . $conn->error;
           }
       }
-
-
           if(isset($_POST['delete'])){
           // sql to delete a record
           $delete_id = $_POST['delete_id'];
@@ -273,7 +270,39 @@ button:hover {
                   echo "Error deleting record: " . $conn->error;
               }
           }
+          if(isset($_POST['btn-cari'])){
+          $query = mysqli_query($conn, "SELECT * FROM artikel_sg");
+          $cari  = $_POST['cari'];
+          $data  = mysqli_query($conn, "SELECT * FROM artikel_sg WHERE judul LIKE '%$cari%' OR sumber LIKE '%$cari%'");
+          $no=1;
+          echo "<center>";
+          echo "<h2>Hasil pencarian $cari</h2>";
+          $output = '
+            <table class="table table-bordered table-striped">
+              <tr>
+                <th width="2%">No</th>
+                <th width="10%">JUDUL</th>
+                <th width="10%">SUMBER</th>
+                <th width="45%">DESKRIPSI KONTEN</th>
+                <th width="13%">Image</th>
+              </tr>
+              ';
+              while($row = mysqli_fetch_array($data))
+              {
+                $output .= '
+                <tr>
+                  <td>'.$no.'</td>
+                  <td>'.$row['judul'].'</td>
+                  <td>'.$row['sumber'].'</td>
+                  <td>'.$row['isi'].'</td>
+                  <td>'.$row['image'].'</td>
+                  </tr>
+                  ';
+                  $no++;
+                }
+                echo $output;
+              }
 
-      
+      // header("location:index.php?pesan=hapus");
       ?>
 </div>
