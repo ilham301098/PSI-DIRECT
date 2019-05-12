@@ -30,9 +30,9 @@ include('front-end/head.php');
                         <span class="active"><a href="artikel.html">Artikel</a></span>
                       </div>
                       <?php
-                      include 'module/module/config.php';
+                      require('config/db.php');
                       $sql = 'SELECT * FROM artikel_sg WHERE id ='.$_GET['id'];
-                      $result = mysqli_query($conn,$sql);
+                      $result = mysqli_query($con,$sql);
                       $output = '';
                       while ($row = mysqli_fetch_array($result)){
                       $output='
@@ -80,7 +80,7 @@ include('front-end/head.php');
                 // sql to delete a record
                 $display_id = $_POST['id'];
                 $sql = "SELECT FROM artikel_sg WHERE id='$display_id' ";
-                $result = mysqli_query($conn,$sql);
+                $result = mysqli_query($con,$sql);
                 $output = '
                 <div class="news-content">
                     <a href="#"><img src="components/images/artikel.jpg" alt=""></a>

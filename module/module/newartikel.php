@@ -73,88 +73,87 @@
 			</div>
 		</div>
 		<form method="POST" enctype="multipart/form-data">
-		<div class="sparkline12-graph">
-			<div class="input-knob-dial-wrap">
-				<div class="row">
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-						<div class="input-mask-title">
-							<label>Judul Artikel</label>
+			<div class="sparkline12-graph">
+				<div class="input-knob-dial-wrap">
+					<div class="row">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+							<div class="input-mask-title">
+								<label>Judul Artikel</label>
+							</div>
+						</div>
+						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+							<div class="input-mark-inner mg-b-22">
+								<input type="text" class="form-control" name="judul">
+							</div>
 						</div>
 					</div>
-					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-						<div class="input-mark-inner mg-b-22">
-							<input type="text" class="form-control" name="judul">
+					<div class="row">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+							<div class="input-mask-title">
+								<label>Sumber Artikel</label>
+							</div>
 						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-						<div class="input-mask-title">
-							<label>Sumber Artikel</label>
-						</div>
-					</div>
-					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-						<div class="input-mark-inner mg-b-22">
-							<input type="text" class="form-control" name="sumber">
+						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+							<div class="input-mark-inner mg-b-22">
+								<input type="text" class="form-control" name="sumber">
 
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-						<div class="input-mask-title">
-							<label>Deskripsi</label>
+					<div class="row">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+							<div class="input-mask-title">
+								<label>Deskripsi</label>
+							</div>
+						</div>
+						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+							<div class="input-mark-inner mg-b-22">
+								<input type="text" class="form-control" name="isi">
+							</div>
 						</div>
 					</div>
-					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-						<div class="input-mark-inner mg-b-22">
-							<input type="text" class="form-control" name="isi">
+					<div class="row">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+							<div class="input-mask-title">
+								<label>Foto</label>
+							</div>
+						</div>
+						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+							<div class="input-mark-inner mg-b-22">
+								<input type="file" placeholder="" name="image" class="form-control">
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-						<div class="input-mask-title">
-							<label>Foto</label>
-						</div>
+					<br><br>
+					<div class="row" align="center">
+						<input type="hidden" name="id" id="artikel_id" />
+						<button type="submit" button class="btn btn-theme" name="upload">Save</button>
+						<button class="btn btn-theme" type="button">Cancel</button>
 					</div>
-					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-						<div class="input-mark-inner mg-b-22">
-							<input type="file" placeholder="" name="image" class="form-control">
-						</div>
-					</div>
-				</div>
-				<br><br>
-				<div class="row" align="center">
-					<input type="hidden" name="id" id="artikel_id" />
-					<button type="submit" button class="btn btn-theme" name="upload">Save</button>
-					<button class="btn btn-theme" type="button">Cancel</button>
-				</div>
-			</form>
+				</form>
 			</div>
 		</div>
 	</div>
 </div>
 
 <?php
-include 'config.php';
-	if (isset($_POST['upload'])){
+require('config/db.php');
+if (isset($_POST['upload'])){
 
-		$target = "components/images/".basename($_FILES['image']['name']);
-		$db = mysqli_connect("localhost","root","","direct");
+	$target = "components/images/".basename($_FILES['image']['name']);
 
-		$image = $_FILES['image']['name'];
-		$judul = $_POST['judul'];
-		$sumber = $_POST['sumber'];
-		$isi = $_POST['isi'];
-		$date = date("Y-m-d");
+	$image = $_FILES['image']['name'];
+	$judul = $_POST['judul'];
+	$sumber = $_POST['sumber'];
+	$isi = $_POST['isi'];
+	$date = date("Y-m-d");
 
-		$sql = "INSERT INTO artikel_sg (judul, sumber, isi, image, date) VALUES ('$judul', '$sumber', '$isi', '$image', '$date')";
-		$result= mysqli_query($db,$sql);
-		if ($result){
-			echo '<script>window.location.href="?module=artikeladm"</script>';
+	$sql = "INSERT INTO artikel_sg (judul, sumber, isi, image, date) VALUES ('$judul', '$sumber', '$isi', '$image', '$date')";
+	$result= mysqli_query($con,$sql);
+	if ($result){
+		echo '<script>window.location.href="?module=artikeladm"</script>';
 
-		}
 	}
+}
 
- ?>
+?>

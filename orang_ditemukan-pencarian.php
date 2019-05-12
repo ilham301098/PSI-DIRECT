@@ -1,7 +1,6 @@
 <?php
   // Create database connection
-  $db = mysqli_connect("localhost", "root", "", "pencarian_orang");
-
+  require('config/db.php');
   // Initialize message variable
   $msg = "";
  
@@ -29,7 +28,7 @@
 	  VALUES ('$nama', '$usia', '$gender', '$ciri', '$lokasi_ditemukan', '$tgl_ditemukan', '$jenis_bencana',
 	   '$nama_pelapor', '$no_telp_pelapor', '$kondisi', '$foto', '$status')";
   	// execute query
-  	mysqli_query($db, $sql);
+  	mysqli_query($con, $sql);
 
   	if (move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
   		$msg = "Image uploaded successfully";
@@ -38,7 +37,7 @@
 	  }
 
   }
-  $result = mysqli_query($db, "SELECT * FROM orang_ditemukan");
+  $result = mysqli_query($con, "SELECT * FROM orang_ditemukan");
 ?>
 <!DOCTYPE html>
 <html lang="en">

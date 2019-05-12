@@ -26,9 +26,9 @@
 </div>
 <?php
   // Create database connection
-  $db = mysqli_connect("localhost", "root", "", "pencarian_orang");
-	$data_orang_hilang = mysqli_query($db, "SELECT * FROM orang_hilang WHERE status='Belum Diverifikasi'");
-	$data_orang_ditemukan = mysqli_query($db, "SELECT * FROM orang_ditemukan WHERE status='Belum Diverifikasi'");
+require('config/db.php');
+$data_orang_hilang = mysqli_query($con, "SELECT * FROM orang_hilang WHERE status='Belum Diverifikasi'");
+$data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE status='Belum Diverifikasi'");
 
 
 ?>
@@ -82,7 +82,7 @@
 						</div>
 						<?php 
 						if(isset($_POST['verif_hilang'])){
-							$ver=mysqli_query($db,"UPDATE orang_hilang SET status='Terverifikasi' WHERE id='".$_POST['idkorban']."'");
+							$ver=mysqli_query($con,"UPDATE orang_hilang SET status='Terverifikasi' WHERE id='".$_POST['idkorban']."'");
 						}
 						?>
 					</div>
@@ -110,45 +110,45 @@
 									</tr>
 								</thead>
 								<tbody>
-								
+									
 									<?php 
-										$no_korban=1;
-										while($user_data = mysqli_fetch_array($data_orang_hilang)) {         
-											echo "<tr>";
-											echo "<td>".$no_korban++."</td>";
-											echo "<td>".$user_data['id']."</td>";
-											echo "<td><img src='foto_org_hilang/".$user_data['foto_korban']."' alt="." border="."3"." height="."100"." width="."300"." ></td>";
-											echo "<td>".$user_data['nama_korban']."</td>";
-											echo "<td>".$user_data['no_identitas']."</td>";   
-											echo "<td>".$user_data['jenis_kartu_identitas']."</td>";    
-											echo "<td>".$user_data['usia']."</td>";    
-											echo "<td>".$user_data['gender']."</td>";    
-											echo "<td>".$user_data['nama_pelapor']."</td>";    
-											echo "<td>".$user_data['no_telepon_pelapor']."</td>";    
-											echo "<td>".$user_data['hubungan_pelapor']."</td>";    
-											echo "<td>".$user_data['tanggal_hilang']."</td>";    
-											echo "<td>".$user_data['jenis_bencana']."</td>";    
-											echo "<td>".$user_data['lokasi_terakhir']."</td>";    
-											echo "<td>".$user_data['ciri_ciri_korban']."</td>";    
-											echo "<td><form action='' method='post'>
-											<input type='hidden' name='idkorban' value='".$user_data['id']."'>
-											<button type='submit' name='verif_hilang' class='btn btn-primary btn-sm'>Verifikasi</button>
-											</form></td>";
+									$no_korban=1;
+									while($user_data = mysqli_fetch_array($data_orang_hilang)) {         
+										echo "<tr>";
+										echo "<td>".$no_korban++."</td>";
+										echo "<td>".$user_data['id']."</td>";
+										echo "<td><img src='foto_org_hilang/".$user_data['foto_korban']."' alt="." border="."3"." height="."100"." width="."300"." ></td>";
+										echo "<td>".$user_data['nama_korban']."</td>";
+										echo "<td>".$user_data['no_identitas']."</td>";   
+										echo "<td>".$user_data['jenis_kartu_identitas']."</td>";    
+										echo "<td>".$user_data['usia']."</td>";    
+										echo "<td>".$user_data['gender']."</td>";    
+										echo "<td>".$user_data['nama_pelapor']."</td>";    
+										echo "<td>".$user_data['no_telepon_pelapor']."</td>";    
+										echo "<td>".$user_data['hubungan_pelapor']."</td>";    
+										echo "<td>".$user_data['tanggal_hilang']."</td>";    
+										echo "<td>".$user_data['jenis_bencana']."</td>";    
+										echo "<td>".$user_data['lokasi_terakhir']."</td>";    
+										echo "<td>".$user_data['ciri_ciri_korban']."</td>";    
+										echo "<td><form action='' method='post'>
+										<input type='hidden' name='idkorban' value='".$user_data['id']."'>
+										<button type='submit' name='verif_hilang' class='btn btn-primary btn-sm'>Verifikasi</button>
+									</form></td>";
 											//echo "<td><button id=".'"verify"'." onclick=".'"return verify();"'." class=".'"btn btn-primary btn-sm"'.">Verifikasi</button></tr>";        
-										}
-									?>
-								</tbody>
-							</table>
-							<br>
-							<p align="center">
-								*Data yang terverifikasi akan dimasukkan ke tabel daftar orang hilang
-							</p>
-						</div>
+								}
+								?>
+							</tbody>
+						</table>
+						<br>
+						<p align="center">
+							*Data yang terverifikasi akan dimasukkan ke tabel daftar orang hilang
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 
 <div class="data-table-area mg-b-15" id=tabel_org_ditemukan>
@@ -162,7 +162,7 @@
 						</div>
 						<?php 
 						if(isset($_POST['verif_ditemukan'])){
-							$ver=mysqli_query($db,"UPDATE orang_ditemukan SET status='Terverifikasi' WHERE id='".$_POST['idkorban']."'");
+							$ver=mysqli_query($con,"UPDATE orang_ditemukan SET status='Terverifikasi' WHERE id='".$_POST['idkorban']."'");
 						}
 						?>
 					</div>
@@ -188,49 +188,49 @@
 									</tr>
 								</thead>
 								<tbody>
-								
+									
 									<?php 
-										$no_korban=1;
-										while($user_data = mysqli_fetch_array($data_orang_ditemukan)) {         
-											echo "<tr>";
-											echo "<td>".$no_korban++."</td>";
-											echo "<td>".$user_data['id']."</td>";
-											echo "<td><img src='foto_org_ditemukan/".$user_data['foto_korban']."' alt="." border="."3"." height="."100"." width="."300"." ></td>";
-											echo "<td>".$user_data['nama_korban']."</td>";   
-											echo "<td>".$user_data['usia']."</td>";    
-											echo "<td>".$user_data['gender']."</td>";    
-											echo "<td>".$user_data['nama_pelapor']."</td>";    
-											echo "<td>".$user_data['no_telepon_pelapor']."</td>";   
-											echo "<td>".$user_data['tanggal_ditemukan']."</td>";   
-											echo "<td>".$user_data['lokasi_ditemukan']."</td>";    
-											echo "<td>".$user_data['jenis_bencana']."</td>";     
-											echo "<td>".$user_data['ciri_ciri_korban']."</td>";  
-											echo "<td>".$user_data['kondisi_korban']."</td>";    
-											echo "<td><form action='' method='post'>
-											<input type='hidden' name='idkorban' value='".$user_data['id']."'>
-											<button type='submit' name='verif_ditemukan' class='btn btn-primary btn-sm'>Verifikasi</button>
-											</form></td>";
+									$no_korban=1;
+									while($user_data = mysqli_fetch_array($data_orang_ditemukan)) {         
+										echo "<tr>";
+										echo "<td>".$no_korban++."</td>";
+										echo "<td>".$user_data['id']."</td>";
+										echo "<td><img src='foto_org_ditemukan/".$user_data['foto_korban']."' alt="." border="."3"." height="."100"." width="."300"." ></td>";
+										echo "<td>".$user_data['nama_korban']."</td>";   
+										echo "<td>".$user_data['usia']."</td>";    
+										echo "<td>".$user_data['gender']."</td>";    
+										echo "<td>".$user_data['nama_pelapor']."</td>";    
+										echo "<td>".$user_data['no_telepon_pelapor']."</td>";   
+										echo "<td>".$user_data['tanggal_ditemukan']."</td>";   
+										echo "<td>".$user_data['lokasi_ditemukan']."</td>";    
+										echo "<td>".$user_data['jenis_bencana']."</td>";     
+										echo "<td>".$user_data['ciri_ciri_korban']."</td>";  
+										echo "<td>".$user_data['kondisi_korban']."</td>";    
+										echo "<td><form action='' method='post'>
+										<input type='hidden' name='idkorban' value='".$user_data['id']."'>
+										<button type='submit' name='verif_ditemukan' class='btn btn-primary btn-sm'>Verifikasi</button>
+									</form></td>";
 											//echo "<td><button id=".'"verify"'." onclick=".'"return verify();"'." class=".'"btn btn-primary btn-sm"'.">Verifikasi</button></tr>";        
-										}
-									?>
-								</tbody>
-							</table>
-							<br>
-							<p align="center">
-								*Data yang terverifikasi akan dimasukkan ke tabel daftar orang ditemukan
-							</p>
-						</div>
+								}
+								?>
+							</tbody>
+						</table>
+						<br>
+						<p align="center">
+							*Data yang terverifikasi akan dimasukkan ke tabel daftar orang ditemukan
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+</div>
 
 <!--JS Files-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
+<script>
+	$(document).ready(function(){
 		$("#show_tabel_hilang").hide();
 		$("#tabel_org_ditemukan").hide();
 		$("#show_tabel_ditemukan").click(function(){
@@ -246,8 +246,8 @@
 			$("#show_tabel_ditemukan").show();
 			
 		});
-		});
-	</script>	
+	});
+</script>	
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
 <script src="back-end/js/bootstable.min.js"></script>
 <script>

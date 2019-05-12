@@ -7,12 +7,12 @@ include('front-end/head.php');
 	<?php
 	include('front-end/navigation.php');
 	?><!-- .site-header -->
-<?php
+	<?php
   // Create database connection
-  $db = mysqli_connect("localhost", "root", "", "pencarian_orang");
-  $result_hilang = mysqli_query($db, "SELECT * FROM orang_hilang WHERE status='Terverifikasi'");
-  $result_ditemukan = mysqli_query($db, "SELECT * FROM orang_ditemukan WHERE status='Terverifikasi'");
-?>
+	require('config/db.php');
+	$result_hilang = mysqli_query($con, "SELECT * FROM orang_hilang WHERE status='Terverifikasi'");
+	$result_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE status='Terverifikasi'");
+	?>
 	<div class="page-header">
 		<div class="container">
 			<div class="row">
@@ -29,41 +29,41 @@ include('front-end/head.php');
 		<div class="container">
 
 
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-sm-10">
-				<div style="padding:10px" class="row justify-content-center">
-					<nav class="navbar navbar-light bg-light ">
-						<button class="btn btn gradient-bg my-1 my-sm-0" id="show_tabel_ditemukan" type="button">Tampilkan tabel orang ditemukan</button>
-						<button class="btn btn gradient-bg my-1 my-sm-0" id="show_tabel_hilang" type="button">Tampilkan tabel orang hilang</button>
-					</nav>
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-sm-10">
+						<div style="padding:10px" class="row justify-content-center">
+							<nav class="navbar navbar-light bg-light ">
+								<button class="btn btn gradient-bg my-1 my-sm-0" id="show_tabel_ditemukan" type="button">Tampilkan tabel orang ditemukan</button>
+								<button class="btn btn gradient-bg my-1 my-sm-0" id="show_tabel_hilang" type="button">Tampilkan tabel orang hilang</button>
+							</nav>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-		<div id="tabel_org_hilang">
-			<h3 align="center">Tabel orang hilang</h3>
-			<table class="table" id="daftar_orang">
-				<thead>
-					<tr>
-					<th>No.</th>
-					<th>Foto Korban</th>
-					<th>Nama Korban</th>
-					<th>No. Identitas</th>
-					<th>Jenis Kartu Identitas</th>
-					<th>Usia</th>
-					<th>Gender</th>
-					<th>Nama Pelapor</th>
-					<th>No. Telepon Pelapor</th>
-					<th>Hubungan Pelapor Dengan Korban</th>
-					<th>Tanggal Hilang</th>
-					<th>Jenis Bencana</th>
-					<th>Lokasi Terakhir</th>
-					<th>Ciri-Ciri Korban</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
+			<div id="tabel_org_hilang">
+				<h3 align="center">Tabel orang hilang</h3>
+				<table class="table" id="daftar_orang">
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th>Foto Korban</th>
+							<th>Nama Korban</th>
+							<th>No. Identitas</th>
+							<th>Jenis Kartu Identitas</th>
+							<th>Usia</th>
+							<th>Gender</th>
+							<th>Nama Pelapor</th>
+							<th>No. Telepon Pelapor</th>
+							<th>Hubungan Pelapor Dengan Korban</th>
+							<th>Tanggal Hilang</th>
+							<th>Jenis Bencana</th>
+							<th>Lokasi Terakhir</th>
+							<th>Ciri-Ciri Korban</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
 						$no_korban=1;
 						while($user_data = mysqli_fetch_array($result_hilang)) {
 							echo "<tr>";
@@ -82,31 +82,31 @@ include('front-end/head.php');
 							echo "<td>".$user_data['lokasi_terakhir']."</td>";
 							echo "<td>".$user_data['ciri_ciri_korban']."</td>";
 						}
-					?>
-				</tbody>
-			</table>
-		</div>
-		<div id="tabel_org_ditemukan">
-		<h3 align="center">Tabel orang ditemukan</h3>
-			<table class="table" id="orang_ditemukan" >
-				<thead>
-					<tr>
-					<th>No.</th>
-					<th>Foto Korban</th>
-					<th>Nama Korban</th>
-					<th>Usia</th>
-					<th>Gender</th>
-					<th>Nama Pelapor</th>
-					<th>No. Telepon Pelapor</th>
-					<th>Jenis Bencana</th>
-					<th>Tanggal Ditemukan</th>
-					<th>Lokasi Ditemukan</th>
-					<th>Ciri-Ciri Korban</th>
-					<th>Kondisi Korban</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
+						?>
+					</tbody>
+				</table>
+			</div>
+			<div id="tabel_org_ditemukan">
+				<h3 align="center">Tabel orang ditemukan</h3>
+				<table class="table" id="orang_ditemukan" >
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th>Foto Korban</th>
+							<th>Nama Korban</th>
+							<th>Usia</th>
+							<th>Gender</th>
+							<th>Nama Pelapor</th>
+							<th>No. Telepon Pelapor</th>
+							<th>Jenis Bencana</th>
+							<th>Tanggal Ditemukan</th>
+							<th>Lokasi Ditemukan</th>
+							<th>Ciri-Ciri Korban</th>
+							<th>Kondisi Korban</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
 						$no_korban=1;
 						while($user_data = mysqli_fetch_array($result_ditemukan)) {
 							echo "<tr>";
@@ -123,10 +123,10 @@ include('front-end/head.php');
 							echo "<td>".$user_data['ciri_ciri_korban']."</td>";
 							echo "<td>".$user_data['kondisi_korban']."</td>";
 						}
-					?>
-				</tbody>
-			</table>
-		</div>
+						?>
+					</tbody>
+				</table>
+			</div>
 
 			<div class="row">
 				<p>
@@ -155,21 +155,21 @@ include('front-end/head.php');
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script>
 		$(document).ready(function(){
-		$("#show_tabel_hilang").hide();
-		$("#tabel_org_ditemukan").hide();
-		$("#show_tabel_ditemukan").click(function(){
-			$("#tabel_org_hilang").hide();
-			$("#tabel_org_ditemukan").show();
-			$("#show_tabel_ditemukan").hide();
-			$("#show_tabel_hilang").show();
-		});
-		$("#show_tabel_hilang").click(function(){
-			$("#tabel_org_hilang").show();
-			$("#tabel_org_ditemukan").hide();
 			$("#show_tabel_hilang").hide();
-			$("#show_tabel_ditemukan").show();
+			$("#tabel_org_ditemukan").hide();
+			$("#show_tabel_ditemukan").click(function(){
+				$("#tabel_org_hilang").hide();
+				$("#tabel_org_ditemukan").show();
+				$("#show_tabel_ditemukan").hide();
+				$("#show_tabel_hilang").show();
+			});
+			$("#show_tabel_hilang").click(function(){
+				$("#tabel_org_hilang").show();
+				$("#tabel_org_ditemukan").hide();
+				$("#show_tabel_hilang").hide();
+				$("#show_tabel_ditemukan").show();
 
-		});
+			});
 		});
 	</script>
 
@@ -178,16 +178,16 @@ include('front-end/head.php');
 	include('front-end/script.php');
 	?>
 	<script type="text/javascript">
+		$(document).ready( function () {
+				// console.log('tes');
+				$('#daftar_orang').DataTable();
+			} );
+		</script>
+		<script type="text/javascript">
 			$(document).ready( function () {
 				// console.log('tes');
-			$('#daftar_orang').DataTable();
-		} );
-	</script>
-	<script type="text/javascript">
-			$(document).ready( function () {
-				// console.log('tes');
-			$('#orang_ditemukan').DataTable();
-		} );
-	</script>
-</body>
-</html>
+				$('#orang_ditemukan').DataTable();
+			} );
+		</script>
+	</body>
+	</html>
