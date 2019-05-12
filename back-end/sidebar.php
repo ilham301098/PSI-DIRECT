@@ -51,7 +51,7 @@
 	</a>
 	<ul class="submenu-angle" aria-expanded="true">
 		<li><a href="?module=daftar_orang"><span class="mini-sub-pro">&nbsp;Daftar Orang</span></a></li>
-		<li><a href="?module=verifikasi_form"><span class="mini-sub-pro">&nbsp;Verifikasi Orang Hilang</span></a></li>
+		<li><a href="?module=verifikasi_form"><span class="mini-sub-pro">&nbsp;Verifikasi Data</span></a></li>
 
 	</ul>
 </li>
