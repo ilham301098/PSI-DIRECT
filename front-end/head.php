@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <head>
 <title>Direct | Home</title>
 

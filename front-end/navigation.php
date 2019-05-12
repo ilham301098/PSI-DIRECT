@@ -1,13 +1,13 @@
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5c960940c37db86fcfcf7217/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+		s1.async=true;
+		s1.src='https://embed.tawk.to/5c960940c37db86fcfcf7217/default';
+		s1.charset='UTF-8';
+		s1.setAttribute('crossorigin','*');
+		s0.parentNode.insertBefore(s1,s0);
+	})();
 </script>
 <header class="site-header">
 	<!-- .top-header-bar -->
@@ -20,11 +20,18 @@ s0.parentNode.insertBefore(s1,s0);
 						<a href="#">contact@direct.com</a>
 					</div><!-- .header-bar-email -->
 				</div><!-- .col -->
-
 				<div class="col-12 col-lg-4 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+					<?php if(!isset($_SESSION['signed_in'])){ ?>
 					<div class="donate-btn">
 						<a href="login.php">Login</a>
-					</div><!-- .donate-btn -->
+					</div>
+					<?php }else{ ?>
+					<div class="donate-btn">
+						<a href="logout.php">Logout from <?php echo $_SESSION['user_name']; ?> </a>
+					</div>
+					<?php } ?>
+
+					
 				</div><!-- .col -->
 			</div><!-- .row -->
 		</div><!-- .container -->
