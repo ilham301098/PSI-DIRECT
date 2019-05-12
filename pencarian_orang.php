@@ -23,23 +23,11 @@ include('front-end/head.php');
 		</div><!-- .container -->
 	</div><!-- .page-header -->
 
-	
+
 
 	<div class="portfolio-wrap">
 		<div class="container">
-		<div class="row justify-content-center">
-		<div class="col-sm-10">
-			<div style="padding:10px" class="">
-				<nav class="navbar navbar-light bg-light ">
-					<a class="navbar-brand">Cari Korban</a>
-					<form class="form-inline">
-						<input class="form-control " type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn gradient-bg my-1 my-sm-0" type="submit">Search</button>
-					</form>
-				</nav>
-			</div>
-		</div>
-	</div>
+
 
 	<div class="container">
 		<div class="row justify-content-center">
@@ -55,7 +43,7 @@ include('front-end/head.php');
 	</div>
 		<div id="tabel_org_hilang">
 			<h3 align="center">Tabel orang hilang</h3>
-			<table class="table">
+			<table class="table" id="daftar_orang">
 				<thead>
 					<tr>
 					<th>No.</th>
@@ -75,24 +63,24 @@ include('front-end/head.php');
 					</tr>
 				</thead>
 				<tbody>
-					<?php 
+					<?php
 						$no_korban=1;
-						while($user_data = mysqli_fetch_array($result_hilang)) {         
+						while($user_data = mysqli_fetch_array($result_hilang)) {
 							echo "<tr>";
 							echo "<td>".$no_korban++."</td>";
 							echo "<td><img src='foto_org_hilang/".$user_data['foto_korban']."' alt="." border="."3"." height="."100"." width="."300"." ></td>";
 							echo "<td>".$user_data['nama_korban']."</td>";
-							echo "<td>".$user_data['no_identitas']."</td>";   
-							echo "<td>".$user_data['jenis_kartu_identitas']."</td>";    
-							echo "<td>".$user_data['usia']."</td>";    
-							echo "<td>".$user_data['gender']."</td>";    
-							echo "<td>".$user_data['nama_pelapor']."</td>";    
-							echo "<td>".$user_data['no_telepon_pelapor']."</td>";    
-							echo "<td>".$user_data['hubungan_pelapor']."</td>";    
-							echo "<td>".$user_data['tanggal_hilang']."</td>";    
-							echo "<td>".$user_data['jenis_bencana']."</td>";    
-							echo "<td>".$user_data['lokasi_terakhir']."</td>";    
-							echo "<td>".$user_data['ciri_ciri_korban']."</td>";          
+							echo "<td>".$user_data['no_identitas']."</td>";
+							echo "<td>".$user_data['jenis_kartu_identitas']."</td>";
+							echo "<td>".$user_data['usia']."</td>";
+							echo "<td>".$user_data['gender']."</td>";
+							echo "<td>".$user_data['nama_pelapor']."</td>";
+							echo "<td>".$user_data['no_telepon_pelapor']."</td>";
+							echo "<td>".$user_data['hubungan_pelapor']."</td>";
+							echo "<td>".$user_data['tanggal_hilang']."</td>";
+							echo "<td>".$user_data['jenis_bencana']."</td>";
+							echo "<td>".$user_data['lokasi_terakhir']."</td>";
+							echo "<td>".$user_data['ciri_ciri_korban']."</td>";
 						}
 					?>
 				</tbody>
@@ -100,7 +88,7 @@ include('front-end/head.php');
 		</div>
 		<div id="tabel_org_ditemukan">
 		<h3 align="center">Tabel orang ditemukan</h3>
-			<table class="table">
+			<table class="table" id="orang_ditemukan" >
 				<thead>
 					<tr>
 					<th>No.</th>
@@ -118,22 +106,22 @@ include('front-end/head.php');
 					</tr>
 				</thead>
 				<tbody>
-					<?php 
+					<?php
 						$no_korban=1;
-						while($user_data = mysqli_fetch_array($result_ditemukan)) {         
+						while($user_data = mysqli_fetch_array($result_ditemukan)) {
 							echo "<tr>";
 							echo "<td>".$no_korban++."</td>";
 							echo "<td><img src='foto_org_ditemukan/".$user_data['foto_korban']."' alt="." border=".'"3"'." height=".'"100"'." width=".'"300"'." ></td>";
-							echo "<td>".$user_data['nama_korban']."</td>";   
-							echo "<td>".$user_data['usia']."</td>";    
-							echo "<td>".$user_data['gender']."</td>";    
-							echo "<td>".$user_data['nama_pelapor']."</td>";    
-							echo "<td>".$user_data['no_telepon_pelapor']."</td>";      
-							echo "<td>".$user_data['jenis_bencana']."</td>";  
-							echo "<td>".$user_data['tanggal_ditemukan']."</td>";    
-							echo "<td>".$user_data['lokasi_ditemukan']."</td>";    
-							echo "<td>".$user_data['ciri_ciri_korban']."</td>";    
-							echo "<td>".$user_data['kondisi_korban']."</td>";           
+							echo "<td>".$user_data['nama_korban']."</td>";
+							echo "<td>".$user_data['usia']."</td>";
+							echo "<td>".$user_data['gender']."</td>";
+							echo "<td>".$user_data['nama_pelapor']."</td>";
+							echo "<td>".$user_data['no_telepon_pelapor']."</td>";
+							echo "<td>".$user_data['jenis_bencana']."</td>";
+							echo "<td>".$user_data['tanggal_ditemukan']."</td>";
+							echo "<td>".$user_data['lokasi_ditemukan']."</td>";
+							echo "<td>".$user_data['ciri_ciri_korban']."</td>";
+							echo "<td>".$user_data['kondisi_korban']."</td>";
 						}
 					?>
 				</tbody>
@@ -146,7 +134,7 @@ include('front-end/head.php');
 				</p>
 
 				<p>
-					
+
 					<a href="orang_hilang-pencarian.php" ><b>Klik disini</b>
 					</a>
 					untuk melaporkan orang hilang.
@@ -180,7 +168,7 @@ include('front-end/head.php');
 			$("#tabel_org_ditemukan").hide();
 			$("#show_tabel_hilang").hide();
 			$("#show_tabel_ditemukan").show();
-			
+
 		});
 		});
 	</script>
@@ -189,5 +177,17 @@ include('front-end/head.php');
 	include('front-end/footer.php');
 	include('front-end/script.php');
 	?>
+	<script type="text/javascript">
+			$(document).ready( function () {
+				// console.log('tes');
+			$('#daftar_orang').DataTable();
+		} );
+	</script>
+	<script type="text/javascript">
+			$(document).ready( function () {
+				// console.log('tes');
+			$('#orang_ditemukan').DataTable();
+		} );
+	</script>
 </body>
 </html>
