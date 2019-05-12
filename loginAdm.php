@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 require('config/db.php');
 if(isset($_POST['btnLogin'])){
 	$query="SELECT * FROM `user` WHERE `USERNAME`='".$_POST['username']."' AND `PASSWORD`='".md5($_POST['password'])."'";
@@ -37,7 +35,7 @@ include('front-end/head.php');
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<h1 align="center">Login</h1>
+					<h1 align="center">Login Admin</h1>
 				</div><!-- .col -->
 			</div><!-- .row -->
 		</div><!-- .container -->

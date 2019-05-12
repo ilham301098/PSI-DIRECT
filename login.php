@@ -186,14 +186,20 @@ include('front-end/head.php');
 
              </div><!-- .col -->
 
-         </div><!-- .row -->
-     </div><!-- .container -->
- </div>
 
- <?php
- include('front-end/footer.php');
- include('front-end/script.php');
- ?>
+         </div><!-- .row -->
+         <br>
+         <br>
+         <div class="col-12" align="center">
+            <h4>Masuk sebagai Admin Direct ? <a href="loginAdm.php">Klik disini</a></h4>
+        </div>
+    </div><!-- .container -->
+</div>
+
+<?php
+include('front-end/footer.php');
+include('front-end/script.php');
+?>
 
 
 </body>
