@@ -20,11 +20,24 @@ include('front-end/head.php');
 
     <center><div>
         <table cellpadding="10" cellspacing="10"><tbody>
-        <tr> 
-        <td align="justify" valign="top" width="45%"><center><a href=info-obat.php><img src="components/images/info-obat-button.jpg" width="500px" height="500px"></a></center></center><center> <a href=info-obat.php> <h2>Info Obat</h2> </a> </center></td>
+            <tr> 
+            <td align="justify" valign="top" width="35%"><center><a href=info-obat.php><img src="components/images/info-obat-button.jpg" width="350px" height="400px"></a></center></center><center> <a href=info-obat.php> <h2>Info Obat</h2> </a> </center></td>
 
-        <td align="justify" valign="top" width="45%"><center><a href=info-pp.php><img src="components/images/info-pp-button.jpg" width="500px" height="500px"></a></center><center> <a href=info-pp.php> <h2>Info Pertolongan Pertama</h2> </a></center></td> 
-        </tr>
+                <td></td>
+
+                <td align="justify" width="30%">
+                    <center>
+                        <a href="forum_diskusi.php">
+                            <img src="components/images/discuss.jpg" width="350px" height="250px">
+                            <h2>Forum Diskusi</h2> 
+                        </a>
+                    </center>
+                </td> 
+
+                <td></td>
+
+                <td align="justify" valign="top" width="35%"><center><a href=info-pp.php><img src="components/images/info-pp-button.jpg" width="400px" height="400px"></a></center><center> <a href=info-pp.php> <h2>Info Pertolongan Pertama</h2> </a></center></td> 
+            </tr>
         </tbody></table>
     </div></center>
     <br>

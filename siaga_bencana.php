@@ -22,7 +22,7 @@ include('front-end/head.php');
 		<table cellpadding="10" cellspacing="10">
 			<tbody>
 				<tr> 
-					<td align="justify" valign="top" width="45%">
+					<td align="justify" valign="top" width="35%">
 						<center>
 							<a href=video-siaga_bencana.php>
 								<img src="components/images/video.png" width="200px" height="200px">
@@ -37,7 +37,18 @@ include('front-end/head.php');
 
 					<td></td>
 
-					<td align="justify" valign="top" width="45%">
+					<td align="justify" valign="top" width="30%">
+						<center>
+							<a href="forum_diskusi.php">
+								<img src="components/images/discuss.jpg" width="270px" height="200px">
+								<h2>Forum Diskusi</h2> 
+							</a>
+						</center>
+					</td> 
+
+					<td></td>
+
+					<td align="justify" valign="top" width="35%">
 						<center>
 							<a href=artikel-siaga_bencana.php>
 								<img src="components/images/article.png" width="200px" height="200px">
