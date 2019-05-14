@@ -226,7 +226,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 													<div class="modal-close-area modal-close-df">
 														<a class="close" data-dismiss="modal" href="#">X</a>
 													</div>
-													<form action="" method="post" autocomplete="off">
+													<form action="" method="post" autocomplete="off" enctype="multipart/form-data">
 														<div class="modal-body">
 
 															<h2>Edit Data <br><?php echo $no_korban-1; ?> </h2>
@@ -340,7 +340,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 																<?php
 																echo "<img src='foto_org_hilang/".$user_data['foto_korban']."'>"
 																?>
-																<input type="file" name="foto" class="form-control" id="exampleInputNoTeleponPelapor">
+																<input type="file" name="foto" class="form-control" id="foto">
 															</div>
 
 															
@@ -366,7 +366,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 													<div class="modal-close-area modal-close-df">
 														<a class="close" data-dismiss="modal" href="#">X</a>
 													</div>
-													<form action="" method="post" autocomplete="off">
+													<form action="" method="post" autocomplete="off" enctype="multipart/form-data">
 														<div class="modal-body">
 															<span class="educate-icon educate-danger modal-check-pro information-icon-pro"></span>
 															<h2>Perhatian!</h2>
@@ -387,7 +387,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 													<div class="modal-close-area modal-close-df">
 														<a class="close" data-dismiss="modal" href="#">X</a>
 													</div>
-													<form action="" method="post" autocomplete="off">
+													<form action="" method="post" autocomplete="off" enctype="multipart/form-data">
 														<div class="modal-body">
 
 															<h2>Tambah Data Orang Hilang</h2>
@@ -505,7 +505,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 																<br>
 																<div class="col-md-12">
 																	<label style="color:white;">Foto</label>
-																	<input type="file" name="foto" class="form-control">
+																	<input type="file" name="foto" id="foto" class="form-control">
 																</div>
 
 																<br>
@@ -704,7 +704,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 															<div class="modal-close-area modal-close-df">
 																<a class="close" data-dismiss="modal" href="#">X</a>
 															</div>
-															<form action="" method="post" autocomplete="off">
+															<form action="" method="post" autocomplete="off" enctype="multipart/form-data">
 																<div class="modal-body">
 
 																	<h2>Edit Data <br><?php echo $no_korban-1; ?> </h2>
@@ -800,7 +800,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 																		<?php
 																		echo "<img src='foto_org_ditemukan/".$user_data['foto_korban']."'>"
 																		?>
-																		<input type="file" name="foto" class="form-control" id="exampleInputNoTeleponPelapor" value="Masukkan Foto">
+																		<input type="file" name="foto" class="form-control" id="foto" value="Masukkan Foto">
 																	</div>
 																	<br>
 																	<div class="col-md-12">
@@ -823,7 +823,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 															<div class="modal-close-area modal-close-df">
 																<a class="close" data-dismiss="modal" href="#">X</a>
 															</div>
-															<form action="" method="post" autocomplete="off">
+															<form action="" method="post" autocomplete="off" enctype="multipart/form-data">
 																<div class="modal-body">
 																	<span class="educate-icon educate-danger modal-check-pro information-icon-pro"></span>
 																	<h2>Perhatian!</h2>
@@ -844,7 +844,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 															<div class="modal-close-area modal-close-df">
 																<a class="close" data-dismiss="modal" href="#">X</a>
 															</div>
-															<form action="" method="post" autocomplete="off">
+															<form action="" method="post" autocomplete="off" enctype="multipart/form-data">
 																<div class="modal-body">
 
 																	<h2>Tambah Data Orang Ditemukan</h2>
@@ -925,7 +925,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 																	<br>
 																	<div class="col-md-12">
 																		<label style="color:white;">Foto</label>
-																		<input type="file" name="foto" class="form-control" id="exampleInputNoTeleponPelapor" placeholder="Masukkan No. Telepon Peapor">
+																		<input type="file" name="foto" class="form-control" id="foto" placeholder="Masukkan No. Telepon Peapor">
 																	</div>
 																</div>
 																<br>
