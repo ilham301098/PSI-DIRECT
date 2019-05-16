@@ -14,6 +14,28 @@
                             </div>
                         </div>
 
+                        <?php
+                        if(isset($_POST['btnEdit'])){
+                            $queryEdt="UPDATE `video` SET `JUDUL`='".$_POST['judul']."',`LINK`='".$_POST['link']."',`SUMBER`='".$_POST['sumber']."' WHERE `ID`='".$_POST['IDVideo']."'";
+                            $edit=mysqli_query($con,$queryEdt);
+                            if($edit){
+                                echo "Berhasil";
+                            }else{
+                                echo "Gagal";
+                            }
+                        }
+                        if(isset($_POST['btnDelete'])){
+                            $queryDel="DELETE FROM `video` WHERE `ID`='".$_POST['IDVideo']."'";
+                            $del=mysqli_query($con,$queryDel);
+                            if($del){
+                                echo "Berhasil";
+                            }else{
+                                echo "Gagal";
+                            }
+                        }
+
+                        ?>
+
                         <div class="col-lg-3">
                             <button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#AddVideoSiaga"><i class="fa fa-plus"></i>&nbsp;Add New</button>
                         </div>
@@ -150,24 +172,37 @@
             <div class="modal-close-area modal-close-df">
                 <a class="close" data-dismiss="modal" href="#">X</a>
             </div>
-            <form action="" method="" autocomplete="off">
+            
+            <form action="" method="post" autocomplete="off">
                 <div class="modal-body">
+                    <?php
+                    require('config/db.php');
+                    if(isset($_POST['btnSubmit'])){
+                        $queryReg="INSERT INTO `video_pemulihan`(`Judul`, `Link`, `Sumber`) VALUES ('".$_POST['judul']."','".$_POST['link']."','".$_POST['sumber']."')";
+                        $inp=mysqli_query($con,$queryReg);
+                        if($inp){
+                            echo '<p align="center">Data Anda Berhasil Tersimpan</p>';
+                        }else{
+                            echo '<p align="center">Terjadi Kesalahan</p>';
+                        }
+                    }
+                    ?>
 
                     <h2>Tambah Video</h2>
 
                     <div class="col-md-12">
                         <label style="color:white;">Judul</label>
-                        <input type="text" class="form-control" name="" placeholder="Judul Video">
+                        <input type="text" class="form-control" name="judul" placeholder="Judul Video">
                     </div>
                     <br>
                     <div class="col-md-12">
                         <label style="color:white;">Link</label>
-                        <input type="text" class="form-control" name="" placeholder="Link Video">
+                        <input type="text" class="form-control" name="link" placeholder="Link Video">
                     </div>
                     <br>
                     <div class="col-md-12">
                         <label style="color:white;">Sumber</label>
-                        <input type="text" class="form-control" name="" placeholder="Sumber Video">
+                        <input type="text" class="form-control" name="sumber" placeholder="Sumber Video">
                     </div>
                     <br>
                     <div class="col-md-12">
@@ -176,7 +211,7 @@
                 </div>
                 <br>
                 <div class="modal-footer footer-modal-admin">
-                    <button type="submit" class="btn btn-md btn-primary">Submit</button>
+                    <button type="submit" name ="btnSubmit" class="btn btn-md btn-primary">Submit</button>
                 </div>
             </form>
         </div>
