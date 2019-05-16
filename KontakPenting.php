@@ -3,6 +3,11 @@
 <?php
 include('front-end/head.php');
 ?>
+<?php
+  // Create database connection
+	require('config/db.php');
+	$darurat= mysqli_query($con, "SELECT * FROM `kontak_penting`");
+?>
 <body class="single-page single-cause">
 	<?php
 	include('front-end/navigation.php');
@@ -50,7 +55,7 @@ include('front-end/head.php');
 						<h2 class="w-100 mt-5 mb-3">Pencarian Wilayah</h2>
 
 						<input type="text" placeholder="Provinsi">
-						<input type="email" placeholder="Kota/Kabupaten">
+						<input type="text" placeholder="Kota/Kabupaten">
 						<input type="text" placeholder="Kategori">
 						<input class="btn gradient-bg mt-5" type="submit" value="CARI">
 
@@ -67,24 +72,15 @@ include('front-end/head.php');
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>1</td>
-											<td>RS. Darmo</td>
-											<td>Jl. Raya Darmo No.90, DR. Soetomo, Tegalsari, Surabaya</td>
-											<td>(031)5676253</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>RSUD.Dr.Sutomo </td>
-											<td> Jl. Mayjen Prof. Dr. Moestopo No.6-8, Airlangga, Gubeng, Surabaya</td>
-											<td>(031)5501078</td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td>UGD RS.Universitas Airlangga </td>
-											<td> Rumah Sakit Universitas Airlangga Jl. Mulyorejo Surabaya, Mulyorejo, Surabaya</td>
-											<td>(031)8208280</td>
-										</tr>
+										<?php
+										while($user_data = mysqli_fetch_array($darurat)) {
+										echo "<tr>";
+										echo "<td>".$user_data['Kode']."</td>";
+										echo "<td>".$user_data['Nama']."</td>";
+										echo "<td>".$user_data['Alamat']."</td>";
+										echo "<td>".$user_data['Nomor Telepon']."</td>";
+										?>
+		
 									</tbody>
 								</table>
 
