@@ -3,11 +3,12 @@
 <?php
 include('front-end/head.php');
 ?>
-<?php
+	<?php
   // Create database connection
 	require('config/db.php');
-	$darurat= mysqli_query($con, "SELECT * FROM `kontak_penting`");
-?>
+	$darurat= mysqli_query($con, "SELECT * FROM `kontak_penting`") or die ('Error');
+	?>
+
 <body class="single-page single-cause">
 	<?php
 	include('front-end/navigation.php');
@@ -72,15 +73,17 @@ include('front-end/head.php');
 										</tr>
 									</thead>
 									<tbody>
+
 										<?php
 										while($user_data = mysqli_fetch_array($darurat)) {
 										echo "<tr>";
 										echo "<td>".$user_data['Kode']."</td>";
 										echo "<td>".$user_data['Nama']."</td>";
 										echo "<td>".$user_data['Alamat']."</td>";
-										echo "<td>".$user_data['Nomor Telepon']."</td>";
+										echo "<td>".$user_data['Nomor_telepon']."</td>";
+									};
 										?>
-		
+
 									</tbody>
 								</table>
 
