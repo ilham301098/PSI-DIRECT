@@ -36,20 +36,21 @@ include('front-end/head.php');
                         <!-- <div class="entry-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. </p>
                         </div> -->
-                    </div>
+                        </div>
                 </a>
-            </div>
+                </div>
 
-            <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                <div class="icon-box">
-                    <figure class="d-flex justify-content-center">
-                        <img src="components/images/donation-gray.png" alt="">
-                        <img src="components/images/donation-white.png" alt="">
-                    </figure>
+                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                    <a href="article-survival.php">
+                    <div class="icon-box">
+                        <figure class="d-flex justify-content-center">
+                            <img src="components/images/donation-gray.png" alt="">
+                            <img src="components/images/donation-white.png" alt="">
+                        </figure>
 
-                    <header class="entry-header">
-                        <h3 class="entry-title">Post-Disaster Survival</h3>
-                    </header>
+                        <header class="entry-header">
+                            <h3 class="entry-title">Post-Disaster Survival</h3>
+                        </header>
 
                         <!-- <div class="entry-content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. </p>
@@ -58,6 +59,7 @@ include('front-end/head.php');
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                    <a href="article-conditions.php">
                     <div class="icon-box">
                         <figure class="d-flex justify-content-center">
                             <img src="components/images/charity-gray.png" alt="">
@@ -74,8 +76,8 @@ include('front-end/head.php');
                     </div>
                 </div>
             </div><!-- .row -->
-        </div>
-    </div>
+        </div><!-- container -->
+    </div><!-- news wrap -->
 
     <?php
     include('front-end/footer.php');
