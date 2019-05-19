@@ -57,6 +57,13 @@
 </li>
 
 <li>
+	<a href="?module=donasi" aria-expanded="false">
+		<i class="fa fa-money-bill"></i>
+		<span class="mini-click-non">&nbsp;Donasi</span>
+	</a>
+</li>
+
+<li>
 	<a href="?module=about" aria-expanded="false">
 		<i class="fa fa-crown"></i>
 		<span class="mini-click-non">&nbsp;About Us</span>
