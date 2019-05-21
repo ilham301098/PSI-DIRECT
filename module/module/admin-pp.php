@@ -167,6 +167,20 @@ echo $output;
 
 </center>
 </div>
+<?php
+if(isset($_POST['delete'])){
+          // sql to delete a record
+    $delete_id = $_POST['delete_id'];
+    $sql = "DELETE FROM pertolongan_pertama WHERE id='$delete_id' ";
+    if ($con->query($sql) === TRUE) {
+      echo '<script>window.location.href="?module=admin-pp"</script>';
+  } else {
+      echo "Error deleting record: " . $con->error;
+  }
+}
+
+      // header("location:index.php?pesan=hapus");
+?>
 
 		</div>
 
