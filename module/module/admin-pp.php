@@ -168,6 +168,21 @@ echo $output;
 </center>
 </div>
 <?php
+if(isset($_POST['edit'])){
+    $edit_id = $_POST['edit_id'];
+    $judul = $_POST['judul'];
+    $isi = $_POST['isi'];
+    $date = date("Y-m-d");
+    $sql = "UPDATE  pertolongan_pertama SET
+    judul='$judul',
+    isi='$isi'
+    WHERE id='$edit_id' ";
+    if ($con->query($sql) === TRUE) {
+      echo '<script>window.location.href="?module=admin-pp"</script>';
+  } else {
+      echo "Error updating record: " . $con->error;
+  }
+}
 if(isset($_POST['delete'])){
           // sql to delete a record
     $delete_id = $_POST['delete_id'];
