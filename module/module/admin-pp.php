@@ -1,32 +1,32 @@
 <div class="breadcome-area">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class="breadcome-list">
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-							<div class="breadcome-heading">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="breadcome-heading">
 
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-							<ul class="breadcome-menu">
-								<li><a href="?module=dashboard">Home</a> <span class="bread-slash">/</span>
-								</li>
-								<li><span class="bread-blod">Dashboard</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <ul class="breadcome-menu">
+                                <li><a href="?module=dashboard">Home</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li><span class="bread-blod">Dashboard</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="analytics-sparkle-area">
-	<div class="container-fluid">
-		<br>
+    <div class="container-fluid">
+        <br>
             <center><h2> Admin Info Pertolongan Pertama <h2></center>
             <div class="breadcome-area">
                 <div class="container-fluid">
@@ -61,6 +61,8 @@ $output = '
     <th width="45%">DESKRIPSI KONTEN</th>
     <th width="10%">Change</th>
     <th width="10%">Remove</th>
+    <th width="10%">Pratinjau</th>
+
 </tr>
 ';
 while($row = mysqli_fetch_array($result))
@@ -72,6 +74,7 @@ while($row = mysqli_fetch_array($result))
       <td>'.$row['isi'].'</td>
       <td><button type="button" name="edit" data-toggle="modal" data-target=".bs-modal-ChangeArticle'.$row["id"].'" class="btn btn-custon-four btn-default"  id="'.$row["id"].'">Edit</button></a></td>
       <td><button type="button" name="delete" data-toggle="modal" data-target=".bs-modal-DeleteArticle'.$row['id'].'" class="btn btn-custon-four btn-default" id="'.$row["id"].'">Delete</button>
+      <td><button type="button" name="Pratinjau" data-toggle="modal" data-target=".bs-modal-PratinjauArticle'.$row['id'].'" class="btn btn-custon-four btn-default" id="'.$row["id"].'">Pratinjau</button>
       </td>
       <!--Delete Item Modal -->
       <div id="delete<?php echo $id; ?>" class="modal fade bs-modal-DeleteArticle'.$row["id"].'" role="dialog">
@@ -131,6 +134,35 @@ while($row = mysqli_fetch_array($result))
 </div>
 </form>
 </div>
+<!--Pratinjau Item Modal -->
+      <div id="Pratinjau<?php echo $id; ?>" class="modal fade bs-modal-PratinjauArticle'.$row["id"].'" role="dialog">
+        <div class="modal-dialog">
+          <form method="post">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Pratinjau</h4>
+
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST">
+                  <input type="hidden" name="Pratinjau" value="'.$row["id"].'">
+                  <div class="alert alert-danger">Judul: <strong>
+                    '.$row['judul'].'</strong>? </div>
+                    <div class="alert alert-danger"></br> <strong>
+                    '.$row['isi'].'</strong>? </div>
+                    <div class="modal-footer">
+                      
+                      <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> OK</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </form>
+</div>
+</div>
+
 </tr>
 ';
 $no++;
@@ -168,36 +200,6 @@ echo $output;
 </center>
 </div>
 <?php
-if(isset($_POST['edit'])){
-    $edit_id = $_POST['edit_id'];
-    $judul = $_POST['judul'];
-    $isi = $_POST['isi'];
-    $date = date("Y-m-d");
-    $sql = "UPDATE  pertolongan_pertama SET
-    judul='$judul',
-    isi='$isi'
-    WHERE id='$edit_id' ";
-    if ($con->query($sql) === TRUE) {
-      echo '<script>window.location.href="?module=admin-pp"</script>';
-  } else {
-      echo "Error updating record: " . $con->error;
-  }
-}
-if(isset($_POST['edit'])){
-    $edit_id = $_POST['edit_id'];
-    $judul = $_POST['judul'];
-    $isi = $_POST['isi'];
-    $date = date("Y-m-d");
-    $sql = "UPDATE  pertolongan_pertama SET
-    judul='$judul',
-    isi='$isi'
-    WHERE id='$edit_id' ";
-    if ($con->query($sql) === TRUE) {
-      echo '<script>window.location.href="?module=admin-pp"</script>';
-  } else {
-      echo "Error updating record: " . $con->error;
-  }
-}
 if(isset($_POST['delete'])){
           // sql to delete a record
     $delete_id = $_POST['delete_id'];
@@ -208,10 +210,25 @@ if(isset($_POST['delete'])){
       echo "Error deleting record: " . $con->error;
   }
 }
-
+if(isset($_POST['edit'])){
+    $edit_id = $_POST['edit_id'];
+    $judul = $_POST['judul'];
+    $isi = $_POST['isi'];
+    $date = date("Y-m-d");
+    $sql = "UPDATE  pertolongan_pertama SET
+    judul='$judul',
+    isi='$isi'
+    WHERE id='$edit_id' ";
+    if ($con->query($sql) === TRUE) {
+      echo '<script>window.location.href="?module=admin-pp"</script>';
+  } else {
+      echo "Error updating record: " . $con->error;
+  }
+}
       // header("location:index.php?pesan=hapus");
 ?>
 
-		</div>
 
-		<br><br>
+        </div>
+
+        <br><br>
