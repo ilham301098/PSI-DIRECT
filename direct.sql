@@ -848,10 +848,10 @@ CREATE TABLE `orang_ditemukan` (
 --
 
 INSERT INTO `orang_ditemukan` (`id`, `nama_korban`, `usia`, `gender`, `nama_pelapor`, `no_telepon_pelapor`, `tanggal_ditemukan`, `lokasi_ditemukan`, `kondisi_korban`, `ciri_ciri_korban`, `foto_korban`, `jenis_bencana`, `status`) VALUES
-(4, 'x', 21, 'Laki-Laki', 'smrht', '2654', '2019-05-16', 'werab', 'Hidup', 'fbew', '1544921154105.png', 'Banjir', 'Terverifikasi'),
-(5, 'q', 13, 'Laki-Laki', 'serhedth', '452344', '2019-05-09', 'srth', 'Hidup', 'cwwd', '1544921086014.png', 'Banjir', 'Terverifikasi'),
-(6, 'w', 21, 'Laki-Laki', 'wegezrg', '24523', '2019-05-17', 'aerge', 'Meninggal Dunia', 'serther', '1544829298981.png', 'Tanah Longsor', 'Belum Diverifikasi'),
-(7, 't', 21, 'Perempuan', 'wedvqwe', '214513', '2019-05-17', 'wq12e', 'Meninggal Dunia', 'qwdvwedv', '1555638837597.jpg', 'Gunung Meletus', 'Terverifikasi');
+(8, 'Marta', 21, 'Perempuan', 'Joko', '0897555033', '2019-05-16', 'Rs.Berkah Abadi', 'Hidup', 'tinggi 170, memakai tas merah', 'default.jpg', 'Banjir', 'Terverifikasi'),
+(9, 'Wahyu', 18, 'Laki-Laki', 'Martini', '0897559003', '2019-05-09', 'Posko xix', 'Hidup', 'tingg 176, memakai topi kuning', 'default.jpg', 'Banjir', 'Terverifikasi'),
+(10, 'Tara', 25, 'Laki-Laki', 'Angel', '0897575883', '2019-05-17', 'Rs.Ranu Juna', 'Meninggal Dunia', 'memakai celana biru, tato di tangan kanan', 'default.jpg', 'Tanah Longsor', 'Belum Diverifikasi'),
+(11, 'Santi', 23, 'Perempuan', 'Pipit', '0897465093', '2019-05-17', 'Rs.Panjang Jiwa', 'Meninggal Dunia', 'memakai baju kuning, celana jeans', 'default.jpg', 'Tsunami', 'Terverifikasi');
 
 -- --------------------------------------------------------
 
@@ -882,11 +882,12 @@ CREATE TABLE `orang_hilang` (
 --
 
 INSERT INTO `orang_hilang` (`id`, `nama_korban`, `no_identitas`, `jenis_kartu_identitas`, `usia`, `gender`, `nama_pelapor`, `no_telepon_pelapor`, `hubungan_pelapor`, `tanggal_hilang`, `jenis_bencana`, `lokasi_terakhir`, `ciri_ciri_korban`, `status`, `foto_korban`) VALUES
-(1, 'aaaaa', '3413563452', 'KTP', 32, 'Laki-Laki', 'dvsvagwsrfw', '346345235', 'Keluarga', '2019-05-14', 'Banjir', 'sdvwsvwgw', 'egwfaqwfqw', 'Terverifikasi', ''),
-(2, 'qqqqqqqqq', '7236572347581365', 'SIM', 45, 'Laki-Laki', 'iqsbcgkibq', '92365497613', 'Keluarga', '2019-05-15', 'Gempa Bumi', 'qs chqaiushc', 'asouchouscnoq', 'Belum Diverifikasi', '1544921086014.png'),
-(3, 'az', '4362231', 'KTP', 13, 'Laki-Laki', 'v2e12w', '1243124', 'Keluarga', '2019-05-04', 'Gempa Bumi', 'qwcwecqw', 'wevw', 'Belum Diverifikasi', '1544921154105.png'),
-(4, 'e', '2346244', 'KTP', 21, 'Laki-Laki', 'tyhjxrfyhr', '35463465', 'Keluarga', '2019-05-16', 'Tanah Longsor', 'wefwefqw', 'sxrtghzrrf', 'Terverifikasi', '1543478644726.png'),
-(5, 'y', '4576457', 'KTP', 23, 'Laki-Laki', 'wedfwe', '245245', 'Teman', '2019-05-16', 'Tanah Longsor', 'xtyjxrfth', 'xrtyjxrth', 'Terverifikasi', '1543478644726.png');
+(6, 'Mawar', '15074313695722584', 'KTP', 32, 'Perempuan', 'Herman', '0838555830', 'Keluarga', '2019-05-14', 'Banjir', 'depan rumah', 'tinggi168cm, kulit sawo matang, rambut merah', 'Terverifikasi', 'default.jpg'),
+(7, 'Tono', '97939695214723887', 'SIM', 45, 'Laki-Laki', 'Ratna', '0898555277', 'Keluarga', '2019-03-15', 'Gempa Bumi', 'alun-alun kota palu', 'tinggi 175cm, rambut gondrong, tato di tangan sebelah kiri', 'Belum Diverifikasi', 'default.jpg'),
+(8, 'Rinda', '66312682236140487', 'KTP', 23, 'Perempuan', 'Tanto', '0878555595', 'Keluarga', '2019-05-04', 'Gempa Bumi', 'gapura gang desa', 'tingg 168, berkacamata', 'Belum Diverifikasi', 'default.jpg'),
+(9, 'Rudi', '02170558460801080', 'KTP', 21, 'Laki-Laki', 'Rino', '0838555021', 'Teman', '2019-05-16', 'Tanah Longsor', 'hutan perkemahan', 'memakai ransel coklat, tinggi 170, memakai topi', 'Terverifikasi', 'default.jpg'),
+(10, 'Yono', '81394510524112677', 'Passport', 27, 'Laki-Laki', 'Tika', '0838555027', 'Teman', '2019-05-16', 'Tanah Longsor', 'bukit permai indah', 'tinggi 172, memakai tas biru, memakai jaket hitam', 'Terverifikasi', 'default.jpg');
+(11, 'Riana', '81394510524556687', 'KTP', 25, 'Perempuan', 'Ronald', '0838585098', 'Teman', '2019-05-16', 'Banjir', 'pinggir sungai brantas', 'tinggi 167, memakai baju biru, memakai celana jeans', 'Belum Diverifikasi', 'default.jpg');
 
 -- --------------------------------------------------------
 
