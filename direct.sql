@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19 Mei 2019 pada 09.03
--- Versi Server: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- Generation Time: May 21, 2019 at 06:19 PM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `artikel_sg`
+-- Table structure for table `artikel_sg`
 --
 
 CREATE TABLE `artikel_sg` (
@@ -38,16 +38,18 @@ CREATE TABLE `artikel_sg` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `artikel_sg`
+-- Dumping data for table `artikel_sg`
 --
 
 INSERT INTO `artikel_sg` (`id`, `judul`, `sumber`, `isi`, `image`, `date`) VALUES
-(31, 'menghadapi bencana angin puting beliung', 'google', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec commodo arcu, non luctus metus. Duis tempus porta pulvinar. Ut gravida erat at imperdiet commodo. Nullam ut facilisis diam, vel dapibus erat. Donec pretium tincidunt faucibus. Pellentesque ac fermentum nibh, sit amet dapibus mi. Praesent metus odio, porttitor ut luctus ut, semper sit amet arcu. Quisque magna massa, suscipit a facilisis faucibus, convallis sit amet nibh. Morbi porttitor enim sem, pellentesque convallis elit luctus a. Suspendisse potenti. Curabitur venenatis blandit est id aliquam.', 'artikel.jpg', '2019-05-12');
+(31, 'menghadapi bencana angin puting beliung', 'google', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec commodo arcu, non luctus metus. Duis tempus porta pulvinar. Ut gravida erat at imperdiet commodo. Nullam ut facilisis diam, vel dapibus erat. Donec pretium tincidunt faucibus. Pellentesque ac fermentum nibh, sit amet dapibus mi. Praesent metus odio, porttitor ut luctus ut, semper sit amet arcu. Quisque magna massa, suscipit a facilisis faucibus, convallis sit amet nibh. Morbi porttitor enim sem, pellentesque convallis elit luctus a. Suspendisse potenti. Curabitur venenatis blandit est id aliquam.', 'artikel.jpg', '2019-05-12'),
+(32, 'Gempa Palu Donggala', 'Detik.com', 'Pukul 17.02 WIB, gempa bermagnitudo 7,4 mengguncang Kota Palu dan Donggala. Pusat gempa ada pada kedalaman 10 km, jaraknya ada di 27 km sebelah timur laut Donggala. Saking kencangnya getaran itu, kursi dan meja orang-orang di Kabupaten Gowa sampai bergetar, padahal Kabupaten Gowa berjarak sekitar 780 km dari Kota Palu. Gara-gara Sesar Palu-Koro yang menggeliat ini, jembatan di dekat Pantai Talise patah. Kubah Masjid Baiturrahman yang berwarna hijau juga ikut roboh. Hotel Roa-roa roboh menimbun orang-orang di dalamnya.  Tsunami datang  Badan Metereologi Klimatologi dan Geofisika (BMKG) mengaktivasi peringatan dini tsunami, status siaga untuk pantai Donggala barat dan waspada untuk Donggala utara, Mamuju, dan Kota Palu bagian barat.  Tsunami setinggi hampir 6 meter dengan kecepatan 800 km/jam menerjang Pantai Talise, ketinggian ombak meraih baliho tinggi dekat pantai. Orang-orang kalang-kabut, jerit kepanikan memekik.', 'palu.jpeg', '2019-05-21'),
+(34, 'Gempa Aceh', 'Detik.com', 'Test Deskripsi', 'palu.jpeg', '2019-05-21');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `donasi`
+-- Table structure for table `donasi`
 --
 
 CREATE TABLE `donasi` (
@@ -62,7 +64,7 @@ CREATE TABLE `donasi` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kontak_penting`
+-- Table structure for table `kontak_penting`
 --
 
 CREATE TABLE `kontak_penting` (
@@ -76,7 +78,7 @@ CREATE TABLE `kontak_penting` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kontak_penting`
+-- Dumping data for table `kontak_penting`
 --
 
 INSERT INTO `kontak_penting` (`Kode`, `Propinsi`, `Kab/Kota`, `Kategori`, `Nama`, `Alamat`, `Nomor_telepon`) VALUES
@@ -822,7 +824,7 @@ INSERT INTO `kontak_penting` (`Kode`, `Propinsi`, `Kab/Kota`, `Kategori`, `Nama`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `orang_ditemukan`
+-- Table structure for table `orang_ditemukan`
 --
 
 CREATE TABLE `orang_ditemukan` (
@@ -842,7 +844,7 @@ CREATE TABLE `orang_ditemukan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `orang_ditemukan`
+-- Dumping data for table `orang_ditemukan`
 --
 
 INSERT INTO `orang_ditemukan` (`id`, `nama_korban`, `usia`, `gender`, `nama_pelapor`, `no_telepon_pelapor`, `tanggal_ditemukan`, `lokasi_ditemukan`, `kondisi_korban`, `ciri_ciri_korban`, `foto_korban`, `jenis_bencana`, `status`) VALUES
@@ -854,7 +856,7 @@ INSERT INTO `orang_ditemukan` (`id`, `nama_korban`, `usia`, `gender`, `nama_pela
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `orang_hilang`
+-- Table structure for table `orang_hilang`
 --
 
 CREATE TABLE `orang_hilang` (
@@ -876,7 +878,7 @@ CREATE TABLE `orang_hilang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `orang_hilang`
+-- Dumping data for table `orang_hilang`
 --
 
 INSERT INTO `orang_hilang` (`id`, `nama_korban`, `no_identitas`, `jenis_kartu_identitas`, `usia`, `gender`, `nama_pelapor`, `no_telepon_pelapor`, `hubungan_pelapor`, `tanggal_hilang`, `jenis_bencana`, `lokasi_terakhir`, `ciri_ciri_korban`, `status`, `foto_korban`) VALUES
@@ -889,7 +891,7 @@ INSERT INTO `orang_hilang` (`id`, `nama_korban`, `no_identitas`, `jenis_kartu_id
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `posts`
+-- Table structure for table `posts`
 --
 
 CREATE TABLE `posts` (
@@ -901,7 +903,7 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `posts`
+-- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`post_id`, `post_content`, `post_date`, `post_topic`, `post_by`) VALUES
@@ -913,7 +915,7 @@ INSERT INTO `posts` (`post_id`, `post_content`, `post_date`, `post_topic`, `post
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `topics`
+-- Table structure for table `topics`
 --
 
 CREATE TABLE `topics` (
@@ -924,7 +926,7 @@ CREATE TABLE `topics` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `topics`
+-- Dumping data for table `topics`
 --
 
 INSERT INTO `topics` (`topic_id`, `topic_subject`, `topic_date`, `topic_by`) VALUES
@@ -935,7 +937,7 @@ INSERT INTO `topics` (`topic_id`, `topic_subject`, `topic_date`, `topic_by`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -950,7 +952,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`ID`, `NAMA`, `ALAMAT`, `PHONE`, `USERNAME`, `PASSWORD`, `ID_ROLE`, `DATE_CREATED`) VALUES
@@ -960,7 +962,7 @@ INSERT INTO `user` (`ID`, `NAMA`, `ALAMAT`, `PHONE`, `USERNAME`, `PASSWORD`, `ID
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -976,7 +978,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `nama`, `user_name`, `user_pass`, `user_email`, `user_level`, `date`, `user_phone`, `alamat`) VALUES
@@ -989,7 +991,7 @@ INSERT INTO `users` (`user_id`, `nama`, `user_name`, `user_pass`, `user_email`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `video`
+-- Table structure for table `video`
 --
 
 CREATE TABLE `video` (
@@ -1004,7 +1006,7 @@ CREATE TABLE `video` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `video`
+-- Dumping data for table `video`
 --
 
 INSERT INTO `video` (`ID`, `JUDUL`, `ISI`, `LINK`, `SUMBER`, `KATEGORI`, `DATE_CREATED`, `CREATED_BY`) VALUES
@@ -1085,58 +1087,68 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT for table `artikel_sg`
 --
 ALTER TABLE `artikel_sg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
 --
 -- AUTO_INCREMENT for table `donasi`
 --
 ALTER TABLE `donasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `kontak_penting`
 --
 ALTER TABLE `kontak_penting`
   MODIFY `Kode` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=738;
+
 --
 -- AUTO_INCREMENT for table `orang_ditemukan`
 --
 ALTER TABLE `orang_ditemukan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `orang_hilang`
 --
 ALTER TABLE `orang_hilang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `post_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
 --
 -- AUTO_INCREMENT for table `topics`
 --
 ALTER TABLE `topics`
   MODIFY `topic_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
 --
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `topics`
+-- Constraints for table `topics`
 --
 ALTER TABLE `topics`
   ADD CONSTRAINT `topics_ibfk_1` FOREIGN KEY (`topic_by`) REFERENCES `users` (`user_id`);

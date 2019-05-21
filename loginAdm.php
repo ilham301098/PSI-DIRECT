@@ -1,5 +1,13 @@
 <?php
 
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<?php
+include('front-end/head.php');
+
+
 require('config/db.php');
 if(isset($_POST['btnLogin'])){
 	$query="SELECT * FROM `user` WHERE `USERNAME`='".$_POST['username']."' AND `PASSWORD`='".md5($_POST['password'])."'";
@@ -21,12 +29,6 @@ if(isset($_POST['btnLogin'])){
 
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<?php
-include('front-end/head.php');
-?>
 <body class="single-page contact-page">
 	<?php
 	include('front-end/navigation.php');
@@ -44,51 +46,10 @@ include('front-end/head.php');
 	<div class="contact-page-wrap">
 		<div class="container">
 			<div class="row">
-				<div class="col-12 col-lg-6">
-					<div class="contact-form" >
-						
-						<h4 align="center">Register</h4>
-						<?php
-						require('config/db.php');
-						if(isset($_POST['btnRegister'])){
-							$queryReg="INSERT INTO `users`(`NAMA`, `ALAMAT`, `PHONE`, `USERNAME`, `PASSWORD`) VALUES ('".$_POST['nama']."','".$_POST['alamat']."','".$_POST['phone']."','".$_POST['usernamereg']."','".md5($_POST['passwordreg'])."')";
-							$inp=mysqli_query($con,$queryReg);
-							if($inp){
-								echo '<p align="center">Data Anda Berhasil Tersimpan</p>';
-							}else{
-								echo '<p align="center">Terjadi Kesalahan</p>';
-							}
-						}
-						?>
-						<form action="" method="post" autocomplete="off">
-							<br>
+				<div class="col-lg-3">
+				</div>
 
-							<div class="row">
-								<div class="col-6 col-3">
-									<input type="text" name="nama" placeholder="Nama Anda">
-								</div>
-								<div class="col-6 col-3">
-									<input type="text" name="phone" placeholder="No. Handphone">
-								</div>
-							</div>
-							<input type="text" name="alamat" placeholder="Alamat">
-							<div class="row">
-								<div class="col-6 col-3">	
-									<input type="text" name="usernamereg" placeholder="Username">
-								</div>
-								<div class="col-6 col-3">
-									<input type="Password" name="passwordreg" placeholder="Password">
-								</div>
-							</div>
-							<span>
-								<input class="btn gradient-bg" name="btnRegister" type="submit" value="Register">
-							</span>
-						</form>
-					</div><!-- .contact-form -->
-
-				</div><!-- .col -->
-
-				<div class="col-12 col-lg-6">
+				<div class="col-lg-6">
 
 					<div class="contact-form">
 						<form action="" method="post" autocomplete="off">
@@ -105,7 +66,8 @@ include('front-end/head.php');
 					</div><!-- .contact-form -->
 
 				</div><!-- .col -->
-
+				<div class="col-lg-3">
+				</div>
 			</div><!-- .row -->
 		</div><!-- .container -->
 	</div>

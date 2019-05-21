@@ -173,7 +173,7 @@ while($row = mysqli_fetch_array($result))
       <td>'.$row['judul'].'</td>
       <td>'.$row['sumber'].'</td>
       <td>'.$row['isi'].'</td>
-      <td><img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'" height="60" width="75" class="img-thumbnail" /></td>
+      <td><img src="components/images/'.$row['image'].'" height="60" width="75" class="img-thumbnail" /></td>
       <td><button type="button" name="edit" data-toggle="modal" data-target=".bs-modal-ChangeArticle'.$row["id"].'" class="btn btn-warning btn-s"  id="'.$row["id"].'">Change</button></a></td>
       <td><button type="button" name="delete" data-toggle="modal" data-target=".bs-modal-DeleteArticle'.$row['id'].'" class="btn btn-danger bt-sm" id="'.$row["id"].'">Remove</button>
       </td>
@@ -226,9 +226,7 @@ while($row = mysqli_fetch_array($result))
             <div class="form-group">
                 <label class="control-label col-sm-2" for="isi">Description:</label>
                 <div class="col-sm-4">
-                  <textarea class="form-control" id="isi" name="isi" placeholder="Description" required style="width: 100%;">
-                    '.$row['isi'].'
-                </textarea>
+                  <textarea class="form-control" id="isi" name="isi" placeholder="Description" required style="width: 100%;">'.$row['isi'].'</textarea>
             </div>
             <label class="control-label col-sm-2" for="image">Image:</label>
             <div class="col-sm-4">

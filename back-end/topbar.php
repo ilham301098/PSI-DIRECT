@@ -33,26 +33,28 @@
 										<li class="nav-item">
 											<a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
 												<img src="components/images/logo.png" alt="" style="width: 40px;height: 30px;background: white;" />
-												<span class="admin-name">Admin Direct</span>
-												<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
-											</a>
-											<ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-												<li>
-													<a href="?module=User">
-														<span class="edu-icon edu-home-admin author-log-ic"></span>
-														My Account
-													</a>
-												</li>										
-												<li>
-													<a href="logout.php">
-														<span class="edu-icon edu-locked author-log-ic"></span>
-														Log Out
-													</a>
-												</li>
-											</ul>
-										</li>
-										
-									</ul>
+												<span class="admin-name">
+													<?php echo $_SESSION['USERNAME']; ?></span>
+													<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
+												</a>
+												<ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+													<li>
+														<a href="?module=User">
+															<span class="edu-icon edu-home-admin author-log-ic"></span>
+															My Account
+														</a>
+													</li>										
+													<li>
+														<a href="logout.php">
+															<span class="edu-icon edu-locked author-log-ic"></span>
+															Log Out
+														</a>
+													</li>
+												</ul>
+											</li>
+											
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -60,23 +62,22 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Mobile Menu start -->
-	<div class="mobile-menu-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<div class="mobile-menu">
-						<nav id="dropdown">
-							<ul class="mobile-menu-nav">
-								<?php include('sidebar.php'); ?>
-							</ul>
-						</nav>
+		<!-- Mobile Menu start -->
+		<div class="mobile-menu-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="mobile-menu">
+							<nav id="dropdown">
+								<ul class="mobile-menu-nav">
+									<?php include('sidebar.php'); ?>
+								</ul>
+							</nav>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- Mobile Menu end -->
+		
 	</div>
-	<!-- Mobile Menu end -->
-	
-</div>

@@ -72,7 +72,7 @@
 				<h1 align="center">Form Tambah Artikel</h1>
 			</div>
 		</div>
-		<form method="POST" enctype="multipart/form-data">
+		<form method="POST" action="" enctype="multipart/form-data">
 			<div class="sparkline12-graph">
 				<div class="input-knob-dial-wrap">
 					<div class="row">
@@ -141,6 +141,7 @@ require('config/db.php');
 if (isset($_POST['upload'])){
 
 	$target = "components/images/".basename($_FILES['image']['name']);
+	move_uploaded_file($_FILES['image']['name'], $target);
 
 	$image = $_FILES['image']['name'];
 	$judul = $_POST['judul'];

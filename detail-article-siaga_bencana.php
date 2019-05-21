@@ -37,7 +37,7 @@ include('front-end/head.php');
                       while ($row = mysqli_fetch_array($result)){
                       $output='
                       <div class="news-content">
-                          <a href="#"><img src="components/images/artikel.jpg" alt=""></a>
+                          <a href="#"><img src="components/images/'.$row["image"].'" alt=""></a>
                           <header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
                               <div class="header-elements">
                                   <div class="posted-date">'.$row["date"].'</div>
