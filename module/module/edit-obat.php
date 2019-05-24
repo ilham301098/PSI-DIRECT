@@ -1,3 +1,8 @@
+<?php
+$id=$_GET['id'];
+require('config/db.php');
+$result=mysqli_fetch_assoc(mysqli_query($con,"SELECT * FROM obat WHERE id_obat ='".$id."'"));
+?>
 <div class="breadcome-area">
 	<div class="container-fluid">
 		<div class="row">
@@ -28,12 +33,13 @@
 <div class="analytics-sparkle-area">
 	<div class="container-fluid">
 		<br>
-        <form>
+        <form id="editobat" method="post" action="?module=admin-obat" enctype="multipart/form-data">
                 <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nama Obat</label>
-                                    <input type="text" class="form-control" name="upload" value="Sanmol" required>
+                                    <input type="text" class="form-control" name="nama_obat" value="<?php echo 
+                                    $result['nama_obat']; ?>" required>
                                 </div>
                             </div>
                         </div>
@@ -42,54 +48,48 @@
                                 <div class="form-group">
                                     
                                     <label>Ubah Gambar</label><br>
-                                    <img src="components/images/sanmol.jpg" width = "180px"><br><br>
-                                    <input type="file" class="form-control" name="upload" required>
+                                    <img src="foto_obat/<?php echo $result['foto_obat']; ?>" width = "180px"><br><br>
+                                    <input type="file" class="form-control" name="foto_obat">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Dosis</label>
-                                    <textarea type="text" class="form-control" name="Nama" required>Diatas 12 tahun : satu tablet 3-4 kali / hari 
-5-12 tahun : setengah tablet 3-4 kali / hari</textarea>
+                                    <label>Dosis Anak</label>
+                                    <textarea type="text" class="form-control" name="dosis_anak" required><?php echo $result['dosis_anak']; ?></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Dosis Dewasa</label>
+                                    <textarea type="text" class="form-control" name="dosis_dewasa" required><?php echo $result['dosis_dewasa']; ?></textarea>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Penyakit</label>
-                                    <textarea class="form-control" type="text" name="Isi"required>Sakit kepala
-Nyeri otot
-Nyeri sendi
-Sakit gigi
-Demam
-Sakit punggung
-Nyeri akibat haid</textarea>
+                                    <textarea class="form-control" type="text" name="penyakit"required><?php echo $result['penyakit']?></textarea>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Bahan Aktif</label>
-                                    <input class="form-control" type="text" name="Isi" value="Paracetamol 500gr"required></input>
+                                    <input class="form-control" type="text" name="bahan_aktif" value="<?php echo $result['bahan_aktif']?>"required></input>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Efek Samping</label>
-                                    <textarea class="form-control" type="text" name="Isi"required>Kehilangan nafsu makan
-Perut nyeri
-Merasa mual
-Urin berwarna gelap
-Kulit kuning
-Timbul alergi, seperti kulit ruam, gatal, dan bengkak
-Sulit bernapas</textarea>
+                                    <textarea class="form-control" type="text" name="efek_samping"required><?php echo $result['efek_samping']?></textarea>
                                 </div>
                             </div>
                         </div>
 
             <div class="col-md-12" align="center">
-                        <button type="submit" class="btn btn-default btn-lg" name="addEvent">Edit</button>
+                        <input type="hidden" name="ID" value="<?php echo $result['id_obat']; ?>">
+                        <button type="submit" class="btn btn-default btn-lg" name="editObat">Edit</button>
                     </div>
         </form>
 			
