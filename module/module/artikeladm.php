@@ -55,6 +55,71 @@
 			</div>
 		</div>
 		<br>
+		<?php
+		require('config/db.php');
+
+		if (isset($_POST['edit'])){
+			$idn=$_POST['idArticle'];
+			$nama = $_FILES['fileEdit']['name'];
+			$judul = $_POST['judul'];
+			$sumber = $_POST['sumber'];
+			$isi = $_POST['isi'];
+
+			if($nama!==""){
+				$x = explode('.', $nama);
+				$ekstensi = strtolower(end($x));
+				$image = $idn.".".$ekstensi;
+				$target = "images/SiagaBencana/".$idn.".".$ekstensi;
+
+				move_uploaded_file($_FILES['fileEdit']['tmp_name'], $target);
+
+				$sql = "UPDATE artikel_sg SET judul='$judul', sumber = '$sumber', isi='$isi', image='$image' WHERE id='$idn'";
+				$result= mysqli_query($con,$sql);
+				
+				if (!$result) {
+					echo '
+					<div class="alert alert-danger alert-dismissible fade in" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+						</button>
+						<strong>Error</strong><br> Edit Artikel Gagal.
+					</div>
+					';
+
+				}else{
+					echo 
+					'
+					<div class="alert alert-success alert-dismissible fade in" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+						</button>
+						<strong>Success</strong><br> Edit Artikel Telah Berhasil.
+					</div>';
+				}
+			}else{
+				$sql = "UPDATE artikel_sg SET judul='$judul', sumber = '$sumber', isi='$isi' WHERE id='$idn'";
+				$result= mysqli_query($con,$sql);
+				if (!$result) {
+					echo '
+					<div class="alert alert-danger alert-dismissible fade in" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+						</button>
+						<strong>Error</strong><br> Edit Artikel Gagal.
+					</div>
+					';
+
+				}else{
+					echo 
+					'
+					<div class="alert alert-success alert-dismissible fade in" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+						</button>
+						<strong>Success</strong><br> Edit Artikel Telah Berhasil.
+					</div>';
+				}
+			}
+			
+		}
+
+		?>
 		<div class="row">
 			<div class="col-md-12">
 				<?php
@@ -73,7 +138,7 @@
 				<table class="table table-bordered table-striped">
 					<tr>
 						<th width="2%">NO</th>
-						<th width="18%">Image</th>
+						<th width="18%">IMAGE</th>
 						<th width="20%">JUDUL</th>
 						<th width="30%">DESKRIPSI KONTEN</th>
 						<th width="10%">SUMBER</th>
@@ -85,13 +150,22 @@
 					<tr>
 						<td><?php echo $no; ?></td>
 						<td>
-							<img src="images/SiagaBencana/<?php echo $row['image']; ?>" height="60" width="100%" class="img-thumbnail" />
+							<a href="?module=dtlArticleSiaga&id=<?php echo $row['id']; ?>"> <img src="images/SiagaBencana/<?php echo $row['image']; ?>" height="60" width="100%" class="img-thumbnail" /></b>
+							</a>
+							
 						</td>
 						<td><?php echo $row['judul']; ?></td>
-						<td><?php echo limit_words($row['isi'],20)."..."; ?></td>
+						<td>
+							<?php 
+							echo limit_words($row['isi'],20);
+							if(str_word_count($row['isi'])>20){
+								echo '<a href="?module=dtlArticleSiaga&id='.$row['id'].'"> <b>[Read More]</b></a>';
+							}
+							?>
+						</td>
 						<td><?php echo $row['sumber']; ?></td>
 						<td align="center">
-							<button type="button" name="edit" data-toggle="modal" data-target=".bs-modal-ChangeArticle<?php echo $row["id"]; ?>" class="btn btn-warning btn-s">Change</button>
+							<a href="?module=editArtikelSiaga&id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-warning btn-s">Change</button></a>
 							&nbsp;&nbsp;&nbsp;
 							<button type="button" name="delete" data-toggle="modal" data-target=".bs-modal-DeleteArticle<?php echo $row['id']; ?>" class="btn btn-danger bt-sm" >Remove</button>
 						</td>
@@ -134,95 +208,86 @@
 											<div class="modal-content">
 												<div class="modal-header">
 													<button type="button" class="close" data-dismiss="modal">&times;</button>
-													<h4 class="modal-title">Edit Artikel</h4>
+													<h4 class="modal-title" align="center">Edit Artikel</h4>
 												</div>
 												<div class="modal-body">
-													<input type="hidden" name="edit_id" value="<?php echo $row["id"]; ?>">
-													<div class="form-group">
-														<label class="control-label col-sm-2" for="judul">Judul:
-														</label>
-														<div class="col-sm-4">
-															<input type="text" class="form-control" id="judul" name="judul" value="<?php echo $row['judul']; ?>" placeholder="Judul" required autofocus> 
+													<form action="" method="post" enctype="multipart/form-data">
+														<div class="row">
+															
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label>Judul Artikel</label>
+																	<input type="text" class="form-control" name="judul" value="<?php echo $row['judul']; ?>" required="">
+																</div>
+																<div class="form-group">
+																	<label>Sumber Artikel</label>
+																	<input type="text" class="form-control" name="sumber" value="<?php echo $row['sumber']; ?>" required="">
+																</div>
+																<div class="form-group">
+																	<label>Foto Cover</label>
+																	<input type="file" id="fileEdit" name="fileEdit" class="form-control" >
+																</div>
+															</div>
+															<div class="col-md-6">
+																<h4 align="center">Preview</h4>
+																<img src="images/SiagaBencana/<?php echo $row['image']; ?>" alt="" width="100%">
+															</div>
+
+															<div class="col-lg-12">
+																<div class="form-group">
+																	<label>Deskripsi Artikel</label>
+																	<textarea class="ckeditor" id="ckeditor" name="isi" required=""><?php echo $row['isi']; ?></textarea>
+																</div>
+															</div>
+
 														</div>
-													</div>
-													<div class="form-group">
-														<label class="control-label col-sm-2" for="sumber">Sumber:</label>
-														<div class="col-sm-4">
-															<input type="text" readonly class="form-control" id="sumber" name="sumber" value="<?php echo $row['sumber']; ?>" placeholder="Sumber" required> 
+
+														<br><br>
+														<div class="row" align="center">
+															<input type="hidden" name="idArticle" value="<?php echo $row['id']; ?>">
+															<button type="submit" button class="btn btn-theme" name="edit">Save</button>
 														</div>
-													</div>
-													<div class="form-group">
-														<label class="control-label col-sm-2" for="isi">Description:</label>
-														<div class="col-sm-4">
-															<textarea class="form-control" id="isi" name="isi" placeholder="Description" required style="width: 100%;"><?php echo $row['isi']; ?></textarea>
-														</div>
-														<label class="control-label col-sm-2" for="image">Image:</label>
-														<div class="col-sm-4">
-															<input type="file" class="form-control" id="image" name="image" value="<?php echo $row['image']; ?>" placeholder="Image" required> </div>
-														</div>
-													</div>
+													</form>
+
 													<div class="modal-footer">
-														<button type="submit" class="btn btn-primary" name="edit">
-															<span class="glyphicon glyphicon-edit"></span> Edit</button>
-															<button type="button" class="btn btn-warning" data-dismiss="modal">
-																<span class="glyphicon glyphicon-remove-circle"></span> Cancel
-															</button>
-														</div>
+														
 													</div>
 												</div>
-											</form>
-										</div>
-									</tr>
-									<?php 
-									$no++;
-								}
+											</div>
+										</form>
+									</div>
+								</tr>
+								<?php 
+								$no++;
+							}
 
-								?>
-							</table>
-							<?php 
-							//Update Items
-							if(isset($_POST['edit'])){
-								$edit_id = $_POST['edit_id'];
-								$image = $_FILES['image']['name'];
-								$judul = $_POST['judul'];
-								$sumber = $_POST['sumber'];
-								$isi = $_POST['isi'];
-								$date = date("Y-m-d");
-								$sql = "UPDATE  artikel_sg SET
-								judul='$judul',
-								sumber = '$sumber',
-								isi='$isi',
-								image='$image'
-								WHERE id='$edit_id' ";
-								if ($con->query($sql) === TRUE) {
-									echo '<script>window.location.href="?module=artikeladm"</script>';
-								} else {
-									echo "Error updating record: " . $con->error;
-								}
-							}
-							if(isset($_POST['delete'])){
+							?>
+						</table>
+						<?php 
+						if(isset($_POST['delete'])){
 				// sql to delete a record
-								$delete_id = $_POST['delete_id'];
-								$sql = "DELETE FROM artikel_sg WHERE id='$delete_id' ";
-								if ($con->query($sql) === TRUE) {
-									echo '<script>window.location.href="?module=artikeladm"</script>';
-								} else {
-									echo "Error deleting record: " . $con->error;
-								}
+							$delete_id = $_POST['delete_id'];
+							$sql = "DELETE FROM artikel_sg WHERE id='$delete_id' ";
+							if ($con->query($sql) === TRUE) {
+								echo '<script>window.location.href="?module=artikeladm"</script>';
+							} else {
+								echo "Error deleting record: " . $con->error;
 							}
+						}
 
 	// header("location:index.php?pesan=hapus");
-							?>
-						</div>
+						?>
 					</div>
-
 				</div>
+
 			</div>
+		</div>
 
+		<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 
-			<?php
-			function limit_words($string, $word_limit){
-				$words = explode(" ",$string);
-				return implode(" ",array_splice($words,0,$word_limit));
-			}
-			?>
+		<?php
+		function limit_words($string, $word_limit){
+			$words = explode(" ",$string);
+			return implode(" ",array_splice($words,0,$word_limit));
+		}
+		?>

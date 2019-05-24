@@ -99,7 +99,6 @@
 					$result= mysqli_query($con,$sql);
 					if ($result){
 						echo '<script>window.location.href="?module=artikeladm"</script>';
-
 					}
 				}
 
@@ -130,14 +129,9 @@
 				
 			</div>
 
-			
-			
-			
 			<br><br>
 			<div class="row" align="center">
-				<input type="hidden" name="id" id="artikel_id" />
 				<button type="submit" button class="btn btn-theme" name="upload">Save</button>
-				<button class="btn btn-theme" type="button">Cancel</button>
 			</div>
 		</form>
 	</div>
