@@ -24,23 +24,63 @@
 	</div>
     <center><h2> Input Pertolongan Pertama </h2></center>
 </div>
+	<form action="" method="post" enctype="multipart/form-data">
+			<div class="row">
+				<?php
+				require('config/db.php');
+				if (isset($_POST['upload'])){
 
-<div class="analytics-sparkle-area">
-	<div class="container-fluid">
-		<br>
-        <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-        <form>
-          <input type="text" name="" placeholder="Judul" style="width: 100%;padding: 10px;"><br><br>
-          <textarea class="ckeditor" id="ckedtor"></textarea><br>
-         </form>
+					$cek=mysqli_fetch_assoc(mysqli_query($con,"SELECT MAX(id)AS MAX FROM pertolongan_pertama"));
+					$idn=$cek['MAX'];
 
-            <div class="col-md-12" align="center">
-                        <button type="submit" class="btn btn-default btn-lg" name="addEvent">Submit</button>
-                    </div>
-        </form>
-			
-		</div>
-    </div>
+					$nama = $_FILES['file']['name'];
+					$x = explode('.', $nama);
+					$ekstensi = strtolower(end($x));
 
-		<br><br>
+					
 
+					move_uploaded_file($_FILES['file']['tmp_name'], $target);
+
+					
+					$judul = $_POST['judul'];
+					
+					$isi = $_POST['isi'];
+				
+
+					$sql = "INSERT INTO pertolongan_pertama (judul,isi) VALUES ('$judul', '$isi')";
+					$result= mysqli_query($con,$sql);
+					if ($result){
+						echo '<script>window.location.href="?module=admin-pp"</script>';
+					}
+				}
+
+				?>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Judul Artikel</label>
+						<input type="text" class="form-control" name="judul" required="">
+					</div>
+					
+				</div>
+				<div class="col-md-6">
+				</div>
+
+				<div class="col-lg-12">
+					<div class="form-group">
+						<label>Deskripsi Artikel</label>
+						<textarea class="ckeditor" id="ckeditor" name="isi" required=""></textarea>
+					</div>
+				</div>
+				
+			</div>
+
+			<br><br>
+			<div class="row" align="center">
+				<button type="submit" button class="btn btn-theme" name="upload">Save</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
