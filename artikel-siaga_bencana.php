@@ -98,7 +98,7 @@ include('front-end/head.php');
 
 										<div class="col-md-4">
 											<div class="post">
-												<a class="post-img" href=""><img src="images/SiagaBencana/'.$row['image'].'" alt="" width="100%" height="150px"></a>
+												<a class="post-img" href="detail-article-siaga_bencana.php?id='.$row['id'].'"><img src="images/SiagaBencana/'.$row['image'].'" alt="" width="100%" height="150px"></a>
 												<div class="post-body">
 													<div class="post-meta">
 														<a class="post-category cat-1" href="">by Admin</a>
