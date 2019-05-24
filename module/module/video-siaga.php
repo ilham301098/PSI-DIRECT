@@ -16,7 +16,23 @@
  									</form>
  								</div>
  							</div>
- 							<?php
+
+ 							<div class="col-lg-3">
+ 							 <button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#AddVideoSiaga"><i class="fa fa-plus"></i>&nbsp;Add New</button>
+ 							</div>
+
+ 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+ 								<ul class="breadcome-menu">
+ 									<i class="fa fa-tachometer-alt"></i>
+ 									<li><a href="?module=dashboard">Home</a> <span class="bread-slash">/</span>
+ 									</li>
+ 									<li><span class="bread-blod">Video - Siaga Bencana</span>
+ 									</li>
+ 								</ul>
+ 							</div>
+ 						</div>
+ 					</div>
+     <?php
  							require('config/db.php');
  							if(isset($_POST['btnAdd'])){
  								$queryAdd="INSERT INTO `video`(`JUDUL`, `LINK`, `SUMBER`, `KATEGORI`, `CREATED_BY`) VALUES ('".$_POST['judul']."','".$_POST['link']."','".$_POST['sumber']."','1','".$_SESSION['IDUSER']."')";
@@ -47,22 +63,6 @@
  							}
 
  							?>
-
- 							<div class="col-lg-3">
- 								<button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#AddVideoSiaga"><i class="fa fa-plus"></i>&nbsp;Add New</button>
- 							</div>
-
- 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
- 								<ul class="breadcome-menu">
- 									<i class="fa fa-tachometer-alt"></i>
- 									<li><a href="?module=dashboard">Home</a> <span class="bread-slash">/</span>
- 									</li>
- 									<li><span class="bread-blod">Video - Siaga Bencana</span>
- 									</li>
- 								</ul>
- 							</div>
- 						</div>
- 					</div>
  				</div>
  			</div>
  		</div>
@@ -98,6 +98,9 @@
  							<h2 align="center"><?php echo $res['JUDUL']; ?></h2>
  						</div>
  						<div align="center">
+ 							<p><?php echo limit_words($res['ISI'],50); ?></p>
+ 						</div>
+ 						<div align="center">
  							<p><span><i class="fa fa-clock"></i></span> <b>Sumber : </b><?php echo $res['SUMBER']; ?></p>
 
  							<button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#EditVideoSiaga<?php echo $res['ID']; ?>"><i class="fa fa-edit"></i>&nbsp;Edit</button>
@@ -126,6 +129,11 @@
  									<div class="col-md-12">
  										<label style="color:white;">Link</label>
  										<input type="text" class="form-control" name="link" value="<?php echo $res['LINK']; ?>" placeholder="Link Video" required="">
+ 									</div>
+ 									<br>
+                  <div class="col-md-12">
+ 										<label style="color:white;">Deskripsi</label>
+ 										<textarea class="form-control" name="isi" placeholder="Deskripsi Video" ><?php echo $res['ISI']; ?></textarea> 
  									</div>
  									<br>
  									<div class="col-md-12">
@@ -195,6 +203,11 @@
  								<input type="text" class="form-control" name="link" placeholder="Link Video" required="">
  							</div>
  							<br>
+              <div class="col-md-12">
+ 								<label style="color:white;">Deskripsi</label>
+ 								<textarea class="form-control" name="isi" placeholder="Deskripsi Video"></textarea> 
+ 							</div>
+ 							<br>
  							<div class="col-md-12">
  								<label style="color:white;">Sumber</label>
  								<input type="text" class="form-control" name="sumber" placeholder="Sumber Video" required="">
@@ -212,3 +225,9 @@
  				</div>
  			</div>
  		</div>
+<?php
+ 		function limit_words($string, $word_limit){
+ 			$words = explode(" ",$string);
+ 			return implode(" ",array_splice($words,0,$word_limit));
+ 		}
+ 		?>
