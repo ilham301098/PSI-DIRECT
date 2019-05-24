@@ -83,7 +83,7 @@
 						</div>
 						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 							<div class="input-mark-inner mg-b-22">
-								<input type="text" class="form-control" name="judul">
+								<input type="text" class="form-control" name="judul" required="">
 							</div>
 						</div>
 					</div>
@@ -95,7 +95,7 @@
 						</div>
 						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 							<div class="input-mark-inner mg-b-22">
-								<input type="text" class="form-control" name="sumber">
+								<input type="text" class="form-control" name="sumber" required="">
 
 							</div>
 						</div>
@@ -108,7 +108,7 @@
 						</div>
 						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 							<div class="input-mark-inner mg-b-22">
-								<input type="text" class="form-control" name="isi">
+								<input type="text" class="form-control" name="isi" required="">
 							</div>
 						</div>
 					</div>
@@ -120,7 +120,7 @@
 						</div>
 						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 							<div class="input-mark-inner mg-b-22">
-								<input type="file" placeholder="" name="image" class="form-control">
+								<input type="file" placeholder="" name="image" class="form-control" required="">
 							</div>
 						</div>
 					</div>
