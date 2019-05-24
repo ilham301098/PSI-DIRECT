@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2019 at 06:19 PM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Generation Time: May 24, 2019 at 10:03 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -824,6 +824,31 @@ INSERT INTO `kontak_penting` (`Kode`, `Propinsi`, `Kab/Kota`, `Kategori`, `Nama`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `obat`
+--
+
+CREATE TABLE `obat` (
+  `id_obat` int(10) NOT NULL,
+  `nama_obat` varchar(255) NOT NULL,
+  `foto_obat` varchar(255) NOT NULL,
+  `dosis_anak` text NOT NULL,
+  `dosis_dewasa` text NOT NULL,
+  `penyakit` text NOT NULL,
+  `bahan_aktif` text NOT NULL,
+  `efek_samping` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `obat`
+--
+
+INSERT INTO `obat` (`id_obat`, `nama_obat`, `foto_obat`, `dosis_anak`, `dosis_dewasa`, `penyakit`, `bahan_aktif`, `efek_samping`) VALUES
+(2, 'Panadol Flu & Batuk', 'panadol flu.jpg', 'Jangan diberikan kepada anak-anak di bawah umur 12 tahun, kecuali atas petunjuk dokter.', '1 tablet 4-6 kali sehari, maksimum 8 tablet per hari.', 'Meredakan demam, sakit kepala, hidung tersumbat, bersin-bersin, batuk tidak berdahak, nyeri otot, dan nyeri tenggorokan akibat flu.', 'Tiap tablet Panadol Flu & Batuk mengandung 500 mg paracetamol, 5 mg phenylephrine HCl, dan 15 mg.', 'Dapat meningkatkan kerja obat antihistamin dan efeknya terhadap otak. Dapat meningkatkan efek toksisitas obat jika digunakan bersama dengan fluoxetine, paroxetine, quinidine, atau terbinafine. Dapat mengakibatkan hipertensi jika digunakan bersama dengan propranolol. Dapat menyempitkan pembuluh darah jika digunakan bersama dengan metildopa dan antidepresan trisiklik.'),
+(3, 'Sanmol Tablet', 'SANMOL TABLET.jpg', '1 - 2 kaplet, 3 sampai 4 kali per hari. Penggunaan maximum 8 kaplet per hari.', 'Anak (7 - 12 tahun): 0.5 - 1 kaplet, 3 sampai 4 kali per hari. Penggunaan maximum 4 kaplet per hari.', 'Meredakan nyeri seperti sakit kepala, sakit gigi, dan demam.', 'Paracetamol 500 mg', 'Parasetamol jangan diberikan kepada penderita hipersensitif/alergi terhadap Paracetamol.Penderita gangguan fungsi hati berat.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `orang_ditemukan`
 --
 
@@ -887,7 +912,6 @@ INSERT INTO `orang_hilang` (`id`, `nama_korban`, `no_identitas`, `jenis_kartu_id
 (8, 'Rinda', '66312682236140487', 'KTP', 23, 'Perempuan', 'Tanto', '0878555595', 'Keluarga', '2019-05-04', 'Gempa Bumi', 'gapura gang desa', 'tingg 168, berkacamata', 'Belum Diverifikasi', 'default.jpg'),
 (9, 'Rudi', '02170558460801080', 'KTP', 21, 'Laki-Laki', 'Rino', '0838555021', 'Teman', '2019-05-16', 'Tanah Longsor', 'hutan perkemahan', 'memakai ransel coklat, tinggi 170, memakai topi', 'Terverifikasi', 'default.jpg'),
 (10, 'Yono', '81394510524112677', 'Passport', 27, 'Laki-Laki', 'Tika', '0838555027', 'Teman', '2019-05-16', 'Tanah Longsor', 'bukit permai indah', 'tinggi 172, memakai tas biru, memakai jaket hitam', 'Terverifikasi', 'default.jpg');
-(11, 'Riana', '81394510524556687', 'KTP', 25, 'Perempuan', 'Ronald', '0838585098', 'Teman', '2019-05-16', 'Banjir', 'pinggir sungai brantas', 'tinggi 167, memakai baju biru, memakai celana jeans', 'Belum Diverifikasi', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -1038,6 +1062,12 @@ ALTER TABLE `kontak_penting`
   ADD PRIMARY KEY (`Kode`);
 
 --
+-- Indexes for table `obat`
+--
+ALTER TABLE `obat`
+  ADD PRIMARY KEY (`id_obat`);
+
+--
 -- Indexes for table `orang_ditemukan`
 --
 ALTER TABLE `orang_ditemukan`
@@ -1103,16 +1133,22 @@ ALTER TABLE `kontak_penting`
   MODIFY `Kode` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=738;
 
 --
+-- AUTO_INCREMENT for table `obat`
+--
+ALTER TABLE `obat`
+  MODIFY `id_obat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `orang_ditemukan`
 --
 ALTER TABLE `orang_ditemukan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `orang_hilang`
 --
 ALTER TABLE `orang_hilang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `posts`
