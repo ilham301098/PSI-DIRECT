@@ -21,7 +21,37 @@ include('front-end/head.php');
     <div id=tabel-obat>
     <center><img src="components/images/info-obat-button.jpg" width = "300px" ><h1>Informasi Obat<h1></center><br>
     <center>
-    <table border="1">
+    <div id="search "class="search-widget" >
+        <form class="flex flex-wrap align-items-center" method="post" action="info-obat.php">
+                <input type="search" name="search" placeholder="Search...">
+                <button type="submit" class="flex justify-content-center align-items-center"><i class="fa fa-search"></i></button>
+        </form><!-- .flex -->
+    </div><!-- .search-widget -->
+    </center>
+    <br>
+
+    <?php
+    if(isset($_POST['search'])==false){
+      $con = mysqli_connect("localhost","root","","direct");
+      $halaman = 5;
+      $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
+      $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
+      $query = mysqli_query($con,"SELECT * FROM obat");
+      $total = mysqli_num_rows($query);
+      $pages = ceil($total/$halaman);            
+      $result = mysqli_query($con,"SELECT * FROM obat LIMIT $mulai, $halaman")or die(mysql_error);
+      $no =$mulai+1;
+
+    if(!$result)
+            {
+                echo 'Maaf obat belum bisa ditampilkan, cobalah sesaat lagi!' . mysqli_error($con);
+            }
+            else{
+
+    echo '<div id=tabel-obat>
+    <center>
+    <table class="table">
+    <thead>
     <tr>
         <td width ="40px" align = "center">No</td>
         <td width ="150px" align = "center">Nama</td>
@@ -31,32 +61,89 @@ include('front-end/head.php');
         <td width ="150px" align = "center">Bahan Aktif</td>
         <td width ="250px" align = "center">Efek Samping</td>
     </tr>
+    </thead>';
+
+    $i=0;
+    while($row = mysqli_fetch_assoc($result)){
+    $i=$i+1;
+    echo '<tbody> <tr>
+        <td width ="40px" align = "center"> '.$i.'</td>
+        <td width ="150px" align = "center">'.$row['nama_obat'].'</td>
+        <td width ="200px" align = "center"><img src="foto_obat/'.$row['foto_obat'].'" width = "180px"></td>
+        <td align = "left" width ="150px"><ul><li>'.$row['dosis_dewasa'].'</li>
+        <li>'.$row['dosis_anak'].'</li></ul></td>
+        <td width ="150px" align = "center">'.$row['penyakit'].'</td>
+        <td width ="150px" align = "center">'.$row['bahan_aktif'].'</td>
+        <td width ="200px" align = "center" >'.$row['efek_samping'].'</td></font>
+    </tr> </tbody>';
+    }
+    echo '</table>';
+    echo '<center><h3>';
+    for ($i=1; $i<=$pages ; $i++){
+      echo '<a href="?halaman='.$i.'">'.$i.'</a>';
+        echo ' ';}
+    echo '</center></h3>';
+}
+}
+
+    if(isset($_POST['search'])){
+    $cari = $_POST['search'];
+    $con = mysqli_connect("localhost","root","","direct");
+      $halaman = 5;
+      $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
+      $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
+      $sql = "(SELECT * FROM obat WHERE nama_obat LIKE '%".$cari."%') UNION (SELECT * FROM obat WHERE  PENYAKIT LIKE '%".$cari."%') UNION (SELECT * FROM obat WHERE bahan_aktif LIKE '%".$cari."%') ";
+      $query = mysqli_query($con,$sql);
+      $total = mysqli_num_rows($query);
+      $pages = ceil($total/$halaman);            
+      $result = mysqli_query($con,"(SELECT * FROM obat WHERE nama_obat LIKE '%".$cari."%') UNION (SELECT * FROM obat WHERE  PENYAKIT LIKE '%".$cari."%') UNION (SELECT * FROM obat WHERE bahan_aktif LIKE '%".$cari."%') LIMIT $mulai, $halaman")or die(mysql_error);
+      $no =$mulai+1;
+
+    if(!$result)
+            {
+                echo 'Maaf obat belum bisa ditampilkan, cobalah sesaat lagi!' . mysqli_error($con);
+            }
+            else{
+
+    echo '<div id=tabel-obat>
+    <center>
+    <table class="table">
+    <thead>
     <tr>
-        <td width ="40px" align = "center">1</td>
-        <td width ="150px" align = "center">Sanmol Tablet</td>
-         <td width ="200px" align = "center"><img src="components/images/sanmol.jpg" width = "180px"></td>
-        <td align = "left" width ="150px"><ul><li>Diatas 12 tahun : satu tablet 3-4 kali / hari</li>
-        <li>5-12 tahun : setengah tablet 3-4 kali / hari</li></ul></td>
-        <td width ="150px" >Sakit kepala<br>Nyeri otot<br>Nyeri sendi<br>Sakit gigi<br>Demam<br>Sakit punggung<br>Nyeri akibat haid</td>
-        <td width ="150px" align = "center">Paracetamol <br> 500 mg</td>
-        <td width ="200px" >Kehilangan nafsu makan<br>
-        Perut nyeri<br>
-        Merasa mual<br>
-        Urin berwarna gelap<br>
-        Kulit kuning<br>
-        Timbul alergi, seperti kulit ruam, gatal, dan bengkak<br>
-        Sulit bernapas</td>
+        <td width ="40px" align = "center">No</td>
+        <td width ="150px" align = "center">Nama</td>
+         <td width ="200px" align = "center">Gambar</td>
+        <td width ="200px" align = "center">Dosis</td>
+        <td width ="150px" align = "center">Penyakit</td>
+        <td width ="150px" align = "center">Bahan Aktif</td>
+        <td width ="250px" align = "center">Efek Samping</td>
     </tr>
-    <tr>
-        
-    </tr>
-    <tr>
-       
-    </tr>
-</table>
-<br>
-<a href="#" class="previous">&laquo; Previous </a>
-<a href="#" class="next">Next &raquo;</a>
+    </thead>';
+
+    $i=0;
+    while($row = mysqli_fetch_assoc($result)){
+    $i=$i+1;
+    echo '<tbody> <tr>
+        <td width ="40px" align = "center"> '.$i.'</td>
+        <td width ="150px" align = "center">'.$row['nama_obat'].'</td>
+        <td width ="200px" align = "center"><img src="foto_obat/'.$row['foto_obat'].'" width = "180px"></td>
+        <td align = "left" width ="150px"><ul><li>'.$row['dosis_dewasa'].'</li>
+        <li>'.$row['dosis_anak'].'</li></ul></td>
+        <td width ="150px" align = "center">'.$row['penyakit'].'</td>
+        <td width ="150px" align = "center">'.$row['bahan_aktif'].'</td>
+        <td width ="200px" align = "center" >'.$row['efek_samping'].'</td></font>
+    </tr> </tbody>';
+    }
+    echo '</table>';
+        echo '<center><h3>';
+    for ($i=1; $i<=$pages ; $i++){
+      echo '<a href="?halaman='.$i.'">'.$i.'</a>';
+        echo ' ';}
+    echo '</center></h3>';
+    
+}
+}
+?>
 
 </center>
 </div>

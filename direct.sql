@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2019 at 06:19 PM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Generation Time: May 24, 2019 at 10:03 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -824,6 +824,31 @@ INSERT INTO `kontak_penting` (`Kode`, `Propinsi`, `Kab/Kota`, `Kategori`, `Nama`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `obat`
+--
+
+CREATE TABLE `obat` (
+  `id_obat` int(10) NOT NULL,
+  `nama_obat` varchar(255) NOT NULL,
+  `foto_obat` varchar(255) NOT NULL,
+  `dosis_anak` text NOT NULL,
+  `dosis_dewasa` text NOT NULL,
+  `penyakit` text NOT NULL,
+  `bahan_aktif` text NOT NULL,
+  `efek_samping` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `obat`
+--
+
+INSERT INTO `obat` (`id_obat`, `nama_obat`, `foto_obat`, `dosis_anak`, `dosis_dewasa`, `penyakit`, `bahan_aktif`, `efek_samping`) VALUES
+(2, 'Panadol Flu & Batuk', 'panadol flu.jpg', 'Jangan diberikan kepada anak-anak di bawah umur 12 tahun, kecuali atas petunjuk dokter.', '1 tablet 4-6 kali sehari, maksimum 8 tablet per hari.', 'Meredakan demam, sakit kepala, hidung tersumbat, bersin-bersin, batuk tidak berdahak, nyeri otot, dan nyeri tenggorokan akibat flu.', 'Tiap tablet Panadol Flu & Batuk mengandung 500 mg paracetamol, 5 mg phenylephrine HCl, dan 15 mg.', 'Dapat meningkatkan kerja obat antihistamin dan efeknya terhadap otak. Dapat meningkatkan efek toksisitas obat jika digunakan bersama dengan fluoxetine, paroxetine, quinidine, atau terbinafine. Dapat mengakibatkan hipertensi jika digunakan bersama dengan propranolol. Dapat menyempitkan pembuluh darah jika digunakan bersama dengan metildopa dan antidepresan trisiklik.'),
+(3, 'Sanmol Tablet', 'SANMOL TABLET.jpg', '1 - 2 kaplet, 3 sampai 4 kali per hari. Penggunaan maximum 8 kaplet per hari.', 'Anak (7 - 12 tahun): 0.5 - 1 kaplet, 3 sampai 4 kali per hari. Penggunaan maximum 4 kaplet per hari.', 'Meredakan nyeri seperti sakit kepala, sakit gigi, dan demam.', 'Paracetamol 500 mg', 'Parasetamol jangan diberikan kepada penderita hipersensitif/alergi terhadap Paracetamol.Penderita gangguan fungsi hati berat.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `orang_ditemukan`
 --
 
@@ -848,10 +873,10 @@ CREATE TABLE `orang_ditemukan` (
 --
 
 INSERT INTO `orang_ditemukan` (`id`, `nama_korban`, `usia`, `gender`, `nama_pelapor`, `no_telepon_pelapor`, `tanggal_ditemukan`, `lokasi_ditemukan`, `kondisi_korban`, `ciri_ciri_korban`, `foto_korban`, `jenis_bencana`, `status`) VALUES
-(4, 'x', 21, 'Laki-Laki', 'smrht', '2654', '2019-05-16', 'werab', 'Hidup', 'fbew', '1544921154105.png', 'Banjir', 'Terverifikasi'),
-(5, 'q', 13, 'Laki-Laki', 'serhedth', '452344', '2019-05-09', 'srth', 'Hidup', 'cwwd', '1544921086014.png', 'Banjir', 'Terverifikasi'),
-(6, 'w', 21, 'Laki-Laki', 'wegezrg', '24523', '2019-05-17', 'aerge', 'Meninggal Dunia', 'serther', '1544829298981.png', 'Tanah Longsor', 'Belum Diverifikasi'),
-(7, 't', 21, 'Perempuan', 'wedvqwe', '214513', '2019-05-17', 'wq12e', 'Meninggal Dunia', 'qwdvwedv', '1555638837597.jpg', 'Gunung Meletus', 'Terverifikasi');
+(8, 'Marta', 21, 'Perempuan', 'Joko', '0897555033', '2019-05-16', 'Rs.Berkah Abadi', 'Hidup', 'tinggi 170, memakai tas merah', 'default.jpg', 'Banjir', 'Terverifikasi'),
+(9, 'Wahyu', 18, 'Laki-Laki', 'Martini', '0897559003', '2019-05-09', 'Posko xix', 'Hidup', 'tingg 176, memakai topi kuning', 'default.jpg', 'Banjir', 'Terverifikasi'),
+(10, 'Tara', 25, 'Laki-Laki', 'Angel', '0897575883', '2019-05-17', 'Rs.Ranu Juna', 'Meninggal Dunia', 'memakai celana biru, tato di tangan kanan', 'default.jpg', 'Tanah Longsor', 'Belum Diverifikasi'),
+(11, 'Santi', 23, 'Perempuan', 'Pipit', '0897465093', '2019-05-17', 'Rs.Panjang Jiwa', 'Meninggal Dunia', 'memakai baju kuning, celana jeans', 'default.jpg', 'Tsunami', 'Terverifikasi');
 
 -- --------------------------------------------------------
 
@@ -882,11 +907,11 @@ CREATE TABLE `orang_hilang` (
 --
 
 INSERT INTO `orang_hilang` (`id`, `nama_korban`, `no_identitas`, `jenis_kartu_identitas`, `usia`, `gender`, `nama_pelapor`, `no_telepon_pelapor`, `hubungan_pelapor`, `tanggal_hilang`, `jenis_bencana`, `lokasi_terakhir`, `ciri_ciri_korban`, `status`, `foto_korban`) VALUES
-(1, 'aaaaa', '3413563452', 'KTP', 32, 'Laki-Laki', 'dvsvagwsrfw', '346345235', 'Keluarga', '2019-05-14', 'Banjir', 'sdvwsvwgw', 'egwfaqwfqw', 'Terverifikasi', ''),
-(2, 'qqqqqqqqq', '7236572347581365', 'SIM', 45, 'Laki-Laki', 'iqsbcgkibq', '92365497613', 'Keluarga', '2019-05-15', 'Gempa Bumi', 'qs chqaiushc', 'asouchouscnoq', 'Belum Diverifikasi', '1544921086014.png'),
-(3, 'az', '4362231', 'KTP', 13, 'Laki-Laki', 'v2e12w', '1243124', 'Keluarga', '2019-05-04', 'Gempa Bumi', 'qwcwecqw', 'wevw', 'Belum Diverifikasi', '1544921154105.png'),
-(4, 'e', '2346244', 'KTP', 21, 'Laki-Laki', 'tyhjxrfyhr', '35463465', 'Keluarga', '2019-05-16', 'Tanah Longsor', 'wefwefqw', 'sxrtghzrrf', 'Terverifikasi', '1543478644726.png'),
-(5, 'y', '4576457', 'KTP', 23, 'Laki-Laki', 'wedfwe', '245245', 'Teman', '2019-05-16', 'Tanah Longsor', 'xtyjxrfth', 'xrtyjxrth', 'Terverifikasi', '1543478644726.png');
+(6, 'Mawar', '15074313695722584', 'KTP', 32, 'Perempuan', 'Herman', '0838555830', 'Keluarga', '2019-05-14', 'Banjir', 'depan rumah', 'tinggi168cm, kulit sawo matang, rambut merah', 'Terverifikasi', 'default.jpg'),
+(7, 'Tono', '97939695214723887', 'SIM', 45, 'Laki-Laki', 'Ratna', '0898555277', 'Keluarga', '2019-03-15', 'Gempa Bumi', 'alun-alun kota palu', 'tinggi 175cm, rambut gondrong, tato di tangan sebelah kiri', 'Belum Diverifikasi', 'default.jpg'),
+(8, 'Rinda', '66312682236140487', 'KTP', 23, 'Perempuan', 'Tanto', '0878555595', 'Keluarga', '2019-05-04', 'Gempa Bumi', 'gapura gang desa', 'tingg 168, berkacamata', 'Belum Diverifikasi', 'default.jpg'),
+(9, 'Rudi', '02170558460801080', 'KTP', 21, 'Laki-Laki', 'Rino', '0838555021', 'Teman', '2019-05-16', 'Tanah Longsor', 'hutan perkemahan', 'memakai ransel coklat, tinggi 170, memakai topi', 'Terverifikasi', 'default.jpg'),
+(10, 'Yono', '81394510524112677', 'Passport', 27, 'Laki-Laki', 'Tika', '0838555027', 'Teman', '2019-05-16', 'Tanah Longsor', 'bukit permai indah', 'tinggi 172, memakai tas biru, memakai jaket hitam', 'Terverifikasi', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -1037,6 +1062,12 @@ ALTER TABLE `kontak_penting`
   ADD PRIMARY KEY (`Kode`);
 
 --
+-- Indexes for table `obat`
+--
+ALTER TABLE `obat`
+  ADD PRIMARY KEY (`id_obat`);
+
+--
 -- Indexes for table `orang_ditemukan`
 --
 ALTER TABLE `orang_ditemukan`
@@ -1102,16 +1133,22 @@ ALTER TABLE `kontak_penting`
   MODIFY `Kode` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=738;
 
 --
+-- AUTO_INCREMENT for table `obat`
+--
+ALTER TABLE `obat`
+  MODIFY `id_obat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `orang_ditemukan`
 --
 ALTER TABLE `orang_ditemukan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `orang_hilang`
 --
 ALTER TABLE `orang_hilang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `posts`
