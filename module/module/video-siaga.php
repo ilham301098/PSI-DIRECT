@@ -32,34 +32,76 @@
  							</div>
  						</div>
  					</div>
-     <?php
+    <?php
  							require('config/db.php');
  							if(isset($_POST['btnAdd'])){
- 								$queryAdd="INSERT INTO `video`(`JUDUL`, `LINK`, `SUMBER`, `KATEGORI`, `CREATED_BY`) VALUES ('".$_POST['judul']."','".$_POST['link']."','".$_POST['sumber']."','1','".$_SESSION['IDUSER']."')";
+ 								$queryAdd="INSERT INTO `video`(`JUDUL`, `LINK`,`ISI`, `SUMBER`, `KATEGORI`, `CREATED_BY`) VALUES ('".$_POST['judul']."','".$_POST['link']."','".$_POST['isi']."','".$_POST['sumber']."','1','".$_SESSION['IDUSER']."')";
  								$add=mysqli_query($con,$queryAdd);
- 								if($add){
- 									echo "Berhasil";
+ 								if (!$add) {
+ 									echo '
+ 									<div class="alert alert-danger alert-dismissible fade in" role="alert">
+ 									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+ 									</button>
+ 									<strong>Error</strong><br> Penambahan Video Siaga Bencana Gagal.
+ 									</div>
+ 									';
+
  								}else{
- 									echo "Gagal";
+ 									echo 
+ 									'
+ 									<div class="alert alert-success alert-dismissible fade in" role="alert">
+ 									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+ 									</button>
+ 									<strong>Success</strong><br> Penambahan Video Siaga Bencana Telah Berhasil.
+ 									</div>';
  								}
+ 								
  							}
  							if(isset($_POST['btnEdit'])){
- 								$queryEdt="UPDATE `video` SET `JUDUL`='".$_POST['judul']."',`LINK`='".$_POST['link']."',`SUMBER`='".$_POST['sumber']."' WHERE `ID`='".$_POST['IDVideo']."'";
+ 								$queryEdt="UPDATE `video` SET `JUDUL`='".$_POST['judul']."',`LINK`='".$_POST['link']."',`ISI`='".$_POST['isi']."',`SUMBER`='".$_POST['sumber']."' WHERE `ID`='".$_POST['IDVideo']."'";
  								$edit=mysqli_query($con,$queryEdt);
- 								if($edit){
- 									echo "Berhasil";
+ 								if (!$edit) {
+ 									echo '
+ 									<div class="alert alert-danger alert-dismissible fade in" role="alert">
+ 									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+ 									</button>
+ 									<strong>Error</strong><br> Edit Video Siaga Bencana Gagal.
+ 									</div>
+ 									';
+
  								}else{
- 									echo "Gagal";
+ 									echo 
+ 									'
+ 									<div class="alert alert-success alert-dismissible fade in" role="alert">
+ 									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+ 									</button>
+ 									<strong>Success</strong><br> Edit Video Siaga Bencana Telah Berhasil.
+ 									</div>';
  								}
+ 								
  							}
  							if(isset($_POST['btnDelete'])){
  								$queryDel="DELETE FROM `video` WHERE `ID`='".$_POST['IDVideo']."'";
  								$del=mysqli_query($con,$queryDel);
- 								if($del){
- 									echo "Berhasil";
+ 								if (!$del) {
+ 									echo '
+ 									<div class="alert alert-danger alert-dismissible fade in" role="alert">
+ 									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+ 									</button>
+ 									<strong>Error</strong><br> Hapus Video Siaga Bencana Gagal.
+ 									</div>
+ 									';
+
  								}else{
- 									echo "Gagal";
+ 									echo 
+ 									'
+ 									<div class="alert alert-success alert-dismissible fade in" role="alert">
+ 									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+ 									</button>
+ 									<strong>Success</strong><br> Hapus Video Siaga Bencana Telah Berhasil.
+ 									</div>';
  								}
+ 								
  							}
 
  							?>
