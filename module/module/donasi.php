@@ -137,7 +137,7 @@ $donasi = mysqli_query($con, "SELECT * FROM donasi");
 																<label style="color:white;">Status</label>
 																<select name="status" id="exampleInputStatus" class="form-control">
 																	<option value="<?php echo $user_data['status'] ?>" hidden><?php echo $user_data['status'] ?></option>
-																	<option>Terverifikasi</option>
+																	<option>Terverfikasi</option>
 																	<option>Belum Terverifikasi</option>
 																</select>
 															</div>
