@@ -95,7 +95,6 @@ $donasi = mysqli_query($con, "SELECT * FROM donasi");
 										<th>ID User</th>
 										<th>Donasi</th>
 										<th>Tanggal Donasi</th>
-										<th>Bukti</th>
 										<th>Status</th>
 										<th>Button</th>
 									</tr>
@@ -109,8 +108,7 @@ $donasi = mysqli_query($con, "SELECT * FROM donasi");
 										echo "<td>".$user_data['id']."</td>";
 										echo "<td>".$user_data['id_user']."</td>";
 										echo "<td>".$user_data['donasi']."</td>"; 
-										echo "<td>".$user_data['tanggal']."</td>";      
-										echo "<td>".$user_data['bukti_transfer']."</td>"; 
+										echo "<td>".$user_data['tanggal']."</td>"; 
 										echo "<td>".$user_data['status']."</td>";    
 										echo "<td><button type='button' class='btn btn-md btn-primary' data-toggle='modal' data-target='#EditDataHilang".$user_data['id']."'><i class='fa fa-edit'></i>&nbsp;Edit</button>";
 										echo "<td><button type='button' class='btn btn-md btn-danger' data-toggle='modal' data-target='#DeleteDataHilang".$user_data['id']."'><i class='fa fa-trash-alt'></i>&nbsp;Delete</button>";

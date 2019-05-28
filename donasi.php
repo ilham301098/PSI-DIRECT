@@ -19,12 +19,11 @@ require('config/db.php');
     if (isset($_POST['kirim'])) {
     // Get data
         $donasi=$_POST['nominal'] + $random;
-        $time = date("Y-m-d h:i:sa", $d);
         $status="Belum Terverifikasi";
         $id = $_SESSION['user_id'];
           
-      $sql = "INSERT INTO donasi (id_user, donasi, tanggal, status) 
-      VALUES ('$id','$donasi','$time','$status')";
+      $sql = "INSERT INTO donasi (id_user, donasi, status) 
+      VALUES ('$id','$donasi','$status')";
     // execute query
     mysqli_query($con, $sql);
     }
@@ -92,6 +91,7 @@ require('config/db.php');
                                 a=Number("<?= $random ?>");
                                 b=Number(document.getElementById("user_input").value);
                                 c=a+b
+                                ("<? $donasi ?>") =c
                                window.alert("Donasi yang harus ditransfer adalah " +c +". Harap perhatikan nominal yang harus di transfer");
                            }
                         </script>
