@@ -1,4 +1,7 @@
 <?php
+  error_reporting(E_ALL ^ E_NOTICE);
+?>
+<?php
   // Create database connection
   require('config/db.php');
   // Initialize message variable
@@ -20,6 +23,9 @@
 	  $kondisi = $_POST['kondisi_korban'];
 	  $status = "Belum Diverifikasi";
   	
+  	if (move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
+  		$foto = "default.jpg";
+	  }
   	// image file directory
 	  $target = "foto_org_ditemukan/".basename($foto);
 	  
@@ -27,14 +33,28 @@
 	   jenis_bencana, nama_pelapor, no_telepon_pelapor, kondisi_korban, foto_korban, status) 
 	  VALUES ('$nama', '$usia', '$gender', '$ciri', '$lokasi_ditemukan', '$tgl_ditemukan', '$jenis_bencana',
 	   '$nama_pelapor', '$no_telp_pelapor', '$kondisi', '$foto', '$status')";
-  	// execute query
-  	mysqli_query($con, $sql);
 
-  	if (move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
-  		$msg = "Image uploaded successfully";
-  	}else{
-  		$msg = "Failed to upload image";
-	  }
+
+  	// execute query
+  	$addDitemukan = mysqli_query($con, $sql);
+  	if($addDitemukan){
+		echo '
+		<div class="alert alert-success alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+			</button>
+			<strong>Error</strong><br> Data berhasil ditambahkan. Mohon tunggu verifikasi dari admin.
+		</div>
+		';
+		}else{
+		echo '
+		<div class="alert alert-danger alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+			</button>
+			<strong>Error</strong><br> Data gagal ditambahkan.
+		</div>
+		';
+	}
+
 
   }
   $result = mysqli_query($con, "SELECT * FROM orang_ditemukan");
@@ -64,7 +84,7 @@ include('front-end/head.php');
 		<form action="orang_ditemukan-pencarian.php" method="POST" enctype="multipart/form-data">
   			<input type="hidden" name="size" value="1000000">
 
-			  <div class="row justify-content-center">
+			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<div class="form-group">
 						<h3 for="exampleIntro">Isi form berikut ini untuk melaporkan orang ditemukan</h3>
@@ -95,8 +115,8 @@ include('front-end/head.php');
 			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<div class="form-group">
-						<label for="exampleInpuGender">Gender</label>
-						<select name="gender" id="exampleInputGender" class="form-control">
+						<label for="exampleInpuGender">*Gender</label>
+						<select name="gender" id="exampleInputGender" class="form-control" required>
 							<option>Laki-Laki</option>
 							<option>Perempuan</option>
 						</select>
@@ -108,8 +128,8 @@ include('front-end/head.php');
 			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<div class="form-group">
-						<label for="exampleInputCiri">Ciri-ciri</label>
-						<input name="ciri" class="form-control" id="exampleInputCiri" placeholder="Masukkan Ciri-ciri">
+						<label for="exampleInputCiri">*Ciri-ciri</label>
+						<input name="ciri" class="form-control" id="exampleInputCiri" placeholder="Masukkan Ciri-ciri" required>
 					</div>
 				</div>
 			</div>
@@ -117,8 +137,8 @@ include('front-end/head.php');
 			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<div class="form-group">
-						<label for="exampleInputLokasiDitemukan">Lokasi Ditemukan</label>
-						<input name="lokasi_ditemukan" class="form-control" id="exampleInputLokasiDitemukan" placeholder="Masukkan Lokasi Ditemukan">
+						<label for="exampleInputLokasiDitemukan">*Lokasi Ditemukan</label>
+						<input name="lokasi_ditemukan" class="form-control" id="exampleInputLokasiDitemukan" placeholder="Masukkan Lokasi Ditemukan" required>
 					</div>
 				</div>
 			</div>
@@ -126,8 +146,8 @@ include('front-end/head.php');
 			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<div class="form-group">
-						<label for="exampleInputKondisiKorban">Kondisi Korban</label>
-						<select name="kondisi_korban" id="jenis_kartu_identitas" class="form-control">
+						<label for="exampleInputKondisiKorban">*Kondisi Korban</label>
+						<select name="kondisi_korban" id="jenis_kartu_identitas" class="form-control" required>
 							<option>Hidup</option>
 							<option>Meninggal Dunia</option>
 						</select>
@@ -164,8 +184,8 @@ include('front-end/head.php');
 			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<div class="form-group">
-						<label for="exampleInputNamaPelapor">Nama Pelapor</label>
-						<input name="nama_pelapor" class="form-control" id="exampleInputNamaPelapor" placeholder="Masukkan Nama Pelapor">
+						<label for="exampleInputNamaPelapor">*Nama Pelapor</label>
+						<input name="nama_pelapor" class="form-control" id="exampleInputNamaPelapor" placeholder="Masukkan Nama Pelapor" required>
 					</div>
 				</div>
 			</div>
@@ -173,8 +193,8 @@ include('front-end/head.php');
 			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<div class="form-group">
-						<label for="exampleInputNoTeleponPelapor">No. Telepon Pelapor</label>
-						<input name="no_telepon_pelapor" class="form-control" id="exampleInputNoTeleponPelapor" placeholder="Masukkan No. Telepon Pelapor">
+						<label for="exampleInputNoTeleponPelapor">*No. Telepon Pelapor</label>
+						<input name="no_telepon_pelapor" class="form-control" id="exampleInputNoTeleponPelapor" placeholder="Masukkan No. Telepon Pelapor" required>
 					</div>
 				</div>
 			</div>
@@ -182,19 +202,22 @@ include('front-end/head.php');
 			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<div class="form-group">
-						<label for="exampleInputFoto">Foto Korban (Opsional)</label>
+						<label for="exampleInputFoto">Foto Korban</label>
 						<input type="file" name="foto" class="form-control" id="exampleInputNoTeleponPelapor" placeholder="Masukkan No. Telepon Peapor">
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-sm-10">
+					<div class="form-group">
+						<p align="left">*Wajib diisi</p>
 					</div>
 				</div>
 			</div>
 			
 			<div class="row justify-content-center">
-				<input type="submit" onclick="return clicked();" name="kirim" value="Kirim" class="btn gradient-bg">
-				<script>
-					function clicked() {
-						return alert('Data yang anda masukan telah terkirim. Mohon tunggu konfirmasi dari Admin !');
-					}
-				</script>
+				<input type="submit" name="kirim" value="Kirim" class="btn gradient-bg">
 			</div>
 		</form>
 	</div>
