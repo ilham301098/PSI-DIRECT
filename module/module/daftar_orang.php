@@ -1,6 +1,6 @@
 <?php
 	// Create database connection
-	// error_reporting(E_ALL ^ E_NOTICE);
+	error_reporting(E_ALL ^ E_NOTICE);
 require('config/db.php');
 $data_orang_hilang = mysqli_query($con, "SELECT * FROM orang_hilang WHERE status='Terverifikasi'");
 $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE status='Terverifikasi'");
@@ -65,10 +65,23 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 							$queryDelHilang="DELETE FROM `orang_hilang` WHERE `id`='".$_POST['IDData']."'";
 							$del=mysqli_query($con,$queryDelHilang);
 							if($del){
-								echo "Berhasil";
+								echo '
+								<div class="alert alert-success alert-dismissible fade in" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+									</button>
+									<strong>Success</strong><br> Data berhasil dihapus.
+								</div>
+								';
 							}else{
-								echo "Gagal";
+								echo '
+								<div class="alert alert-danger alert-dismissible fade in" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+									</button>
+									<strong>Error</strong><br> Data gagal dihapus.
+								</div>
+								';
 							}
+							echo "<meta http-equiv='refresh' content='0'>";
 						}
 					// Edit
 						if(isset($_POST['btnEditHilang'])){
@@ -92,11 +105,11 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 								// image file directory
 							$target = "foto_org_hilang/".basename($foto);
-							if (move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
-								echo "Image uploaded successfully";
-							}else{
-								echo "Failed to upload image";
-							}
+							// if (move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
+							// 	echo "Image uploaded successfully";
+							// }else{
+							// 	echo "Failed to upload image";
+							// }
 
 								// $queryEdtHilang="UPDATE `orang_hilang` SET 
 								// `foto_korban`='$foto'
@@ -117,10 +130,23 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 							$editHilang=mysqli_query($con, $queryEdtHilang);
 							if($editHilang){
-								echo "Berhasil";
+								echo '
+								<div class="alert alert-success alert-dismissible fade in" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+									</button>
+									<strong>Success</strong><br> Data berhasil diedit.
+								</div>
+								';
 							}else{
-								echo "Gagal";
+								echo '
+								<div class="alert alert-danger alert-dismissible fade in" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+									</button>
+									<strong>Error</strong><br> Data gagal diedit.
+								</div>
+								';
 							}
+							echo "<meta http-equiv='refresh' content='0'>";
 						}
 					// Add New
 						if(isset($_POST['btnAddHilang'])){
@@ -144,11 +170,8 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 								// image file directory
 							$target = "foto_org_hilang/".basename($foto);
-							echo "dir = ".$target;
-							if (move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
-								echo "Image uploaded successfully";
-							}else{
-								echo "Failed to upload image";
+							if (!move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
+								$foto = "default.jpg";
 							}
 							$queryAddHilang= "INSERT INTO orang_hilang (nama_korban, no_identitas, jenis_kartu_identitas, usia,
 							gender, ciri_ciri_korban, lokasi_terakhir, tanggal_hilang, jenis_bencana, status, 
@@ -159,10 +182,23 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 							$addHilang=mysqli_query($con, $queryAddHilang);
 							if($addHilang){
-								echo "Berhasil";
+								echo '
+								<div class="alert alert-success alert-dismissible fade in" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+									</button>
+									<strong>Success</strong><br> Data berhasil ditambahkan.
+								</div>
+								';
 							}else{
-								echo "Gagal";
+								echo '
+								<div class="alert alert-danger alert-dismissible fade in" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+									</button>
+									<strong>Error</strong><br> Data gagal ditambahkan.
+								</div>
+								';
 							}
+							echo "<meta http-equiv='refresh' content='0'>";
 						}
 						?>
 						<button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#AddDataHilang"><i class="fa fa-plus"></i>&nbsp;Add New</button>
@@ -172,7 +208,6 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 								<thead>
 									<tr>
 										<th>No.</th>
-										<th>ID</th>
 										<th>Foto Korban</th>
 										<th>Nama Korban</th>
 										<th>Jenis Kartu Identitas</th>
@@ -196,7 +231,6 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 									while($user_data = mysqli_fetch_array($data_orang_hilang)) {         
 										echo "<tr>";
 										echo "<td>".$no_korban++."</td>";
-										echo "<td>".$user_data['id']."</td>";
 										echo "<td><img src='foto_org_hilang/".$user_data['foto_korban']."' alt="." border="."3"." height="."100"." width="."300"." ></td>";
 										echo "<td>".$user_data['nama_korban']."</td>";
 										echo "<td>".$user_data['jenis_kartu_identitas']."</td>"; 
@@ -393,8 +427,8 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 															<h2>Tambah Data Orang Hilang</h2>
 
 															<div class="col-md-12">
-																<label style="color:white;">Nama</label>
-																<input type="text" class="form-control" name="nama_korban" placeholder="Nama">
+																<label style="color:white;">*Nama</label>
+																<input type="text" class="form-control" name="nama_korban" placeholder="Nama" required>
 															</div>
 															<br>
 															<div class="col-md-12" >
@@ -435,14 +469,14 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 																<br>
 																<div class="col-md-12">
-																	<label style="color:white;">Usia</label>
-																	<input class="form-control" name="usia" placeholder="Usia">
+																	<label style="color:white;">*Usia</label>
+																	<input class="form-control" name="usia" placeholder="Usia" required>
 																</div>
 
 																<br>
 																<div class="col-md-12">
-																	<label style="color:white;">Gender</label>
-																	<select name="gender" id="exampleInputGender" class="form-control">
+																	<label style="color:white;">*Gender</label>
+																	<select name="gender" id="exampleInputGender" class="form-control" required>
 																		<option>Laki-Laki</option>
 																		<option>Perempuan</option>
 																	</select>
@@ -450,26 +484,26 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 																<br>
 																<div class="col-md-12">
-																	<label style="color:white;">Ciri-Ciri</label>
-																	<input name="ciri" class="form-control" id="exampleInputCiri" placeholder="Masukkan Ciri-ciri">
+																	<label style="color:white;">*Ciri-Ciri</label>
+																	<input name="ciri" class="form-control" id="exampleInputCiri" placeholder="Masukkan Ciri-ciri" required>
 																</div>
 
 																<br>
 																<div class="col-md-12">
-																	<label style="color:white;">Lokasi Terakhir</label>
-																	<input name="lokasi_terakhir" class="form-control" id="exampleInputLokasiTerakhirKorban" placeholder="Masukkan Lokasi Terakhir Korban">
+																	<label style="color:white;">*Lokasi Terakhir</label>
+																	<input name="lokasi_terakhir" class="form-control" id="exampleInputLokasiTerakhirKorban" placeholder="Masukkan Lokasi Terakhir Korban" required>
 																</div>
 
 																<br>
 																<div class="col-md-12">
-																	<label style="color:white;">Tanggal Hilang</label>
-																	<input type="date" name="tgl_hilang" value="" class="form-control">
+																	<label style="color:white;">*Tanggal Hilang</label>
+																	<input type="date" name="tgl_hilang" value="" class="form-control" required>
 																</div>
 
 																<br>
 																<div class="col-md-12">
-																	<label style="color:white;">Jenis Bencana</label>
-																	<select name="jenis_bencana" id="exampleInputJenisBencana" class="form-control">
+																	<label style="color:white;">*Jenis Bencana</label>
+																	<select name="jenis_bencana" id="exampleInputJenisBencana" class="form-control" required>
 																		<option>Gempa Bumi</option>
 																		<option>Banjir</option>
 																		<option>Tanah Longsor</option>
@@ -481,20 +515,20 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 																<br>
 																<div class="col-md-12">
-																	<label style="color:white;">Nama Pelapor</label>
-																	<input name="nama_pelapor" class="form-control" id="exampleInputNamaPelapor" placeholder="Masukkan Nama Pelapor">
+																	<label style="color:white;">*Nama Pelapor</label>
+																	<input name="nama_pelapor" class="form-control" id="exampleInputNamaPelapor" placeholder="Masukkan Nama Pelapor" required>
 																</div>
 
 																<br>
 																<div class="col-md-12">
-																	<label style="color:white;">No. Telepon Pelapor</label>
-																	<input name="no_telepon_pelapor" class="form-control" id="exampleInputNoTeleponPelapor" placeholder="Masukkan No. Telepon Pelapor">
+																	<label style="color:white;">*No. Telepon Pelapor</label>
+																	<input name="no_telepon_pelapor" class="form-control" id="exampleInputNoTeleponPelapor" placeholder="Masukkan No. Telepon Pelapor" required>
 																</div>
 
 																<br>
 																<div class="col-md-12">
-																	<label style="color:white;">Hubungan Pelapor</label>
-																	<select name="hubungan_pelapor" id="exampleInputHubunganPelaporDenganKorban" class="form-control">
+																	<label style="color:white;">*Hubungan Pelapor</label>
+																	<select name="hubungan_pelapor" id="exampleInputHubunganPelaporDenganKorban" class="form-control" required>
 																		<option>Keluarga</option>
 																		<option>Teman</option>
 
@@ -504,14 +538,22 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 																
 																<br>
 																<div class="col-md-12">
-																	<label style="color:white;">Foto</label>
+																	<label style="color:white;">*Foto</label>
 																	<input type="file" name="foto" id="foto" class="form-control">
+																</div>
+																<div class="col-md-12">
+																	<p><br></p>
+																</div>
+
+																<div class="col-md-12">
+																	<p align="left">*Wajib diisi</p>
 																</div>
 
 																<br>
 																<div class="modal-footer footer-modal-admin">
 																	<button type="submit" name="btnAddHilang" class="btn btn-md btn-primary">Submit</button>
 																</div>
+																
 															</div>
 														</form>
 													</div>
@@ -549,10 +591,23 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 									$queryDelDitemukan="DELETE FROM `orang_ditemukan` WHERE `id`='".$_POST['IDData']."'";
 									$del=mysqli_query($con,$queryDelDitemukan);
 									if($del){
-										echo "Berhasil";
+										echo '
+										<div class="alert alert-success alert-dismissible fade in" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+											</button>
+											<strong>Success</strong><br> Data berhasil dihapus.
+										</div>
+										';
 									}else{
-										echo "Gagal";
+										echo '
+										<div class="alert alert-danger alert-dismissible fade in" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+											</button>
+											<strong>Error</strong><br> Data gagal dihapus.
+										</div>
+										';
 									}
+									echo "<meta http-equiv='refresh' content='0'>";
 								}
 					// Edit
 								if(isset($_POST['btnEditDitemukan'])){
@@ -601,10 +656,23 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 									$editDitemukan=mysqli_query($con, $queryEdtDitemukan);
 									if($editDitemukan){
-										echo "Berhasil";
+										echo '
+										<div class="alert alert-success alert-dismissible fade in" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+											</button>
+											<strong>Success</strong><br> Data berhasil diedit.
+										</div>
+										';
 									}else{
-										echo "Gagal";
+										echo '
+										<div class="alert alert-danger alert-dismissible fade in" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+											</button>
+											<strong>Error</strong><br> Data gagal diedit.
+										</div>
+										';
 									}
+									echo "<meta http-equiv='refresh' content='0'>";
 								}
 					// Add New
 								if(isset($_POST['btnAddDitemukan'])){
@@ -627,10 +695,8 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 								// image file directory
 									$target = "foto_org_ditemukan/".basename($foto);
 									echo "dir = ".$target;
-									if (move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
-										echo "Image uploaded successfully";
-									}else{
-										echo "Failed to upload image";
+									if (!move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
+										$foto="default.jpg";
 									}
 									$queryAddDitemukan="INSERT INTO orang_ditemukan (nama_korban, usia, gender, ciri_ciri_korban, lokasi_ditemukan, tanggal_ditemukan,
 									jenis_bencana, nama_pelapor, no_telepon_pelapor, kondisi_korban, foto_korban, status) 
@@ -640,11 +706,24 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 									$addDitemukan=mysqli_query($con, $queryAddDitemukan);
 									if($addDitemukan){
-										echo "Berhasil";
+										echo '
+										<div class="alert alert-success alert-dismissible fade in" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+											</button>
+											<strong>Success</strong><br> Data berhasil ditambahkan.
+										</div>
+										';
 									}else{
-										echo "Gagal";
+										echo '
+										<div class="alert alert-danger alert-dismissible fade in" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+											</button>
+											<strong>Error</strong><br> Data gagal ditambahkan.
+										</div>
+										';
 									}
-								}
+									echo "<meta http-equiv='refresh' content='0'>";								}
+								
 								?>
 
 								<button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#AddDataDitemukan"><i class="fa fa-plus"></i>&nbsp;Add New</button>
@@ -863,8 +942,8 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 																	<br>
 																	<div class="col-md-12">
-																		<label style="color:white;">Gender</label>
-																		<select name="gender" id="exampleInputGender" class="form-control">
+																		<label style="color:white;">*Gender</label>
+																		<select name="gender" id="exampleInputGender" class="form-control" required>
 																			<option>Laki-Laki</option>
 																			<option>Perempuan</option>
 																		</select>
@@ -872,14 +951,14 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 																	<br>
 																	<div class="col-md-12">
-																		<label style="color:white;">Ciri-Ciri</label>
-																		<input name="ciri" class="form-control" id="exampleInputCiri" placeholder="Masukkan Ciri-ciri">
+																		<label style="color:white;">*Ciri-Ciri</label>
+																		<input name="ciri" class="form-control" id="exampleInputCiri" placeholder="Masukkan Ciri-ciri" required>
 																	</div>
 
 																	<br>
 																	<div class="col-md-12">
-																		<label style="color:white;">Lokasi Ditemukan</label>
-																		<input name="lokasi_ditemukan" class="form-control" id="exampleInputLokasiDitemukan" placeholder="Masukkan Lokasi Ditemukan">
+																		<label style="color:white;">*Lokasi Ditemukan</label>
+																		<input name="lokasi_ditemukan" class="form-control" id="exampleInputLokasiDitemukan" placeholder="Masukkan Lokasi Ditemukan" required>
 																	</div>
 
 																	<br>
@@ -903,8 +982,8 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 																	<br>
 																	<div class="col-md-12">
-																		<label style="color:white;">Kondisi Korban</label>
-																		<select name="kondisi_korban" id="kondisi_korban" class="form-control">
+																		<label style="color:white;">*Kondisi Korban</label>
+																		<select name="kondisi_korban" id="kondisi_korban" class="form-control" required>
 																			<option>Hidup</option>
 																			<option>Meninggal Dunia</option>
 																		</select>
@@ -912,20 +991,26 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 																	<br>
 																	<div class="col-md-12">
-																		<label style="color:white;">Nama Pelapor</label>
-																		<input name="nama_pelapor" class="form-control" id="exampleInputNamaPelapor" placeholder="Masukkan Nama Pelapor">
+																		<label style="color:white;">*Nama Pelapor</label>
+																		<input name="nama_pelapor" class="form-control" id="exampleInputNamaPelapor" placeholder="Masukkan Nama Pelapor" required>
 																	</div>
 
 																	<br>
 																	<div class="col-md-12">
-																		<label style="color:white;">No. Telepon Pelapor</label>
-																		<input name="no_telepon_pelapor" class="form-control" id="exampleInputNoTeleponPelapor" placeholder="Masukkan No. Telepon Pelapor">
+																		<label style="color:white;">*No. Telepon Pelapor</label>
+																		<input name="no_telepon_pelapor" class="form-control" id="exampleInputNoTeleponPelapor" placeholder="Masukkan No. Telepon Pelapor" required>
 																	</div>
 
 																	<br>
 																	<div class="col-md-12">
 																		<label style="color:white;">Foto</label>
 																		<input type="file" name="foto" class="form-control" id="foto" placeholder="Masukkan No. Telepon Peapor">
+																	</div>
+																	<div class="col-md-12">
+																		<p><br></p>
+																	</div>
+																	<div class="col-md-12">
+																		<p align="left">*Wajib diisi.</p>
 																	</div>
 																</div>
 																<br>
