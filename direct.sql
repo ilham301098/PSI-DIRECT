@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28 Mei 2019 pada 17.33
--- Versi Server: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- Generation Time: 28 Mei 2019 pada 18.53
+-- Versi Server: 10.1.22-MariaDB
+-- PHP Version: 7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,8 +19,33 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `direct`
+-- Database: `directnew`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `artikel_p`
+--
+
+CREATE TABLE `artikel_p` (
+  `id` int(12) NOT NULL,
+  `judul` varchar(36) NOT NULL,
+  `sumber` varchar(36) NOT NULL,
+  `isi` text NOT NULL,
+  `image` varchar(36) NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `artikel_p`
+--
+
+INSERT INTO `artikel_p` (`id`, `judul`, `sumber`, `isi`, `image`, `date`) VALUES
+(6, 'Tes001', 'Tes001', '<p>Tes001</p>\r\n', '6.png', '2019-05-28 00:00:00'),
+(7, 'Tes002', 'Tes002', '<p>Tess002</p>\r\n', '6.png', '2019-05-28 00:00:00'),
+(8, 'Tes3', 'Tes3', '<p>Tes3</p>\r\n', '7.png', '2019-05-28 00:00:00'),
+(9, 'Tes4', 'Tes4', '<p>Tes4</p>\r\n', '8.png', '2019-05-28 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1071,6 +1096,12 @@ INSERT INTO `video` (`ID`, `JUDUL`, `ISI`, `LINK`, `SUMBER`, `KATEGORI`, `DATE_C
 --
 
 --
+-- Indexes for table `artikel_p`
+--
+ALTER TABLE `artikel_p`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `artikel_sg`
 --
 ALTER TABLE `artikel_sg`
@@ -1147,6 +1178,11 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `artikel_p`
+--
+ALTER TABLE `artikel_p`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `artikel_sg`
 --
