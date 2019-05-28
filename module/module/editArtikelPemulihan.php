@@ -27,6 +27,12 @@
 	}
 </style>
 
+<?php
+require('config/db.php');
+$id=$_GET['id'];
+$row=mysqli_fetch_assoc(mysqli_query($con,"SELECT * FROM artikel_p WHERE id='".$id."'"));
+?>
+
 <div class="breadcome-area">
 	<div class="container-fluid">
 		<div class="row">
@@ -53,7 +59,7 @@
 									<span class="bread-slash">/</span>
 								</li>
 								<li>
-									<a href="?module=artikeladm">Artikel</a>
+									<a href="?module=artikel-pemulihan">Artikel</a>
 								</li>
 							</ul>
 						</div>
@@ -69,69 +75,44 @@
 	<div class="sparkline12-list mt-b-30">
 		<div class="sparkline12-hd">
 			<div class="main-sparkline12-hd">
-				<h1 align="center">Form Tambah Artikel</h1>
+				<h1 align="center">Edit Artikel Pemulihan</h1>
 			</div>
 		</div>
-		<form action="" method="post" enctype="multipart/form-data">
+		<form action="?module=artikel-pemulihan" method="post" enctype="multipart/form-data">
 			<div class="row">
-				<?php
-				require('config/db.php');
-				if (isset($_POST['upload'])){
 
-					$cek=mysqli_fetch_assoc(mysqli_query($con,"SELECT MAX(id)AS MAX FROM artikel_p"));
-					$idn=$cek['MAX'];
-
-					$nama = $_FILES['file']['name'];
-					$x = explode('.', $nama);
-					$ekstensi = strtolower(end($x));
-
-					$target = "images/SiagaBencana/".$idn.".".$ekstensi;
-
-					move_uploaded_file($_FILES['file']['tmp_name'], $target);
-
-					$image = $idn.".".$ekstensi;
-					$judul = $_POST['judul'];
-					$sumber = $_POST['sumber'];
-					$isi = $_POST['isi'];
-					$date = date("Y-m-d");
-
-					$sql = "INSERT INTO artikel_p (judul, sumber, isi, image, date) VALUES ('$judul', '$sumber', '$isi', '$image', '$date')";
-					$result= mysqli_query($con,$sql);
-					if ($result){
-						echo '<script>window.location.href="?module=artikel-pemulihan"</script>';
-					}
-				}
-
-				?>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Judul Artikel</label>
-						<input type="text" class="form-control" name="judul" required="">
+						<input type="text" class="form-control" name="judul" value="<?php echo $row['judul']; ?>" required="">
 					</div>
 					<div class="form-group">
 						<label>Sumber Artikel</label>
-						<input type="text" class="form-control" name="sumber" required="">
+						<input type="text" class="form-control" name="sumber" value="<?php echo $row['sumber']; ?>" required="">
 					</div>
 					<div class="form-group">
 						<label>Foto Cover</label>
-						<input type="file" name="file" class="form-control" required="">
+						<input type="file" id="fileEdit" name="fileEdit" class="form-control" >
 					</div>
 				</div>
 				<div class="col-md-6">
+					<h4 align="center">Preview</h4>
+					<img src="images/SiagaBencana/<?php echo $row['image']; ?>" alt="" width="100%">
 				</div>
 
 				<div class="col-lg-12">
 					<div class="form-group">
 						<label>Deskripsi Artikel</label>
-						<textarea class="ckeditor" id="ckeditor" name="isi" required=""></textarea>
+						<textarea class="ckeditor" id="ckeditor" name="isi" required=""><?php echo $row['isi']; ?></textarea>
 					</div>
 				</div>
-				
+
 			</div>
 
 			<br><br>
 			<div class="row" align="center">
-				<button type="submit" button class="btn btn-theme" name="upload">Save</button>
+				<input type="hidden" name="idArticle" value="<?php echo $row['id']; ?>">
+				<button type="submit" button class="btn btn-theme" name="edit">Save</button>
 			</div>
 		</form>
 	</div>

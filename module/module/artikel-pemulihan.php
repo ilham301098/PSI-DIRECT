@@ -1,286 +1,293 @@
-<?php
-require('config/db.php');
-if (isset($_POST['hapus'])){
-    // $id = $_GET['hapus'];
-  $dlt = "DELETE FROM artikel_p WHERE id='artikel_id'";
-  $result= mysqli_query($con,$dlt);
-
-  if ($result){
-    $msg = "ARTICLE DELETE SUCCESSFULLY";
-
-}else{
-    $msg = "ARTICLE CANNOT BE DELETE";
-}
-}
-?>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<!-- Optional theme -->
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-<!-- Loader -->
-<link rel="stylesheet" href="css/loader.css">
-<script src="js/jquery-1.12.4.js"></script>
-<link rel="stylesheet" type="text/css" href="dashboard/vendor/font-awesome/css/font-awesome.min.css">
-
-<style>
-
-  body {
-    font-family: Arial;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-}
-
-form.example button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: orange;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none;
-    cursor: pointer;
-}
-
-form.example button:hover {
-    background: #0b7dda;
-}
-
-form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-    width: 200px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-button {
-    background-color: orange;
-    border: none;
-    color: white;
-    padding: 15px 25px;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    width:100px;
-}
-
-button:hover {
-    background-color: blue;}
-</style>
 
 <div class="breadcome-area">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcome-list">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="breadcome-heading">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <ul class="breadcome-menu">
-                                <li>
-                                  <a href="?module=dashboard">Dashboard</a>
-                                  <span class="bread-slash">/</span>
-                              </li>
-                              <li>
-                                  <span class="bread-blod">Pemulihan</span> <span class="bread-slash">/</span>
-                              </li>
-                              <li>
-                                  <span><a href="?module=artikeladm">Artikel</a></span>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="breadcome-list">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="breadcome-heading">
               </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <ul class="breadcome-menu">
+                <li>
+                  <a href="?module=dashboard">Dashboard</a>
+                  <span class="bread-slash">/</span>
+                </li>
+                <li>
+                  <span class="bread-blod">Pemulihan</span> <span class="bread-slash">/</span>
+                </li>
+                <li>
+                  <span><a href="?module=artikeladm">Artikel</a></span>
+                </li>
+              </ul>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
   </div>
 </div>
 
-<div class="analytics-sparkle-area">
-	<div class="container-fluid">
-       <h1 align="center">Artikel Pemulihan</h1>
-   </div>
-   <div align="right"><a href="?module=newartikel2"><button class="btn btn-success" >New</button></a></div>
-</br>
-<form role="search" class="sr-input-func" action="" method="post" style="max-width:200px" align="left">
-  <input type="text" placeholder="Search..." class="search-int form-control" name="cari">
-  <button class="btn btn-sm btn-primary" type="submit" name="btn-cari"><i class="fa fa-search"></i></button>
-</form>
-
-<?php
-require('config/db.php');
-$sql="";
-if(isset($_POST['btn-cari'])){
-    $cari=$_POST['cari'];
-    $sql="SELECT * FROM artikel_p WHERE judul LIKE '%$cari%' OR sumber LIKE '%".$cari."%'";
-}else{
-    $sql = 'SELECT * FROM artikel_p ORDER by id ASC';
-}
-
-$result = mysqli_query($con,$sql);
-$no = 1;
-$output = '
-<table class="table table-bordered table-striped">
-  <tr>
-    <th width="2%">No</th>
-    <th width="10%">JUDUL</th>
-    <th width="10%">SUMBER</th>
-    <th width="45%">DESKRIPSI KONTEN</th>
-    <th width="13%">Image</th>
-    <th width="10%">Change</th>
-    <th width="10%">Remove</th>
-</tr>
-';
-while($row = mysqli_fetch_array($result))
-{
-    $output .= '
-    <tr>
-      <td>'.$no.'</td>
-      <td>'.$row['judul'].'</td>
-      <td>'.$row['sumber'].'</td>
-      <td>'.$row['isi'].'</td>
-      <td><img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'" height="60" width="75" class="img-thumbnail" /></td>
-      <td><button type="button" name="edit" data-toggle="modal" data-target=".bs-modal-ChangeArticle'.$row["id"].'" class="btn btn-warning btn-s"  id="'.$row["id"].'">Change</button></a></td>
-      <td><button type="button" name="delete" data-toggle="modal" data-target=".bs-modal-DeleteArticle'.$row['id'].'" class="btn btn-danger bt-sm" id="'.$row["id"].'">Remove</button>
-      </td>
-      <!--Delete Item Modal -->
-      <div id="delete<?php echo $id; ?>" class="modal fade bs-modal-DeleteArticle'.$row["id"].'" role="dialog">
-        <div class="modal-dialog">
-          <form method="post">
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Delete</h4>
-            </div>
-            <div class="modal-body">
-                <form action="" method="POST">
-                  <input type="hidden" name="delete_id" value="'.$row["id"].'">
-                  <div class="alert alert-danger">Are you Sure you want to Delete <strong>
-                    '.$row['judul'].'</strong>? </div>
-                    <div class="modal-footer">
-                      <button type="submit" name="delete" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> YES</button>
-                      <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> NO</button>
-                  </div>
-              </form>
-          </div>
-      </div>
-  </form>
-</div>
-</div>
-
-<!--Edit Item Modal -->
-<div id="edit<?php echo $id; ?>" class="modal fade bs-modal-ChangeArticle'.$row["id"].'" role="dialog">
-  <form method="POST" class="form-horizontal" role="form">
-    <div class="modal-dialog modal-lg">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Edit Artikel</h4>
-      </div>
-      <div class="modal-body">
-          <input type="hidden" name="edit_id" value="'.$row["id"].'">
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="judul">Judul:</label>
-            <div class="col-sm-4">
-              <input type="text" class="form-control" id="judul" name="judul" value="'.$row['judul'].'" placeholder="Judul" required autofocus> </div>
-              <label class="control-label col-sm-2" for="sumber">Sumber:</label>
-              <div class="col-sm-4">
-                <input type="text" readonly class="form-control" id="sumber" name="sumber" value="'.$row['sumber'].'" placeholder="Sumber" required> </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="isi">Description:</label>
-                <div class="col-sm-4">
-                  <textarea class="form-control" id="isi" name="isi" placeholder="Description" required style="width: 100%;">
-                    '.$row['isi'].'
-                </textarea>
-            </div>
-            <label class="control-label col-sm-2" for="image">Image:</label>
-            <div class="col-sm-4">
-              <input type="file" class="form-control" id="image" name="image" value="'.$row['image'].'" placeholder="Image" required> </div>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" name="edit"><span class="glyphicon glyphicon-edit"></span> Edit</button>
-        <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Cancel</button>
+<div class="col-lg-12">
+  <div class="courses-inner res-mg-b-30">
+    <div class="courses-title">
+      <h1 align="center">Artikel Pemulihan</h1>
     </div>
-</div>
-</div>
-</form>
-</div>
-</tr>
-';
-$no++;
-}
-$output .= '</table>';
-echo $output;
+    <div class="row">
+      <form action="" method="post" autocomplete="off">
+        <div class="col-lg-3">
+          <div class="input-group input-mark-inner ">
+            <input type="text" placeholder="Search..."  class="input-mark-inner mg-b-22 form-control" name="cari">
+            <span class="input-group-btn">
+              <button type="submit" name="btn-cari" class="btn btn-sm btn-primary">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+        </div>
+      </form>
+      <div class="col-lg-9" align="right">
+        <a href="?module=newartikel2">
+          <button class="btn btn-success">Tambah Artikel</button>
+        </a>
+      </div>
+    </div>
+    <br>
+    <?php
+    require('config/db.php');
 
-      //Update Items
-if(isset($_POST['edit'])){
-    $edit_id = $_POST['edit_id'];
-    $image = $_FILES['image']['name'];
-    $judul = $_POST['judul'];
-    $sumber = $_POST['sumber'];
-    $isi = $_POST['isi'];
-    $date = date("Y-m-d");
-    $sql = "UPDATE  artikel_p SET
-    judul='$judul',
-    sumber = '$sumber',
-    isi='$isi',
-    image='$image'
-    WHERE id='$edit_id' ";
-    if ($con->query($sql) === TRUE) {
-      echo '<script>window.location.href="?module=artikel-pemulihan"</script>';
-  } else {
-      echo "Error updating record: " . $con->error;
-  }
-}
-if(isset($_POST['delete'])){
-          // sql to delete a record
-    $delete_id = $_POST['delete_id'];
-    $sql = "DELETE FROM artikel_p WHERE id='$delete_id' ";
-    if ($con->query($sql) === TRUE) {
-      echo '<script>window.location.href="?module=artikel-pemulihan"</script>';
-  } else {
-      echo "Error deleting record: " . $con->error;
-  }
-}
+    if (isset($_POST['edit'])){
+      $idn=$_POST['idArticle'];
+      $nama = $_FILES['fileEdit']['name'];
+      $judul = $_POST['judul'];
+      $sumber = $_POST['sumber'];
+      $isi = $_POST['isi'];
 
-      // header("location:index.php?pesan=hapus");
-?>
-</div>
+      if($nama!==""){
+        $x = explode('.', $nama);
+        $ekstensi = strtolower(end($x));
+        $image = $idn.".".$ekstensi;
+        $target = "images/SiagaBencana/".$idn.".".$ekstensi;
+
+        move_uploaded_file($_FILES['fileEdit']['tmp_name'], $target);
+
+        $sql = "UPDATE artikel_p SET judul='$judul', sumber = '$sumber', isi='$isi', image='$image' WHERE id='$idn'";
+        $result= mysqli_query($con,$sql);
+        
+        if (!$result) {
+          echo '
+          <div class="alert alert-danger alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+            </button>
+            <strong>Error</strong><br> Edit Artikel Gagal.
+          </div>
+          ';
+
+        }else{
+          echo 
+          '
+          <div class="alert alert-success alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+            </button>
+            <strong>Success</strong><br> Edit Artikel Telah Berhasil.
+          </div>';
+        }
+      }else{
+        $sql = "UPDATE artikel_p SET judul='$judul', sumber = '$sumber', isi='$isi' WHERE id='$idn'";
+        $result= mysqli_query($con,$sql);
+        if (!$result) {
+          echo '
+          <div class="alert alert-danger alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+            </button>
+            <strong>Error</strong><br> Edit Artikel Gagal.
+          </div>
+          ';
+
+        }else{
+          echo 
+          '
+          <div class="alert alert-success alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+            </button>
+            <strong>Success</strong><br> Edit Artikel Telah Berhasil.
+          </div>';
+        }
+      }
+      
+    }
+
+    ?>
+    <div class="row">
+      <div class="col-md-12">
+        <?php
+        require('config/db.php');
+        $sql="";
+        if(isset($_POST['btn-cari'])){
+          $cari=$_POST['cari'];
+          $sql="SELECT * FROM artikel_p WHERE judul LIKE '%$cari%' OR sumber LIKE '%".$cari."%'";
+        }else{
+          $sql = 'SELECT * FROM artikel_p ORDER by id ASC';
+        }
+
+        $result = mysqli_query($con,$sql);
+        $no = 1;
+        ?>
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th width="2%">NO</th>
+            <th width="18%">IMAGE</th>
+            <th width="20%">JUDUL</th>
+            <th width="30%">DESKRIPSI KONTEN</th>
+            <th width="10%">SUMBER</th>
+            <th width="20%">BUTTON</th>
+          </tr>
+          <?php
+          while($row = mysqli_fetch_array($result)){ ?>
+
+          <tr>
+            <td><?php echo $no; ?></td>
+            <td>
+              <a href="?module=dtlArticlePemulihan&id=<?php echo $row['id']; ?>"> <img src="images/SiagaBencana/<?php echo $row['image']; ?>" height="60" width="100%" class="img-thumbnail" /></b>
+              </a>
+              
+            </td>
+            <td><?php echo $row['judul']; ?></td>
+            <td>
+              <?php 
+              echo limit_words($row['isi'],20);
+              if(str_word_count($row['isi'])>20){
+                echo '<a href="?module=dtlArticlePemulihan&id='.$row['id'].'"> <b>[Read More]</b></a>';
+              }
+              ?>
+            </td>
+            <td><?php echo $row['sumber']; ?></td>
+            <td align="center">
+              <a href="?module=editArtikelPemulihan&id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-warning btn-s">Change</button></a>
+              &nbsp;&nbsp;&nbsp;
+              <button type="button" name="delete" data-toggle="modal" data-target=".bs-modal-DeleteArticle<?php echo $row['id']; ?>" class="btn btn-danger bt-sm" >Remove</button>
+            </td>
+            <!--Delete Item Modal -->
+            <div class="modal fade bs-modal-DeleteArticle<?php echo $row["id"]; ?>" role="dialog">
+              <div class="modal-dialog">
+                <form method="post" action="">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Delete</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        <input type="hidden" name="delete_id" value="<?php echo $row["id"]; ?>">
+                        <div class="alert alert-danger">
+                          Are you Sure you want to Delete <strong>
+                          <?php echo $row['judul']; ?></strong>? </div>
+                          <div class="modal-footer">
+                            <button type="submit" name="delete" class="btn btn-danger">
+                              <span class="glyphicon glyphicon-trash"></span>
+                              YES</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <span class="glyphicon glyphicon-remove-circle"></span> NO
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <!--Edit Item Modal -->
+                <div class="modal fade bs-modal-ChangeArticle<?php echo $row["id"]; ?>" role="dialog">
+                  <form method="POST" class="form-horizontal" role="form">
+                    <div class="modal-dialog modal-lg">
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title" align="center">Edit Artikel</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form action="" method="post" enctype="multipart/form-data">
+                            <div class="row">
+                              
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label>Judul Artikel</label>
+                                  <input type="text" class="form-control" name="judul" value="<?php echo $row['judul']; ?>" required="">
+                                </div>
+                                <div class="form-group">
+                                  <label>Sumber Artikel</label>
+                                  <input type="text" class="form-control" name="sumber" value="<?php echo $row['sumber']; ?>" required="">
+                                </div>
+                                <div class="form-group">
+                                  <label>Foto Cover</label>
+                                  <input type="file" id="fileEdit" name="fileEdit" class="form-control" >
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <h4 align="center">Preview</h4>
+                                <img src="images/SiagaBencana/<?php echo $row['image']; ?>" alt="" width="100%">
+                              </div>
+
+                              <div class="col-lg-12">
+                                <div class="form-group">
+                                  <label>Deskripsi Artikel</label>
+                                  <textarea class="ckeditor" id="ckeditor" name="isi" required=""><?php echo $row['isi']; ?></textarea>
+                                </div>
+                              </div>
+
+                            </div>
+
+                            <br><br>
+                            <div class="row" align="center">
+                              <input type="hidden" name="idArticle" value="<?php echo $row['id']; ?>">
+                              <button type="submit" button class="btn btn-theme" name="edit">Save</button>
+                            </div>
+                          </form>
+
+                          <div class="modal-footer">
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </tr>
+                <?php 
+                $no++;
+              }
+
+              ?>
+            </table>
+            <?php 
+            if(isset($_POST['delete'])){
+        // sql to delete a record
+              $delete_id = $_POST['delete_id'];
+              $sql = "DELETE FROM artikel_p WHERE id='$delete_id' ";
+              if ($con->query($sql) === TRUE) {
+                echo '<script>window.location.href="?module=artikel-pemulihan"</script>';
+              } else {
+                echo "Error deleting record: " . $con->error;
+              }
+            }
+
+  // header("location:index.php?pesan=hapus");
+            ?>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+
+    <?php
+    function limit_words($string, $word_limit){
+      $words = explode(" ",$string);
+      return implode(" ",array_splice($words,0,$word_limit));
+    }
+    ?>
