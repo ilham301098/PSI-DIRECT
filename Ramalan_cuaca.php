@@ -30,9 +30,9 @@ include('front-end/head.php');
 							<form class="form-inline" method="post" action="">
 								<select class="form-control mr-sm-2" name="lokasi">
 									<option value="-7.24,112.74:Surabaya">PILIH</option>
-									<option value="-6.93,109.12:Adiwerna">Adiwerna</option>
-									<option value="-3.34,128.92:Amahai">Amahai</option>
-									<option value="-3.7,128.16:Ambon">Ambon</option>
+									<option value="Adiwerna">Adiwerna</option>
+									<option value="Amahai">Amahai</option>
+									<option value="Ambon">Ambon</option>
 									<option value="-6.65,108.4:Arjawinangun">Arjawinangun</option>
 									<option value="-6.8,108.6:Astanajapura">Astanajapura</option>
 									<option value="-6.77,110.86:Bae">Bae</option>
