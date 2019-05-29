@@ -3,7 +3,58 @@
 <?php
 include('front-end/head.php');
 ?>
-<body class="single-page causes-page">
+<style >
+    h3, h4, h5, h6 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-weight: 700;
+        color: #212631;
+        margin: 0px 0px 15px}
+        h3 {
+            font-size: 23px;
+        }
+        .post {
+            margin-bottom: 40px;
+        }
+        .post .post-img {
+            display: block;
+            -webkit-transition: 0.2s opacity;
+            transition: 0.2s opacity;
+        }
+        .post .post-img > img {
+            width: 100%;
+        }
+        .post .post-meta {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .post-meta .post-category {
+            font-size: 13px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            font-weight: 600;
+            border-radius: 2px;
+            margin-right: 15px;
+            color: #FFF;
+            background-color: #212631;
+            -webkit-transition: 0.2s opacity;
+            transition: 0.2s opacity;
+        }
+        .post-meta .post-category:hover, .post-meta .post-category:focus {
+            text-decoration: none;
+            opacity: 0.9;
+        }
+        .post-meta .post-category.cat-1 {
+            background-color: #4BB92F;
+        }.post-meta .post-date {
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .post .post-title {
+            font-size: 18px;
+            margin-bottom: 0px;
+        }
+    </style>
+    <body class="single-page causes-page">
     <?php
     include('front-end/navigation.php');
     ?><!-- .site-header -->
@@ -22,6 +73,7 @@ include('front-end/head.php');
         <div class="container">
             <div class="row">
              <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                <a href="article-pemulihan.php">
                 <div class="icon-box active">
                     <figure class="d-flex justify-content-center">
                         <img src="components/images/hands-gray.png" alt="">
@@ -32,149 +84,66 @@ include('front-end/head.php');
                         <h3 class="entry-title">Trauma Healing</h3>
                     </header>
 
-                        <!-- <div class="entry-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. </p>
-                        </div> -->
-                    </div>
-                </div>            
-                <div class="col-8">
-                    <div class="search-widget">
-                        <form class="flex flex-wrap align-items-center">
-                            <input type="search" placeholder="Search...">
-                            <button type="submit" class="flex justify-content-center align-items-center">GO</button>
-                        </form><!-- .flex -->
-                    </div><!-- .search-widget -->
-                </div><!-- .col -->
+                </div>
+            </div>
+
+            <div class="col-8">
+                <div class="search-widget">
+                    <form class="flex flex-wrap align-items-center">
+                        <input type="search" placeholder="Search...">
+                        <button type="submit" class="flex justify-content-center align-items-center">GO</button>
+                    </form><!-- .flex -->
+                </div><!-- .search-widget -->
+            </div><!-- .col -->
             </div><!-- .row -->
 
             <div class="row">
-                <div class="col-12 col-lg-6">
-                    <div class="cause-wrap d-flex flex-wrap justify-content-between">
-                        <figure class="m-0">
-                            <img src="components/images/featured-causes.jpg" alt="">
-                        </figure>
-
+                <div class="col-12 col-lg-8">
                         <div class="cause-content-wrap">
-                            <header class="entry-header d-flex flex-wrap align-items-center">
-                                <h3 class="entry-title w-100 m-0"><a href="#">Fundraiser for Kids</a></h3>
+                            <?php
+                                    require('config/db.php');
+                                    $sql="";
+                                    if(isset($_POST['btnSearch'])){
+                                        $sql = "SELECT * FROM artikel_p WHERE judul LIKE '%".$_POST['cari']."%' ORDER by id ASC";
+                                    }else{
+                                        $sql = 'SELECT * FROM artikel_p ORDER by id ASC';
+                                    }
 
-                                <div class="posted-date">
-                                    <a href="#">Aug 25, 2018 </a>
-                                </div><!-- .posted-date -->
+                                    $result = mysqli_query($con,$sql);
+                                    $output = '';
 
-                                <div class="cats-links">
-                                    <a href="#">Ball Room New York</a>
-                                </div><!-- .cats-links -->
-                            </header><!-- .entry-header -->
+                                    while ($row = mysqli_fetch_array($result)){
+                                        $output.='
 
-                            <div class="entry-content">
-                                <p class="m-0">pemulihan trauma terhadap korban pasca benca alam.........</p>
-                            </div><!-- .entry-content -->
+                                        <div class="col-md-4">
+                                            <div class="post">
+                                                <a class="post-img" href="detail-article-pemulihan.php'.$row['id'].'"><img src="images/pemulihan/'.$row['image'].'" alt="" width="100%" height="150px"></a>
+                                                <div class="post-body">
+                                                    <div class="post-meta">
+                                                        <a class="post-category cat-1" href="">by Admin</a>
+                                                        <span class="post-date">'.$row['date'].'</span>
+                                                    </div>
+                                                    <h3 class="post-title" name="display" id="'.$row["id"].'"><a href="detail-article-pemulihan.php'.$row['id'].'">'.$row['judul'].'</a></h3>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                            <div class="entry-footer mt-5">
-                                <a href="detail-article-pemulihan.php" class="btn gradient-bg mr-2">Read More</a>
-                            </div><!-- .entry-footer -->
+                                        ';
+                                    }
+                                    echo $output;
+                                    ?>
                         </div><!-- .cause-content-wrap -->
-                    </div><!-- .cause-wrap -->
                 </div><!-- .col -->
 
-                <div class="col-12 col-lg-6">
-                    <div class="cause-wrap d-flex flex-wrap justify-content-between">
-                        <figure class="m-0">
-                            <img src="components/images/eye-for.jpg" alt="">
-                        </figure>
-
-                        <div class="cause-content-wrap">
-                            <header class="entry-header d-flex flex-wrap align-items-center">
-                                <h3 class="entry-title w-100 m-0"><a href="#">Fundraiser for Kids</a></h3>
-
-                                <div class="posted-date">
-                                    <a href="#">Aug 25, 2018 </a>
-                                </div><!-- .posted-date -->
-
-                                <div class="cats-links">
-                                    <a href="#">Ball Room New York</a>
-                                </div><!-- .cats-links -->
-                            </header><!-- .entry-header -->
-
-                            <div class="entry-content">
-                                <p class="m-0">tenagkan pikiran, tarik napas dalam-dalam, hembuskan....</p>
-                            </div><!-- .entry-content -->
-
-                            <div class="entry-footer mt-5">
-                                <a href="detail-article-pemulihan.php" class="btn gradient-bg mr-2">Read More</a>
-                            </div><!-- .entry-footer -->
-                        </div><!-- .cause-content-wrap -->
-                    </div><!-- .cause-wrap -->
-                </div><!-- .col -->
-
+                    
+                </div><!-- .row -->
                 <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <div class="cause-wrap d-flex flex-wrap justify-content-between">
-                            <figure class="m-0">
-                                <img src="components/images/eye-for.jpg" alt="">
-                            </figure>
-
-                            <div class="cause-content-wrap">
-                                <header class="entry-header d-flex flex-wrap align-items-center">
-                                    <h3 class="entry-title w-100 m-0"><a href="#">Fundraiser for Kids</a></h3>
-
-                                    <div class="posted-date">
-                                        <a href="#">Aug 25, 2018 </a>
-                                    </div><!-- .posted-date -->
-
-                                    <div class="cats-links">
-                                        <a href="#">Ball Room New York</a>
-                                    </div><!-- .cats-links -->
-                                </header><!-- .entry-header -->
-
-                                <div class="entry-content">
-                                    <p class="m-0">tenagkan pikiran, tarik napas dalam-dalam, hembuskan....</p>
-                                </div><!-- .entry-content -->
-
-                                <div class="entry-footer mt-5">
-                                    <a href="detail-article-pemulihan.php" class="btn gradient-bg mr-2">Read More</a>
-                                </div><!-- .entry-footer -->
-                            </div><!-- .cause-content-wrap -->
-                        </div><!-- .cause-wrap -->
-                    </div><!-- .col -->
-
-                    <div class="col-12 col-lg-6">
-                        <div class="cause-wrap d-flex flex-wrap justify-content-between">
-                            <figure class="m-0">
-                                <img src="components/images/featured-causes.jpg" alt="">
-                            </figure>
-
-                            <div class="cause-content-wrap">
-                                <header class="entry-header d-flex flex-wrap align-items-center">
-                                    <h3 class="entry-title w-100 m-0"><a href="#">Fundraiser for Kids</a></h3>
-
-                                    <div class="posted-date">
-                                        <a href="#">Aug 25, 2018 </a>
-                                    </div><!-- .posted-date -->
-
-                                    <div class="cats-links">
-                                        <a href="#">Ball Room New York</a>
-                                    </div><!-- .cats-links -->
-                                </header><!-- .entry-header -->
-
-                                <div class="entry-content">
-                                    <p class="m-0">pemulihan trauma terhadap korban pasca bencana alam.........</p>
-                                </div><!-- .entry-content -->
-
-                                <div class="entry-footer mt-5">
-                                    <a href="detail-article-pemulihan.php" class="btn gradient-bg mr-2">Read More</a>
-                                </div><!-- .entry-footer -->
-                            </div><!-- .cause-content-wrap -->
-                        </div><!-- .cause-wrap -->
-                    </div><!-- .col -->
-
                     <ul class="pagination d-flex flex-wrap align-items-center p-0">
                         <li class="active"><a href="#">01</a></li>
                         <li><a href="#">02</a></li>
                         <li><a href="#">03</a></li>
                     </ul>
-                </div><!-- .row -->
+                </div>
             </div><!-- .container -->
         </div>
     </div>
