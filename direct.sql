@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28 Mei 2019 pada 18.53
--- Versi Server: 10.1.22-MariaDB
--- PHP Version: 7.1.4
+-- Generation Time: May 29, 2019 at 02:49 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `directnew`
+-- Database: `direct`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `artikel_p`
+-- Table structure for table `artikel_p`
 --
 
 CREATE TABLE `artikel_p` (
@@ -38,19 +38,17 @@ CREATE TABLE `artikel_p` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `artikel_p`
+-- Dumping data for table `artikel_p`
 --
 
 INSERT INTO `artikel_p` (`id`, `judul`, `sumber`, `isi`, `image`, `date`) VALUES
-(6, 'Tes001', 'Tes001', '<p>Tes001</p>\r\n', '6.png', '2019-05-28 00:00:00'),
-(7, 'Tes002', 'Tes002', '<p>Tess002</p>\r\n', '6.png', '2019-05-28 00:00:00'),
-(8, 'Tes3', 'Tes3', '<p>Tes3</p>\r\n', '7.png', '2019-05-28 00:00:00'),
-(9, 'Tes4', 'Tes4', '<p>Tes4</p>\r\n', '8.png', '2019-05-28 00:00:00');
+(10, '7 Cara Memulihkan Trauma Paska Benca', 'skata.info', '<p>Beberapa hari lalu gempa dan tsunami yang mengguncang Palu-Donggala, Sulawesi Tengah telah mengakibatkan banyak kerusakan dan menelan puluhan korban jiwa. Mereka yang terdampak bencana gempa mengungsi ke tempat-tempat aman. Bagi para korban dari kejadian ini tentunya dapat menimbulkan trauma yang mendalam ataupun korban biasanya rentan terhadap stres.&nbsp;&nbsp;</p>\r\n\r\n<p>Gangguan trauma paska stres atau yang dikenal juga sebagai Post Traumatic Stress Disorder (PTSD) adalah sebuah kondisi gangguan kesehatan mental akibat peristiwa yang mengerikan, seperti kecelakaan, perang, ataupun kejadian bencana alam (gempa bumi, tsunami, longsor dan lainnya).</p>\r\n\r\n<p>Dampak dari gangguan trauma itu sendiri tentu bervariasi, dari yang ringan sampai yang berat. Berikut beberapa diantaranya:</p>\r\n\r\n<p>- Selalu merasa cemas dan sangat mengganggu,&nbsp;</p>\r\n\r\n<p>- Terbayang-bayang dengan peristiwa bencana,&nbsp;</p>\r\n\r\n<p>- Mimpi buruk yang menyebabkan kesulitan tidur,&nbsp;</p>\r\n\r\n<p>- Kondisi fisik penderita menjadi siaga ketika mereka mengingat ataupun memikirkan trauma yang dialami.</p>\r\n\r\n<p>Gejala psikis seperti demikian tidak bisa dibiarkan berlarut-larut. Para korban harus dibantu agar pulih kondisi psikologisnya dari pengalaman traumatis melalui pemulihan trauma (trauma healing).&nbsp;</p>\r\n\r\n<p>Gangguan PTSD pada korban bencana muncul setelah 1 bulan, sedangkan gangguan trauma yang muncul kurang dari 1 bulan disebut Acute Stress Disorder (ASD). Biasanya korban yang mengalami ASD dapat pulih kembali dari gangguan trauma sehingga hanya memerlukan dukungan psikososial.&nbsp;</p>\r\n\r\n<p>Sedangkan Gangguan PTSD memerlukan penanganan khusus, seperti terapi psikis dengan intervensi khusus dan jika sangat mengganggu dapat dipertimbangkan pemberian obat-obatan.&nbsp;</p>\r\n\r\n<p>Lalu bila kita didekat mereka, apa saja kira-kira yang bisa kita lakukan untuk memulihkan kondisi tersebut.</p>\r\n\r\n<p>1. Meminimalkan paparan media yang memberitakan tentang bencana atau peristiwa tersebut&nbsp;</p>\r\n\r\n<p>2. Menghindarkan mereka dari tempat-tempat dimana kejadian mengerikan itu berlangsung&nbsp;</p>\r\n\r\n<p>3. Memberikan dukungan, kita perlu menunjukkan bahwa kita peduli dan berempati terhadap kondisi korban.&nbsp;</p>\r\n\r\n<p>4. Memberikan donasi dalam bentuk pangan, sandang, dan papan.&nbsp;</p>\r\n\r\n<p>5. Mengajak para korban untuk bermain dan bersenda gurau, hal ini dapat meringankan tekanan traumatis yang dialami korban</p>\r\n\r\n<p>6. Melakukan kegiatan bersama-sama seperti memasak di dapur umum</p>\r\n\r\n<p>7. Menjadi pendengar cerita para korban, bila mereka siap menceritakan musibah yang dialaminya</p>\r\n\r\n<p>Secara moral, dukungan psikososial ditujukan untuk melepaskan korban dari perasaan ketakutan yang dialaminya, bukannya bertujuan untuk melupakan peristiwa pahit tersebut. Dan kegiatan yang dilakukan bersama-sama memberikan efek psikologis yang kuat kepada korban yang menandakan bahwa mereka tidak sendirian dalam menghadapi peristiwa ini.&nbsp;</p>\r\n\r\n<p>Selain itu edukasi seputar informasi bencana atau informasi bantuan pun menjadi hal yang penting dan dapat disampaikan kepada korban sehingga apabila bencana susulan terjadi para korban mengerti apa yang harus dilakukan.</p>\r\n\r\n<p>Kondisi psikologis seseorang setelah mengalami trauma dapat kembali pulih atau normal. Tentunya pemulihan kondisi psikologis seseorang tergantung dari bagaimana mereka mampu menghadapi situasi sulit serta ketersediaan sumber-sumber daya lokal yang dapat menunjang proses pemulihan trauma.</p>\r\n\r\n<p>Namun, tidak dipungkiri bahwa gangguan trauma dapat menetap dan berkepanjangan sehingga memerlukan penanganan yang lebih lanjut dan bersifat holistik.&nbsp;</p>\r\n', '10.jpg', '2019-05-29 00:00:00'),
+(11, 'Delapan Cara Mudah untuk Bertahan Hi', 'nationalgeographic.grid.id', '<p><strong>Nationalgeographic.co.id -</strong>&nbsp;Mulai dari badai hingga gempa bumi,&nbsp;<a href=\"https://nationalgeographic.grid.id/tag/bencana-alam\">bencana alam</a>bisa terjadi kapan saja. Ratusan hingga ribuan orang tewas akibat peristiwa tersebut. Dan menurut para peneliti, dengan adanya kenaikan suhu di darat maupun laut,&nbsp;<a href=\"https://nationalgeographic.grid.id/tag/bencana-alam\">bencana alam</a>&nbsp;mungkin semakin buruk ke depannya.</p>\r\n\r\n<p>Berikut sepuluh cara yang bisa dilakukan agar tetap aman selama bencana terjadi:</p>\r\n\r\n<p><strong>Hindari menggunakan air terkontaminasi</strong></p>\r\n\r\n<p>Air minum mungkin tidak bisa digunakan lagi setelah&nbsp;<a href=\"https://nationalgeographic.grid.id/tag/bencana-alam\">bencana alam</a>, terutama ketika banjir. Air bersih akan terkontaminasi oleh berbagai senyawa, kotoran manusia serta ternak.</p>\r\n\r\n<p>Pada saat itu, Anda hanya boleh menggunakan air kemasan untuk minum, memasak, dan membersihkan diri.</p>\r\n', '10.jpg', '2019-05-29 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `artikel_sg`
+-- Table structure for table `artikel_sg`
 --
 
 CREATE TABLE `artikel_sg` (
@@ -63,7 +61,7 @@ CREATE TABLE `artikel_sg` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `artikel_sg`
+-- Dumping data for table `artikel_sg`
 --
 
 INSERT INTO `artikel_sg` (`id`, `judul`, `sumber`, `isi`, `image`, `date`) VALUES
@@ -74,7 +72,7 @@ INSERT INTO `artikel_sg` (`id`, `judul`, `sumber`, `isi`, `image`, `date`) VALUE
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `donasi`
+-- Table structure for table `donasi`
 --
 
 CREATE TABLE `donasi` (
@@ -88,7 +86,7 @@ CREATE TABLE `donasi` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kontak_penting`
+-- Table structure for table `kontak_penting`
 --
 
 CREATE TABLE `kontak_penting` (
@@ -102,7 +100,7 @@ CREATE TABLE `kontak_penting` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kontak_penting`
+-- Dumping data for table `kontak_penting`
 --
 
 INSERT INTO `kontak_penting` (`Kode`, `Propinsi`, `Kab/Kota`, `Kategori`, `Nama`, `Alamat`, `Nomor_telepon`) VALUES
@@ -848,7 +846,7 @@ INSERT INTO `kontak_penting` (`Kode`, `Propinsi`, `Kab/Kota`, `Kategori`, `Nama`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `obat`
+-- Table structure for table `obat`
 --
 
 CREATE TABLE `obat` (
@@ -863,7 +861,7 @@ CREATE TABLE `obat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `obat`
+-- Dumping data for table `obat`
 --
 
 INSERT INTO `obat` (`id_obat`, `nama_obat`, `foto_obat`, `dosis_anak`, `dosis_dewasa`, `penyakit`, `bahan_aktif`, `efek_samping`) VALUES
@@ -874,7 +872,7 @@ INSERT INTO `obat` (`id_obat`, `nama_obat`, `foto_obat`, `dosis_anak`, `dosis_de
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `orang_ditemukan`
+-- Table structure for table `orang_ditemukan`
 --
 
 CREATE TABLE `orang_ditemukan` (
@@ -894,7 +892,7 @@ CREATE TABLE `orang_ditemukan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `orang_ditemukan`
+-- Dumping data for table `orang_ditemukan`
 --
 
 INSERT INTO `orang_ditemukan` (`id`, `nama_korban`, `usia`, `gender`, `nama_pelapor`, `no_telepon_pelapor`, `tanggal_ditemukan`, `lokasi_ditemukan`, `kondisi_korban`, `ciri_ciri_korban`, `foto_korban`, `jenis_bencana`, `status`) VALUES
@@ -906,7 +904,7 @@ INSERT INTO `orang_ditemukan` (`id`, `nama_korban`, `usia`, `gender`, `nama_pela
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `orang_hilang`
+-- Table structure for table `orang_hilang`
 --
 
 CREATE TABLE `orang_hilang` (
@@ -928,7 +926,7 @@ CREATE TABLE `orang_hilang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `orang_hilang`
+-- Dumping data for table `orang_hilang`
 --
 
 INSERT INTO `orang_hilang` (`id`, `nama_korban`, `no_identitas`, `jenis_kartu_identitas`, `usia`, `gender`, `nama_pelapor`, `no_telepon_pelapor`, `hubungan_pelapor`, `tanggal_hilang`, `jenis_bencana`, `lokasi_terakhir`, `ciri_ciri_korban`, `status`, `foto_korban`) VALUES
@@ -941,7 +939,7 @@ INSERT INTO `orang_hilang` (`id`, `nama_korban`, `no_identitas`, `jenis_kartu_id
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pertolongan_pertama`
+-- Table structure for table `pertolongan_pertama`
 --
 
 CREATE TABLE `pertolongan_pertama` (
@@ -951,7 +949,7 @@ CREATE TABLE `pertolongan_pertama` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pertolongan_pertama`
+-- Dumping data for table `pertolongan_pertama`
 --
 
 INSERT INTO `pertolongan_pertama` (`id`, `judul`, `isi`) VALUES
@@ -968,7 +966,7 @@ INSERT INTO `pertolongan_pertama` (`id`, `judul`, `isi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `posts`
+-- Table structure for table `posts`
 --
 
 CREATE TABLE `posts` (
@@ -980,7 +978,7 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `posts`
+-- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`post_id`, `post_content`, `post_date`, `post_topic`, `post_by`) VALUES
@@ -992,7 +990,7 @@ INSERT INTO `posts` (`post_id`, `post_content`, `post_date`, `post_topic`, `post
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `topics`
+-- Table structure for table `topics`
 --
 
 CREATE TABLE `topics` (
@@ -1003,7 +1001,7 @@ CREATE TABLE `topics` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `topics`
+-- Dumping data for table `topics`
 --
 
 INSERT INTO `topics` (`topic_id`, `topic_subject`, `topic_date`, `topic_by`) VALUES
@@ -1014,7 +1012,7 @@ INSERT INTO `topics` (`topic_id`, `topic_subject`, `topic_date`, `topic_by`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -1029,7 +1027,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`ID`, `NAMA`, `ALAMAT`, `PHONE`, `USERNAME`, `PASSWORD`, `ID_ROLE`, `DATE_CREATED`) VALUES
@@ -1039,7 +1037,7 @@ INSERT INTO `user` (`ID`, `NAMA`, `ALAMAT`, `PHONE`, `USERNAME`, `PASSWORD`, `ID
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -1055,7 +1053,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `nama`, `user_name`, `user_pass`, `user_email`, `user_level`, `date`, `user_phone`, `alamat`) VALUES
@@ -1068,7 +1066,7 @@ INSERT INTO `users` (`user_id`, `nama`, `user_name`, `user_pass`, `user_email`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `video`
+-- Table structure for table `video`
 --
 
 CREATE TABLE `video` (
@@ -1083,7 +1081,7 @@ CREATE TABLE `video` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `video`
+-- Dumping data for table `video`
 --
 
 INSERT INTO `video` (`ID`, `JUDUL`, `ISI`, `LINK`, `SUMBER`, `KATEGORI`, `DATE_CREATED`, `CREATED_BY`) VALUES
@@ -1182,73 +1180,86 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT for table `artikel_p`
 --
 ALTER TABLE `artikel_p`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `artikel_sg`
 --
 ALTER TABLE `artikel_sg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
 --
 -- AUTO_INCREMENT for table `donasi`
 --
 ALTER TABLE `donasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `kontak_penting`
 --
 ALTER TABLE `kontak_penting`
   MODIFY `Kode` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=738;
+
 --
 -- AUTO_INCREMENT for table `obat`
 --
 ALTER TABLE `obat`
   MODIFY `id_obat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT for table `orang_ditemukan`
 --
 ALTER TABLE `orang_ditemukan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `orang_hilang`
 --
 ALTER TABLE `orang_hilang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `pertolongan_pertama`
 --
 ALTER TABLE `pertolongan_pertama`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `post_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
 --
 -- AUTO_INCREMENT for table `topics`
 --
 ALTER TABLE `topics`
   MODIFY `topic_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
 --
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `topics`
+-- Constraints for table `topics`
 --
 ALTER TABLE `topics`
   ADD CONSTRAINT `topics_ibfk_1` FOREIGN KEY (`topic_by`) REFERENCES `users` (`user_id`);
