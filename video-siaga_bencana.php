@@ -46,7 +46,7 @@ include('front-end/head.php');
 							<h2 class="entry-title"><a href="#"><?php echo $key['JUDUL']; ?></a></h2>
 
 							<iframe width="100%" height="415" src="https://www.youtube.com/embed/<?php echo $id ?>?rel=0&showinfo=0&color=white&iv_load_policy=3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							<p><?php echo $res['ISI']; ?></p>
+							<p><?php echo $key['ISI']; ?></p>
 							<i>Sumber : <?php echo $key['SUMBER']; ?> </i>
 
 						</div>
