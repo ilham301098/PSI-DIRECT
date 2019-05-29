@@ -1,21 +1,11 @@
 -- phpMyAdmin SQL Dump
-<<<<<<< HEAD
--- version 4.8.5
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2019 at 04:25 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
-=======
--- version 4.8.3
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: May 29, 2019 at 03:56 AM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
->>>>>>> da36be692ddeb7e4f0a3a6bb42f3ba52d786a1be
+-- Generation Time: 29 Mei 2019 pada 04.36
+-- Versi Server: 10.1.22-MariaDB
+-- PHP Version: 7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -35,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `artikel_p`
+-- Struktur dari tabel `artikel_p`
 --
 
 CREATE TABLE `artikel_p` (
@@ -48,17 +38,19 @@ CREATE TABLE `artikel_p` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `artikel_p`
+-- Dumping data untuk tabel `artikel_p`
 --
 
 INSERT INTO `artikel_p` (`id`, `judul`, `sumber`, `isi`, `image`, `date`) VALUES
-(10, '7 Cara Memulihkan Trauma Paska Benca', 'skata.info', '<p>Beberapa hari lalu gempa dan tsunami yang mengguncang Palu-Donggala, Sulawesi Tengah telah mengakibatkan banyak kerusakan dan menelan puluhan korban jiwa. Mereka yang terdampak bencana gempa mengungsi ke tempat-tempat aman. Bagi para korban dari kejadian ini tentunya dapat menimbulkan trauma yang mendalam ataupun korban biasanya rentan terhadap stres.&nbsp;&nbsp;</p>\r\n\r\n<p>Gangguan trauma paska stres atau yang dikenal juga sebagai Post Traumatic Stress Disorder (PTSD) adalah sebuah kondisi gangguan kesehatan mental akibat peristiwa yang mengerikan, seperti kecelakaan, perang, ataupun kejadian bencana alam (gempa bumi, tsunami, longsor dan lainnya).</p>\r\n\r\n<p>Dampak dari gangguan trauma itu sendiri tentu bervariasi, dari yang ringan sampai yang berat. Berikut beberapa diantaranya:</p>\r\n\r\n<p>- Selalu merasa cemas dan sangat mengganggu,&nbsp;</p>\r\n\r\n<p>- Terbayang-bayang dengan peristiwa bencana,&nbsp;</p>\r\n\r\n<p>- Mimpi buruk yang menyebabkan kesulitan tidur,&nbsp;</p>\r\n\r\n<p>- Kondisi fisik penderita menjadi siaga ketika mereka mengingat ataupun memikirkan trauma yang dialami.</p>\r\n\r\n<p>Gejala psikis seperti demikian tidak bisa dibiarkan berlarut-larut. Para korban harus dibantu agar pulih kondisi psikologisnya dari pengalaman traumatis melalui pemulihan trauma (trauma healing).&nbsp;</p>\r\n\r\n<p>Gangguan PTSD pada korban bencana muncul setelah 1 bulan, sedangkan gangguan trauma yang muncul kurang dari 1 bulan disebut Acute Stress Disorder (ASD). Biasanya korban yang mengalami ASD dapat pulih kembali dari gangguan trauma sehingga hanya memerlukan dukungan psikososial.&nbsp;</p>\r\n\r\n<p>Sedangkan Gangguan PTSD memerlukan penanganan khusus, seperti terapi psikis dengan intervensi khusus dan jika sangat mengganggu dapat dipertimbangkan pemberian obat-obatan.&nbsp;</p>\r\n\r\n<p>Lalu bila kita didekat mereka, apa saja kira-kira yang bisa kita lakukan untuk memulihkan kondisi tersebut.</p>\r\n\r\n<p>1. Meminimalkan paparan media yang memberitakan tentang bencana atau peristiwa tersebut&nbsp;</p>\r\n\r\n<p>2. Menghindarkan mereka dari tempat-tempat dimana kejadian mengerikan itu berlangsung&nbsp;</p>\r\n\r\n<p>3. Memberikan dukungan, kita perlu menunjukkan bahwa kita peduli dan berempati terhadap kondisi korban.&nbsp;</p>\r\n\r\n<p>4. Memberikan donasi dalam bentuk pangan, sandang, dan papan.&nbsp;</p>\r\n\r\n<p>5. Mengajak para korban untuk bermain dan bersenda gurau, hal ini dapat meringankan tekanan traumatis yang dialami korban</p>\r\n\r\n<p>6. Melakukan kegiatan bersama-sama seperti memasak di dapur umum</p>\r\n\r\n<p>7. Menjadi pendengar cerita para korban, bila mereka siap menceritakan musibah yang dialaminya</p>\r\n\r\n<p>Secara moral, dukungan psikososial ditujukan untuk melepaskan korban dari perasaan ketakutan yang dialaminya, bukannya bertujuan untuk melupakan peristiwa pahit tersebut. Dan kegiatan yang dilakukan bersama-sama memberikan efek psikologis yang kuat kepada korban yang menandakan bahwa mereka tidak sendirian dalam menghadapi peristiwa ini.&nbsp;</p>\r\n\r\n<p>Selain itu edukasi seputar informasi bencana atau informasi bantuan pun menjadi hal yang penting dan dapat disampaikan kepada korban sehingga apabila bencana susulan terjadi para korban mengerti apa yang harus dilakukan.</p>\r\n\r\n<p>Kondisi psikologis seseorang setelah mengalami trauma dapat kembali pulih atau normal. Tentunya pemulihan kondisi psikologis seseorang tergantung dari bagaimana mereka mampu menghadapi situasi sulit serta ketersediaan sumber-sumber daya lokal yang dapat menunjang proses pemulihan trauma.</p>\r\n\r\n<p>Namun, tidak dipungkiri bahwa gangguan trauma dapat menetap dan berkepanjangan sehingga memerlukan penanganan yang lebih lanjut dan bersifat holistik.&nbsp;</p>\r\n', '10.jpg', '2019-05-29 00:00:00'),
-(11, 'Delapan Cara Mudah untuk Bertahan Hi', 'nationalgeographic.grid.id', '<p><strong>Nationalgeographic.co.id -</strong>&nbsp;Mulai dari badai hingga gempa bumi,&nbsp;<a href=\"https://nationalgeographic.grid.id/tag/bencana-alam\">bencana alam</a>bisa terjadi kapan saja. Ratusan hingga ribuan orang tewas akibat peristiwa tersebut. Dan menurut para peneliti, dengan adanya kenaikan suhu di darat maupun laut,&nbsp;<a href=\"https://nationalgeographic.grid.id/tag/bencana-alam\">bencana alam</a>&nbsp;mungkin semakin buruk ke depannya.</p>\r\n\r\n<p>Berikut sepuluh cara yang bisa dilakukan agar tetap aman selama bencana terjadi:</p>\r\n\r\n<p><strong>Hindari menggunakan air terkontaminasi</strong></p>\r\n\r\n<p>Air minum mungkin tidak bisa digunakan lagi setelah&nbsp;<a href=\"https://nationalgeographic.grid.id/tag/bencana-alam\">bencana alam</a>, terutama ketika banjir. Air bersih akan terkontaminasi oleh berbagai senyawa, kotoran manusia serta ternak.</p>\r\n\r\n<p>Pada saat itu, Anda hanya boleh menggunakan air kemasan untuk minum, memasak, dan membersihkan diri.</p>\r\n', '10.jpg', '2019-05-29 00:00:00');
+(6, 'Tes001', 'Tes001', '<p>Tes001</p>\r\n', '6.png', '2019-05-28 00:00:00'),
+(7, 'Tes002', 'Tes002', '<p>Tess002</p>\r\n', '6.png', '2019-05-28 00:00:00'),
+(8, 'Tes3', 'Tes3', '<p>Tes3</p>\r\n', '7.png', '2019-05-28 00:00:00'),
+(9, 'Tes4', 'Tes4', '<p>Tes4</p>\r\n', '8.png', '2019-05-28 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `artikel_sg`
+-- Struktur dari tabel `artikel_sg`
 --
 
 CREATE TABLE `artikel_sg` (
@@ -71,19 +63,17 @@ CREATE TABLE `artikel_sg` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `artikel_sg`
+-- Dumping data untuk tabel `artikel_sg`
 --
 
 INSERT INTO `artikel_sg` (`id`, `judul`, `sumber`, `isi`, `image`, `date`) VALUES
-(32, 'Gempa Palu Donggala', 'Detik.com', 'Pukul 17.02 WIB, gempa bermagnitudo 7,4 mengguncang Kota Palu dan Donggala. Pusat gempa ada pada kedalaman 10 km, jaraknya ada di 27 km sebelah timur laut Donggala. Saking kencangnya getaran itu, kursi dan meja orang-orang di Kabupaten Gowa sampai bergetar, padahal Kabupaten Gowa berjarak sekitar 780 km dari Kota Palu. Gara-gara Sesar Palu-Koro yang menggeliat ini, jembatan di dekat Pantai Talise patah. Kubah Masjid Baiturrahman yang berwarna hijau juga ikut roboh. Hotel Roa-roa roboh menimbun orang-orang di dalamnya.  Tsunami datang  Badan Metereologi Klimatologi dan Geofisika (BMKG) mengaktivasi peringatan dini tsunami, status siaga untuk pantai Donggala barat dan waspada untuk Donggala utara, Mamuju, dan Kota Palu bagian barat.  Tsunami setinggi hampir 6 meter dengan kecepatan 800 km/jam menerjang Pantai Talise, ketinggian ombak meraih baliho tinggi dekat pantai. Orang-orang kalang-kabut, jerit kepanikan memekik.', 'palu.jpeg', '2019-05-21'),
-(34, 'Gempa Aceh', 'Detik.com', 'Test Deskripsi', 'palu.jpeg', '2019-05-21'),
-(36, 'Siaga Bencana : Siap Menghadapi Gempa Bumi', 'Handouts Geologi Lingkungan (GG405)', '<p>Gempa bumi adalah peristiwa saat lempeng bumi bergerak selama waktu tertentu. Gempa bumi dapat disebabkan oleh berbagai macam hal yaitu pergeseran lempeng bumi, reruntuhan, letusan gunung berapi, dan lain sebagainya</p>\r\n\r\n<p>Gempa bumi merupakan salah satu bencana alam yang menimbulkan kerusakan di permukaan bumi. Penting untuk kita ketahui bagaimana menghadapi gempa bumi, berikut ini adalah cara-cara yang dapat dilakukan untuk meminimalisir dampak gempa bumi:</p>\r\n\r\n<ol>\r\n	<li>Sebelum terjadinya Gempa Bumi :\r\n	<ol>\r\n		<li>Mengetahui apa yang disebut gempa bumi</li>\r\n		<li>Mengenali lingkungan sekitar</li>\r\n		<li>Memperhatikan letak pintu emergency dan tempat berlindung</li>\r\n		<li>Mengatur perabotan untuk menghindari &nbsp;jatuh, roboh dan bergeser pada saat terjadinya gempa.</li>\r\n	</ol>\r\n	</li>\r\n	<li>Belajar melakukan P3K\r\n	<ol>\r\n		<li>Belajar menggunkan alat pemadam kebakaran</li>\r\n		<li>Mencatat nomor-nomor penting</li>\r\n		<li>Latihan menghadapi bencana secara massal</li>\r\n	</ol>\r\n	</li>\r\n	<li>Menyiapkan Survival Kit\r\n	<ol>\r\n		<li>Kotak P3K</li>\r\n		<li>Senter beserta baterai</li>\r\n		<li>Makanan instant dan Air</li>\r\n	</ol>\r\n	</li>\r\n	<li>Saat terjadinya Gempa :\r\n	<ol>\r\n		<li>Lindungi kepala dari reruntuhan</li>\r\n		<li>Cari tempat yang aman dari reruntuhan</li>\r\n		<li>Berlari keluar gedung jika memungkinkan</li>\r\n	</ol>\r\n	</li>\r\n</ol>\r\n\r\n<p>&nbsp;</p>\r\n', '35.jpeg', '2019-05-29'),
-(37, 'Menghadapi Bencana Angin Puting Beliung', 'Surya.co.id', '<p>Memasuki awal musim hujan seperti ini berpotensi terjadi fenomena cuaca angin puting beliung. Angin&nbsp;puting beliung&nbsp;yang mirip dengan tornado di Amerika Serikat, namun dengan intensitas kecil dan dapat datang tak terduga.</p>\r\n\r\n<p>Tak jarang ketika angin puting beliung&nbsp;melanda dapat mengakibatkan kerusakan serius dan menimbulkan korban jiwa.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Agar terhindar dari bencana angin puting beliung&nbsp;<a href=\"http://surabaya.tribunnews.com/tag/bmkg-juanda\">BMKG&ensp;Juanda</a>&nbsp;memberikan 3&nbsp;<a href=\"http://surabaya.tribunnews.com/tag/tips\">t</a>ips&nbsp;menghindar dari&nbsp;angin puting beliung&nbsp;sebagai berikut:</p>\r\n\r\n<p><strong><strong>1. Perbanyak informasi perkiraan cuaca</strong></strong></p>\r\n\r\n<p>Di zaman millenial seperti sekarag ini, alangkah baiknya mendownload aplikasi perkiraan cuaca di gadget.</p>\r\n\r\n<p>Prakirawan Cuaca&nbsp;<a href=\"http://surabaya.tribunnews.com/tag/bmkg-juanda\">BMKG&ensp;Juanda</a>,&nbsp;Teguh Tri Susanto, mengatakan semakin kita tahu ramalan cuaca, dapat semakin terhindar dari bencana, di antaranya&nbsp;angin puting beliung.</p>\r\n\r\n<p>&quot;Kalau di aplikasi perkiraan cuaca kan ada daerah mana yang berpotensi hujan deras disertai angin lebat. Biasanya angin puting beliung terjadi sebelum hujan lebat,&quot; kata Teguh Tribunjatimcom (grup surya.co.id), Jumat (07/12/2018).</p>\r\n\r\n<p><strong><strong>2. Perhatikan kondisi cuaca</strong></strong></p>\r\n\r\n<p>Teguh mengatakan masyarakat harus cermat memperhatikan kondisi cuaca.</p>\r\n\r\n<p><br />\r\nDi musim pancaroba dan memasuki awal fase puncak musim hujan seperti sekarang ini, potensi&nbsp;angin puting beliung&nbsp;dapat sering terjadi.</p>\r\n\r\n<p>&quot;Angin&nbsp;angin puting beliung&nbsp;sering terjadi siang maupun sore hari, jadi perhatikan awan. Biasanya sebelum&nbsp;angin puting beliung, terbentuk dulu awan kumulonimbus,&quot; ungkapnya.</p>\r\n\r\n<p>Ia menjelaskan awan kumulonimbus sendiri biasanya berbentuk seperti bunga kol. Berwarna agak gelap. Dan tinggi awan nya cukup rendah.</p>\r\n\r\n<p>&quot;Kalau sudah begitu pasti akan hujan lebat dan potensi angin puting beliungnya cukup besar,&quot; tambahnya.</p>\r\n\r\n<p><strong><strong>3. Hindari Berada di Tempat Terbuka</strong></strong></p>\r\n\r\n<p>Apabila muncul anginputing&nbsp; beliung, alangkah baiknya kita menghindari berada di tempat terbuka.</p>\r\n\r\n<p>Teguh menjelaskan, angin puting beliung&nbsp;tidak pernah berdiam di satu tempat.</p>\r\n\r\n<p>Selalu bergerak dan berdurasi tidak terlalu lama, hanya sekitar 3-5 menit.</p>\r\n\r\n<p>&quot;Sebisa mungkin hindari berada di bawah pohon serta baliho reklame,&quot; pungkasnya.</p>\r\n', '36.jpg', '2019-05-29');
+(31, 'menghadapi bencana angin puting beliung', 'google', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec commodo arcu, non luctus metus. Duis tempus porta pulvinar. Ut gravida erat at imperdiet commodo. Nullam ut facilisis diam, vel dapibus erat. Donec pretium tincidunt faucibus. Pellentesque ac fermentum nibh, sit amet dapibus mi. Praesent metus odio, porttitor ut luctus ut, semper sit amet arcu. Quisque magna massa, suscipit a facilisis faucibus, convallis sit amet nibh. Morbi porttitor enim sem, pellentesque convallis elit luctus a. Suspendisse potenti. Curabitur venenatis blandit est id aliquam.', 'artikel.jpg', '2019-05-12'),
+(32, 'Tes2', 'Tes2', 'Tes2', '', '2019-05-20');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donasi`
+-- Struktur dari tabel `donasi`
 --
 
 CREATE TABLE `donasi` (
@@ -91,23 +81,13 @@ CREATE TABLE `donasi` (
   `id_user` int(11) NOT NULL,
   `donasi` int(11) NOT NULL,
   `tanggal` datetime NOT NULL,
-  `bukti_transfer` varchar(200) NOT NULL,
   `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `donasi`
---
-
-INSERT INTO `donasi` (`id`, `id_user`, `donasi`, `tanggal`, `bukti_transfer`, `status`) VALUES
-(1, 39, 100001, '2019-05-28 08:29:23', '', 'Belum Terverifikasi'),
-(2, 39, 150060, '2019-05-28 08:31:09', '', 'Belum Terverifikasi'),
-(3, 39, 200089, '2019-05-28 08:31:59', '', 'Belum Terverifikasi');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kontak_penting`
+-- Struktur dari tabel `kontak_penting`
 --
 
 CREATE TABLE `kontak_penting` (
@@ -121,7 +101,7 @@ CREATE TABLE `kontak_penting` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kontak_penting`
+-- Dumping data untuk tabel `kontak_penting`
 --
 
 INSERT INTO `kontak_penting` (`Kode`, `Propinsi`, `Kab/Kota`, `Kategori`, `Nama`, `Alamat`, `Nomor_telepon`) VALUES
@@ -867,7 +847,7 @@ INSERT INTO `kontak_penting` (`Kode`, `Propinsi`, `Kab/Kota`, `Kategori`, `Nama`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `obat`
+-- Struktur dari tabel `obat`
 --
 
 CREATE TABLE `obat` (
@@ -882,17 +862,18 @@ CREATE TABLE `obat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `obat`
+-- Dumping data untuk tabel `obat`
 --
 
 INSERT INTO `obat` (`id_obat`, `nama_obat`, `foto_obat`, `dosis_anak`, `dosis_dewasa`, `penyakit`, `bahan_aktif`, `efek_samping`) VALUES
 (2, 'Panadol Flu & Batuk', 'panadol flu.jpg', 'Jangan diberikan kepada anak-anak di bawah umur 12 tahun, kecuali atas petunjuk dokter.', '1 tablet 4-6 kali sehari, maksimum 8 tablet per hari.', 'Meredakan demam, sakit kepala, hidung tersumbat, bersin-bersin, batuk tidak berdahak, nyeri otot, dan nyeri tenggorokan akibat flu.', 'Tiap tablet Panadol Flu & Batuk mengandung 500 mg paracetamol, 5 mg phenylephrine HCl, dan 15 mg.', 'Dapat meningkatkan kerja obat antihistamin dan efeknya terhadap otak. Dapat meningkatkan efek toksisitas obat jika digunakan bersama dengan fluoxetine, paroxetine, quinidine, atau terbinafine. Dapat mengakibatkan hipertensi jika digunakan bersama dengan propranolol. Dapat menyempitkan pembuluh darah jika digunakan bersama dengan metildopa dan antidepresan trisiklik.'),
-(3, 'Sanmol Tablet', 'SANMOL TABLET.jpg', '1 - 2 kaplet, 3 sampai 4 kali per hari. Penggunaan maximum 8 kaplet per hari.', 'Anak (7 - 12 tahun): 0.5 - 1 kaplet, 3 sampai 4 kali per hari. Penggunaan maximum 4 kaplet per hari.', 'Meredakan nyeri seperti sakit kepala, sakit gigi, dan demam.', 'Paracetamol 500 mg', 'Parasetamol jangan diberikan kepada penderita hipersensitif/alergi terhadap Paracetamol.Penderita gangguan fungsi hati berat.');
+(3, 'Sanmol Tablet', 'SANMOL TABLET.jpg', '1 - 2 kaplet, 3 sampai 4 kali per hari. Penggunaan maximum 8 kaplet per hari.', 'Anak (7 - 12 tahun): 0.5 - 1 kaplet, 3 sampai 4 kali per hari. Penggunaan maximum 4 kaplet per hari.', 'Meredakan nyeri seperti sakit kepala, sakit gigi, dan demam.', 'Paracetamol 500 mg', 'Parasetamol jangan diberikan kepada penderita hipersensitif/alergi terhadap Paracetamol.Penderita gangguan fungsi hati berat.'),
+(14, 'aaaaa', 'asma6.jpg', 'bbb', 'ccc', 'ddd', 'kkk', 'ooo');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orang_ditemukan`
+-- Struktur dari tabel `orang_ditemukan`
 --
 
 CREATE TABLE `orang_ditemukan` (
@@ -912,10 +893,14 @@ CREATE TABLE `orang_ditemukan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `orang_ditemukan`
+-- Dumping data untuk tabel `orang_ditemukan`
 --
 
 INSERT INTO `orang_ditemukan` (`id`, `nama_korban`, `usia`, `gender`, `nama_pelapor`, `no_telepon_pelapor`, `tanggal_ditemukan`, `lokasi_ditemukan`, `kondisi_korban`, `ciri_ciri_korban`, `foto_korban`, `jenis_bencana`, `status`) VALUES
+(4, 'x', 21, 'Laki-Laki', 'smrht', '2654', '2019-05-16', 'werab', 'Hidup', 'fbew', '1544921154105.png', 'Banjir', 'Terverifikasi'),
+(5, 'q', 13, 'Laki-Laki', 'serhedth', '452344', '2019-05-09', 'srth', 'Hidup', 'cwwd', '1544921086014.png', 'Banjir', 'Terverifikasi'),
+(6, 'w', 21, 'Laki-Laki', 'wegezrg', '24523', '2019-05-17', 'aerge', 'Meninggal Dunia', 'serther', '1544829298981.png', 'Tanah Longsor', 'Belum Diverifikasi'),
+(7, 't', 21, 'Perempuan', 'wedvqwe', '214513', '2019-05-17', 'wq12e', 'Meninggal Dunia', 'qwdvwedv', '1555638837597.jpg', 'Gunung Meletus', 'Terverifikasi'),
 (8, 'Marta', 21, 'Perempuan', 'Joko', '0897555033', '2019-05-16', 'Rs.Berkah Abadi', 'Hidup', 'tinggi 170, memakai tas merah', 'default.jpg', 'Banjir', 'Terverifikasi'),
 (9, 'Wahyu', 18, 'Laki-Laki', 'Martini', '0897559003', '2019-05-09', 'Posko xix', 'Hidup', 'tingg 176, memakai topi kuning', 'default.jpg', 'Banjir', 'Terverifikasi'),
 (10, 'Tara', 25, 'Laki-Laki', 'Angel', '0897575883', '2019-05-17', 'Rs.Ranu Juna', 'Meninggal Dunia', 'memakai celana biru, tato di tangan kanan', 'default.jpg', 'Tanah Longsor', 'Belum Diverifikasi'),
@@ -924,7 +909,7 @@ INSERT INTO `orang_ditemukan` (`id`, `nama_korban`, `usia`, `gender`, `nama_pela
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orang_hilang`
+-- Struktur dari tabel `orang_hilang`
 --
 
 CREATE TABLE `orang_hilang` (
@@ -946,10 +931,15 @@ CREATE TABLE `orang_hilang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `orang_hilang`
+-- Dumping data untuk tabel `orang_hilang`
 --
 
 INSERT INTO `orang_hilang` (`id`, `nama_korban`, `no_identitas`, `jenis_kartu_identitas`, `usia`, `gender`, `nama_pelapor`, `no_telepon_pelapor`, `hubungan_pelapor`, `tanggal_hilang`, `jenis_bencana`, `lokasi_terakhir`, `ciri_ciri_korban`, `status`, `foto_korban`) VALUES
+(1, 'aaaaa', '3413563452', 'KTP', 32, 'Laki-Laki', 'dvsvagwsrfw', '346345235', 'Keluarga', '2019-05-14', 'Banjir', 'sdvwsvwgw', 'egwfaqwfqw', 'Terverifikasi', ''),
+(2, 'qqqqqqqqq', '7236572347581365', 'SIM', 45, 'Laki-Laki', 'iqsbcgkibq', '92365497613', 'Keluarga', '2019-05-15', 'Gempa Bumi', 'qs chqaiushc', 'asouchouscnoq', 'Belum Diverifikasi', '1544921086014.png'),
+(3, 'az', '4362231', 'KTP', 13, 'Laki-Laki', 'v2e12w', '1243124', 'Keluarga', '2019-05-04', 'Gempa Bumi', 'qwcwecqw', 'wevw', 'Belum Diverifikasi', '1544921154105.png'),
+(4, 'e', '2346244', 'KTP', 21, 'Laki-Laki', 'tyhjxrfyhr', '35463465', 'Keluarga', '2019-05-16', 'Tanah Longsor', 'wefwefqw', 'sxrtghzrrf', 'Terverifikasi', '1543478644726.png'),
+(5, 'y', '4576457', 'KTP', 23, 'Laki-Laki', 'wedfwe', '245245', 'Teman', '2019-05-16', 'Tanah Longsor', 'xtyjxrfth', 'xrtyjxrth', 'Terverifikasi', '1543478644726.png'),
 (6, 'Mawar', '15074313695722584', 'KTP', 32, 'Perempuan', 'Herman', '0838555830', 'Keluarga', '2019-05-14', 'Banjir', 'depan rumah', 'tinggi168cm, kulit sawo matang, rambut merah', 'Terverifikasi', 'default.jpg'),
 (7, 'Tono', '97939695214723887', 'SIM', 45, 'Laki-Laki', 'Ratna', '0898555277', 'Keluarga', '2019-03-15', 'Gempa Bumi', 'alun-alun kota palu', 'tinggi 175cm, rambut gondrong, tato di tangan sebelah kiri', 'Belum Diverifikasi', 'default.jpg'),
 (8, 'Rinda', '66312682236140487', 'KTP', 23, 'Perempuan', 'Tanto', '0878555595', 'Keluarga', '2019-05-04', 'Gempa Bumi', 'gapura gang desa', 'tingg 168, berkacamata', 'Belum Diverifikasi', 'default.jpg'),
@@ -959,7 +949,7 @@ INSERT INTO `orang_hilang` (`id`, `nama_korban`, `no_identitas`, `jenis_kartu_id
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pertolongan_pertama`
+-- Struktur dari tabel `pertolongan_pertama`
 --
 
 CREATE TABLE `pertolongan_pertama` (
@@ -969,7 +959,7 @@ CREATE TABLE `pertolongan_pertama` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pertolongan_pertama`
+-- Dumping data untuk tabel `pertolongan_pertama`
 --
 
 INSERT INTO `pertolongan_pertama` (`id`, `judul`, `isi`) VALUES
@@ -977,12 +967,16 @@ INSERT INTO `pertolongan_pertama` (`id`, `judul`, `isi`) VALUES
 (2, 'Pertolongan Pertama Pada Asma', '1. Bantulah penderita menemukan posisi nyaman. Kebanyakan orang yang menderita asma akan lebih nyaman dengan duduk daripada berdiri atau berbaring. Tegakkan badannya untuk membantu pengembangan paru-paru dan mempermudah pernapasan. Biarkan ia mencondongkan tubuh sedikit ke arah Anda atau kursi untuk dukungan. Beberapa penderita asma bisa duduk dalam posisi tripod, yaitu mencondongkan tubuh ke depan dengan tangan di atas lutut untuk meringankan tekanan di diafragma.                                                                                                                               2. Tanyakan dengan tenang, “Apakah kau punya asma?” Walaupun ia tidak dapat menjawab secara verbal karena sesak atau batuk, mungkin ia akan mengangguk atau menunjuk tempat inhaler atau kartu petunjuknya berada.                                                                                                                                                                                  3. Singkirkan semua pemicu di area kejadian. Asma biasanya semakin parah karena pemicu atau alergen tertentu. Tanyakan apakah ada sesuatu di tempat tersebut yang mungkin memicu serangan dan jika ia memberi respons, usahakan menyingkirkan pemicu atau membawa si penderita menjauh dari pemicu yang ada di lingkungan (seperti serbuk sari atau berkaitan dengan cuaca).                                                                                          4. Katakan bahwa Anda mencari inhaler miliknya. Lakukan ini supaya ia tenang dan meyakinkan bahwa Anda sedang membantunya, bukan bermaksud buruk.                                                                                                                                                                                                                                      5. Siapkan penderita untuk menerima obat dari inhaler. Jika kepalanya tertunduk, angkat tubuh bagian atasnya untuk sementara.                                   6. Hubungi IGD. Pantau si penderita sampai paramedis tiba.'),
 (3, 'pertolongan Pertama Pada Serangan Jantung', 'Serangan jantung adalah kondisi darurat media di mana terjadi pemutusan atau penghentian aliran darah yang membawa oksigen ke jantung. Kondisi ini dapat merusak otot jantung karena tidak mendapat suplai oksigen, dan bisa menyebabkan kematian. Karena itu penting untuk mengetahui pertolongan pertama serangan jantung. Jika seseorang tiba-tiba mengalami serangan jantung.                                                    1.Dudukkan orang tersebut, dengan lutut terangkat. Sebagian besar petugas medis menyarankan untuk mendudukkan orang yang diduga terkena serangan jantung dalam \"posisi W\", yaitu posisi setengah berbaring (duduk dengan posisi kira-kira 75 derajat dari lantai) dengan lutut ditekuk.Punggungnya harus diberi penopang, bisa dengan beberapa bantal apabila di dalam rumah atau disandarkan ke pohon apabila di luar rumah. Setelah didudukkan dalam posisi W, kendurkan pakaian di sekitar leher dan dada (misalnya dasi, syal atau kancing baju bagian atas) dan usahakan orang tersebut tetap diam dan tenang. Mungkin Anda tidak tahu apa yang membuatnya tidak nyaman, namun Anda bisa meyakinkan orang tersebut bahwa bantuan medis akan segera tiba dan Anda akan terus menemaninya hingga mereka tiba.                                           2.Tanyakan apakah orang tersebut membawa nitrogliserin. Orang yang memiliki riwayat masalah jantung dan angina (nyeri pada dada dan lengan yang disebabkan oleh penyakit jantung) biasanya diberi resep obat nitrogliserin, yaitu vasodilator kuat yang membuat pembuluh darah besar menjadi relaks (membesar) sehingga darah yang mengandung oksigen bisa mencapai jantung dalam jumlah yang lebih besar.[10] Nitrogliserin juga bisa meredakan gejala serangan jantung yang menyakitkan. Penderitanya sering kali membawa nitrogliserin, jadi tanyakan apakah dia membawanya lalu bantulah orang tersebut untuk mengonsumsinya sambil menunggu datangnya layanan darurat. Nitrogliserin tersedia dalam bentuk pil kecil atau obat semprot, yang keduanya harus diberikan di bawah lidah (sublingual). Obat semprot (Nitrolingual) dilaporkan memiliki efek yang lebih cepat karena lebih cepat diserap dibandingkan pil.                                                                                                                                  3.Berikan aspirin. Apabila Anda atau orang yang terkena serangan jantung mempunyai aspirin, berikan obat tersebut apabila dia tidak alergi terhadap aspirin. Tanyakan apakah dia mempunyai alergi dan lihatlah gelang medis di pergelangan tangannya (jika ada) apabila dia sulit berbicara. Jika usianya lebih dari 18 tahun, berikan tablet aspirin 300 mg agar dikunyah dengan perlahan. Aspirin merupakan obat antiradang nonsteroid atau NSAID (non-steroidal anti-inflammatory drug) yang bisa mengurangi kerusakan jantung dengan \"mengencerkan\" darah, yang berarti mencegah darah agar tidak menggumpal. Aspirin juga bisa mengurangi radang yang terkait dan membantu mengurangi nyeri karena serangan jantung.                                                                                                                                                                                                                                 4.Lakukan CPR apabila orang tersebut berhenti bernapas. CPR (cardiopulmonary resuscitation) dilakukan dengan memberi tekanan pada dada untuk membantu mendorong darah melalui arteri (terutama ke arah otak) yang digabungkan dengan memberi pernapasan buatan (dari mulut ke mulut), untuk mengalirkan oksigen ke paru-paru.[13] Ingatlah bahwa CPR mempunyai keterbatasan dan biasanya tidak bisa memicu jantung agar berdenyut kembali, tetapi CPR bisa menyalurkan oksigen yang sangat berharga ke otak dan memberi pertolongan pertama sebelum layanan darurat datang dengan membawa defibrilator elektrik. Terlepas dari hal tersebut, tidak ada salahnya Anda mengikuti kursus CPR, setidaknya untuk mempelajari dasar-dasarnya.'),
 (4, 'Pertolongan Pertama Pada Luka Bakar', 'Mengetahui tindakan pertolongan pertama untuk luka bakar ringan dapat membantu proses penyembuhan serta menjaga keselamatan diri. Meskipun kasus luka bakar yang lebih parah selalu memerlukan penanganan medis profesional, mempelajari cara mengobati dan menyembuhkan luka bakar ringan tidak sulit. Pelajari pertolongan pertama, penanganan lanjutan, serta pengobatan rumahan yang efektif menyembuhkan luka bakar ringan.                                                                                                                                                                                                             1.Basuh luka bakar ringan dengan air dingin yang mengalir. Jika luka bakar ringan baru saja terjadi, basuhlah dengan air dingin yang mengalir. Air dingin dapat segera mendinginkan serta meminimalkan ukuran luka bakar. Untuk saat ini, jangan menggunakan sabun. Basuh dengan air dingin saja.Jangan membasuh luka bakar yang lebih parah. Jika luka bakar tampak kehitaman dan berbau gosong, jangan basuh luka dengan air. Segera hubungi unit gawat darurat. Jangan merendam luka bakar di dalam air. Basuh luka bakar ringan dengan lembut, lalu tepuk-tepuk dengan handuk bersih sampai kering.                                                                                                                                                                                                                                2.Dinginkan luka bakar selama 5-10 menit. Setelah didinginkan dengan air, tempelkan kompres dingin yang bersih pada luka bakar. Cara ini membantu meredakan nyeri serta meminimalkan bengkak dan lepuh yang dapat timbul pada luka bakar ringan. Jangan menempelkan kompres dingin pada luka bakar selama lebih dari 5-10 menit. Kulit yang mengalami luka bakar kehilangan sensitivitas terhadap suhu sehingga radang dingin (frostbite) dapat terjadi. Oleh karena itu, batasi durasi penggunaan kompres dingin. Selain menggunakan kompres dingin dapat juga menggunakan potongan es batu atau sekantong sayuran dingin.                                                                                                                                                               3.Periksa luka bakar setelah beberapa menit. Bahkan meskipun mungkin kelihatannya relatif ringan, rawatlah luka bakar dengan cermat agar tidak menjadi parah. Terkadang, luka bakar yang parah menjadi kebas dan baru terasa sakit setelah beberapa saat.                                              4.Gunakan terus kompres dingin jika masih terasa sakit. Tempelkan waslap dingin atau kompres lain yang bersih pada luka bakar ringan untuk meredakan nyeri. Kompres dingin membantu meredakan nyeri serta bengkak pada luka bakar ringan. Luka bakar yang melepuh terasa lebih sakit dalam waktu lama. Jadi, sebisa mungkin, minimalkan bengkak.                                                                                                                                           5.Angkat area luka bakar ringan sehingga berada lebih tinggi dari jantung. Terkadang, luka bakar ringan sekalipun akan berdenyut dan terasa menyakitkan selama beberapa jam pertama. Jika bisa, redakan rasa sakit dengan mengangkat area yang mengalami luka bakar sehingga berada lebih tinggi daripada jantung.                                                                                                                                                                                                                                                 6.Segera hubungi unit gawat darurat jika mengalami luka bakar parah.</b> Semua kasus luka bakar tingkat 3 memerlukan penanganan medis sesegera mungkin. Luka bakar tingkat 2 yang lebih dari 7,5 cm atau terjadi pada tangan, kaki, wajah, area kelamin, atau sendi utama dan area sensitif juga harus dikonsultasikan dengan dokter.'),
-(5, 'Pertolongan Pertama Pada Patah Tulang', 'Patah tulang atau fraktur, adalah cedera traumatis serius yang membutuhkan pertolongan medis. Namun, mendapatkan pertolongan pertama dari praktisi medis terlatih tidak selalu memungkinkan—beberapa situasi bisa menghambat pertolongan medis selama beberapa jam atau beberapa hari. Bahkan di negara-negara maju, orang mengalami dua kali patah tulang selama hidupnya, jadi ini bukan kejadian yang langka. Dengan demikian, mengetahui cara memberikan pertolongan pertama pada patah tulang baik untuk diri sendiri, keluarga, maupun orang lain yang berada dalam kondisi darurat adalah hal yang penting.                                                                                                                                          1.Hentikan gerakan pada tulang yang patah. Setelah tubuh orang yang cedera distabilkan, ini waktunya untuk menghentikan gerakan pada tulang yang patah jika Anda mengantisipasi untuk menunggu personel medis dari unit gawat darurat sekitar satu jam atau lebih.[9]Menghentikan gerakan pada tulang yang patah dapat mengurangi nyeri dan melindunginya agar tidak timbul cedera yang lebih berat akibat gerakan tiba-tiba. Jika Anda belum pernah mendapatkan pelatihan yang tepat, jangan coba-coba meluruskan kembali tulang yang patah. Mencoba untuk meluruskan tulang yang patah dengan cara yang salah dapat menimbulkan kerusakan pada pembuluh darah dan saraf, sehingga menimbulkan pendarahan dan kemungkinan kelumpuhan. Perhatikan, bidai hanya dapat digunakan pada tulang anggota badan, bukan tulang pada pelvis atau batang tubuh.                                                                                                                                                                                                                                 2.Berikan kompres es pada lokasi cedera. Ketika tulang yang patah dihentikan pergerakannya, berikan kompres dingin (idealnya es) sesegera mungkin sementara menunggu ambulans datang. Terapi dingin mempunyai banyak manfaat, antara lain mengurangi nyeri, mengurangi peradangan/pembengkakan, serta mengurangi pendarahan dengan mempersempit pembuluh darah arteri.Jika tidak ada es, coba gunakan kantung gel beku atau sekantung sayuran, namun pastikan untuk selalu membungkusnya dengan kain tipis agar tidak menimbulkan lepuh es atau radang dingin.\nBerikan kompres es selama 20 menit atau hingga rasa nyeri pada area cedera benar-benar hilang sebelum kompres dilepaskan. Mengompres cedera dapat mengurangi pembengkakan selama rasa nyeri tidak bertambah berat.\nSaat mengompres dengan es, pastikan untuk mengangkat tulang yang patah untuk mengurangi pembengkakan dan menghambat pendarahan (jika bisa).                                                                                                                                                                                                                                            3.Tetap tenang dan perhatikan tanda-tanda syok. Patah tulang adalah sesuatu yang sangat traumatis dan menyakitkan. Ketakutan, panik, dan syok adalah reaksi yang lazim terjadi, namun memiliki akibat negatif terhadap tubuh, jadi harus dikendalikan. Dengan demikian, tenangkan diri Anda dan/atau orang yang mengalami cedera dengan meyakinkannya bahwa pertolongan akan segera datang dan situasinya dapat dikendalikan. Saat menunggu pertolongan, tutupi tubuh orang yang cedera agar tetap hangat dan berikan minuman jika ia merasa haus. Ajak ia bicara untuk mengalihkan pikirannya dari cedera.                                                                                                                                                                                   4.Pertimbangkan untuk mengonsumsi obat pereda nyeri. Jika waktu yang dibutuhkan untuk menunggu personel medis darurat lebih dari satu jam (atau Anda mengantisipasinya lebih lama lagi), pertimbangkan untuk mengonsumsi/memberikan obat-obatan, jika tersedia, untuk mengendalikan nyeri dan membuat waktu menunggu bisa lebih diterima. Asetaminofen (Tylenol) adalah obat pereda nyeri yang paling tepat untuk patah tulang dan cedera dalam lainnya karena tidak mengencerkan darah dan menyebabkan pendarahan semakin berat.');
+(5, 'Pertolongan Pertama Pada Patah Tulang', 'Patah tulang atau fraktur, adalah cedera traumatis serius yang membutuhkan pertolongan medis. Namun, mendapatkan pertolongan pertama dari praktisi medis terlatih tidak selalu memungkinkan—beberapa situasi bisa menghambat pertolongan medis selama beberapa jam atau beberapa hari. Bahkan di negara-negara maju, orang mengalami dua kali patah tulang selama hidupnya, jadi ini bukan kejadian yang langka. Dengan demikian, mengetahui cara memberikan pertolongan pertama pada patah tulang baik untuk diri sendiri, keluarga, maupun orang lain yang berada dalam kondisi darurat adalah hal yang penting.                                                                                                                                          1.Hentikan gerakan pada tulang yang patah. Setelah tubuh orang yang cedera distabilkan, ini waktunya untuk menghentikan gerakan pada tulang yang patah jika Anda mengantisipasi untuk menunggu personel medis dari unit gawat darurat sekitar satu jam atau lebih.[9]Menghentikan gerakan pada tulang yang patah dapat mengurangi nyeri dan melindunginya agar tidak timbul cedera yang lebih berat akibat gerakan tiba-tiba. Jika Anda belum pernah mendapatkan pelatihan yang tepat, jangan coba-coba meluruskan kembali tulang yang patah. Mencoba untuk meluruskan tulang yang patah dengan cara yang salah dapat menimbulkan kerusakan pada pembuluh darah dan saraf, sehingga menimbulkan pendarahan dan kemungkinan kelumpuhan. Perhatikan, bidai hanya dapat digunakan pada tulang anggota badan, bukan tulang pada pelvis atau batang tubuh.                                                                                                                                                                                                                                 2.Berikan kompres es pada lokasi cedera. Ketika tulang yang patah dihentikan pergerakannya, berikan kompres dingin (idealnya es) sesegera mungkin sementara menunggu ambulans datang. Terapi dingin mempunyai banyak manfaat, antara lain mengurangi nyeri, mengurangi peradangan/pembengkakan, serta mengurangi pendarahan dengan mempersempit pembuluh darah arteri.Jika tidak ada es, coba gunakan kantung gel beku atau sekantung sayuran, namun pastikan untuk selalu membungkusnya dengan kain tipis agar tidak menimbulkan lepuh es atau radang dingin.\nBerikan kompres es selama 20 menit atau hingga rasa nyeri pada area cedera benar-benar hilang sebelum kompres dilepaskan. Mengompres cedera dapat mengurangi pembengkakan selama rasa nyeri tidak bertambah berat.\nSaat mengompres dengan es, pastikan untuk mengangkat tulang yang patah untuk mengurangi pembengkakan dan menghambat pendarahan (jika bisa).                                                                                                                                                                                                                                            3.Tetap tenang dan perhatikan tanda-tanda syok. Patah tulang adalah sesuatu yang sangat traumatis dan menyakitkan. Ketakutan, panik, dan syok adalah reaksi yang lazim terjadi, namun memiliki akibat negatif terhadap tubuh, jadi harus dikendalikan. Dengan demikian, tenangkan diri Anda dan/atau orang yang mengalami cedera dengan meyakinkannya bahwa pertolongan akan segera datang dan situasinya dapat dikendalikan. Saat menunggu pertolongan, tutupi tubuh orang yang cedera agar tetap hangat dan berikan minuman jika ia merasa haus. Ajak ia bicara untuk mengalihkan pikirannya dari cedera.                                                                                                                                                                                   4.Pertimbangkan untuk mengonsumsi obat pereda nyeri. Jika waktu yang dibutuhkan untuk menunggu personel medis darurat lebih dari satu jam (atau Anda mengantisipasinya lebih lama lagi), pertimbangkan untuk mengonsumsi/memberikan obat-obatan, jika tersedia, untuk mengendalikan nyeri dan membuat waktu menunggu bisa lebih diterima. Asetaminofen (Tylenol) adalah obat pereda nyeri yang paling tepat untuk patah tulang dan cedera dalam lainnya karena tidak mengencerkan darah dan menyebabkan pendarahan semakin berat.'),
+(6, '', ''),
+(7, '', ''),
+(8, '', ''),
+(9, '', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Struktur dari tabel `posts`
 --
 
 CREATE TABLE `posts` (
@@ -994,7 +988,7 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `posts`
+-- Dumping data untuk tabel `posts`
 --
 
 INSERT INTO `posts` (`post_id`, `post_content`, `post_date`, `post_topic`, `post_by`) VALUES
@@ -1006,27 +1000,7 @@ INSERT INTO `posts` (`post_id`, `post_content`, `post_date`, `post_topic`, `post
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ramalan_cuaca`
---
-
-CREATE TABLE `ramalan_cuaca` (
-  `nama_kota` text NOT NULL,
-  `coordinates` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `ramalan_cuaca`
---
-
-INSERT INTO `ramalan_cuaca` (`nama_kota`, `coordinates`) VALUES
-('Adiwerna', '-6.93,109.12'),
-('Amahai', '-3.34,128.92'),
-('Ambon', '-3.7,128.16');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `topics`
+-- Struktur dari tabel `topics`
 --
 
 CREATE TABLE `topics` (
@@ -1037,7 +1011,7 @@ CREATE TABLE `topics` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `topics`
+-- Dumping data untuk tabel `topics`
 --
 
 INSERT INTO `topics` (`topic_id`, `topic_subject`, `topic_date`, `topic_by`) VALUES
@@ -1048,7 +1022,7 @@ INSERT INTO `topics` (`topic_id`, `topic_subject`, `topic_date`, `topic_by`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -1063,7 +1037,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`ID`, `NAMA`, `ALAMAT`, `PHONE`, `USERNAME`, `PASSWORD`, `ID_ROLE`, `DATE_CREATED`) VALUES
@@ -1073,7 +1047,7 @@ INSERT INTO `user` (`ID`, `NAMA`, `ALAMAT`, `PHONE`, `USERNAME`, `PASSWORD`, `ID
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -1089,7 +1063,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`user_id`, `nama`, `user_name`, `user_pass`, `user_email`, `user_level`, `date`, `user_phone`, `alamat`) VALUES
@@ -1102,7 +1076,7 @@ INSERT INTO `users` (`user_id`, `nama`, `user_name`, `user_pass`, `user_email`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `video`
+-- Struktur dari tabel `video`
 --
 
 CREATE TABLE `video` (
@@ -1117,13 +1091,39 @@ CREATE TABLE `video` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `video`
+-- Dumping data untuk tabel `video`
 --
 
 INSERT INTO `video` (`ID`, `JUDUL`, `ISI`, `LINK`, `SUMBER`, `KATEGORI`, `DATE_CREATED`, `CREATED_BY`) VALUES
 (3, 'Tanggap , Tangkas , Tangguh Menghadapi Bencana \"Gempa Bumi\"', '', 'https://www.youtube.com/watch?v=nk38uvgEWkM', 'Badan Nasional Penanggulangan Bencana', 1, '2019-04-12 14:56:07', 0),
-(4, 'Siaga Bencana', 'Test', 'https://www.youtube.com/watch?v=7jFXLAj1n5Q&t=1s', 'Badan Nasional Penanggulangan Bencana ', 1, '2019-04-12 14:56:33', 2),
-(6, 'Siaga Bencana Puting Beliung', '', 'https://www.youtube.com/watch?v=QlDntG3Mi_4', 'Badan Nasional Penanggulangan Bencana', 1, '2019-04-15 10:20:05', 2);
+(4, 'Siaga Bencana', '', 'https://www.youtube.com/watch?v=7jFXLAj1n5Q&t=1s', 'Badan Nasional Penanggulangan Bencana', 1, '2019-04-12 14:56:33', 2),
+(6, 'Siaga Bencana Puting Beliung', '', 'https://www.youtube.com/watch?v=QlDntG3Mi_4', 'Badan Nasional Penanggulangan Bencana', 1, '2019-04-15 10:20:05', 2),
+(9, 'Tes', 'Tes', 'https://www.youtube.com/watch?v=XhXqd0S9_4c', 'Youtube', 1, '2019-05-29 09:20:17', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `video_p`
+--
+
+CREATE TABLE `video_p` (
+  `ID` int(11) NOT NULL,
+  `JUDUL` varchar(60) NOT NULL,
+  `ISI` text NOT NULL,
+  `LINK` text NOT NULL,
+  `SUMBER` varchar(60) NOT NULL,
+  `KATEGORI` int(3) NOT NULL,
+  `DATE_CREATED` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `CREATED_BY` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `video_p`
+--
+
+INSERT INTO `video_p` (`ID`, `JUDUL`, `ISI`, `LINK`, `SUMBER`, `KATEGORI`, `DATE_CREATED`, `CREATED_BY`) VALUES
+(1, 'Tes01', 'Tes01', 'https://www.youtube.com/watch?v=XhXqd0S9_4c', 'Youtube', 1, '2019-05-29 09:26:07', 1),
+(2, 'Tes02', 'Tes02', 'https://www.youtube.com/watch?v=ghaktA6ufaw', 'Youtube', 1, '2019-05-29 09:34:22', 1);
 
 --
 -- Indexes for dumped tables
@@ -1209,81 +1209,81 @@ ALTER TABLE `video`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `video_p`
+--
+ALTER TABLE `video_p`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `artikel_p`
+--
+ALTER TABLE `artikel_p`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
 -- AUTO_INCREMENT for table `artikel_sg`
 --
 ALTER TABLE `artikel_sg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT for table `donasi`
 --
 ALTER TABLE `donasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `kontak_penting`
 --
 ALTER TABLE `kontak_penting`
   MODIFY `Kode` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=738;
-
---
--- AUTO_INCREMENT for table `obat`
---
-ALTER TABLE `obat`
-  MODIFY `id_obat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
 --
 -- AUTO_INCREMENT for table `orang_ditemukan`
 --
 ALTER TABLE `orang_ditemukan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
 --
 -- AUTO_INCREMENT for table `orang_hilang`
 --
 ALTER TABLE `orang_hilang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `post_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
-
 --
 -- AUTO_INCREMENT for table `topics`
 --
 ALTER TABLE `topics`
   MODIFY `topic_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
-
 --
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `video_p`
+--
+ALTER TABLE `video_p`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
 
 --
--- Constraints for dumped tables
---
-
---
--- Constraints for table `topics`
+-- Ketidakleluasaan untuk tabel `topics`
 --
 ALTER TABLE `topics`
   ADD CONSTRAINT `topics_ibfk_1` FOREIGN KEY (`topic_by`) REFERENCES `users` (`user_id`);
