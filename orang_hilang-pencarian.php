@@ -22,82 +22,83 @@ include('front-end/head.php');
 	</div><!-- .page-header -->
 
 	<div style="padding:20px" class="">
-		<form action="orang_hilang-pencarian.php" method="POST" enctype="multipart/form-data">
+		
+		<br>
+		<div class="row">
+			<div class="col-sm-1"></div>
 			<?php
 			  // Create database connection
-			  require('config/db.php');
+			require('config/db.php');
 			  // Initialize message variable
-			  $msg = "";
-			  $foto = null;
-				  $nama = null;
-				  $jenis_kartu_identitas = null;
-				  $no_identitas = null;
-				  $usia = null;
-				  $gender = null;
-				  $ciri = null;
-				  $lokasi_terakhir = null;
-				  $tgl_hilang = null;
-				  $jenis_bencana = null;
-				  $nama_pelapor = null;
-				  $no_telp_pelapor = null;
-				  $hub_pelapor = null;
-				  $status = null;
-				  $sql = null;
+			$msg = "";
+			$foto = null;
+			$nama = null;
+			$jenis_kartu_identitas = null;
+			$no_identitas = null;
+			$usia = null;
+			$gender = null;
+			$ciri = null;
+			$lokasi_terakhir = null;
+			$tgl_hilang = null;
+			$jenis_bencana = null;
+			$nama_pelapor = null;
+			$no_telp_pelapor = null;
+			$hub_pelapor = null;
+			$status = null;
+			$sql = null;
 
 			  // If upload button is clicked ...
-			  if (isset($_POST['kirim'])) {
+			if (isset($_POST['kirim'])) {
 			  	// Get data
-				  $foto = $_FILES['foto']['name'];
-				  $nama = $_POST['nama_korban'];
-				  $jenis_kartu_identitas = $_POST['jenis_kartu_identitas'];
-				  $no_identitas = $_POST['no_identitas'];
-				  $usia = $_POST['usia'];
-				  $gender = $_POST['gender'];
-				  $ciri = $_POST['ciri'];
-				  $lokasi_terakhir = $_POST['lokasi_terakhir_korban'];
-				  $tgl_hilang = $_POST['tgl_hilang'];
-				  $jenis_bencana = $_POST['jenis_bencana'];
-				  $nama_pelapor = $_POST['nama_pelapor'];
-				  $no_telp_pelapor = $_POST['no_telepon_pelapor'];
-				  $hub_pelapor = $_POST['hubungan_pelapor'];
-				  $status = "Belum Diverifikasi";
-			  	
-			  	// image file directory
-				  $target = "foto_org_hilang/".basename($foto);
-				  if (!move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
-			  		$foto="default.jpg";
-				  }
+				$foto = $_FILES['foto']['name'];
+				$nama = $_POST['nama_korban'];
+				$jenis_kartu_identitas = $_POST['jenis_kartu_identitas'];
+				$no_identitas = $_POST['no_identitas'];
+				$usia = $_POST['usia'];
+				$gender = $_POST['gender'];
+				$ciri = $_POST['ciri'];
+				$lokasi_terakhir = $_POST['lokasi_terakhir_korban'];
+				$tgl_hilang = $_POST['tgl_hilang'];
+				$jenis_bencana = $_POST['jenis_bencana'];
+				$nama_pelapor = $_POST['nama_pelapor'];
+				$no_telp_pelapor = $_POST['no_telepon_pelapor'];
+				$hub_pelapor = $_POST['hubungan_pelapor'];
+				$status = "Belum Diverifikasi";
 
-				  $sql = "INSERT INTO orang_hilang (nama_korban, no_identitas, jenis_kartu_identitas, usia, gender, ciri_ciri_korban, lokasi_terakhir, tanggal_hilang,
-				   jenis_bencana, status, hubungan_pelapor, nama_pelapor, no_telepon_pelapor, foto_korban) 
-				  VALUES ('$nama', '$no_identitas', '$jenis_kartu_identitas', '$usia', '$gender', '$ciri', '$lokasi_terakhir', '$tgl_hilang', '$jenis_bencana',
-				   '$status', '$hub_pelapor', '$nama_pelapor', '$no_telp_pelapor', '$foto')";
+			  	// image file directory
+				$target = "foto_org_hilang/".basename($foto);
+				if (!move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
+					$foto="default.jpg";
+				}
+
+				$sql = "INSERT INTO orang_hilang (nama_korban, no_identitas, jenis_kartu_identitas, usia, gender, ciri_ciri_korban, lokasi_terakhir, tanggal_hilang,
+				jenis_bencana, status, hubungan_pelapor, nama_pelapor, no_telepon_pelapor, foto_korban) 
+				VALUES ('$nama', '$no_identitas', '$jenis_kartu_identitas', '$usia', '$gender', '$ciri', '$lokasi_terakhir', '$tgl_hilang', '$jenis_bencana',
+				'$status', '$hub_pelapor', '$nama_pelapor', '$no_telp_pelapor', '$foto')";
 			  	// execute query
-			  	$addHilang = mysqli_query($con, $sql);
+				$addHilang = mysqli_query($con, $sql);
 				if($addHilang){
 					echo '
-					<div class="alert alert-success alert-dismissible fade in" role="alert">
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
-						</button>
-						<strong>Error</strong><br> Data berhasil ditambahkan. Mohon tunggu verifikasi dari admin.
+					<div class="alert alert-success col-sm-10" align="center">
+						Data berhasil ditambahkan. Mohon tunggu verifikasi dari admin.
 					</div>
 					';
-					}else{
+				}else{
 					echo '
-					<div class="alert alert-danger alert-dismissible fade in" role="alert">
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
-						</button>
-						<strong>Error</strong><br> Data gagal ditambahkan.
+					<div class="alert alert-danger col-sm-10" align="center">
+						Data gagal ditambahkan.
 					</div>
 					';
 				}
-			  	
-			  }
-			  $result = mysqli_query($con, "SELECT * FROM orang_hilang");
-			?>
 
-  			<input type="hidden" name="size" value="1000000">
-  			<div class="row justify-content-center">
+			}
+			?>
+			<div class="col-sm-1"></div>
+		</div>
+
+		<form action="" method="POST" enctype="multipart/form-data">
+			<input type="hidden" name="size" value="1000000">
+			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<div class="form-group">
 						<h3 for="exampleIntro">Isi form berikut ini untuk melaporkan orang ditemukan</h3>
