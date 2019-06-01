@@ -14,17 +14,15 @@ include('front-end/head.php');
 	<div class="swiper-container hero-slider">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide hero-content-wrap">
-				<img src="components/images/hero.jpg" alt="">
+				<img src="images/disaster.jpg" alt="">
 
 				<div class="hero-content-overlay position-absolute w-100 h-100">
 					<div class="container h-100">
 						<div class="row h-100">
-							<div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
+							<div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
 								<header class="entry-header">
-									<h1>Direct
-
-									</h1>
-									<h4>Disaster Recovery Technology</h4>
+									<h1>Direct</h1>
+									<h4>Disaster Recovery with Technology</h4>
 								</header><!-- .entry-header -->
 
 								<div class="entry-content mt-4">
@@ -92,30 +90,30 @@ include('front-end/head.php');
 
 	<?php
 	if(isset($_SESSION['user_name'])){ ?>
-	<div class="home-page-icon-boxes">
+	<div class="our-causes">
 		<div class="container">
 			
-			<h3 align="center">Selamat Datang, <?php echo $_SESSION['user_name']; ?></h3>
-
+			<h2 align="center">Selamat Datang, <?php echo $_SESSION['user_name']; ?></h2>
+			<br>
 			
 			<div class="row">
 
-				<div class="col-sm-2"></div>
-				<div class="col-sm-4" >
+				<div class="col-sm-1"></div>
+				<div class="col-sm-5" >
 					<a href="#" type="button" id="btnForum">
 						<div class="icon-box"><h3 class="entry-title">Forum Diskusi</h3>
 							<p align="center">Klik untuk melihat topik yang anda buat</p>
 						</div>
 					</a>
 				</div>
-				<div class="col-sm-4" id="btnDonasi">
+				<div class="col-sm-5" id="btnDonasi">
 					<a href="#">
 						<div class="icon-box"><h3 class="entry-title">Donasi</h3>
 							<p align="center">Klik untuk melihat history donasi anda</p>
 						</div>
 					</a>
 				</div>
-				<div class="col-sm-2"></div>
+				<div class="col-sm-1"></div>
 			</div>
 
 			<div class="row justify-content-center">
@@ -142,7 +140,7 @@ include('front-end/head.php');
 	</div>
 	<?php }else{	?>
 
-	<div class="home-page-icon-boxes">
+	<div class="our-causes">
 		<div class="container">
 
 			<div class="row">
