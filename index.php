@@ -103,15 +103,15 @@ include('front-end/head.php');
 				<div class="col-sm-2"></div>
 				<div class="col-sm-4" >
 					<a href="#" type="button" id="btnForum">
-						<div class="icon-box"><h3 class="entry-title">Siaga Bencana</h3>
-							<p align="center">Test Fitur</p>
+						<div class="icon-box"><h3 class="entry-title">Forum Diskusi</h3>
+							<p align="center">Klik untuk melihat topik yang anda buat</p>
 						</div>
 					</a>
 				</div>
 				<div class="col-sm-4" id="btnDonasi">
 					<a href="#">
-						<div class="icon-box"><h3 class="entry-title">Siaga Bencana</h3>
-							<p align="center">Test Fitur</p>
+						<div class="icon-box"><h3 class="entry-title">Donasi</h3>
+							<p align="center">Klik untuk melihat history donasi anda</p>
 						</div>
 					</a>
 				</div>
