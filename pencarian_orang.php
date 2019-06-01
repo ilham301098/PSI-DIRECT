@@ -68,7 +68,7 @@ include('front-end/head.php');
 						while($user_data = mysqli_fetch_array($result_hilang)) {
 							echo "<tr>";
 							echo "<td>".$no_korban++."</td>";
-							echo "<td><img src='foto_org_hilang/".$user_data['foto_korban']."' alt="." border="."3"." height="."100"." width="."300"." ></td>";
+							echo "<td><img src='foto_org_hilang/".$user_data['foto_korban']."' alt='' border='3' height='220' width='130'></td>";
 							echo "<td>".$user_data['nama_korban']."</td>";
 							echo "<td>".$user_data['no_identitas']."</td>";
 							echo "<td>".$user_data['jenis_kartu_identitas']."</td>";
@@ -111,7 +111,7 @@ include('front-end/head.php');
 						while($user_data = mysqli_fetch_array($result_ditemukan)) {
 							echo "<tr>";
 							echo "<td>".$no_korban++."</td>";
-							echo "<td><img src='foto_org_ditemukan/".$user_data['foto_korban']."' alt="." border=".'"3"'." height=".'"100"'." width=".'"300"'." ></td>";
+							echo "<td><img src='foto_org_ditemukan/".$user_data['foto_korban']."' alt='' border='3' height='220' width='130' ></td>";
 							echo "<td>".$user_data['nama_korban']."</td>";
 							echo "<td>".$user_data['usia']."</td>";
 							echo "<td>".$user_data['gender']."</td>";
@@ -157,6 +157,7 @@ include('front-end/head.php');
 		$(document).ready(function(){
 			$("#show_tabel_hilang").hide();
 			$("#tabel_org_ditemukan").hide();
+			
 			$("#show_tabel_ditemukan").click(function(){
 				$("#tabel_org_hilang").hide();
 				$("#tabel_org_ditemukan").show();

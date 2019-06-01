@@ -6,7 +6,7 @@ include('front-end/head.php');
 <body>
 	<!--Start of Tawk.to Script-->
 
-<!--End of Tawk.to Script-->
+	<!--End of Tawk.to Script-->
 	<?php
 	include('front-end/navigation.php');
 	?>
@@ -90,9 +90,63 @@ include('front-end/head.php');
 		</div>
 	</div><!-- .hero-slider -->
 
+	<?php
+	if(isset($_SESSION['user_name'])){ ?>
 	<div class="home-page-icon-boxes">
 		<div class="container">
+			
+			<h3 align="center">Selamat Datang, <?php echo $_SESSION['user_name']; ?></h3>
+
+			
 			<div class="row">
+
+				<div class="col-sm-2"></div>
+				<div class="col-sm-4" >
+					<a href="#" type="button" id="btnForum">
+						<div class="icon-box"><h3 class="entry-title">Siaga Bencana</h3>
+							<p align="center">Test Fitur</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-4" id="btnDonasi">
+					<a href="#">
+						<div class="icon-box"><h3 class="entry-title">Siaga Bencana</h3>
+							<p align="center">Test Fitur</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-sm-10">
+					<br>
+					<table class="table" id="tabelDonasi">
+						<thead>
+							<th>No</th>
+							<th>Event</th>
+						</thead>
+					</table>
+				</div>
+				<div class="col-sm-10">
+					<br>
+					<table class="table" id="tabelForum">
+						<thead>
+							<th>No</th>
+							<th>Forum</th>
+						</thead>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php }else{	?>
+
+	<div class="home-page-icon-boxes">
+		<div class="container">
+
+			<div class="row">
+				
 				<div class="col-12 col-md-3 col-lg-3 mt-4 mt-lg-0">
 					<a href="siaga_bencana.php">
 						<div class="icon-box">
@@ -212,7 +266,7 @@ include('front-end/head.php');
 		</div><!-- .container -->
 	</div><!-- .home-page-icon-boxes -->
 
-	
+	<?php } ?>
 
 	<div class="single-page about-page">
 		<div class="welcome-wrap">
@@ -425,6 +479,24 @@ include('front-end/head.php');
 
 	</div>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$("#tabelForum").hide();
+			$("#tabelDonasi").hide();
+			
+			$("#btnDonasi").click(function(){
+				$("#tabelForum").hide();
+				$("#tabelDonasi").show();
+			});
+			$("#btnForum").click(function(){
+				$("#tabelForum").show();
+				$("#tabelDonasi").hide();
+
+			});
+		});
+	</script>
 
 	<?php
 	include('front-end/footer.php');
