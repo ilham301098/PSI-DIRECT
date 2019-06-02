@@ -20,25 +20,36 @@ include('front-end/head.php');
 
     <div>
     <center><img src="components/images/info-pp-button.jpg" width = "300px" ><h1>Informasi Pertolongan Pertama<h1></center><br>
+    <center>
+    <?php
+    require('config/db.php');
+    $sql="";
+    if(isset($_POST['btnSearch'])){
+      $sql = "SELECT * FROM pertolongan_pertama WHERE judul LIKE '%".$_POST['cari']."%' ORDER by id ASC";
+    }else{
+      $sql = 'SELECT * FROM pertolongan_pertama ORDER by id ASC';
+    }
+
+    $result = mysqli_query($con,$sql);
+    ?>
     <table align = "center" border="1">
-    <tr >
-        <td width ="1000px" height="50px" align = "center"><img src = "components/images/search.png" width="15px"><font color="gray"> cari pertolongan pertama </font></td>
-    </tr>
-    <tr>
-        <td width ="1000px" align = "center"><a href =pp-detail.php>Pertolongan Pertama pada Asma</a></td>
-    </tr>
-    <tr>
-        <td width ="1000px" align = "center">Pertolongan Pertama pada Diare</td>
-    </tr>
-    <tr>
-        <td width ="1000px" align = "center">Pertolongan Pertama pada Serangan Jantung</td>
-    </tr>
-    </table>
-    <br>
-    <center><a href="#" class="previous">&laquo; Previous </a>
-    <a href="#" class="next">Next &raquo;</a></center>
-    </div>
-    </center>
+      <tr>
+        <td width ="1000px" align = "center">Artikel Pertolongan Pertama</td>
+      </tr>
+      <?php
+    while($row = mysqli_fetch_array($result))
+    {?>
+          <tr>
+            <td width ="1000px" align = "center">
+              <a href="pp-detail.php?id=<?php echo $row['id']; ?>"><?php echo $row['judul'];?>
+              </a></td>
+        </tr>
+    <?php } ?>
+  </table>
+  </center>
+     </div>
+
+
     <br>
 
     <?php
