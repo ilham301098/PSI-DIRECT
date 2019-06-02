@@ -21,6 +21,14 @@ include('front-end/head.php');
     <div>
     <center><img src="components/images/info-pp-button.jpg" width = "300px" ><h1>Informasi Pertolongan Pertama<h1></center><br>
     <center>
+    <div id="search "class="search-widget" >
+        <form class="flex flex-wrap align-items-center" method="post" action="info-pp.php">
+                <input type="search" name="search" placeholder="Search...">
+                <button type="submit" class="flex justify-content-center align-items-center"><i class="fa fa-search"></i></button>
+        </form><!-- .flex -->
+    </div><!-- .search-widget -->
+    </center>
+    <br>
     <?php
     require('config/db.php');
     $sql="";
@@ -32,9 +40,9 @@ include('front-end/head.php');
 
     $result = mysqli_query($con,$sql);
     ?>
-    <table align = "center" border="1">
+     <table align = "center" border="1">
       <tr>
-        <td width ="1000px" align = "center">Artikel Pertolongan Pertama</td>
+        
       </tr>
       <?php
     while($row = mysqli_fetch_array($result))
