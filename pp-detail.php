@@ -18,27 +18,41 @@ include('front-end/head.php');
         </div><!-- .container -->
     </div><!-- .page-header -->
 
-    <div>
-    <br>
-    <center><h2>Pertolongan Pertama pada Asma</h2></center>
-    <table align = "center">
-    <tr><td align = "justify" width = "900px">Asma disebabkan oleh inflamasi dan sumbatan di saluran bronkioli, yaitu saluran yang membantu paru-paru menarik dan mengembuskan napas. Pada tahun 2009, American Academy of Asthma, Allergy and Immunology menyatakan bahwa satu dari 12 orang di Amerika Serikat didiagnosis menderita asma, dibandingkan dengan 1 banding 12 di tahun 2001. Selama serangan asma, otot-otot di sekitar saluran bronkioli mengetat dan bengkak sehingga membuat jalan udara menyempit dan menyebabkan orang sulit bernapas. Pemicu serangan asma yang umum antara lain paparan terhadap penyebab alergi (seperti rumput, rambut, serbuk sari, dsb.), penyebab iritasi di udara (seperti asap atau aroma kuat), penyakit (seperti flu), stres, kondisi cuaca ekstrem (seperti panas ekstrem), atau aktivitas fisik dan olahraga. Pengetahuan akan tanda-tanda serangan asma dan apa yang harus dilakukan saat serangan terjadi dapat membantu menyelamatkan jiwa seseorang.</td></tr>
+    <div class="news-wrap">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-12 col-lg-8">
+  					<div class="news-content">
+  						<?php
+  						require('config/db.php');
+  						$sql = 'SELECT * FROM pertolongan_pertama WHERE id ='.$_GET['id'];
+  						$row = mysqli_query($con,$sql);
+              while($result = mysqli_fetch_array($row)){
+  						$output ='
+  						<div class="news-content">
+  							<header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
+  								<div class="header-elements">
+  									<h2 class="entry-title"><a href="#">'.$result["judul"].'</a></h2>
+  									<div class="post-metas d-flex flex-wrap align-items-center">
+  										<span class="post-author">by <a href="#">Admin</a></span>
+  									</div>
+  								</div>
+  							</header>
 
-    <tr><td align="justify" width = "900px"><ol>
-        <center><img src = components/images/asma1.jpg></center>
-        <li><b>Bantulah penderita menemukan posisi nyaman.</b> Kebanyakan orang yang menderita asma akan lebih nyaman dengan duduk daripada berdiri atau berbaring. Tegakkan badannya untuk membantu pengembangan paru-paru dan mempermudah pernapasan. Biarkan ia mencondongkan tubuh sedikit ke arah Anda atau kursi untuk dukungan. Beberapa penderita asma bisa duduk dalam posisi tripod, yaitu mencondongkan tubuh ke depan dengan tangan di atas lutut untuk meringankan tekanan di diafragma.
-        Asma dapat diperburuk oleh kecemasan, tetapi tidak dipicu kecemasan. Artinya, selama serangan, penderita akan merespons lebih cepat bila ia tenang. Kecemasan melepaskan kortisol di tubuh yang menyempitkan bronkioli, yaitu saluran yang mengalirkan udara melalui hidung dan/atau mulut ke kantung udara di paru-paru.
-        Anda harus tetap tenang dan meyakinkan karena itu penting untuk membantu si penderita mempertahankan ketenangannya.</li>
-        <center><img src = components/images/asma2.jpg></center>
-        <li><b>Tanyakan dengan tenang, “Apakah kau punya asma?”</b> Walaupun ia tidak dapat menjawab secara verbal karena sesak atau batuk, mungkin ia akan mengangguk atau menunjuk tempat inhaler atau kartu petunjuknya berada.
-        Tanyakan apakah ia memiliki rencana tindakan darurat asma. Saat ini, banyak orang yang bersiap untuk serangan asma telah membawa rencana darurat yang tertulis. Jika ia punya, ambil dan bantulah ia mengikuti rencana tersebut.</li>
-        .<br>.<br>.<br>
-    </ol>
-    <i>Sumber : id.wikihow.com/Mengatasi-Serangan-Asma</i>
-</td></tr>
-    </div>
-    </table>
-    <br>
+  							<div class="entry-content">
+              		<p>'.$result["isi"].'</p>
+
+  							</div>
+  						</div>
+  					</div>
+  					';}
+  					echo $output;
+  					?>
+            </div>
+            </div>
+            </div>
+            </div>
+
 
 </body>
 </html>
