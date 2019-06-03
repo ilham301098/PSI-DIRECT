@@ -3,11 +3,6 @@
 <?php
 include('front-end/head.php');
 ?>
-<?php
-  // Create database connection
-require('config/db.php');
-$darurat= mysqli_query($con, "SELECT * FROM `kontak_penting`") or die ('Error');
-?>
 
 <body class="single-page single-cause">
 	<?php
@@ -54,6 +49,50 @@ $darurat= mysqli_query($con, "SELECT * FROM `kontak_penting`") or die ('Error');
 
 					<div class="billing-information  d-flex flex-wrap justify-content-between align-items-center" align="center">
 						<h2 class="w-100 mt-5 mb-3">Pencarian Wilayah</h2>
+
+
+					<!--SEARCH-->
+					<?php
+require('config/db.php');
+//$darurat= mysqli_query($con, "SELECT * FROM `kontak_penting`") or die ('Error');
+
+if($_GET['']!==""){
+	$id=$_GET['id'];
+	
+	$query=mysql_query("SELECT * from kontak_penting where kode='$id'");
+	?>
+
+
+	<tr>
+	<td width="195" valign="top">
+	<select name="id" id="id" onChange="pilih(this.value)">
+		<option value="0" selected="selected">Pilih Kategori</option>
+		<?php 
+		$query_limit=mysql_query("SELECT * from kontak_penting");
+		
+		while($row=mysql_fetch_array($query_limit))
+		{
+			?><option value="<?php  echo $row['id']; ?>"><?php  echo $row['Kategori']; ?></option><?php 
+		}
+		?>
+	</select>	
+	</td>
+</tr>
+
+	<table border="1">
+	<tr><th>No</th><th>Nama</th><th>Alamat</th><th>No.Telepon</th></tr>
+	<?php
+	while($row=mysql_fetch_array($query)){
+		?>
+		<tr><td><?php echo $c=$c+1;?></td><td><?php echo $row['Nama'];?></td><td><?php echo $row['Alamat']; ?></td><td><?php echo $row['Nomor_telepon']; ?></td></tr>
+		<?php
+	}
+	?></table><?php
+}
+
+?>
+
+
 
 						<input type="text" placeholder="Provinsi">
 						<input type="text" placeholder="Kota/Kabupaten">
