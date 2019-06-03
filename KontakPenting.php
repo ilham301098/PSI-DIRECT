@@ -3,6 +3,11 @@
 <?php
 include('front-end/head.php');
 ?>
+<?php
+  // Create database connection
+require('config/db.php');
+$darurat= mysqli_query($con, "SELECT * FROM `kontak_penting`") or die ('Error');
+?>
 
 <body class="single-page single-cause">
 	<?php
@@ -51,46 +56,64 @@ include('front-end/head.php');
 						<h2 class="w-100 mt-5 mb-3">Pencarian Wilayah</h2>
 
 
-					<!--SEARCH-->
-					<?php
-require('config/db.php');
-//$darurat= mysqli_query($con, "SELECT * FROM `kontak_penting`") or die ('Error');
+								<form class="form-horizontal" method="post">
 
-if($_GET['']!==""){
-	$id=$_GET['id'];
-	
-	$query=mysql_query("SELECT * from kontak_penting where kode='$id'");
-	?>
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <!--provinsi-->
+                                            <select id="provinsi" class="form-control" name="provinsi">
+                                                <option value="">Please Select</option>
+                                                <?php
+                                                    $query = mysqli_query($con, "SELECT * FROM provinsi ORDER BY prov");
+                                                    while ($row = mysqli_fetch_array($query)) { ?>
+
+                                                    <option value="<?php echo $row['id']; ?>">
+                                                        <?php echo $row['prov']; ?>
+                                                    </option>
+
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <!--kota-->
+                                            <select id="kota" class="form-control" name="kota">
+                                                <option value="">Please Select</option>
+                                                <?php
+                                                    $query = mysqli_query($con, "SELECT * FROM kota INNER JOIN provinsi ON kota.id_provinsi_fk = provinsi.id ORDER BY kota");
+                                                    while ($row = mysqli_fetch_array($query)) { ?>
+
+                                                    <option id="kota" class="<?php echo $row['id_provinsi']; ?>" value="<?php echo $row['id_kota']; ?>">
+                                                        <?php echo $row['kota']; ?>
+                                                    </option>
+
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                        	
+                                            <!--kecamatan-->
+                                            <select id="kecamatan" class="form-control" name="kecamatan">
+                                                <option value="">Please Select</option>
+                                                <?php
+                                                    $query = mysqli_query($con, "SELECT * FROM kecamatan INNER JOIN kota ON kecamatan.id_kota_fk = kota.id_kota ORDER BY nama_kecamatan");
+                                                    while ($row = mysqli_fetch_array($query)) { ?>
+
+                                                    <option id="kecamatan" class="<?php echo $row['id_kota']; ?>" value="<?php echo $row['id_kecamatan']; ?>">
+                                                        <?php echo $row['nama_kecamatan']; ?>
+                                                    </option>
+
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>   
+                                </form>
 
 
-	<tr>
-	<td width="195" valign="top">
-	<select name="id" id="id" onChange="pilih(this.value)">
-		<option value="0" selected="selected">Pilih Kategori</option>
-		<?php 
-		$query_limit=mysql_query("SELECT * from kontak_penting");
-		
-		while($row=mysql_fetch_array($query_limit))
-		{
-			?><option value="<?php  echo $row['id']; ?>"><?php  echo $row['Kategori']; ?></option><?php 
-		}
-		?>
-	</select>	
-	</td>
-</tr>
 
-	<table border="1">
-	<tr><th>No</th><th>Nama</th><th>Alamat</th><th>No.Telepon</th></tr>
-	<?php
-	while($row=mysql_fetch_array($query)){
-		?>
-		<tr><td><?php echo $c=$c+1;?></td><td><?php echo $row['Nama'];?></td><td><?php echo $row['Alamat']; ?></td><td><?php echo $row['Nomor_telepon']; ?></td></tr>
-		<?php
-	}
-	?></table><?php
-}
 
-?>
+
+
 
 
 
