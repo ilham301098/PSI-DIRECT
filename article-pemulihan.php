@@ -72,81 +72,88 @@ include('front-end/head.php');
     <div class="featured-cause">
         <div class="container">
             <div class="row">
-             <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                <a href="article-pemulihan.php">
-                <div class="icon-box active">
-                    <figure class="d-flex justify-content-center">
-                        <img src="components/images/hands-gray.png" alt="">
-                        <img src="components/images/hands-white.png" alt="">
-                    </figure>
-
-                    <header class="entry-header">
-                        <h3 class="entry-title">Trauma Healing</h3>
-                    </header>
-
-                </div>
+                <div class="col-8">
+                    <div class="search-widget">
+                        <form class="flex flex-wrap align-items-center">
+                            <input type="search" placeholder="Search...">
+                            <button type="submit" class="flex justify-content-center align-items-center">GO</button>
+                        </form><!-- .flex -->
+                    </div><!-- .search-widget -->
+                </div><!-- .col -->
             </div>
+            <br>
+            <div class="row" >
+                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0"style="margin: auto;">
+                    <a href="article-pemulihan.php">
+                    <div class="icon-box active">
+                        <figure class="d-flex justify-content-center">
+                            <img src="components/images/hands-gray.png" alt="">
+                            <img src="components/images/hands-white.png" alt="">
+                        </figure> </center>
 
-            <div class="col-8">
-                <div class="search-widget">
-                    <form class="flex flex-wrap align-items-center">
-                        <input type="search" placeholder="Search...">
-                        <button type="submit" class="flex justify-content-center align-items-center">GO</button>
-                    </form><!-- .flex -->
-                </div><!-- .search-widget -->
-            </div><!-- .col -->
+                        <header class="entry-header">
+                            <h3 class="entry-title">Trauma Healing</h3>
+                        </header>
+                    </div>
+                </div><!--col-->
             </div><!-- .row -->
 
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                        <div class="cause-content-wrap">
-                            <?php
-                                    require('config/db.php');
-                                    $sql="";
-                                    if(isset($_POST['btnSearch'])){
-                                        $sql = "SELECT * FROM artikel_p WHERE judul LIKE '%".$_POST['cari']."%' ORDER by id ASC";
-                                    }else{
-                                        $sql = 'SELECT * FROM artikel_p ORDER by id ASC';
-                                    }
+            <br>
 
-                                    $result = mysqli_query($con,$sql);
-                                    $output = '';
+            <div class="news-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                        <div class="news content">
+                        <div class = "row">
+                        <?php
+                        require('config/db.php');
+                        $sql="";
+                        if(isset($_POST['btnSearch'])){
+                            $sql = "SELECT * FROM artikel_p WHERE judul LIKE '%".$_POST['cari']."%' ORDER by id ASC";
+                        }else{
+                            $sql = 'SELECT * FROM artikel_p ORDER by id ASC';
+                        }
 
-                                    while ($row = mysqli_fetch_array($result)){
-                                        $output.='
+                        $result = mysqli_query($con,$sql);
+                        $output = '';
 
-                                        <div class="col-md-4">
-                                            <div class="post">
-                                                <a class="post-img" href="detail-article-pemulihan.php'.$row['id'].'"><img src="images/pemulihan/'.$row['image'].'" alt="" width="100%" height="150px"></a>
-                                                <div class="post-body">
-                                                    <div class="post-meta">
-                                                        <a class="post-category cat-1" href="">by Admin</a>
-                                                        <span class="post-date">'.$row['date'].'</span>
-                                                    </div>
-                                                    <h3 class="post-title" name="display" id="'.$row["id"].'"><a href="detail-article-pemulihan.php'.$row['id'].'">'.$row['judul'].'</a></h3>
-                                                </div>
-                                            </div>
+                        while ($row = mysqli_fetch_array($result)){
+                            $output.='
+
+                            <div class="col-md-4">
+                                <div class="post">
+                                    <a class="post-img" href="detail-article-pemulihan.php'.$row['id'].'"><img src="images/pemulihan/'.$row['image'].'" alt="" width="100%" height="150px"></a>
+                                    <div class="post-body">
+                                        <div class="post-meta">
+                                            <a class="post-category cat-1" href="">by Admin</a>
+                                            <span class="post-date">'.$row['date'].'</span>
                                         </div>
+                                        <h3 class="post-title" name="display" id="'.$row["id"].'"><a href="detail-article-pemulihan.php?id='.$row['id'].'">'.$row['judul'].'</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            ';
+                        }
+                        echo $output;
+                        ?>
+                        </div><!--row-->
+                        </div><!-- news content-wrap -->
+                        </div><!-- .col -->
+                    </div><!-- .row -->
 
-                                        ';
-                                    }
-                                    echo $output;
-                                    ?>
-                        </div><!-- .cause-content-wrap -->
-                </div><!-- .col -->
-
-                    
-                </div><!-- .row -->
-                <div class="row">
-                    <ul class="pagination d-flex flex-wrap align-items-center p-0">
-                        <li class="active"><a href="#">01</a></li>
-                        <li><a href="#">02</a></li>
-                        <li><a href="#">03</a></li>
-                    </ul>
-                </div>
-            </div><!-- .container -->
-        </div>
-    </div>
+                    <div class="row">
+                        <ul class="pagination d-flex flex-wrap align-items-center p-0">
+                            <li class="active"><a href="#">01</a></li>
+                            <li><a href="#">02</a></li>
+                            <li><a href="#">03</a></li>
+                        </ul>
+                    </div><!--row-->
+                </div><!-- .container -->
+            </div><!--news wrap-->
+        </div><!--container-->
+    </div><!--featured cause-->
+    
 
     <?php
     include('front-end/footer.php');
