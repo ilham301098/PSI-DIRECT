@@ -22,6 +22,7 @@ include('front-end/head.php');
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                    <a href="article-pemulihan.php">
                     <div class="icon-box active">
                         <figure class="d-flex justify-content-center">
                             <img src="components/images//hands-gray.png" alt="">
@@ -31,92 +32,80 @@ include('front-end/head.php');
                         <header class="entry-header">
                             <h3 class="entry-title">Trauma Healing</h3>
                         </header>
-
-                        <!-- <div class="entry-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. </p>
-                        </div> -->
                     </div>
+                <br><br>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
-                        <div class="header-elements">
-                            <div class="posted-date">March 12, 2018</div>
 
-                            <h2 class="entry-title"><a href="#">Toys for Children Campaign</a></h2>
+                <div class="news content">
+                    <div class="col-6 col-lg-8">
+                    <?php
+                        require('config/db.php');
+                        $sql = 'SELECT * FROM artikel_p WHERE id ='.$_GET['id'];
+                        $row = mysqli_fetch_assoc(mysqli_query($con,$sql));
+                        $output='
+                        <div class="news-content">
+                            <a href="#"><img src="images/pemulihan/'.$row["image"].'" alt=""></a>
+                            <header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
+                                <div class="header-elements">
+                                    <div class="posted-date">'.$row["date"].'</div>
+                                    <h2 class="entry-title"><a href="#">'.$row["judul"].'</a></h2>
+                                    <div class="post-metas d-flex flex-wrap align-items-center">
+                                        <span class="post-author">by <a href="#">Admin</a></span>
+                                    </div>
+                                </div>
+                            </header>
 
-                            <div class="post-metas d-flex flex-wrap align-items-center">
-                                <span class="cat-links">in <a href="#">Causes</a></span>
-                                <span class="post-author">by <a href="#">Tom Phillips</a></span>
-                                <span class="post-comments"><a href="#">3 Comments</a></span>
+                            <div class="entry-content">
+                                <p>'.$row["isi"].'</p>
                             </div>
                         </div>
-                    </header>
-
-                    <div class="news-content">
-                        <a href="#"><img src="components/images//1.jpg" alt=""></a>
-
-                        
-
-                        <div class="entry-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris. Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. Integer accumsan sodales odio, id tempus velit ullamc.</p>
-                        </div>
-
-                        
                     </div>
-
-                </div>
-
-
-
-
-
-
-
+                    ';
+                    
+                    echo $output;
+                    ?>
+                    </div><!--col-->
+                </div><!--news content-->
+        
+                <div class="news content">
                 <div class="col-5 col-md-12">
                     <div class="sidebar">
-
                         <div class="popular-posts">
                             <h2>Artikel Terkait</h2>
-
                             <ul class="p-0">
                                 <li class="d-flex flex-wrap justify-content-between align-items-center">
                                     <figure><a href="#"><img src="components/images//p-1.jpg" alt=""></a></figure>
-
                                     <div class="entry-content">
                                         <h3 class="entry-title"><a href="#">A new cause to help</a></h3>
-
-                                        <div class="posted-date">MArch 12, 2018</div>
+                                        <div class="posted-date">March 12, 2018</div>
                                     </div>
                                 </li>
-
                                 <li class="d-flex flex-wrap justify-content-between align-items-center">
                                     <figure><a href="#"><img src="components/images//p-2.jpg" alt=""></a></figure>
 
                                     <div class="entry-content">
                                         <h3 class="entry-title"><a href="#">We love to help people</a></h3>
 
-                                        <div class="posted-date">MArch 10, 2018</div>
+                                        <div class="posted-date">March 10, 2018</div>
                                     </div>
                                 </li>
-
                                 <li class="d-flex flex-wrap justify-content-between align-items-center">
                                     <figure><a href="#"><img src="components/images//p-3.jpg" alt=""></a></figure>
 
                                     <div class="entry-content">
                                         <h3 class="entry-title"><a href="#">The new ideas for helping</a></h3>
 
-                                        <div class="posted-date">MArch 09, 2018</div>
+                                        <div class="posted-date">March 09, 2018</div>
                                     </div>
                                 </li>
                             </ul>
                         </div><!-- .cat-links -->
                     </div><!-- .sidebar -->
                 </div><!-- .col -->
-            </div>
-        </div>
-    </div>
+                </div><!--news content-->
+            </div><!--row-->
+        </div><!--container-->
+    </div><!--news wrap-->
 
     <?php
     include('front-end/footer.php');
