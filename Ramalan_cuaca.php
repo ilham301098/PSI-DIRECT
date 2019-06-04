@@ -8,6 +8,7 @@ include('front-end/head.php');
 	include('front-end/navigation.php');
 
 	$kordinat = "-7.24917,112.75083";
+
 	?><!-- .site-header -->
 
 	<div class="page-header">
@@ -343,9 +344,13 @@ include('front-end/head.php');
 			<?php
 			if( isset($_POST['btnSearch'])){
 				$ambil = $_POST['lokasi'];
-				$arr = explode(':', $ambil);
-
-				dailyWeather($arr[0],$arr[1]);
+				$con = mysqli_connect("localhost","root","","direct");
+				$hasil = mysqli_query($con,"SELECT nama_kota,koordinat FROM ramalan_cuaca WHERE id = $ambil");
+				foreach($hasil as $hasil){
+				// 	echo $hasil['nama_kota'];
+				// 	echo $hasil['koordinat'];
+				}
+				dailyWeather($hasil['koordinat'],$hasil['nama_kota']);
 			}else{
 				dailyWeather("-7.24917,112.75083","Surabaya");
 			}
@@ -447,10 +452,10 @@ function dailyWeather($cordinates,$nama){
 					Kelembapan : <?php echo $day->humidity*100;?>%
 				</p>
 				<p class="lead">
-					Kecepatan Angin : <?php echo $day->summary;?>
+					<?php echo $day->summary;?>
 				</p>
 				<p class="lead">
-					<?php echo $windSpeed_daily?> MPH
+					Kecepatan Angin : <?php echo $windSpeed_daily?>MPH
 				</p>
 			</div>
 		</div>
