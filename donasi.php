@@ -1,3 +1,7 @@
+<?php
+$random = mt_rand(1,99);
+$_SESSION['random']=$random;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -14,11 +18,12 @@ require('config/db.php');
     $sum = $row['value_sum'];
     $d=strtotime("now");
     $donasi =null;
-    $random = mt_rand(1,99);
-
+    $temp = $_SESSION['random'];
+    echo $temp;
+    
     if (isset($_POST['kirim'])) {
     // Get data
-        $donasi=$_POST['nominal'] + $random;
+        $donasi=$_POST['nominal'] + $temp;
         $status="Belum Terverifikasi";
         $id = $_SESSION['user_id'];
           
@@ -88,11 +93,11 @@ require('config/db.php');
                             function showInput() {
                             //    document.getElementById('display').innerHTML = 
                             //                document.getElementById("user_input").value;
-                                a=Number("<?= $random ?>");
+                                a=Number("<?= $temp ?>");
                                 b=Number(document.getElementById("user_input").value);
                                 c=a+b
-                                ("<? $donasi ?>") =c
-                               window.alert("Donasi yang harus ditransfer adalah " +c +". Harap perhatikan nominal yang harus di transfer");
+                                //("<? $donasi ?>") =c
+                               window.alert("Donasi yang harus ditransfer adalah " +b +". Harap perhatikan nominal yang harus di transfer");
                            }
                         </script>
                     <?php echo '</div>
