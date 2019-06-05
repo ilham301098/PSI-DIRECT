@@ -61,7 +61,7 @@ $output = '
     <th width="45%">DESKRIPSI KONTEN</th>
     <th width="10%">Change</th>
     <th width="10%">Remove</th>
-    <th width="10%">Pratinjau</th>
+  
 
 </tr>
 ';
@@ -74,8 +74,7 @@ while($row = mysqli_fetch_array($result))
       <td>'.$row['isi'].'</td>
       <td><button type="button" name="edit" data-toggle="modal" data-target=".bs-modal-ChangeArticle'.$row["id"].'" class="btn btn-custon-four btn-default"  id="'.$row["id"].'">Edit</button></a></td>
       <td><button type="button" name="delete" data-toggle="modal" data-target=".bs-modal-DeleteArticle'.$row['id'].'" class="btn btn-custon-four btn-default" id="'.$row["id"].'">Delete</button>
-      <td><button type="button" name="Pratinjau" data-toggle="modal" data-target=".bs-modal-PratinjauArticle'.$row['id'].'" class="btn btn-custon-four btn-default" id="'.$row["id"].'">Pratinjau</button>
-      </td>
+      
       <!--Delete Item Modal -->
       <div id="delete<?php echo $id; ?>" class="modal fade bs-modal-DeleteArticle'.$row["id"].'" role="dialog">
         <div class="modal-dialog">
@@ -133,34 +132,6 @@ while($row = mysqli_fetch_array($result))
 </div>
 </div>
 </form>
-</div>
-<!--Pratinjau Item Modal -->
-      <div id="Pratinjau<?php echo $id; ?>" class="modal fade bs-modal-PratinjauArticle'.$row["id"].'" role="dialog">
-        <div class="modal-dialog">
-          <form method="post">
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Pratinjau</h4>
-
-            </div>
-            <div class="modal-body">
-                <form action="" method="POST">
-                  <input type="hidden" name="Pratinjau" value="'.$row["id"].'">
-                  <div class="alert alert-danger">Judul: <strong>
-                    '.$row['judul'].'</strong>? </div>
-                    <div class="alert alert-danger"></br> <strong>
-                    '.$row['isi'].'</strong>? </div>
-                    <div class="modal-footer">
-                      
-                      <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> OK</button>
-                  </div>
-              </form>
-          </div>
-      </div>
-  </form>
-</div>
 </div>
 
 </tr>
@@ -251,7 +222,7 @@ if(isset($_POST['edit'])){
     <th width="45%">DESKRIPSI KONTEN</th>
     <th width="10%">Change</th>
     <th width="10%">Remove</th>
-  
+    <th width="10%">Pratinjau</th>
 
     </tr>
     </thead>';
