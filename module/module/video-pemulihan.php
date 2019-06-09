@@ -114,7 +114,7 @@
             <?php 
             require('config/db.php');
             $no=0;
-//KATEGORI SIAGA BENCANA == 1
+//KATEGORI Pemulihan == 1
             $res="";
             if(isset($_POST['btn-cari'])){
                 $query="SELECT * FROM `video_p` WHERE `JUDUL` like '%".$_POST['cari']."%'";
@@ -143,7 +143,7 @@
                             <p><?php echo limit_words($res['ISI'],50); ?></p>
                         </div>
                         <div align="center">
-                            <p><span><i class="fa fa-clock"></i></span> <b>Sumber : </b><?php echo $res['SUMBER']; ?></p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Kategori : </b><?php echo $res['SUMBER']; ?></p>
 
                             <button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#EditVideoSiaga<?php echo $res['ID']; ?>"><i class="fa fa-edit"></i>&nbsp;Edit</button>
                             <button type="button" class="btn btn-md btn-danger" data-toggle="modal" data-target="#DeleteVideoSiaga<?php echo $res['ID']; ?>"><i class="fa fa-trash-alt"></i>&nbsp;Delete</button>
@@ -179,7 +179,7 @@
                                     </div>
                                     <br>
                                     <div class="col-md-12">
-                                        <label style="color:white;">Sumber</label>
+                                        <label style="color:white;">Kategori</label>
                                         <input type="text" class="form-control" name="sumber" value="<?php echo $res['SUMBER']; ?>" placeholder="Sumber Video" required="">
                                     </div>
                                     <br>
@@ -251,7 +251,7 @@
                             </div>
                             <br>
                             <div class="col-md-12">
-                                <label style="color:white;">Sumber</label>
+                                <label style="color:white;">Kategori</label>
                                 <input type="text" class="form-control" name="sumber" placeholder="Sumber Video" required="">
                             </div>
                             <br>

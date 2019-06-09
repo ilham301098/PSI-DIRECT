@@ -53,7 +53,7 @@
 									<span class="bread-slash">/</span>
 								</li>
 								<li>
-									<a href="?module=artikeladm">Artikel</a>
+									<a href="?module=artikel-pemulihan">Artikel</a>
 								</li>
 							</ul>
 						</div>
@@ -91,11 +91,12 @@
 
 					$image = $idn.".".$ekstensi;
 					$judul = $_POST['judul'];
+					$kategori = $_POST['kategori'];
 					$sumber = $_POST['sumber'];
 					$isi = $_POST['isi'];
 					$date = date("Y-m-d");
 
-					$sql = "INSERT INTO artikel_p (judul, sumber, isi, image, date) VALUES ('$judul', '$sumber', '$isi', '$image', '$date')";
+					$sql = "INSERT INTO artikel_p (judul, sumber, isi, image, date, kategori) VALUES ('$judul', '$sumber', '$isi', '$image', '$date', '$kategori')";
 					$result= mysqli_query($con,$sql);
 					if ($result){
 						echo '<script>window.location.href="?module=artikel-pemulihan"</script>';
@@ -107,6 +108,10 @@
 					<div class="form-group">
 						<label>Judul Artikel</label>
 						<input type="text" class="form-control" name="judul" required="">
+					</div>
+					<div class="form-group">
+						<label>Kategori Artikel</label>
+						<input type="text" class="form-control" name="kategori" required="">
 					</div>
 					<div class="form-group">
 						<label>Sumber Artikel</label>

@@ -87,6 +87,10 @@ $row=mysqli_fetch_assoc(mysqli_query($con,"SELECT * FROM artikel_p WHERE id='".$
 						<input type="text" class="form-control" name="judul" value="<?php echo $row['judul']; ?>" required="">
 					</div>
 					<div class="form-group">
+						<label>Kategori Artikel</label>
+						<input type="text" class="form-control" name="kategori" value="<?php echo $row['kategori']; ?>" required="">
+					</div>
+					<div class="form-group">
 						<label>Sumber Artikel</label>
 						<input type="text" class="form-control" name="sumber" value="<?php echo $row['sumber']; ?>" required="">
 					</div>

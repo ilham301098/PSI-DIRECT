@@ -19,7 +19,7 @@
                   <span class="bread-blod">Pemulihan</span> <span class="bread-slash">/</span>
                 </li>
                 <li>
-                  <span><a href="?module=artikeladm">Artikel</a></span>
+                  <span><a href="?module=artikel-pemulihan">Artikel</a></span>
                 </li>
               </ul>
             </div>
@@ -64,6 +64,8 @@
       $judul = $_POST['judul'];
       $sumber = $_POST['sumber'];
       $isi = $_POST['isi'];
+      $kategori = $_POST['kategori'];
+      
 
       if($nama!==""){
         $x = explode('.', $nama);
@@ -73,7 +75,7 @@
 
         move_uploaded_file($_FILES['fileEdit']['tmp_name'], $target);
 
-        $sql = "UPDATE artikel_p SET judul='$judul', sumber = '$sumber', isi='$isi', image='$image' WHERE id='$idn'";
+        $sql = "UPDATE artikel_p SET judul='$judul', sumber = '$sumber', isi='$isi', image='$image', kategori='$kategori' WHERE id='$idn'";
         $result= mysqli_query($con,$sql);
         
         if (!$result) {
@@ -95,7 +97,7 @@
           </div>';
         }
       }else{
-        $sql = "UPDATE artikel_p SET judul='$judul', sumber = '$sumber', isi='$isi' WHERE id='$idn'";
+        $sql = "UPDATE artikel_p SET judul='$judul', sumber = '$sumber', isi='$isi', kategori='$kategori' WHERE id='$idn'";
         $result= mysqli_query($con,$sql);
         if (!$result) {
           echo '
@@ -138,9 +140,10 @@
         <table class="table table-bordered table-striped">
           <tr>
             <th width="2%">NO</th>
-            <th width="18%">IMAGE</th>
-            <th width="20%">JUDUL</th>
-            <th width="30%">DESKRIPSI KONTEN</th>
+            <th width="13%">IMAGE</th>
+            <th width="15%">JUDUL</th>
+            <th width="10%">KATEGORI</th>
+            <th width="20%">DESKRIPSI KONTEN</th>
             <th width="10%">SUMBER</th>
             <th width="20%">BUTTON</th>
           </tr>
@@ -155,6 +158,7 @@
               
             </td>
             <td><?php echo $row['judul']; ?></td>
+            <td><?php echo $row['kategori']; ?></td>
             <td>
               <?php 
               echo limit_words($row['isi'],20);
@@ -216,7 +220,7 @@
                               
                               <div class="col-md-6">
                                 <div class="form-group">
-                                  <label>Judul Artikel</label>
+                                  <label>Judul(Kategori) Artikel</label>
                                   <input type="text" class="form-control" name="judul" value="<?php echo $row['judul']; ?>" required="">
                                 </div>
                                 <div class="form-group">
