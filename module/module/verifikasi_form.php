@@ -83,6 +83,24 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 						<?php 
 						if(isset($_POST['verif_hilang'])){
 							$ver=mysqli_query($con,"UPDATE orang_hilang SET status='Terverifikasi' WHERE id='".$_POST['idkorban']."'");
+							if($ver){
+								echo '
+								<div class="alert alert-success alert-dismissible fade in" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+									</button>
+									<strong>Success</strong><br> Verifikasi data berhasil.
+								</div>
+								';
+							}else{
+								echo '
+								<div class="alert alert-danger alert-dismissible fade in" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+									</button>
+									<strong>Error</strong><br> Verifikasi data berhasil.
+								</div>
+								';
+							}
+							echo "<meta http-equiv='refresh' content='0'>";
 						}
 						?>
 					</div>
