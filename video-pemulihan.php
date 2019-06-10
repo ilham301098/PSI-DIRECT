@@ -19,43 +19,51 @@ include('front-end/head.php');
     </div><!-- .page-header -->
 
 
-<div class="col-md-12">
-    <br><br>
-    <div class = "row">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-            <div class="courses-inner res-mg-b-30">
-                <div class="courses-title">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/Teg_kgDFMQ8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <h4 align="center">Trauma Healing by Viona Wang</h4>
-                </div>
-                
-                
-            </div>
-        </div>
+<div class="news-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-8">
 
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-            <div class="courses-inner res-mg-b-30">
-                <div class="courses-title">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/6rg_4Hh4Lzo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <h4 align="center">Trauma Healing by Dudi Iskandar</h4>
-                </div>
-                
-            </div>
-        </div>
+                    <?php
+                    require('config/db.php');
+                    $sql="";
+                    if(isset($_POST['btnSearch'])){
+                        $sql = "SELECT * FROM video_p WHERE JUDUL LIKE '%".$_POST['cari']."%' ORDER by id ASC";
+                    }else{
+                        $sql = 'SELECT * FROM video_p ORDER BY ID DESC';
+                    }
 
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-            <div class="courses-inner res-mg-b-30">
-                <div class="courses-title">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/KscXKBrmg8U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <h4 align="center">Trauma Healing by YDSF Al Falah</h4>
+                    $result=mysqli_query($con,$sql);
+                    foreach ($result as $key) { 
+                        $url = $key['LINK'];
+                        preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches);
+                        $id = $matches[1];
+
+                    ?>
+                    <div class="news-content">
+
+                        <div class="posted-date"><?php echo $key['DATE_CREATED']; ?></div>
+
+                        <h2 class="entry-title"><a href="#"><?php echo $key['JUDUL']; ?></a></h2>
+
+                        <iframe width="100%" height="415" src="https://www.youtube.com/embed/<?php echo $id ?>?rel=0&showinfo=0&color=white&iv_load_policy=3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p><?php echo $key['ISI']; ?></p>
+                        <i>Sumber : <?php echo $key['SUMBER']; ?> </i>
+
+                    </div>
+                    <?php } ?>
+
+
+                    <ul class="pagination d-flex flex-wrap align-items-center p-0" style="text-align: center;">
+                        <li class="active"><a href="#">01</a></li>
+                        <li><a href="#">02</a></li>
+                        <li><a href="#">03</a></li>
+                    </ul>
                 </div>
                 
-                
-            </div>
-        </div>
-    </div>  
-    <br><br> 
-</div>
+            </div><!--row-->
+        </div><!--container-->
+    </div><!--news wrap-->
 
     <?php
     include('front-end/footer.php');
