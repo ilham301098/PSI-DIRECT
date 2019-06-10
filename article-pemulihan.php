@@ -82,7 +82,7 @@ include('front-end/head.php');
                 </div><!-- .col -->
             </div>
             <br>
-            <div class="row" >
+            <div class="row">
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0"style="margin: auto;">
                     <a href="article-pemulihan.php">
                     <div class="icon-box active">
