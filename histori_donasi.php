@@ -27,9 +27,9 @@ include('front-end/head.php');
 
 	<div class="container">
 		<div class="portfolio-wrap">
-			<div id="tabel_org_hilang">
+			<div id="tabel_histori">
 				<h3 align="center">Tabel Riwayat Donasi</h3>
-				<table class="table" id="daftar_orang">
+				<table class="table" id="donasi">
 					<thead>
 						<tr>
 							<th>No.</th>
@@ -63,14 +63,9 @@ include('front-end/head.php');
 	<script type="text/javascript">
 		$(document).ready( function () {
 				// console.log('tes');
-				$('#daftar_orang').DataTable();
+				$('#donasi').DataTable();
 			} );
 		</script>
-		<script type="text/javascript">
-			$(document).ready( function () {
-				// console.log('tes');
-				$('#orang_ditemukan').DataTable();
-			} );
-		</script>
+		
 	</body>
 	</html>
