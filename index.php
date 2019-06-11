@@ -107,7 +107,7 @@ include('front-end/head.php');
 					</a>
 				</div>
 				<div class="col-sm-5" id="btnDonasi">
-					<a href="#">
+					<a href="histori_donasi.php">
 						<div class="icon-box"><h3 class="entry-title">Donasi</h3>
 							<p align="center">Klik untuk melihat history donasi anda</p>
 						</div>

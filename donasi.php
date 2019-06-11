@@ -1,7 +1,4 @@
-<?php
-$random = mt_rand(1,99);
-$_SESSION['random']=$random;
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -18,12 +15,10 @@ require('config/db.php');
     $sum = $row['value_sum'];
     $d=strtotime("now");
     $donasi =null;
-    $temp = $_SESSION['random'];
-    echo $temp;
     
     if (isset($_POST['kirim'])) {
     // Get data
-        $donasi=$_POST['nominal'] + $temp;
+        $donasi= $_POST['nominal'] + $_SESSION['user_id'];
         $status="Belum Terverifikasi";
         $id = $_SESSION['user_id'];
           
@@ -69,40 +64,44 @@ require('config/db.php');
         <div class="container">
             <br>
             <div class="row">
-                <div class="col-12" style="background: #f9deac;" >
+                <div class="col-12">
                     <br>
-                     <h2 align="center">Total Donasi : Rp'. $sum.'</h2>
-                    <form class="contact-form" action="donasi.php" method="post" autocomplete="off" style="background: #f9deac;" > <div class="form-group">
+                     <h2 align="center">Total Donasi : Rp'. $sum.'</h2><br>
+                      <div class="col-12">
+                    <form action="donasi.php" method="post" autocomplete="off" > <div class="form-group">
                         <div class="container">
                             <label for="exampleInputNama">Masukkan jumlah donasi yang diinginkan : </label>
                             <input type="number" name="nominal" id="user_input" class="form-control" placeholder="Input nominal donasi">
                         </div>
                     </div>
                     <br>
+                    <div class="container">
                     <p><span><b>Harap Transfer Nominal Donasi ke :</b></span></p>
                     <p><span>Rekening BCA: 242342523 a.n. DIRECT</span></p>
                     <p><span>Rekening BRI: 242342523 a.n. DIRECT</span></p>
+                    </div>
                     <br>
                     <div class="container">
                         <p><span><i>Berbagi bukan tentang seberapa besar dan seberapa berharganya hal yang kau beri, namun seberapa tulus dan ikhlasnya apa yang ingin kau beri.</i></span></p>
                     </div>
                     <br><br>
                     <div align="center">
-                        <button class="btn btn gradient-bg my-1 my-sm-0" type="submit" onclick="showInput()" name="kirim" value="Kirim">Donasi</button>';?>
+                        <a href="histori_donasi.php">History Donasi</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn gradient-bg my-1 my-sm-0" type="submit" onclick="showInput()" name="kirim" value="Kirim">Donasi</button>
+                        ';
+                        ?>
                         <script>
                             function showInput() {
-                            //    document.getElementById('display').innerHTML = 
-                            //                document.getElementById("user_input").value;
-                                a=Number("<?= $temp ?>");
+                                a=Number("<?= $_SESSION['user_id']; ?>");
                                 b=Number(document.getElementById("user_input").value);
                                 c=a+b
-                                //("<? $donasi ?>") =c
-                               window.alert("Donasi yang harus ditransfer adalah " +b +". Harap perhatikan nominal yang harus di transfer");
+                               window.alert("Donasi yang harus ditransfer adalah " +c +". Harap perhatikan nominal yang harus di transfer");
                            }
                         </script>
                     <?php echo '</div>
                     <br>
                 </div></form>
+                </div>
                 </div>
                 </div>
             </div>';
