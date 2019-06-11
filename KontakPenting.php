@@ -80,10 +80,10 @@ $darurat= mysqli_query($con, "SELECT * FROM `kontak_penting`") or die ('Error');
                                             <select id="kota" class="form-control" name="kota">
                                                 <option value="">Please Select</option>
                                                 <?php
-                                                    $query = mysqli_query($con, "SELECT * FROM kota INNER JOIN provinsi ON kota.id_provinsi_fk = provinsi.id ORDER BY kota");
+                                                    $query = mysqli_query($con, "SELECT * FROM kota INNER JOIN provinsi ON kota.id_prov = provinsi.id ORDER BY kota");
                                                     while ($row = mysqli_fetch_array($query)) { ?>
 
-                                                    <option id="kota" class="<?php echo $row['id_provinsi']; ?>" value="<?php echo $row['id_kota']; ?>">
+                                                    <option id="kota" class="<?php echo $row['id_prov']; ?>" value="<?php echo $row['id_kota']; ?>">
                                                         <?php echo $row['kota']; ?>
                                                     </option>
 
@@ -91,35 +91,11 @@ $darurat= mysqli_query($con, "SELECT * FROM `kontak_penting`") or die ('Error');
                                             </select>
                                         </div>
                                         <div class="col-sm-3">
-                                        	
-                                            <!--kecamatan-->
-                                            <select id="kecamatan" class="form-control" name="kecamatan">
-                                                <option value="">Please Select</option>
-                                                <?php
-                                                    $query = mysqli_query($con, "SELECT * FROM kecamatan INNER JOIN kota ON kecamatan.id_kota_fk = kota.id_kota ORDER BY nama_kecamatan");
-                                                    while ($row = mysqli_fetch_array($query)) { ?>
-
-                                                    <option id="kecamatan" class="<?php echo $row['id_kota']; ?>" value="<?php echo $row['id_kecamatan']; ?>">
-                                                        <?php echo $row['nama_kecamatan']; ?>
-                                                    </option>
-
-                                                <?php } ?>
-                                            </select>
                                         </div>
                                     </div>   
                                 </form>
 
 
-
-
-
-
-
-
-
-						<input type="text" placeholder="Provinsi">
-						<input type="text" placeholder="Kota/Kabupaten">
-						<input type="text" placeholder="Kategori">
 						<input class="btn gradient-bg mt-5" type="submit" value="CARI">
 
 						<h2 class="w-100 mt-5 mb-3">Hasil Pencarian</h2>
