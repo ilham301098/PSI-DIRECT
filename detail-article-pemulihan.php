@@ -71,34 +71,25 @@ include('front-end/head.php');
                 <div class="col-5 col-md-12">
                     <div class="sidebar">
                         <div class="popular-posts">
+                            <div class="popular-posts">
                             <h2>Artikel Terkait</h2>
                             <ul class="p-0">
+                                <?php
+                                $result = mysqli_query($con,"SELECT * FROM artikel_p ORDER by id DESC LIMIT 3");
+                                foreach ($result as $key) { ?>
                                 <li class="d-flex flex-wrap justify-content-between align-items-center">
-                                    <figure><a href="#"><img src="components/images//p-1.jpg" alt=""></a></figure>
-                                    <div class="entry-content">
-                                        <h3 class="entry-title"><a href="#">A new cause to help</a></h3>
-                                        <div class="posted-date">March 12, 2018</div>
-                                    </div>
-                                </li>
-                                <li class="d-flex flex-wrap justify-content-between align-items-center">
-                                    <figure><a href="#"><img src="components/images//p-2.jpg" alt=""></a></figure>
+                                    <figure><a href="detail-article-pemulihan.php?id=<?php echo $key['id']; ?>"><img src="images/pemulihan/<?php echo $key['image']; ?>" alt="" width="100%" height="100%"></a></figure>
 
                                     <div class="entry-content">
-                                        <h3 class="entry-title"><a href="#">We love to help people</a></h3>
+                                        <h3 class="entry-title"><a href="detail-article-pemulihan.php?id=<?php echo $key['id']; ?>"><b><?php echo $key['judul']; ?></b></a></h3>
 
-                                        <div class="posted-date">March 10, 2018</div>
+                                        <div class="posted-date"><?php echo $key['date']; ?></div>
                                     </div>
                                 </li>
-                                <li class="d-flex flex-wrap justify-content-between align-items-center">
-                                    <figure><a href="#"><img src="components/images//p-3.jpg" alt=""></a></figure>
+                                <?php } ?>
 
-                                    <div class="entry-content">
-                                        <h3 class="entry-title"><a href="#">The new ideas for helping</a></h3>
-
-                                        <div class="posted-date">March 09, 2018</div>
-                                    </div>
-                                </li>
                             </ul>
+                            </div><!-- .cat-links -->
                         </div><!-- .cat-links -->
                     </div><!-- .sidebar -->
                 </div><!-- .col -->
