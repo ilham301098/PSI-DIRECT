@@ -71,7 +71,7 @@
         $x = explode('.', $nama);
         $ekstensi = strtolower(end($x));
         $image = $idn.".".$ekstensi;
-        $target = "images/SiagaBencana/".$idn.".".$ekstensi;
+        $target = "images/pemulihan/".$idn.".".$ekstensi;
 
         move_uploaded_file($_FILES['fileEdit']['tmp_name'], $target);
 
@@ -153,7 +153,7 @@
           <tr>
             <td><?php echo $no; ?></td>
             <td>
-              <a href="?module=dtlArticlePemulihan&id=<?php echo $row['id']; ?>"> <img src="images/SiagaBencana/<?php echo $row['image']; ?>" height="60" width="100%" class="img-thumbnail" /></b>
+              <a href="?module=dtlArticlePemulihan&id=<?php echo $row['id']; ?>"> <img src="images/pemulihan/<?php echo $row['image']; ?>" height="60" width="100%" class="img-thumbnail" /></b>
               </a>
               
             </td>
@@ -234,7 +234,7 @@
                               </div>
                               <div class="col-md-6">
                                 <h4 align="center">Preview</h4>
-                                <img src="images/SiagaBencana/<?php echo $row['image']; ?>" alt="" width="100%">
+                                <img src="images/pemulihan/<?php echo $row['image']; ?>" alt="" width="100%">
                               </div>
 
                               <div class="col-lg-12">

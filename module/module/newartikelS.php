@@ -85,7 +85,7 @@
 					$x = explode('.', $nama);
 					$ekstensi = strtolower(end($x));
 
-					$target = "images/SiagaBencana/".$idn.".".$ekstensi;
+					$target = "images/pemulihan/".$idn.".".$ekstensi;
 
 					move_uploaded_file($_FILES['file']['tmp_name'], $target);
 

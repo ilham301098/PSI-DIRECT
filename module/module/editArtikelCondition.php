@@ -101,7 +101,7 @@ $row=mysqli_fetch_assoc(mysqli_query($con,"SELECT * FROM artikel_c WHERE id='".$
 				</div>
 				<div class="col-md-6">
 					<h4 align="center">Preview</h4>
-					<img src="images/SiagaBencana/<?php echo $row['image']; ?>" alt="" width="100%">
+					<img src="images/pemulihan/<?php echo $row['image']; ?>" alt="" width="100%">
 				</div>
 
 				<div class="col-lg-12">
