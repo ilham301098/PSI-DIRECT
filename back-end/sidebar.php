@@ -25,7 +25,11 @@
 	</a>
 	<ul class="submenu-angle" aria-expanded="true">
 		<li><a href="?module=video-pemulihan"><span class="mini-sub-pro">Video</span></a></li>
-		<li><a href="?module=artikel-pemulihan"><span class="mini-sub-pro">Artikel</span></a></li>
+		<li>
+			<a href="?module=artikel-pemulihan"><span class="mini-sub-pro">Artikel Trauma Healing</span></a>
+		</li>
+		<li><a href="?module=artikel-condition"><span class="mini-sub-pro">Artikel Condition</span></a></li>
+		<li><a href="?module=artikel-survival"><span class="mini-sub-pro">Artikel Survival</span></a></li>
 
 	</ul>
 </li>
