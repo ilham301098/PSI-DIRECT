@@ -74,11 +74,11 @@ include('front-end/head.php');
             <div class="row">
                 <div class="col-8">
                     <div class="search-widget">
-                        <form class="flex flex-wrap align-items-center">
-                            <input type="search" placeholder="Search...">
-                            <button type="submit" class="flex justify-content-center align-items-center">GO</button>
+                        <form class="flex flex-wrap align-items-center" action="" method="post">
+                            <input type="search" name="cari" placeholder="Search...">
+                            <button type="submit" name="btnSearch" class="flex justify-content-center align-items-center">GO</button>
                         </form><!-- .flex -->
-                    </div><!-- .search-widget -->
+                    </div><!-- .search-widget -->                
                 </div><!-- .col -->
             </div>
             <br>
@@ -110,9 +110,9 @@ include('front-end/head.php');
                         require('config/db.php');
                         $sql="";
                         if(isset($_POST['btnSearch'])){
-                            $sql = "SELECT * FROM artikel_p WHERE judul LIKE '%".$_POST['cari']."%' ORDER by id ASC";
+                            $sql = "SELECT * FROM artikel_c WHERE judul LIKE '%".$_POST['cari']."%' ORDER by id ASC";
                         }else{
-                            $sql = 'SELECT * FROM artikel_p ORDER by id ASC';
+                            $sql = 'SELECT * FROM artikel_c ORDER by id ASC';
                         }
 
                         $result = mysqli_query($con,$sql);

@@ -40,7 +40,7 @@ include('front-end/head.php');
                     <div class="col-6 col-lg-8">
                     <?php
                         require('config/db.php');
-                        $sql = 'SELECT * FROM artikel_p WHERE id ='.$_GET['id'];
+                        $sql = 'SELECT * FROM artikel_s WHERE id ='.$_GET['id'];
                         $row = mysqli_fetch_assoc(mysqli_query($con,$sql));
                         $output='
                         <div class="news-content">
@@ -73,31 +73,20 @@ include('front-end/head.php');
                         <div class="popular-posts">
                             <h2>Artikel Terkait</h2>
                             <ul class="p-0">
+                                <?php
+                                $result = mysqli_query($con,"SELECT * FROM artikel_s ORDER by id DESC LIMIT 3");
+                                foreach ($result as $key) { ?>
                                 <li class="d-flex flex-wrap justify-content-between align-items-center">
-                                    <figure><a href="#"><img src="components/images//p-1.jpg" alt=""></a></figure>
-                                    <div class="entry-content">
-                                        <h3 class="entry-title"><a href="#">A new cause to help</a></h3>
-                                        <div class="posted-date">March 12, 2018</div>
-                                    </div>
-                                </li>
-                                <li class="d-flex flex-wrap justify-content-between align-items-center">
-                                    <figure><a href="#"><img src="components/images//p-2.jpg" alt=""></a></figure>
+                                    <figure><a href="detail-article-survival.php?id=<?php echo $key['id']; ?>"><img src="images/pemulihan/<?php echo $key['image']; ?>" alt="" width="100%" height="100%"></a></figure>
 
                                     <div class="entry-content">
-                                        <h3 class="entry-title"><a href="#">We love to help people</a></h3>
+                                        <h3 class="entry-title"><a href="detail-article-survival.php?id=<?php echo $key['id']; ?>"><b><?php echo $key['judul']; ?></b></a></h3>
 
-                                        <div class="posted-date">March 10, 2018</div>
+                                        <div class="posted-date"><?php echo $key['date']; ?></div>
                                     </div>
                                 </li>
-                                <li class="d-flex flex-wrap justify-content-between align-items-center">
-                                    <figure><a href="#"><img src="components/images//p-3.jpg" alt=""></a></figure>
+                                <?php } ?>
 
-                                    <div class="entry-content">
-                                        <h3 class="entry-title"><a href="#">The new ideas for helping</a></h3>
-
-                                        <div class="posted-date">March 09, 2018</div>
-                                    </div>
-                                </li>
                             </ul>
                         </div><!-- .cat-links -->
                     </div><!-- .sidebar -->
