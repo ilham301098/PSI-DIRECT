@@ -1,3 +1,20 @@
+<?php
+require("config/db.php");
+$artikelSg=mysqli_num_rows(mysqli_query($con,"SELECT * FROM artikel_sg"));
+$artikelc=mysqli_num_rows(mysqli_query($con,"SELECT * FROM artikel_c"));
+$artikelp=mysqli_num_rows(mysqli_query($con,"SELECT * FROM artikel_p"));
+$artikels=mysqli_num_rows(mysqli_query($con,"SELECT * FROM artikel_s"));
+$video=mysqli_num_rows(mysqli_query($con,"SELECT * FROM video"));
+$videop=mysqli_num_rows(mysqli_query($con,"SELECT * FROM video_p"));
+$oranghilang=mysqli_num_rows(mysqli_query($con,"SELECT * FROM orang_hilang WHERE status='Terverifikasi'"));
+$orangditemukan=mysqli_num_rows(mysqli_query($con,"SELECT * FROM orang_ditemukan WHERE status='Terverifikasi'"));
+
+$artikel=$artikels+$artikelSg+$artikelc+$artikelp;
+$video=$video+$videop;
+
+?>
+
+
 <div class="breadcome-area">
 	<div class="container-fluid">
 		<div class="row">
@@ -26,13 +43,13 @@
 
 <div class="analytics-sparkle-area">
 	<div class="container-fluid">
-	<h1 align="center">SELAMAT DATANG DI DIRECT</h1>
+		<h1 align="center">SELAMAT DATANG DI DIRECT</h1>
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 				<div class="social-media-edu res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
 					<i class="fa fa-newspaper"></i>
 					<div class="social-edu-ctn">
-						<h2><?php echo number_format(19); ?></h2>
+						<h2><?php echo number_format($artikel); ?></h2>
 						<h4 align="center">Artikel</h4>
 					</div>
 				</div>
@@ -42,7 +59,7 @@
 				<div class="social-media-edu res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
 					<i class="fa fa-video"></i>
 					<div class="social-edu-ctn">
-						<h2><?php echo number_format(24); ?></h2>
+						<h2><?php echo number_format($video); ?></h2>
 						<h4 align="center">Video</h4>
 					</div>
 				</div>
@@ -52,7 +69,7 @@
 				<div class="social-media-edu res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
 					<i class="fa fa-user"></i>
 					<div class="social-edu-ctn">
-						<h2><?php echo number_format(142); ?></h2>
+						<h2><?php echo number_format($oranghilang); ?></h2>
 						<h4 align="center">Orang Hilang</h4>
 					</div>
 				</div>
@@ -62,7 +79,7 @@
 				<div class="social-media-edu res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
 					<i class="fa fa-user"></i>
 					<div class="social-edu-ctn">
-						<h2><?php echo number_format(93); ?></h2>
+						<h2><?php echo number_format($orangditemukan); ?></h2>
 						<h4 align="center">Orang di Temukan</h4>
 					</div>
 				</div>
@@ -108,7 +125,7 @@
 			</a>
 		</div>
 
-<br><br>
+		<br><br>
 		
 	</div>
 </div>
