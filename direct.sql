@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2019 at 02:47 PM
+-- Generation Time: Jun 15, 2019 at 05:05 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -144,6 +144,7 @@ CREATE TABLE `comment` (
   `IDTOPIK` int(11) NOT NULL,
   `COMMENT` text NOT NULL,
   `STATUS` int(5) NOT NULL DEFAULT '1',
+  `DATECREATED` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `CREATEDBY` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1600,6 +1601,7 @@ CREATE TABLE `respon` (
   `IDCOMMENT` int(5) NOT NULL,
   `RESPON` text NOT NULL,
   `STATUS` int(5) NOT NULL DEFAULT '1',
+  `DATECREATED` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `CREATEDBY` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1613,7 +1615,7 @@ CREATE TABLE `topics` (
   `topic_id` int(8) NOT NULL,
   `topic_subject` varchar(255) NOT NULL,
   `topic_detail` text NOT NULL,
-  `topic_date` datetime NOT NULL,
+  `topic_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `topic_by` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1908,6 +1910,12 @@ ALTER TABLE `orang_hilang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `pertolongan_pertama`
+--
+ALTER TABLE `pertolongan_pertama`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `respon`
 --
 ALTER TABLE `respon`
@@ -1935,7 +1943,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `video_p`

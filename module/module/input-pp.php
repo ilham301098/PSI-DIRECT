@@ -33,14 +33,6 @@
 					$cek=mysqli_fetch_assoc(mysqli_query($con,"SELECT MAX(id)AS MAX FROM pertolongan_pertama"));
 					$idn=$cek['MAX'];
 
-					$nama = $_FILES['file']['name'];
-					$x = explode('.', $nama);
-					$ekstensi = strtolower(end($x));
-
-					
-
-					move_uploaded_file($_FILES['file']['tmp_name'], $target);
-
 					
 					$judul = $_POST['judul'];
 					
