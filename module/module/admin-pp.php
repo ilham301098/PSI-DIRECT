@@ -38,12 +38,19 @@
 									<button type="button" class="btn btn-custon-four btn-default"> <a href = ?module=input-pp><i class ="fa fa-plus"></i> Input PP Baru</a></button> <button type="button" class="btn btn-custon-four btn-default"> <a href =info-pp.php><i class ="fa fa-home"></i> Pratinjau</a> </button>
 									<br>
 									<br>
-									<div class="breadcome-heading">
-										<form role="search" class="sr-input-func">
-											<input type="text" placeholder="Search..." class="search-int form-control">
-											<a href="#"><i class="fa fa-search"></i></a>
-										</form>
-									</div>
+									<div class="row">
+			<form action="" method="post" autocomplete="off">
+				<div class="col-lg-8">
+					<div class="input-group input-mark-inner ">
+						<input type="text" placeholder="Search..."  class="input-mark-inner mg-b-22 form-control" name="cari">
+						<span class="input-group-btn">
+							<button type="submit" name="btn-cari" class="btn btn-sm btn-primary">
+								<i class="fa fa-search"></i>
+							</button>
+						</span>
+					</div>
+				</div>
+			</form>
 								</div>
 							</div>
 							<br>
@@ -116,7 +123,7 @@
 																		<label class="control-label col-sm-2" for="judul">Judul:</label>
 																		<div class="col-sm-4">
 																			<input type="text" class="form-control" id="judul" name="judul" value="'.$row['judul'].'" placeholder="Judul" required autofocus> </div>
-																			<label class="control-label col-sm-2" for="sumber">Sumber:</label>
+																			
 																			<div class="form-group">
 																				<label class="control-label col-sm-2" for="isi">Description:</label>
 																				<div class="col-sm-4">
@@ -196,56 +203,17 @@
 														echo "Error updating record: " . $con->error;
 													}
 												}
-												if(isset($_POST['search'])){
-													$cari = $_POST['search'];
-													$con = mysqli_connect("localhost","root","","direct");
-													$halaman = 5;
-													$page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
-													$mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
-													$sql = "(SELECT * FROM pertolongan_pertama WHERE judul LIKE '%".$cari."%') UNION (SELECT * FROM pertolongan_pertama WHERE  isi '%".$cari."%') UNION (SELECT * FROM pertolongan_pertama WHERE isi LIKE '%".$cari."%') ";
-													$query = mysqli_query($con,$sql);
-													$total = mysqli_num_rows($query);
-													$pages = ceil($total/$halaman);            
-													$result = mysqli_query($con,"(SELECT * FROM pertolongan_pertama WHERE judul LIKE '%".$cari."%') UNION (SELECT * FROM pertolongan_pertama WHERE  isi '%".$cari."%') UNION (SELECT * FROM pertolongan_pertama WHERE isi LIKE '%".$cari."%') LIMIT $mulai, $halaman")or die(mysql_error);
-													$no =$mulai+1;
+												if(isset($_POST['btn-cari'])){
+					$cari=$_POST['cari'];
+					$sql="SELECT * FROM pertolongan_pertama WHERE judul LIKE '%$cari%' OR isi LIKE '%".$cari."%'";
+				}else{
+					$sql = 'SELECT * FROM pertolongan_pertama ORDER by id ASC';
+				}
 
-													if(!$result)
-													{
-														echo 'Maaf obat belum bisa ditampilkan, cobalah sesaat lagi!' . mysqli_error($con);
-													}
-													else{
-
-														echo '<table class="table table-bordered table-striped">
-														<tr>
-															<th width="2%">No</th>
-															<th width="10%">JUDUL</th>
-															<th width="45%">DESKRIPSI KONTEN</th>
-															<th width="10%">Change</th>
-															<th width="10%">Remove</th>
-															<th width="10%">Pratinjau</th>
-
-														</tr>
-													</thead>';
-
-													$i=0;
-													while($row = mysqli_fetch_assoc($result)){
-														$i=$i+1;
-														echo '<tbody> <tr>
-														<th width="2%">'.$row['id'].'</th>
-														<th width="10%">'.$row['judul'].'</th>
-														<th width="45%">'.$row['isi'].'</th>
-
-													</tr> </tbody>';
-												}
-												echo '</table>';
-												echo '<center><h3>';
-												for ($i=1; $i<=$pages ; $i++){
-													echo '<a href="?halaman='.$i.'">'.$i.'</a>';
-													echo ' ';}
-													echo '</center></h3>';
-
-												}
-											}
+				$result = mysqli_query($con,$sql);
+				$no = 1;
+				
+				
 
       // header("location:index.php?pesan=hapus");
 											?>
