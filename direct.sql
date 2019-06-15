@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2019 at 11:56 AM
+-- Generation Time: Jun 15, 2019 at 02:47 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -132,6 +132,20 @@ INSERT INTO `artikel_sg` (`id`, `judul`, `sumber`, `isi`, `image`, `date`) VALUE
 (38, 'Siap Siaga Menghadapi Tsunami', 'Buku Saku Badan Nasional Penanggulangan Bencana', '<p><strong>Asal Kata Tsunami</strong></p>\r\n\r\n<p>Kata tsunami berasal dari bahasa Jepang, &ldquo;tsu&rdquo; berarti pelabuhan dan &ldquo;name&rdquo; berarti gelombang sehingga secara umum diartikan sebagai gelombang/ombak yang besar di pelabuhan. Tsunami dapat diartikan sebagai gelombang laut yang disebabkan oleh gempabumi dengan pusat di bawah laut, letusan gunungapi bawah laut, longsor di bawah laut, dan atau hantaman meteor di laut.</p>\r\n\r\n<p><strong>Penyebab Terjadinya Tsunami</strong></p>\r\n\r\n<p>Tsunami dapat diakibatkan oleh beberapa yaitu, gempa&nbsp;bumi yang berpusat di laut&nbsp;dan diikuti dislokasi/perpindahan masa tanah/batuan yang sangat besar dibawah air (laut/danau),&nbsp;longsor di bawah laut,&nbsp;letusan gunung&nbsp;api di bawah laut / gunung&nbsp;api pulau&nbsp;dan &nbsp;Hantaman meteor di laut.</p>\r\n\r\n<p><strong>Tanda-Tanda Tsunami</strong></p>\r\n\r\n<p>Pada umumnya di Indonesia didahului dengan gempabumi besar dan susut laut. Terdapat selang waktu antara waktu terjadinya gempabumi sebagai sumber tsunami dengan waktu tiba tsunami di pantai. Gelombang air laut datang secara mendadak dan berulang dengan energi yang sangat kuat. Di Indonesia tsunami terjadi dalam waktu kurang dari 40 menit setelah gempabumi besar di bawah laut.</p>\r\n\r\n<p><strong>Strategi Mitigasi dan Upaya Pengurangan Risiko </strong></p>\r\n\r\n<ul>\r\n	<li>Pembangunan Sistem Peringatan Dini Tsunami.</li>\r\n	<li>Pembangunan tempat evakuasi (shelter) di sekitar daerah pemukiman, pembangunan tembok penahan tsunami pada garis pantai yang berisiko, penanaman mangrove serta tanaman lainnya di sepanjang garis pantai untuk meredam gaya air tsunami.</li>\r\n	<li>Meningkatkan pengetahuan masyarakat lokal khususnya yang tinggal di pinggir pantai tentang tsunami dan cara-cara penyelamatan diri terhadap bahaya tsunami.</li>\r\n	<li>Melaporkan secepatnya jika mengetahui tandatanda akan terjadinyan tsunami kepada petugas yang berwenang : Kepala Desa, Polisi, Stasiun Radio, SATLAK PB maupun institusi terkait.</li>\r\n</ul>\r\n\r\n<p><strong>Ketika Terjadi Tsunami Tsunami </strong></p>\r\n\r\n<ul>\r\n	<li>Jika berada di sekitar pantai, terasa ada guncangan gempabumi, air laut dekat pantai surut secara tibatiba, segeralah lari menuju ke tempat yang tinggi (perbukitan atau bangunan tinggi) sambil memberitahukan teman-teman yang lain.</li>\r\n	<li>Jika sedang berada di dalam perahu/kapal di tengah laut serta mendengar berita dari pantai telah terjadi tsunami, jangan mendekat ke pantai. Arahkan perahu ke laut. Jika gelombang pertama telah datang dan surut kembali, jangan segera turun ke daerah yang rendah. Biasanya gelombang berikutnya akan menerjang. Jika gelombang telah benar-benar mereda, lakukan pertolongan pertama pada korban.</li>\r\n</ul>\r\n', '37.jpg', '2019-06-09'),
 (39, 'Letusan Gunung Api', 'Buku Saku Badan Nasional Penanggulangan Bencana', '<p><strong>Letusan Gunung Api</strong></p>\r\n\r\n<p>Letusan gunung api merupakan bagian dari aktivitas vulkanik yang dikenal dengan istilah &ldquo;erupsi&rdquo;. Hampir semua kegiatan gunungapi berkaitan dengan zona kegempaan aktif sebab berhubungan dengan batas lempeng. Pada batas lempeng inilah terjadi perubahan tekanan dan suhu yang sangat tinggi sehingga mampu melelehkan material sekitarnya yang merupakan cairan pijar (magma). Magma akan mengintrusi batuan atau tanah di sekitarnya melalui rekahan-rekahan mendekati permukaan bumi.&nbsp;</p>\r\n\r\n<p><strong>Bahaya yang Timbul Akibat Gunung Api</strong></p>\r\n\r\n<ol>\r\n	<li>Aliran Lava Lava adalah magma yang meleler ke permukaan bumi melalui rekahan, suhunya &gt;10000 c dan dapat merusak segala bentuk infrastruktur.&nbsp;</li>\r\n	<li>Awan Panas Awan panas adalah aliran material vulkanik panas yang terdiri atas batuan berat, ringan (berongga) larva massif dan butiran klastik yang pergerakannya dipengaruhi gravitasi dan cenderung mengalir melalui lembah.</li>\r\n	<li>Gas Beracun Gas beracun adalah gas vulkanik yang dapat mematikan seketika apabila terhirup dalam tubuh. Gas tersebut antara lain: CO2 , SO2 , Rn, H2 S, HCl, HF, H2 SO4 . Gas tersebut biasanya tidak berwarna dan tidak berbau.</li>\r\n	<li>Lahar Letusan Lahar letusan terjadi pada gunung berapi yang mempunyai danau kawah, terjadi bersamaan saat letusan. Air bercampur material lepas gunung berapi mengalir dan bentuk banjir lahar.</li>\r\n</ol>\r\n\r\n<p><strong>Strategi Mitigasi dan Upaya Pengurangan Risiko</strong></p>\r\n\r\n<ol>\r\n	<li>Pemantauan, aktivitas gunungapi dipantau selama 24 jam menggunakan alat pencatat gempa (seismograf). Data harian hasil pemantauan dilaporkan ke kantor Pusat Vulkanologi dan Mitigasi Bencana Geologi (PVMBG) di Bandung dengan menggunakan radio komunikasi SSB. Petugas Pos Pengamatan Gunungapi menyampaikan laporan bulanan ke pemda setempat.</li>\r\n	<li>Tanggap Darurat, tindakan yang dilakukan ketika terjadi peningkatan aktivitas gunungapi antara lain mengevaluasi laporan dan data (PVMBG), membentuk tim Tanggap Darurat, mengirimkan tim ke lokasi, dan melakukan pemeriksaan secara terpadu. &nbsp;</li>\r\n	<li>Peta Kawasan Rawan Bencana Gunungapi menjelaskan jenis dan sifat bahaya gunungapi, daerah rawan bencana, arah penyelamatan diri, lokasi pengungsian, dan pos penanggulangan bencana.</li>\r\n	<li>Penyelidikan gunungapi menggunakan metoda berbagai ilmu kebumian.</li>\r\n	<li>Sosialisasi kepada Pemerintah Daerah serta masyarakat, terutama yang tinggal di sekitar gunungapi. Bentuk sosialisasi dapat berupa pengiriman informasi kepada Pemda dan penyuluhan langsung kepada masyarakat.</li>\r\n</ol>\r\n\r\n<p>Status Gunung Api</p>\r\n\r\n<ul>\r\n	<li>AWAS<br />\r\n	Menandakan gunung berapi yang segera atau sedang meletus. Letusan pembukaan dimulai dengan abu dan asap, berpeluang terjadi dalam waktu 24 jam. Wilayah yang terancam bahaya direkomendasikan untuk dikosongkan.</li>\r\n	<li>SIAGA<br />\r\n	Menandakan gunung berapi yang sedang bergerak ke arah letusan atau menimbulkan bencana. Peningkatan intensif kegiatan seismik, data menunjukkan bahwa aktivitas dapat segera berlanjut ke letusan atau menuju pada keadaan yang dapat menimbulkan bencana, letusan dapat terjadi dalam waktu 2 minggu. Sosialisasi di wilayah terancam.</li>\r\n	<li>WASPADA<br />\r\n	Ada aktivitas apa pun bentuknya, terdapat kenaikan aktivitas di atas level normal. Peningkatan aktivitas seismik dan kejadian vulkanis lainnya. Sedikit perubahan aktivitas yang diakibatkan oleh aktivitas magma, tektonik dan hidrotermal.</li>\r\n	<li>NORMAL<br />\r\n	Tidak ada gejala aktivitas tekanan magma. Level aktivitas dasar, pengamatan rutin, survei dan penyelidikan</li>\r\n</ul>\r\n\r\n<p><strong>Ketika Terjadi Letusan Gunung Api</strong></p>\r\n\r\n<ul>\r\n	<li>Hindari daerah rawan bencana seperti lereng gunung, lembah dan daerah aliran lahar.</li>\r\n	<li>Jika berada di tempat terbuka, lindungi diri dari abu letusan gunungapi.</li>\r\n	<li>Jangan memakai lensa kontak. Pakai masker atau kain untuk menutup mulut dan hidung.</li>\r\n	<li>Kenakan pakaian yang melindungi tubuh seperti, baju lengan panjang, celana panjang, dan topi.&nbsp;</li>\r\n</ul>\r\n\r\n<p><strong>Setelah Terjadi Letusan Gunung Api</strong></p>\r\n\r\n<ul>\r\n	<li>Jauhi wilayah yang terkena hujan abu.</li>\r\n	<li>Hindari mengendarai mobil di daerah yang terkena hujan abu vulkanik sebab bisa merusak mesin kendaraan seperti rem, persneling hingga pengapian.</li>\r\n	<li>Bersihkan atap dari timbunan debu vulkanik, karena beratnya bisa merobohkan dan merusak atap bangunan.</li>\r\n</ul>\r\n', '38.jpg', '2019-06-09'),
 (40, 'Waspada Bencana Banjir', 'Buku Saku Badan Nasional Penanggulangan Bencana', '<p><strong>Banjir</strong></p>\r\n\r\n<p>Bencana Banjir adalah bencana yang paling sering melanda Indonesia. Curah hujan diatas normal dan adanya pasang naik air laut merupakan penyebab utama terjadinya banjir. Selain itu faktor ulah manusia juga berperan penting seperti penggunaan lahan yang tidak tepat, pembuangan sampah ke dalam sungai, pembangunan pemukiman di daerah dataran banjir dan sebagainya. Adapun banjir terbagi menjadi 3 kategori: Banjir (genangan) Banjir bandang Banjir rob, akibat naiknya permukaan air laut.</p>\r\n\r\n<p><strong>Penyebab Banjir</strong></p>\r\n\r\n<ul>\r\n	<li>Permukaan tanah lebih rendah dibandingkan muka air laut. Terletak pada suatu cekungan yang dikelilingi perbukitan dengan pengaliran air keluar sempit.</li>\r\n	<li>Curah hujan tinggi.</li>\r\n	<li>Banyak pemukiman yang dibangun pada dataran sepanjang sungai.</li>\r\n	<li>Aliran sungai tidak lancar akibat banyaknya sampah.</li>\r\n	<li>Kurangnya tutupan patahan di daerah hulu sungai.</li>\r\n</ul>\r\n\r\n<p><strong>Ketika Terjadi Banjir</strong></p>\r\n\r\n<ul>\r\n	<li>Hindari berjalan di dekat saluran air untuk menghindari terseret arus banjir.</li>\r\n	<li>Matikan aliran listrik di dalam rumah atau hubungi PLN untuk mematikan aliran listrik di wilayah yang terkena bencana.</li>\r\n	<li>Mengungsi ke daerah aman atau posko banjir sedini mungkin saat genangan air masih memungkinkan untuk dilewati.</li>\r\n	<li>Segera amankan barang-barang berharga ke tempat yang lebih tinggi.</li>\r\n	<li>Jika air terus meninggi hubungi instansi yang terkait dengan penanggulangan bencana seperti Kantor Kepala Desa, Lurah ataupun Camat.</li>\r\n</ul>\r\n\r\n<p><strong>Kegiatan Setelah Terjadi Banjir </strong></p>\r\n\r\n<ul>\r\n	<li>Secepatnya membersihkan rumah, gunakan antiseptik untuk membunuh kuman penyakit.</li>\r\n	<li>Cari dan siapkan air bersih untuk menghindari terjangkitnya penyakit diare. Penataan daerah aliran sungai secara terpadu dan sesuai fungsi lahan.</li>\r\n	<li>Tidak membangun rumah dan pemukiman di bantaran sungai serta di daerah banjir.</li>\r\n</ul>\r\n\r\n<p><strong>Mitigasi dan Upaya Pengurangan Risiko Bencana Banjir </strong></p>\r\n\r\n<ul>\r\n	<li>Pemasangan pompa untuk daerah yang lebih rendah dari pemukiman laut.</li>\r\n	<li>Program penghijauan daerah hulu sungai harus selalu dilaksanakan serta mengurangi aktifitas di bagian sungai rawan banjir.</li>\r\n</ul>\r\n\r\n<p><strong>Dampak Banjir </strong></p>\r\n\r\n<ul>\r\n	<li>Merusak sarana-prasarana termasuk perumahan, gedung, jalur transportasi putus, peralatan rumah tangga rusak/hilang.</li>\r\n	<li>Menimbulkan penyakit diare, infeksi saluran pernafasan.</li>\r\n	<li>Dapat menimbulkan erosi bahkan longsor.</li>\r\n	<li>Pencemaran lingkungan.</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n', '39.jpg', '2019-06-09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `IDCOMMENT` int(11) NOT NULL,
+  `IDTOPIK` int(11) NOT NULL,
+  `COMMENT` text NOT NULL,
+  `STATUS` int(5) NOT NULL DEFAULT '1',
+  `CREATEDBY` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1260,30 +1274,6 @@ INSERT INTO `pertolongan_pertama` (`id`, `judul`, `isi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
---
-
-CREATE TABLE `posts` (
-  `post_id` int(8) NOT NULL,
-  `post_content` text NOT NULL,
-  `post_date` datetime NOT NULL,
-  `post_topic` int(8) NOT NULL,
-  `post_by` int(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`post_id`, `post_content`, `post_date`, `post_topic`, `post_by`) VALUES
-(26, 'Fasilitas kesehatan merupakan salah satu hal utama yang wajib diperhatikan di dalam pengembangan suatu daerah. Fasilitas kesehatan yang meliputi rumah sakit, puskesmas, posyandu dan semacamnya perlu dikelola tata letaknya di tiap daerah. Pengelolaan tata letak ini penting agar penyebaran fasilitas kesehatan bisa merata di semua tempat dan tidak terpusat di sartu wilayah saja. Tata letak fasilitas kesehatan yang baik dapat meningkatkan taraf kesehatan masyarakat karena jika ada warga yang sakit maka akan lebih cepat ditangani jika ada fasilitas kesehatan yang dekat dengan wilayahnya, sehingga mengurangi resiko penyebaran penyakit karena penanganan yang terlambat.', '2019-05-08 09:14:37', 5, 39),
-(27, 'Fasilitas kesehatan merupakan salah satu hal utama yang wajib diperhatikan di dalam pengembangan suatu daerah. Fasilitas kesehatan yang meliputi rumah sakit, puskesmas, posyandu dan semacamnya perlu dikelola tata letaknya di tiap daerah. Pengelolaan tata letak ini penting agar penyebaran fasilitas kesehatan bisa merata di semua tempat dan tidak terpusat di sartu wilayah saja. Tata letak fasilitas kesehatan yang baik dapat meningkatkan taraf kesehatan masyarakat karena jika ada warga yang sakit maka akan lebih cepat ditangani jika ada fasilitas kesehatan yang dekat dengan wilayahnya, sehingga mengurangi resiko penyebaran penyakit karena penanganan yang terlambat.', '2019-05-08 09:14:54', 6, 39),
-(28, 'Fasilitas kesehatan merupakan salah satu hal utama yang wajib diperhatikan di dalam pengembangan suatu daerah. Fasilitas kesehatan yang meliputi rumah sakit, puskesmas, posyandu dan semacamnya perlu dikelola tata letaknya di tiap daerah. Pengelolaan tata letak ini penting agar penyebaran fasilitas kesehatan bisa merata di semua tempat dan tidak terpusat di sartu wilayah saja. Tata letak fasilitas kesehatan yang baik dapat meningkatkan taraf kesehatan masyarakat karena jika ada warga yang sakit maka akan lebih cepat ditangani jika ada fasilitas kesehatan yang dekat dengan wilayahnya, sehingga mengurangi resiko penyebaran penyakit karena penanganan yang terlambat.', '2019-05-08 09:15:03', 7, 39),
-(29, 'Mengapa bisa salah deteksi ?', '2019-05-08 09:19:05', 5, 39);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `ramalan_cuaca`
 --
 
@@ -1602,12 +1592,27 @@ INSERT INTO `ramalan_cuaca` (`nama_kota`, `koordinat`, `id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `respon`
+--
+
+CREATE TABLE `respon` (
+  `IDRESPON` int(5) NOT NULL,
+  `IDCOMMENT` int(5) NOT NULL,
+  `RESPON` text NOT NULL,
+  `STATUS` int(5) NOT NULL DEFAULT '1',
+  `CREATEDBY` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `topics`
 --
 
 CREATE TABLE `topics` (
   `topic_id` int(8) NOT NULL,
   `topic_subject` varchar(255) NOT NULL,
+  `topic_detail` text NOT NULL,
   `topic_date` datetime NOT NULL,
   `topic_by` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1616,10 +1621,10 @@ CREATE TABLE `topics` (
 -- Dumping data for table `topics`
 --
 
-INSERT INTO `topics` (`topic_id`, `topic_subject`, `topic_date`, `topic_by`) VALUES
-(5, 'Sistem deteksi tsunami yang sering salah deteksi', '2019-05-08 09:14:37', 39),
-(6, 'Sistem deteksi tsunami yang sering salah deteksi', '2019-05-08 09:14:54', 39),
-(7, 'Sistem deteksi tsunami yang sering salah deteksi', '2019-05-08 09:15:03', 39);
+INSERT INTO `topics` (`topic_id`, `topic_subject`, `topic_detail`, `topic_date`, `topic_by`) VALUES
+(5, 'Sistem deteksi tsunami yang sering salah deteksi', 'Fasilitas kesehatan merupakan salah satu hal utama yang wajib diperhatikan di dalam pengembangan suatu daerah. Fasilitas kesehatan yang meliputi rumah sakit, puskesmas, posyandu dan semacamnya perlu dikelola tata letaknya di tiap daerah. Pengelolaan tata letak ini penting agar penyebaran fasilitas kesehatan bisa merata di semua tempat dan tidak terpusat di sartu wilayah saja. Tata letak fasilitas kesehatan yang baik dapat meningkatkan taraf kesehatan masyarakat karena jika ada warga yang sakit maka akan lebih cepat ditangani jika ada fasilitas kesehatan yang dekat dengan wilayahnya, sehingga mengurangi resiko penyebaran penyakit karena penanganan yang terlambat.', '2019-05-08 09:14:37', 39),
+(6, 'Sistem deteksi tsunami yang sering salah deteksi', 'Fasilitas kesehatan merupakan salah satu hal utama yang wajib diperhatikan di dalam pengembangan suatu daerah. Fasilitas kesehatan yang meliputi rumah sakit, puskesmas, posyandu dan semacamnya perlu dikelola tata letaknya di tiap daerah. Pengelolaan tata letak ini penting agar penyebaran fasilitas kesehatan bisa merata di semua tempat dan tidak terpusat di sartu wilayah saja. Tata letak fasilitas kesehatan yang baik dapat meningkatkan taraf kesehatan masyarakat karena jika ada warga yang sakit maka akan lebih cepat ditangani jika ada fasilitas kesehatan yang dekat dengan wilayahnya, sehingga mengurangi resiko penyebaran penyakit karena penanganan yang terlambat.', '2019-05-08 09:14:54', 39),
+(7, 'Sistem deteksi tsunami yang sering salah deteksi', 'Fasilitas kesehatan merupakan salah satu hal utama yang wajib diperhatikan di dalam pengembangan suatu daerah. Fasilitas kesehatan yang meliputi rumah sakit, puskesmas, posyandu dan semacamnya perlu dikelola tata letaknya di tiap daerah. Pengelolaan tata letak ini penting agar penyebaran fasilitas kesehatan bisa merata di semua tempat dan tidak terpusat di sartu wilayah saja. Tata letak fasilitas kesehatan yang baik dapat meningkatkan taraf kesehatan masyarakat karena jika ada warga yang sakit maka akan lebih cepat ditangani jika ada fasilitas kesehatan yang dekat dengan wilayahnya, sehingga mengurangi resiko penyebaran penyakit karena penanganan yang terlambat.', '2019-05-08 09:15:03', 39);
 
 -- --------------------------------------------------------
 
@@ -1756,6 +1761,14 @@ ALTER TABLE `artikel_sg`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`IDCOMMENT`),
+  ADD KEY `CREATEDBY` (`CREATEDBY`),
+  ADD KEY `IDTOPIK` (`IDTOPIK`);
+
+--
 -- Indexes for table `donasi`
 --
 ALTER TABLE `donasi`
@@ -1792,16 +1805,18 @@ ALTER TABLE `pertolongan_pertama`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `posts`
---
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`post_id`);
-
---
 -- Indexes for table `ramalan_cuaca`
 --
 ALTER TABLE `ramalan_cuaca`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `respon`
+--
+ALTER TABLE `respon`
+  ADD PRIMARY KEY (`IDRESPON`),
+  ADD KEY `IDCOMMENT` (`IDCOMMENT`),
+  ADD KEY `CREATEDBY` (`CREATEDBY`);
 
 --
 -- Indexes for table `topics`
@@ -1863,6 +1878,12 @@ ALTER TABLE `artikel_sg`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `IDCOMMENT` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `donasi`
 --
 ALTER TABLE `donasi`
@@ -1887,10 +1908,10 @@ ALTER TABLE `orang_hilang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `posts`
+-- AUTO_INCREMENT for table `respon`
 --
-ALTER TABLE `posts`
-  MODIFY `post_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+ALTER TABLE `respon`
+  MODIFY `IDRESPON` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `topics`
@@ -1925,6 +1946,20 @@ ALTER TABLE `video_p`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`CREATEDBY`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`IDTOPIK`) REFERENCES `topics` (`topic_id`);
+
+--
+-- Constraints for table `respon`
+--
+ALTER TABLE `respon`
+  ADD CONSTRAINT `respon_ibfk_1` FOREIGN KEY (`IDCOMMENT`) REFERENCES `comment` (`IDCOMMENT`),
+  ADD CONSTRAINT `respon_ibfk_2` FOREIGN KEY (`CREATEDBY`) REFERENCES `users` (`user_id`);
 
 --
 -- Constraints for table `topics`
