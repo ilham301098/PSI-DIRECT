@@ -48,12 +48,12 @@ include('front-end/head.php');
 				$no_telp_pelapor = $_POST['no_telepon_pelapor'];
 				$kondisi = $_POST['kondisi_korban'];
 				$status = "Belum Diverifikasi";
-
+// image file directory
+				$target = "foto_org_ditemukan/".basename($foto);
 				if (!move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
 					$foto = "default.jpg";
 				}
-  	// image file directory
-				$target = "foto_org_ditemukan/".basename($foto);
+  	
 
 				$sql = "INSERT INTO orang_ditemukan (nama_korban, usia, gender, ciri_ciri_korban, lokasi_ditemukan, tanggal_ditemukan,
 				jenis_bencana, nama_pelapor, no_telepon_pelapor, kondisi_korban, foto_korban, status) 
