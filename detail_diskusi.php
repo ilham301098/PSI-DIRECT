@@ -96,7 +96,7 @@ include('front-end/head.php');
 				}else{ ?>
 				<form action="" method="post" autocomplete="off"> 
 					<div class="form-group">
-						<h4><?php echo $_SESSION['nama']; ?></h4>
+						<h4><?php echo $_SESSION['user_name']; ?></h4>
 						<textarea name="comment" placeholder="Komentari post disini" required=""></textarea>
 						<input class="btn btn gradient-bg my-1 my-sm-0 btn-sm" type="submit" value="Submit" name="btnComment" />
 					</div>

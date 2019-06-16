@@ -47,6 +47,42 @@ include('front-end/head.php');
 						}
 					}
 					?>
+					<?php
+					require("config/db.php");
+					if(isset($_POST['editThread'])){
+						$sql = "UPDATE `topics` SET `topic_subject`='".$_POST['judul_thread']."',`topic_detail`='".$_POST['isi_thread']."' WHERE `topic_id`='".$_POST['idTopik']."'";
+
+						$result = mysqli_query($con,$sql);
+						if(!$result){
+							echo '<h4 align="center">Edit topic gagal di simpan</h4>';
+						}else{
+							echo '<h4 align="center">Edit topic berhasil di simpan</h4>';
+
+						}
+					}
+					?>
+					<?php
+					if(isset($_POST['delPost'])){
+						$resp=mysqli_query($con,"SELECT * FROM comment WHERE IDTOPIK='".$_POST['idtopic']."'");
+						foreach ($resp as $key) {
+							mysqli_query($con,"DELETE FROM respon WHERE IDCOMMENT='".$key['IDCOMMENT']."'");
+						}
+						$delcom=mysqli_query($con,"DELETE FROM `comment` WHERE IDTOPIK='".$_POST['idtopic']."'");
+
+						$del=mysqli_query($con,"DELETE FROM `topics` WHERE topic_id='".$_POST['idtopic']."'");
+						if($del){ 
+							?>
+							<h4 align="center">Berhasil Hapus topik</h4>
+							<?php 
+						}else{ 
+							?>
+							<h4 align="center">Gagal Hapus topik</h4>
+
+							<?php 
+						}
+
+					}
+					?>
 					<form action="" method="post" autocomplete="off"> 
 						<div class="form-group">
 							<label for="exampleInputNama">Judul Thread:</label>
@@ -144,7 +180,13 @@ include('front-end/head.php');
 								echo '<td>'.date('d-m-Y', strtotime($row['topic_date'])).'</td>';
 								echo '<td>
 								<a href="detail_diskusi.php?id='.$row['topic_id'].'">'.$row['topic_subject'].'</a></td>';
-								echo '<td><a href="editThread.php?id='.$row['topic_id'].'">Edit</a> | Delete</td>';
+								echo '<td><a href="editThread.php?id='.$row['topic_id'].'"><button class="btn btn-sm btn-info">Edit</button></a>'; ?>
+								<form action="" method="post">
+									<input type="hidden" name="idtopic" value="<?php echo $row['topic_id']; ?>">
+									<button name="delPost" type="submit" class="btn btn-sm btn-danger">Delete</button>
+								</form>
+
+								<?php	echo "</td>";
 								echo '</tr>';
 							} ?>
 						</tbody>

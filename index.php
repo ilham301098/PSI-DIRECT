@@ -181,6 +181,28 @@ include('front-end/head.php');
 					$result = mysqli_query($con,$sql);
 					?>
 					<br>
+					<?php
+					if(isset($_POST['delPost'])){
+						$resp=mysqli_query($con,"SELECT * FROM comment WHERE IDTOPIK='".$_POST['idtopic']."'");
+						foreach ($resp as $key) {
+							mysqli_query($con,"DELETE FROM respon WHERE IDCOMMENT='".$key['IDCOMMENT']."'");
+						}
+						$delcom=mysqli_query($con,"DELETE FROM `comment` WHERE IDTOPIK='".$_POST['idtopic']."'");
+
+						$del=mysqli_query($con,"DELETE FROM `topics` WHERE topic_id='".$_POST['idtopic']."'");
+						if($del){ 
+							?>
+							<h4 align="center">Berhasil Hapus topik</h4>
+							<?php 
+						}else{ 
+							?>
+							<h4 align="center">Gagal Hapus topik</h4>
+
+							<?php 
+						}
+
+					}
+					?>
 					<table class="table" id="tabelForum">
 						<thead>
 							<tr>
@@ -196,7 +218,13 @@ include('front-end/head.php');
 								echo '<td>'.date('d-m-Y', strtotime($row['topic_date'])).'</td>';
 								echo '<td>
 								<a href="detail_diskusi.php?id='.$row['topic_id'].'">'.$row['topic_subject'].'</a></td>';
-								echo '<td><a href="editThread.php?id='.$row['topic_id'].'">Edit</a> | Delete</td>';
+								echo '<td><a href="editThread.php?id='.$row['topic_id'].'"><button class="btn btn-sm btn-info">Edit</button></a>'; ?>
+								<form action="" method="post">
+									<input type="hidden" name="idtopic" value="<?php echo $row['topic_id']; ?>">
+									<button name="delPost" type="submit" class="btn btn-sm btn-danger">Delete</button>
+								</form>
+
+								<?php	echo "</td>";
 								echo '</tr>';
 							} ?>
 						</tbody>
@@ -211,7 +239,7 @@ include('front-end/head.php');
 		<div class="container">
 
 			<div class="row">
-				
+
 				<div class="col-12 col-md-3 col-lg-3 mt-4 mt-lg-0">
 					<a href="siaga_bencana.php">
 						<div class="icon-box">
@@ -310,7 +338,7 @@ include('front-end/head.php');
 						</div>
 					</a>
 				</div>
-				
+
 				<div class="col-12 col-md-3 col-lg-3 mt-4 mt-lg-0">
 					<a href="KontakPenting.php">
 						<div class="icon-box">
@@ -325,8 +353,8 @@ include('front-end/head.php');
 						</div>
 					</a>
 				</div>
-				
-				
+
+
 			</div><!-- .row -->
 		</div><!-- .container -->
 	</div><!-- .home-page-icon-boxes -->
@@ -403,12 +431,12 @@ include('front-end/head.php');
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-	
+
 	<script>
 		$(document).ready(function(){
 			$("#tabelForum").hide();
 			$("#tabelDonasi").hide();
-			
+
 			$("#btnDonasi").click(function(){
 				$("#tabelForum").hide();
 				$("#tabelDonasi").show();
