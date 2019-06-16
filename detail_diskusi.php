@@ -90,13 +90,18 @@ include('front-end/head.php');
 				}
 				?>
 
+				<?php
+				if(!isset($_SESSION['signed_in'])){
+					echo '<br><center><h2>Maaf, Anda harus <a href="login.php">login</a> untuk mengomentari topik ini.</h2></center><br>';
+				}else{ ?>
 				<form action="" method="post" autocomplete="off"> 
 					<div class="form-group">
-						<h4><?php echo $_SESSION['user_name']; ?></h4>
+						<h4><?php echo $_SESSION['nama']; ?></h4>
 						<textarea name="comment" placeholder="Komentari post disini" required=""></textarea>
 						<input class="btn btn gradient-bg my-1 my-sm-0 btn-sm" type="submit" value="Submit" name="btnComment" />
 					</div>
 				</form>
+				<?php } ?>
 
 				<?php
 				$comment=mysqli_query($con,"SELECT * FROM comment a,users b WHERE a.CREATEDBY=b.user_id AND a.IDTOPIK='".$_GET['id']."' ORDER BY a.IDCOMMENT DESC");
@@ -145,6 +150,10 @@ include('front-end/head.php');
 					<div class="justify-content-center" align="right">
 						
 						<div class="col-md-10" align="left">
+							<?php
+							if(!isset($_SESSION['signed_in'])){
+								echo '<br><center><h4>Maaf, Anda harus <a href="login.php">login</a> untuk merespon komentar ini.</h4></center><br>';
+							}else{ ?>
 							<form action="" method="post">
 								<input type="hidden" name="idKomentar" value="<?php echo $val['IDCOMMENT']; ?>">
 								<div class="col-md-6">
@@ -155,6 +164,7 @@ include('front-end/head.php');
 									<button type="submit" name="btnRespon" class="btn btn-sm gradient-bg">Respon</button>
 								</div>
 							</form>
+							<?php } ?>
 							<?php
 							if(isset($_POST['btnRespon'])){
 								$resp=mysqli_query($con,"INSERT INTO `respon`(`IDCOMMENT`, `RESPON`, `CREATEDBY`) VALUES ('".$_POST['idKomentar']."','".$_POST['respon']."','".$_SESSION['user_id']."')");
