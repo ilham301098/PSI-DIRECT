@@ -72,37 +72,9 @@
 				<h1 align="center">Form Tambah Artikel</h1>
 			</div>
 		</div>
-		<form action="" method="post" enctype="multipart/form-data">
+		<form action="?module=artikeladm" method="post" enctype="multipart/form-data">
 			<div class="row">
-				<?php
-				require('config/db.php');
-				if (isset($_POST['upload'])){
-
-					$cek=mysqli_fetch_assoc(mysqli_query($con,"SELECT MAX(id)AS MAX FROM artikel_sg"));
-					$idn=$cek['MAX'];
-
-					$nama = $_FILES['file']['name'];
-					$x = explode('.', $nama);
-					$ekstensi = strtolower(end($x));
-
-					$target = "images/SiagaBencana/".$idn.".".$ekstensi;
-
-					move_uploaded_file($_FILES['file']['tmp_name'], $target);
-
-					$image = $idn.".".$ekstensi;
-					$judul = $_POST['judul'];
-					$sumber = $_POST['sumber'];
-					$isi = $_POST['isi'];
-					$date = date("Y-m-d");
-
-					$sql = "INSERT INTO artikel_sg (judul, sumber, isi, image, date) VALUES ('$judul', '$sumber', '$isi', '$image', '$date')";
-					$result= mysqli_query($con,$sql);
-					if ($result){
-						echo '<script>window.location.href="?module=artikeladm"</script>';
-					}
-				}
-
-				?>
+				
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Judul Artikel</label>

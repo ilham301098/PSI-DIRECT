@@ -57,6 +57,50 @@
 		<br>
 		<?php
 		require('config/db.php');
+		if (isset($_POST['upload'])){
+
+			$cek=mysqli_fetch_assoc(mysqli_query($con,"SELECT MAX(id)AS MAX FROM artikel_sg"));
+			$idn=$cek['MAX'];
+
+			$nama = $_FILES['file']['name'];
+			$x = explode('.', $nama);
+			$ekstensi = strtolower(end($x));
+
+			$target = "images/SiagaBencana/".$idn.".".$ekstensi;
+
+			move_uploaded_file($_FILES['file']['tmp_name'], $target);
+
+			$image = $idn.".".$ekstensi;
+			$judul = $_POST['judul'];
+			$sumber = $_POST['sumber'];
+			$isi = $_POST['isi'];
+			$date = date("Y-m-d");
+
+			$sql = "INSERT INTO artikel_sg (judul, sumber, isi, image, date) VALUES ('$judul', '$sumber', '$isi', '$image', '$date')";
+			$result= mysqli_query($con,$sql);
+			if (!$result) {
+				echo '
+				<div class="alert alert-danger alert-dismissible fade in" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+					</button>
+					<strong>Error</strong><br> Tambah Artikel Gagal.
+				</div>
+				';
+
+			}else{
+				echo 
+				'
+				<div class="alert alert-success alert-dismissible fade in" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+					</button>
+					<strong>Success</strong><br> Tambah Artikel Telah Berhasil.
+				</div>';
+			}
+		}
+
+		?>
+		<?php
+		require('config/db.php');
 
 		if (isset($_POST['edit'])){
 			$idn=$_POST['idArticle'];
@@ -119,6 +163,31 @@
 			
 		}
 
+		?>
+		<?php 
+		if(isset($_POST['delete'])){
+			$delete_id = $_POST['delete_id'];
+			$sql = "DELETE FROM artikel_sg WHERE id='$delete_id' ";
+			$del=mysqli_query($con,$sql);
+			if (!$del) {
+				echo '
+				<div class="alert alert-danger alert-dismissible fade in" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+					</button>
+					<strong>Error</strong><br> Hapus Artikel Gagal.
+				</div>
+				';
+
+			}else{
+				echo 
+				'
+				<div class="alert alert-success alert-dismissible fade in" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+					</button>
+					<strong>Success</strong><br> Hapus Artikel Berhasil.
+				</div>';
+			}
+		}
 		?>
 		<div class="row">
 			<div class="col-md-12">
@@ -263,20 +332,7 @@
 
 							?>
 						</table>
-						<?php 
-						if(isset($_POST['delete'])){
-				// sql to delete a record
-							$delete_id = $_POST['delete_id'];
-							$sql = "DELETE FROM artikel_sg WHERE id='$delete_id' ";
-							if ($con->query($sql) === TRUE) {
-								echo '<script>window.location.href="?module=artikeladm"</script>';
-							} else {
-								echo "Error deleting record: " . $con->error;
-							}
-						}
-
-	// header("location:index.php?pesan=hapus");
-						?>
+						
 					</div>
 				</div>
 
