@@ -72,6 +72,17 @@ include('front-end/head.php');
     <div class="featured-cause">
         <div class="container">
             <div class="row">
+                <div class="col-8">
+                    <div class="search-widget">
+                        <form class="flex flex-wrap align-items-center" action="" method="post">
+                            <input type="search" name="cari" placeholder="Search...">
+                            <button type="submit" name="btnSearch" class="flex justify-content-center align-items-center">GO</button>
+                        </form><!-- .flex -->
+                    </div><!-- .search-widget -->
+                </div><!-- .col -->
+            </div>
+            <br>
+            <div class="row">
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0"style="margin: auto;">
                     <a href="article-pemulihan.php">
                     <div class="icon-box active">
@@ -86,17 +97,6 @@ include('front-end/head.php');
                     </div>
                 </div><!--col-->
             </div><!-- .row -->
-            <br>
-            <div class="row">
-                <div class="col-8">
-                    <div class="search-widget">
-                        <form class="flex flex-wrap align-items-center" action="" method="post">
-                            <input type="search" name="cari" placeholder="Search...">
-                            <button type="submit" name="btnSearch" class="flex justify-content-center align-items-center">GO</button>
-                        </form><!-- .flex -->
-                    </div><!-- .search-widget -->
-                </div><!-- .col -->
-            </div>
             <br>
             <div class="news-wrap">
                 <div class="container">
