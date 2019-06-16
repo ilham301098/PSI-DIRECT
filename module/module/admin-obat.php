@@ -13,9 +13,11 @@
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 							<ul class="breadcome-menu">
-								<li><a href="?module=dashboard">Home</a> <span class="bread-slash">/</span>
+								<li><a href="?module=dashboard">Dashboard</a> <span class="bread-slash">/</span>
 								</li>
-								<li><span class="bread-blod">Dashboard</span>
+								<li><span class="bread-blod">Informasi Medis /</span>
+								</li>
+								<li><a href="?module=admin-obat">Obat</a>
 								</li>
 							</ul>
 						</div>
@@ -153,20 +155,22 @@
 						}
 						?>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-							<button type="button" class="btn btn-custon-four btn-default"> <a href = ?module=input-obat><i class ="fa fa-plus"></i> Input Obat Baru</a></button> <button type="button" class="btn btn-custon-four btn-default"> <a href =info-obat.php><i class ="fa fa-home"></i> Pratinjau</a> </button>
+							<button type="button" class="btn btn-custon-four btn-default"> <a href = ?module=input-obat><i class ="fa fa-plus"></i> Input Obat Baru</a></button> <button type="button" class="btn btn-custon-four btn-default"> <a target ="_blank" href =info-obat.php><i class ="fa fa-home"></i> Pratinjau</a> </button>
 							<br>
 							<br>
-							<div class="breadcome-heading">
-								<div class="search-widget">
-									<form id="search" class="flex flex-wrap align-items-center" 
-									action="?module=admin-obat" method="post">
-									<input type="search" name="search" placeholder="Search...">
-									<button type="submit" class="flex justify-content-center align-items-center"><i class="fa fa-search"></i></button>
-								</form><!-- .flex -->
+						<form id="search" action="?module=admin-obat" method="post">
+							<div class="input-group input-mark-inner ">
+								<input type="search" name="search" placeholder="Search..." class ="input-mark-inner mg-b-22 form-control" >
+								<span class="input-group-btn">
+								<button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-search"></i>
+								</button>
+								</span>
+								<!-- .flex -->
 							</div>
+						</form>
+						<br>
 						</div>
-					</div>
-					<br>
+
 
 					<?php
 					if(isset($_POST['search'])==false){
@@ -204,7 +208,7 @@
 										<td align = "center">'.$i.'</td>
 										<td align = "center">'.$row['nama_obat'].'</td>
 										<td width ="200px" height ="150px" align = "center"><img src="foto_obat/'.$row['foto_obat'].'"'.'width = "180px"></td>
-										<td align = "center"><button type="button" class="btn btn-custon-four btn-default"><a href =?module=edit-obat&id='.$row['id_obat'].'>Edit</a></button> <button type="button" class="btn btn-custon-four btn-default" data-toggle="modal" data-target=".bs-modal-DeleteInformasiObat'.$row['id_obat'].'">Delete</button>
+										<td align = "center"><button type="button" class="btn btn-custon-four btn-default"><a href =?module=edit-obat&id='.$row['id_obat'].'>Edit</a></button> <button type="button" class="btn btn-custon-four btn-danger" data-toggle="modal" data-target=".bs-modal-DeleteInformasiObat'.$row['id_obat'].'">Delete</button>
 
 											<div class="modal fade bs-modal-DeleteInformasiObat'.$row['id_obat'].'" tabindex="-1" role="dialog" aria-hidden="true">
 												<div class="modal-dialog modal-sm">
@@ -221,7 +225,7 @@
 																<form method="post" action="">
 																	Anda yakin ingin menghapus obat ini ?<br><br>
 																	<input type="hidden" name="ID" value="'.$row['id_obat'].'">
-																	<input class="btn btn-primary btn-lg" align="center" name="DelEvent" type="submit" value="Delete">
+																	<input class="btn btn-custon-four btn-danger" align="center" name="DelEvent" type="submit" value="Delete">
 																</form>
 															</div>
 														</div>
@@ -281,9 +285,9 @@
 											<td align = "center">'.$i.'</td>
 											<td align = "center">'.$row['nama_obat'].'</td>
 											<td width ="200px" height ="150px" align = "center"><img src="foto_obat/'.$row['foto_obat'].'"'.'width = "180px"></td>
-											<td align = "center"><button type="button" class="btn btn-custon-four btn-default"><a href =?module=edit-obat&id='.$row['id_obat'].'>Edit</a></button> <button type="button" class="btn btn-custon-four btn-default" data-toggle="modal" data-target=".bs-modal-DeleteInformasi Obat'.$row['id_obat'].'">Delete</button>
+											<td align = "center"><a href =?module=edit-obat&id='.$row['id_obat'].'><button type="button" class="btn btn-custon-four btn-default">Edit</button></a> <button type="button" class="btn btn-custon-four btn-default" data-toggle="modal" data-target=".bs-modal-DeleteInformasiObat'.$row['id_obat'].'">Delete</button>
 
-												<div class="modal fade bs-modal-DeleteInformasi Obat'.$row['id_obat'].'" tabindex="-1" role="dialog" aria-hidden="true">
+												<div class="modal fade bs-modal-DeleteInformasiObat'.$row['id_obat'].'" tabindex="-1" role="dialog" aria-hidden="true">
 													<div class="modal-dialog modal-sm">
 
 														<div class="modal-content">
