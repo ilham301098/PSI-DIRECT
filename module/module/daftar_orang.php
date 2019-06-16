@@ -1,6 +1,6 @@
 <?php
 	// Create database connection
-	// error_reporting(E_ALL ^ E_NOTICE);
+	error_reporting(E_ALL ^ E_NOTICE);
 require('config/db.php');
 $data_orang_hilang = mysqli_query($con, "SELECT * FROM orang_hilang WHERE status='Terverifikasi'");
 $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE status='Terverifikasi'");
@@ -177,7 +177,6 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 								// image file directory
 							$target = "foto_org_hilang/".basename($foto);
-							echo $target;
 							if (!move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
 								$foto = "default.jpg";
 							}
@@ -331,7 +330,6 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 								// image file directory
 							$target = "foto_org_ditemukan/".basename($foto);
-									// echo "dir = ".$target;
 							if (!move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
 								$foto="default.jpg";
 							}
