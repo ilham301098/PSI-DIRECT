@@ -54,7 +54,7 @@ include('front-end/head.php');
 			</div>
 		</div>
 	</div>
-			
+
 
 	<?php
 	include('front-end/footer.php');
@@ -63,9 +63,8 @@ include('front-end/head.php');
 	<script type="text/javascript">
 		$(document).ready( function () {
 				// console.log('tes');
-				$('#donasi').DataTable();
-			} );
-		</script>
-		
-	</body>
-	</html>
+				$('#donasi').DataTable();} );
+			</script>
+			
+		</body>
+		</html>

@@ -107,7 +107,7 @@ include('front-end/head.php');
 					</a>
 				</div>
 				<div class="col-sm-5" id="btnDonasi">
-					<a href="histori_donasi.php">
+					<a href="#">
 						<div class="icon-box"><h3 class="entry-title">Donasi</h3>
 							<p align="center">Klik untuk melihat history donasi anda</p>
 						</div>
@@ -119,20 +119,87 @@ include('front-end/head.php');
 			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<br>
+					<?php 
+					require('config/db.php');
+					$id=$_SESSION['user_id'];
+					$donasi = mysqli_query($con, "SELECT * FROM `donasi` WHERE `id_user`=$id");
+					?>
 					<table class="table" id="tabelDonasi">
 						<thead>
-							<th>No</th>
-							<th>Event</th>
+							<tr>
+								<th>No.</th>
+								<th>Donasi</th>
+								<th>Tanggal</th>
+								<th>Status</th>
+							</tr>
 						</thead>
+						<tbody>
+							<?php
+							$no_korban=1;
+							while($user_data = mysqli_fetch_array($donasi)) {
+								echo "<tr>";
+								echo "<td>".$no_korban++."</td>";
+								echo "<td>".$user_data['donasi']."</td>";
+								echo "<td>".$user_data['tanggal']."</td>";
+								echo "<td>".$user_data['status']."</td>";
+							}
+							?>
+						</tbody>
 					</table>
 				</div>
 				<div class="col-sm-10">
+					<?php
+					require("config/db.php");
+					$sql="";
+					if(isset($_POST['btnCari'])){
+						$sql = "SELECT
+						topics.topic_id,
+						topics.topic_subject,
+						topics.topic_by,
+						topics.topic_date,
+						users.user_id,
+						users.user_name
+						FROM topics LEFT JOIN users
+						ON topics.topic_by = users.user_id 
+						WHERE users.user_id='".$_SESSION['user_id']."' AND topics.topic_subject LIKE '%".$_POST['search']."%'";
+					}else{
+						$sql = "SELECT
+						topics.topic_id,
+						topics.topic_subject,
+						topics.topic_by,
+						topics.topic_date,
+						users.user_id,
+						users.user_name
+						FROM
+						topics
+						LEFT JOIN
+						users
+						ON topics.topic_by = users.user_id WHERE users.user_id='".$_SESSION['user_id']."'";
+
+
+					}
+					$result = mysqli_query($con,$sql);
+					?>
 					<br>
 					<table class="table" id="tabelForum">
 						<thead>
-							<th>No</th>
-							<th>Forum</th>
+							<tr>
+								<th>Tanggal Thread</th>
+								<th>Nama Thread</th>
+								<th>Button</th>
+							</tr>
 						</thead>
+						<tbody>
+							<?php
+							while($row = mysqli_fetch_assoc($result)){
+								echo '<tr>';									
+								echo '<td>'.date('d-m-Y', strtotime($row['topic_date'])).'</td>';
+								echo '<td>
+								<a href="detail_diskusi.php?id='.$row['topic_id'].'">'.$row['topic_subject'].'</a></td>';
+								echo '<td><a href="editThread.php?id='.$row['topic_id'].'">Edit</a> | Delete</td>';
+								echo '</tr>';
+							} ?>
+						</tbody>
 					</table>
 				</div>
 			</div>
@@ -297,148 +364,6 @@ include('front-end/head.php');
 		</div><!-- .home-page-icon-boxes -->
 	</div>
 
-	<div class="our-causes">
-		<div class="container">
-			<div class="row">
-				<div class="coL-12">
-					<div class="section-heading">
-						<h2 class="entry-title">Donasi</h2>
-					</div><!-- .section-heading -->
-				</div><!-- .col -->
-			</div><!-- .row -->
-
-			<div class="row">
-				<div class="col-12">
-
-					<div class="swiper-container causes-slider">
-						<div class="swiper-wrapper">
-
-							<div class="swiper-slide">
-								<div class="cause-wrap">
-									<figure class="m-0">
-										<img src="components/images/cause-1.jpg" alt="">
-
-										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-											<a href="donasi.php" class="btn gradient-bg mr-2">Donate Now</a>
-										</div><!-- .figure-overlay -->
-									</figure>
-
-									<div class="cause-content-wrap">
-										<header class="entry-header d-flex flex-wrap align-items-center">
-											<h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
-										</header><!-- .entry-header -->
-
-										<div class="entry-content">
-											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
-										</div><!-- .entry-content -->
-									</div><!-- .cause-content-wrap -->
-								</div><!-- .cause-wrap -->
-							</div><!-- .swiper-slide -->
-
-							<div class="swiper-slide">
-								<div class="cause-wrap">
-									<figure class="m-0">
-										<img src="components/images/cause-1.jpg" alt="">
-
-										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-											<a href="donasi.php" class="btn gradient-bg mr-2">Donate Now</a>
-										</div><!-- .figure-overlay -->
-									</figure>
-
-									<div class="cause-content-wrap">
-										<header class="entry-header d-flex flex-wrap align-items-center">
-											<h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
-										</header><!-- .entry-header -->
-
-										<div class="entry-content">
-											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
-										</div><!-- .entry-content -->
-									</div><!-- .cause-content-wrap -->
-								</div><!-- .cause-wrap -->
-							</div>
-
-							<div class="swiper-slide">
-								<div class="cause-wrap">
-									<figure class="m-0">
-										<img src="components/images/cause-1.jpg" alt="">
-
-										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-											<a href="donasi.php" class="btn gradient-bg mr-2">Donate Now</a>
-										</div><!-- .figure-overlay -->
-									</figure>
-
-									<div class="cause-content-wrap">
-										<header class="entry-header d-flex flex-wrap align-items-center">
-											<h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
-										</header><!-- .entry-header -->
-
-										<div class="entry-content">
-											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
-										</div><!-- .entry-content -->
-									</div><!-- .cause-content-wrap -->
-								</div><!-- .cause-wrap -->
-							</div>
-
-							<div class="swiper-slide">
-								<div class="cause-wrap">
-									<figure class="m-0">
-										<img src="components/images/cause-1.jpg" alt="">
-
-										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-											<a href="donasi.php" class="btn gradient-bg mr-2">Donate Now</a>
-										</div><!-- .figure-overlay -->
-									</figure>
-
-									<div class="cause-content-wrap">
-										<header class="entry-header d-flex flex-wrap align-items-center">
-											<h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
-										</header><!-- .entry-header -->
-
-										<div class="entry-content">
-											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
-										</div><!-- .entry-content -->
-									</div><!-- .cause-content-wrap -->
-								</div><!-- .cause-wrap -->
-							</div>
-
-							<div class="swiper-slide">
-								<div class="cause-wrap">
-									<figure class="m-0">
-										<img src="components/images/cause-1.jpg" alt="">
-
-										<div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-											<a href="donasi.php" class="btn gradient-bg mr-2">Donate Now</a>
-										</div><!-- .figure-overlay -->
-									</figure>
-
-									<div class="cause-content-wrap">
-										<header class="entry-header d-flex flex-wrap align-items-center">
-											<h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
-										</header><!-- .entry-header -->
-
-										<div class="entry-content">
-											<p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
-										</div><!-- .entry-content -->
-									</div><!-- .cause-content-wrap -->
-								</div><!-- .cause-wrap -->
-							</div>
-						</div><!-- .swiper-wrapper -->
-
-					</div><!-- .swiper-container -->
-
-					<!-- Add Arrows -->
-					<div class="swiper-button-next flex justify-content-center align-items-center">
-						<span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg></span>
-					</div>
-
-					<div class="swiper-button-prev flex justify-content-center align-items-center">
-						<span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1203 544q0 13-10 23l-393 393 393 393q10 10 10 23t-10 23l-50 50q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23z"/></svg></span>
-					</div>
-				</div><!-- .col -->
-			</div><!-- .row -->
-		</div><!-- .container -->
-	</div><!-- .our-causes -->
-
 	<div class="single-page about-page">
 		<div class="welcome-wrap">
 			<div class="container">
@@ -496,11 +421,18 @@ include('front-end/head.php');
 		});
 	</script>
 
-	<?php
-	include('front-end/footer.php');
-	include('front-end/script.php');
-	?>
+	<script type="text/javascript">
+		$(document).ready( function () {
+				// console.log('tes');
+				$('#donasi').DataTable();
+			} );
+		</script>
 
-</body>
+		<?php
+		include('front-end/footer.php');
+		include('front-end/script.php');
+		?>
 
-</html>
+	</body>
+
+	</html>
