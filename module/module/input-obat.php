@@ -95,7 +95,7 @@ include ('config/db.php');
         $path = "foto_obat/".$foto;
 
         if(move_uploaded_file($tmp, $path)){
-                $con = mysqli_connect("localhost","root","","direct");
+                require("config/db.php");
                 $sql = "INSERT INTO
                     obat(nama_obat, foto_obat, dosis_anak, dosis_dewasa , penyakit, bahan_aktif, efek_samping)
                 VALUES('".$nama_obat."', '".$foto."', '".$dosis_anak."', '".$dosis_dewasa."', '".$penyakit."', '".$bahan_aktif."', '".$efek_samping."')";

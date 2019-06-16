@@ -116,7 +116,7 @@
 								$path = "foto_obat/".$foto;
 
 								if(move_uploaded_file($tmp, $path)){
-									$con = mysqli_connect("localhost","root","","direct");
+									require("config/db.php");
 									$sql = "UPDATE obat SET nama_obat='".$nama_obat."', foto_obat='".$foto."', dosis_anak='".$dosis_anak."', dosis_dewasa='".$dosis_dewasa."', penyakit='".$penyakit."', bahan_aktif='".$bahan_aktif."', efek_samping='".$efek_samping."' WHERE id_obat ='".$id."'";
 
 									$result = mysqli_query($con,$sql);

@@ -123,7 +123,7 @@ if(isset($_POST['btnLogin'])){
                                 /*the form has been posted without, so save it
                                 notice the use of mysql_real_escape_string, keep everything safe!
                                 also notice the sha1 function which hashes the password*/
-                                $con = mysqli_connect("localhost","root","","direct");
+                                require("config/db.php");
                                 $sql = "INSERT INTO
                                 users(nama, user_name, user_pass, user_phone , user_level, alamat)
                                 VALUES('" . mysqli_real_escape_string($con,$_POST['nama']) . "',

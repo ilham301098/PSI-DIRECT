@@ -43,7 +43,7 @@ include('front-end/head.php');
 			<p>Silahkan pilih thread yang anda inginkan untuk mulai berdiskusi</p>
 
 			<?php
-			$con = mysqli_connect("localhost","root","","direct");
+			require("config/db.php");
 			$sql = "SELECT
 			            topics.topic_id,
 			            topics.topic_subject,

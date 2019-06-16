@@ -344,7 +344,7 @@ include('front-end/head.php');
 			<?php
 			if( isset($_POST['btnSearch'])){
 				$ambil = $_POST['lokasi'];
-				$con = mysqli_connect("localhost","root","","direct");
+				require("config/db.php");
 				$hasil = mysqli_query($con,"SELECT nama_kota,koordinat FROM ramalan_cuaca WHERE id = $ambil");
 				foreach($hasil as $hasil){
 				// 	echo $hasil['nama_kota'];

@@ -53,11 +53,6 @@ include('front-end/head.php');
 						<?php }	?>
 
 
-						<ul class="pagination d-flex flex-wrap align-items-center p-0" style="text-align: center;">
-							<li class="active"><a href="#">01</a></li>
-							<li><a href="#">02</a></li>
-							<li><a href="#">03</a></li>
-						</ul>
 					</div>
 
 					<div class="col-12 col-lg-4">
