@@ -1,6 +1,6 @@
 <?php
 	// Create database connection
-	error_reporting(E_ALL ^ E_NOTICE);
+	// error_reporting(E_ALL ^ E_NOTICE);
 require('config/db.php');
 $data_orang_hilang = mysqli_query($con, "SELECT * FROM orang_hilang WHERE status='Terverifikasi'");
 $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE status='Terverifikasi'");
@@ -58,7 +58,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 						</div>
 					</div>
 					<div class="sparkline12-graph">
-						<!-- CRUD -->
+						<!-- CRUD Orang Hilang -->
 						<?php
 					// Delete
 						if(isset($_POST['btnDeleteHilang'])){
@@ -105,6 +105,9 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 								// image file directory
 							$target = "foto_org_hilang/".basename($foto);
+							if (!move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
+								$foto = "default.jpg";
+							}
 							// if (move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
 							// 	echo "Image uploaded successfully";
 							// }else{
@@ -170,6 +173,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 
 								// image file directory
 							$target = "foto_org_hilang/".basename($foto);
+							echo $target;
 							if (!move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
 								$foto = "default.jpg";
 							}
@@ -201,6 +205,151 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 							echo "<meta http-equiv='refresh' content='0'>";
 						}
 						?>
+						<!-- CRUD Orang Ditemukan -->
+								<?php
+					// Delete
+								if(isset($_POST['btnDeleteDitemukan'])){
+									$queryDelDitemukan="DELETE FROM `orang_ditemukan` WHERE `id`='".$_POST['IDData']."'";
+									$del=mysqli_query($con,$queryDelDitemukan);
+									if($del){
+										echo '
+										<div class="alert alert-success alert-dismissible fade in" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+											</button>
+											<strong>Success</strong><br> Data berhasil dihapus.
+										</div>
+										';
+									}else{
+										echo '
+										<div class="alert alert-danger alert-dismissible fade in" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+											</button>
+											<strong>Error</strong><br> Data gagal dihapus.
+										</div>
+										';
+									}
+									echo "<meta http-equiv='refresh' content='0'>";
+								}
+					// Edit
+								if(isset($_POST['btnEditDitemukan'])){
+
+							// Initialize message variable
+
+									$foto = $_FILES['foto']['name'];
+									$nama = $_POST['nama'];
+									$usia = $_POST['usia'];
+									$gender = $_POST['gender'];
+									$ciri = $_POST['ciri'];
+									$lokasi_ditemukan = $_POST['lokasi_ditemukan'];
+									$tgl_ditemukan = $_POST['tgl_ditemukan'];
+									$jenis_bencana = $_POST['jenis_bencana'];
+									$nama_pelapor = $_POST['nama_pelapor'];
+									$no_telp_pelapor = $_POST['no_telepon_pelapor'];
+									$kondisi_korban = $_POST['kondisi_korban'];
+									$status = $_POST['status'];
+
+								// image file directory
+									$target = "foto_org_ditemukan/".basename($foto);
+									echo $target;
+									if (!move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
+										$foto = "default.jpg";
+									}
+									// if (move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
+									// 	echo "Image uploaded successfully";
+									// }else{
+									// 	echo "Failed to upload image";
+									// }
+
+								// $queryEdtDitemukan="UPDATE `orang_Ditemukan` SET 
+								// `foto_korban`='$foto'
+								// WHERE `ID`='".$_POST['IDData']."'";
+
+									$queryEdtDitemukan="UPDATE `orang_ditemukan` SET 
+									`nama_korban`='$nama',
+									`usia`='$usia',
+									`gender`='$gender',
+									`ciri_ciri_korban`='$ciri',
+									`lokasi_ditemukan`='$lokasi_ditemukan',
+									`tanggal_ditemukan`='$tgl_ditemukan',
+									`jenis_bencana`='$jenis_bencana',
+									`nama_pelapor`='$nama_pelapor',
+									`no_telepon_pelapor`='$no_telp_pelapor',
+									`kondisi_korban`='$kondisi_korban',
+									`status`='$status'
+									WHERE `ID`='".$_POST['IDData']."'";
+
+									$editDitemukan=mysqli_query($con, $queryEdtDitemukan);
+									if($editDitemukan){
+										echo '
+										<div class="alert alert-success alert-dismissible fade in" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+											</button>
+											<strong>Success</strong><br> Data berhasil diedit.
+										</div>
+										';
+									}else{
+										echo '
+										<div class="alert alert-danger alert-dismissible fade in" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+											</button>
+											<strong>Error</strong><br> Data gagal diedit.
+										</div>
+										';
+									}
+									echo "<meta http-equiv='refresh' content='0'>";
+								}
+					// Add New
+								if(isset($_POST['btnAddDitemukan'])){
+
+							// Initialize message variable
+
+									$foto = $_FILES['foto']['name'];
+									$nama = $_POST['nama'];
+									$usia = $_POST['usia'];
+									$gender = $_POST['gender'];
+									$ciri = $_POST['ciri'];
+									$lokasi_ditemukan = $_POST['lokasi_ditemukan'];
+									$tgl_ditemukan = $_POST['tgl_ditemukan'];
+									$jenis_bencana = $_POST['jenis_bencana'];
+									$nama_pelapor = $_POST['nama_pelapor'];
+									$no_telp_pelapor = $_POST['no_telepon_pelapor'];
+									$kondisi_korban = $_POST['kondisi_korban'];
+									$status = "Terverifikasi";
+
+								// image file directory
+									$target = "foto_org_ditemukan/".basename($foto);
+									// echo "dir = ".$target;
+									if (!move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
+										$foto="default.jpg";
+									}
+									$queryAddDitemukan="INSERT INTO orang_ditemukan (nama_korban, usia, gender, ciri_ciri_korban, lokasi_ditemukan, tanggal_ditemukan,
+									jenis_bencana, nama_pelapor, no_telepon_pelapor, kondisi_korban, foto_korban, status) 
+									VALUES ('$nama', '$usia', '$gender', '$ciri', '$lokasi_ditemukan', '$tgl_ditemukan', '$jenis_bencana',
+									'$nama_pelapor', '$no_telp_pelapor', '$kondisi_korban', '$foto', '$status')";
+
+
+									$addDitemukan=mysqli_query($con, $queryAddDitemukan);
+									if($addDitemukan){
+										echo '
+										<div class="alert alert-success alert-dismissible fade in" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+											</button>
+											<strong>Success</strong><br> Data berhasil ditambahkan.
+										</div>
+										';
+									}else{
+										echo '
+										<div class="alert alert-danger alert-dismissible fade in" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
+											</button>
+											<strong>Error</strong><br> Data gagal ditambahkan.
+										</div>
+										';
+									}
+									echo "<meta http-equiv='refresh' content='0'>";								}
+								
+								?>
+
 						<button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#AddDataHilang"><i class="fa fa-plus"></i>&nbsp;Add New</button>
 
 						<div class="static-table-list">
@@ -584,148 +733,7 @@ $data_orang_ditemukan = mysqli_query($con, "SELECT * FROM orang_ditemukan WHERE 
 								</div>
 							</div>
 							<div class="sparkline12-graph">
-								<!-- CRUD -->
-								<?php
-					// Delete
-								if(isset($_POST['btnDeleteDitemukan'])){
-									$queryDelDitemukan="DELETE FROM `orang_ditemukan` WHERE `id`='".$_POST['IDData']."'";
-									$del=mysqli_query($con,$queryDelDitemukan);
-									if($del){
-										echo '
-										<div class="alert alert-success alert-dismissible fade in" role="alert">
-											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
-											</button>
-											<strong>Success</strong><br> Data berhasil dihapus.
-										</div>
-										';
-									}else{
-										echo '
-										<div class="alert alert-danger alert-dismissible fade in" role="alert">
-											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
-											</button>
-											<strong>Error</strong><br> Data gagal dihapus.
-										</div>
-										';
-									}
-									echo "<meta http-equiv='refresh' content='0'>";
-								}
-					// Edit
-								if(isset($_POST['btnEditDitemukan'])){
-
-							// Initialize message variable
-
-									$foto = $_FILES['foto']['name'];
-									$nama = $_POST['nama'];
-									$usia = $_POST['usia'];
-									$gender = $_POST['gender'];
-									$ciri = $_POST['ciri'];
-									$lokasi_ditemukan = $_POST['lokasi_ditemukan'];
-									$tgl_ditemukan = $_POST['tgl_ditemukan'];
-									$jenis_bencana = $_POST['jenis_bencana'];
-									$nama_pelapor = $_POST['nama_pelapor'];
-									$no_telp_pelapor = $_POST['no_telepon_pelapor'];
-									$kondisi_korban = $_POST['kondisi_korban'];
-									$status = $_POST['status'];
-
-								// image file directory
-									$target = "foto_org_ditemukan/".basename($foto);
-									echo "dir = ".$target;
-									if (move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
-										echo "Image uploaded successfully";
-									}else{
-										echo "Failed to upload image";
-									}
-
-								// $queryEdtDitemukan="UPDATE `orang_Ditemukan` SET 
-								// `foto_korban`='$foto'
-								// WHERE `ID`='".$_POST['IDData']."'";
-
-									$queryEdtDitemukan="UPDATE `orang_ditemukan` SET 
-									`nama_korban`='$nama',
-									`usia`='$usia',
-									`gender`='$gender',
-									`ciri_ciri_korban`='$ciri',
-									`lokasi_ditemukan`='$lokasi_ditemukan',
-									`tanggal_ditemukan`='$tgl_ditemukan',
-									`jenis_bencana`='$jenis_bencana',
-									`nama_pelapor`='$nama_pelapor',
-									`no_telepon_pelapor`='$no_telp_pelapor',
-									`kondisi_korban`='$kondisi_korban',
-									`status`='$status'
-									WHERE `ID`='".$_POST['IDData']."'";
-
-									$editDitemukan=mysqli_query($con, $queryEdtDitemukan);
-									if($editDitemukan){
-										echo '
-										<div class="alert alert-success alert-dismissible fade in" role="alert">
-											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
-											</button>
-											<strong>Success</strong><br> Data berhasil diedit.
-										</div>
-										';
-									}else{
-										echo '
-										<div class="alert alert-danger alert-dismissible fade in" role="alert">
-											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
-											</button>
-											<strong>Error</strong><br> Data gagal diedit.
-										</div>
-										';
-									}
-									echo "<meta http-equiv='refresh' content='0'>";
-								}
-					// Add New
-								if(isset($_POST['btnAddDitemukan'])){
-
-							// Initialize message variable
-
-									$foto = $_FILES['foto']['name'];
-									$nama = $_POST['nama'];
-									$usia = $_POST['usia'];
-									$gender = $_POST['gender'];
-									$ciri = $_POST['ciri'];
-									$lokasi_ditemukan = $_POST['lokasi_ditemukan'];
-									$tgl_ditemukan = $_POST['tgl_ditemukan'];
-									$jenis_bencana = $_POST['jenis_bencana'];
-									$nama_pelapor = $_POST['nama_pelapor'];
-									$no_telp_pelapor = $_POST['no_telepon_pelapor'];
-									$kondisi_korban = $_POST['kondisi_korban'];
-									$status = "Terverifikasi";
-
-								// image file directory
-									$target = "foto_org_ditemukan/".basename($foto);
-									echo "dir = ".$target;
-									if (!move_uploaded_file($_FILES['foto']['tmp_name'], $target)) {
-										$foto="default.jpg";
-									}
-									$queryAddDitemukan="INSERT INTO orang_ditemukan (nama_korban, usia, gender, ciri_ciri_korban, lokasi_ditemukan, tanggal_ditemukan,
-									jenis_bencana, nama_pelapor, no_telepon_pelapor, kondisi_korban, foto_korban, status) 
-									VALUES ('$nama', '$usia', '$gender', '$ciri', '$lokasi_ditemukan', '$tgl_ditemukan', '$jenis_bencana',
-									'$nama_pelapor', '$no_telp_pelapor', '$kondisi_korban', '$foto', '$status')";
-
-
-									$addDitemukan=mysqli_query($con, $queryAddDitemukan);
-									if($addDitemukan){
-										echo '
-										<div class="alert alert-success alert-dismissible fade in" role="alert">
-											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
-											</button>
-											<strong>Success</strong><br> Data berhasil ditambahkan.
-										</div>
-										';
-									}else{
-										echo '
-										<div class="alert alert-danger alert-dismissible fade in" role="alert">
-											<button type="button" class="close" data-dismiss="alert" aria-label="Close">x
-											</button>
-											<strong>Error</strong><br> Data gagal ditambahkan.
-										</div>
-										';
-									}
-									echo "<meta http-equiv='refresh' content='0'>";								}
 								
-								?>
-
 								<button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#AddDataDitemukan"><i class="fa fa-plus"></i>&nbsp;Add New</button>
 
 								<div class="static-table-list">
