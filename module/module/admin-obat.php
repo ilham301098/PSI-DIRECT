@@ -238,7 +238,7 @@
 								echo '</table>';
 								echo '<center><h3>';
 								for ($i=1; $i<=$pages ; $i++){
-									echo '<a href="?halaman='.$i.'">'.$i.'</a>';
+									echo '<a href="?module=admin-obat&halaman='.$i.'">'.$i.'</a>';
 									echo ' ';}
 									echo '</center></h3>';
 								}
@@ -285,7 +285,7 @@
 											<td align = "center">'.$i.'</td>
 											<td align = "center">'.$row['nama_obat'].'</td>
 											<td width ="200px" height ="150px" align = "center"><img src="foto_obat/'.$row['foto_obat'].'"'.'width = "180px"></td>
-											<td align = "center"><a href =?module=edit-obat&id='.$row['id_obat'].'><button type="button" class="btn btn-custon-four btn-default">Edit</button></a> <button type="button" class="btn btn-custon-four btn-default" data-toggle="modal" data-target=".bs-modal-DeleteInformasiObat'.$row['id_obat'].'">Delete</button>
+											<td align = "center"><a href =?module=edit-obat&id='.$row['id_obat'].'><button type="button" class="btn btn-custon-four btn-default">Edit</button></a> <button type="button" class="btn btn-custon-four btn-danger" data-toggle="modal" data-target=".bs-modal-DeleteInformasiObat'.$row['id_obat'].'">Delete</button>
 
 												<div class="modal fade bs-modal-DeleteInformasiObat'.$row['id_obat'].'" tabindex="-1" role="dialog" aria-hidden="true">
 													<div class="modal-dialog modal-sm">
