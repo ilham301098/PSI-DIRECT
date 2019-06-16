@@ -32,9 +32,10 @@ if(isset($_POST['btnLogin'])){
                                 //the form has been posted without errors, so save it
                                 //notice the use of mysql_real_escape_string, keep everything safe!
                                 //also notice the sha1 function which hashes the password
-        $con = mysqli_connect("localhost","root","","direct");
+        require("config/db.php");
         $sql = "SELECT 
         user_id,
+        nama,
         user_name,
         user_level
         FROM
@@ -62,7 +63,7 @@ if(isset($_POST['btnLogin'])){
                 if($row = mysqli_fetch_assoc($result)){
                     $_SESSION['signed_in'] = true;
                     $_SESSION['user_id']    = $row['user_id'];
-                    $_SESSION['user_name']  = $row['user_name'];
+                    $_SESSION['user_name']  = $row['nama'];
                     $_SESSION['user_level'] = $row['user_level'];
                 }
                 header('location:index.php');
@@ -139,7 +140,7 @@ if(isset($_POST['btnLogin'])){
                                     echo mysqli_error($con); 
                                     //debugging purposes, uncomment when needed
                                 }else{
-                                    echo '<br><br><br><br><br><br><br><div align="middle" class="alert alert-success">Berhasil Registrasi<br>Silahkan Login!</div></div>';
+                                    echo '<div align="middle" class="alert alert-success">Berhasil Registrasi<br>Silahkan Login!</div>';
                                 }
                             }
                         }
