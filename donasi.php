@@ -66,7 +66,7 @@ require('config/db.php');
             <div class="row">
                 <div class="col-12">
                     <br>
-                     <h2 align="center">Total Donasi : Rp'. $sum.'</h2><br>
+                     <h2 align="center">Total Donasi : Rp '. number_format($sum).'</h2><br>
                       <div class="col-12">
                     <form action="donasi.php" method="post" autocomplete="off" > <div class="form-group">
                         <div class="container">

@@ -35,7 +35,7 @@ include('front-end/head.php');
 							<th>No.</th>
 							<th>Donasi</th>
 							<th>Tanggal</th>
-							<th>Ststus</th>
+							<th>Status</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -44,7 +44,7 @@ include('front-end/head.php');
 						while($user_data = mysqli_fetch_array($donasi)) {
 							echo "<tr>";
 							echo "<td>".$no_korban++."</td>";
-							echo "<td>".$user_data['donasi']."</td>";
+							echo "<td>".number_format($user_data['donasi'])."</td>";
 							echo "<td>".$user_data['tanggal']."</td>";
 							echo "<td>".$user_data['status']."</td>";
 						}
