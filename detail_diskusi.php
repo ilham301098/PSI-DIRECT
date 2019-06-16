@@ -77,7 +77,7 @@ include('front-end/head.php');
 
 			<div class="contact-form">
 				<h2 align="center">Komentar</h2>
-				<p align="center">Perhatian! Komentar dan respon hanya dapat di hapus oleh admin. <br> Admin memiliki hak untuk menghapus komentar dan respon anda jika diperlukan.</p>
+				<p align="center">Perhatian! Komentar dan respon yang telah tersimpan, tidak dapat di hapus.</p>
 				<?php
 				require("config/db.php");
 				if(isset($_POST['btnComment'])){
