@@ -101,7 +101,7 @@ include('front-end/head.php');
 			<div class="row justify-content-center">
 				<div class="col-sm-10">
 					<div class="form-group">
-						<h3 for="exampleIntro">Isi form berikut ini untuk melaporkan orang ditemukan</h3>
+						<h3 for="exampleIntro">Isi form berikut ini untuk melaporkan orang hilang</h3>
 					</div>
 				</div>
 			</div>

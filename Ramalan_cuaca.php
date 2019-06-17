@@ -461,7 +461,7 @@ function dailyWeather($cordinates,$nama){
 		</div>
 		<?php
 		$i++;
-		if($i == 12) break;
+		if($i == 8) break;
 		endforeach;
 		?>
 	</div>
